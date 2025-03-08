@@ -20,7 +20,7 @@ $(`npx lerna run build --scope @dendronhq/dendron-viz `);
 $(`npx lerna run build --scope @dendronhq/engine-server `);
 $(`npx lerna run build --scope @dendronhq/pods-core `);
 $(
-  `npx lerna run build --parallel --scope "@dendronhq/{common-test-utils,api-server,common-assets}"`
+  `npx lerna run build --parallel --scope "@dendronhq/{api-server,common-assets}"`
 );
 $(
   `npx lerna run build --parallel --scope "@dendronhq/{common-frontend,dendron-cli}"`

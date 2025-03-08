@@ -23,6 +23,7 @@ import { useWorkspaceProps } from "../hooks";
 import { DendronProps } from "../types";
 import luxonGenerateConfig from "../utils/luxonGenerateConfig";
 import { postVSCodeMessage } from "../utils/vscode";
+import { DayPicker } from "react-day-picker";
 
 const { useEngine } = engineHooks;
 
@@ -278,20 +279,11 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   return (
     <>
       <div className="calendar">
-        <Calendar
-          mode={activeMode}
-          onSelect={onSelect}
-          onPanelChange={onPanelChange}
-          /*
-          // @ts-ignore -- `null` initializes ant Calendar into a controlled component whereby it does not render an selected/visible date (today) when `activeDate` is `undefined`*/
-          value={activeDate || null}
-          dateFullCellRender={dateFullCellRender}
-          fullscreen={false}
-        />
+        <DayPicker mode="single" />
       </div>
       <Divider plain style={{ marginTop: 0 }}>
         <Button type="primary" onClick={onClickToday}>
-          Today
+          Today!!!
         </Button>
       </Divider>
     </>
