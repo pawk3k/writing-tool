@@ -30,8 +30,6 @@
     "compile": "tsc -p tsconfig.build.json",
     "watch": "yarn compile --watch"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "rimraf": "^2.6.2"
   },

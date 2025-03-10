@@ -1,6 +1,5 @@
 .vscode/**
 .vscode-test/**
-out/**
 src/**
 .gitignore
 vsc-extension-quickstart.md
@@ -18,3 +17,6 @@ CHANGELOG.md
 *.log
 *.old
 assets
+**/node_modules/**
+../**
+../../**

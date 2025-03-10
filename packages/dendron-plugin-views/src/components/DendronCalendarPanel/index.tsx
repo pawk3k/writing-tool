@@ -14,11 +14,10 @@ import generateCalendar from "antd/lib/calendar/generateCalendar";
 import classNames from "classnames";
 import _ from "lodash";
 import React, { useCallback, useMemo, useState } from "react";
-import { useWorkspaceProps } from "../hooks";
-import { DendronProps } from "../types";
-import luxonGenerateConfig from "../utils/luxonGenerateConfig";
-import { postVSCodeMessage } from "../utils/vscode";
-import { DayPicker } from "react-day-picker";
+import { useWorkspaceProps } from "../../hooks";
+import { DendronProps } from "../../types";
+import luxonGenerateConfig from "../../utils/luxonGenerateConfig";
+import { postVSCodeMessage } from "../../utils/vscode";
 import { ConfigUtils } from "@dendronhq/common-all/src/utils";
 import { VaultUtils } from "@dendronhq/common-all/src/vault";
 import { Time } from "@dendronhq/common-all/src/time";
@@ -26,6 +25,7 @@ import {
   CalendarViewMessageType,
   DMessageSource,
 } from "@dendronhq/common-all/src/types";
+import { MultiViewDatePicker } from "./CustomPicker";
 
 const { useEngine } = engineHooks;
 
@@ -153,20 +153,25 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   }, [noteActive, groupedDailyNotes, journalName, journalDateFormat]);
 
   const getDateKey = useCallback<
-    (date: DateTime, mode?: CalendarProps["mode"]) => string | undefined
+    (date: Date, mode?: CalendarProps["mode"]) => string | undefined
   >(
     (date, mode) => {
       const format =
         (mode || activeMode) === "month"
           ? journalDateFormat
           : journalMonthDateFormat;
-      return format ? date.toFormat(format) : undefined;
+
+      return format
+        ? Time.DateTime.fromJSDate(date).toFormat(format)
+        : undefined;
+
+      // return format ? date.toFormat?.(format) : undefined;
     },
     [activeMode, journalDateFormat]
   );
 
   const onSelect = useCallback<
-    (date: DateTime, mode?: CalendarProps["mode"]) => void
+    (date: Date, mode?: CalendarProps["mode"]) => void
   >(
     (date, mode) => {
       logger.info({ ctx: "onSelect", date });
@@ -281,17 +286,7 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   return (
     <>
       <div className="calendar">
-        {/* <DayPicker mode="single" /> */}
-        <Calendar
-          mode={activeMode}
-          onSelect={onSelect}
-          onPanelChange={onPanelChange}
-          /*
-          // @ts-ignore -- `null` initializes ant Calendar into a controlled component whereby it does not render an selected/visible date (today) when `activeDate` is `undefined`*/
-          value={activeDate || null}
-          dateFullCellRender={dateFullCellRender}
-          fullscreen={false}
-        />
+        <MultiViewDatePicker onSelect={onSelect} />
       </div>
       <Divider plain style={{ marginTop: 0 }}>
         <Button type="primary" onClick={onClickToday}>

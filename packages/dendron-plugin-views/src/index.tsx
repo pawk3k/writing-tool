@@ -17,7 +17,7 @@ import DendronConfigure from "./components/DendronConfigure";
 // Component registry that maps names to actual components
 const COMPONENT_REGISTRY = {
   // DendronNotePreview,
-  SampleComponent,
+  // SampleComponent,
   // DendronLookupPanel,
   DendronCalendarPanel,
   // DendronGraphPanel,
@@ -29,33 +29,55 @@ const COMPONENT_REGISTRY = {
 
 const VALID_NAMES = Object.keys(COMPONENT_REGISTRY);
 
-const elem = window.document.getElementById("root")!;
-const VIEW_NAME = elem.getAttribute("data-name")! || "DendronCalendarPanel";
+// Function to get component name from URL hash or data attribute
+function getComponentName() {
+  const elem = window.document.getElementById("root")!;
+  const hashRoute = window.location.hash.slice(1); // Remove the # character
 
-if (VALID_NAMES.includes(VIEW_NAME)) {
-  console.log("NAME VALID: ", VIEW_NAME);
-
-  // Get the component directly from our registry
-  // @ts-expect-error error
-  const View = COMPONENT_REGISTRY[VIEW_NAME];
-
-  // Configure props
-  let props = {
-    padding: "inherit",
-  };
-  if (VIEW_NAME === "DendronNotePreview") {
-    props = { padding: "33px" };
+  // Check if we have a valid hash route
+  if (hashRoute && VALID_NAMES.includes(hashRoute)) {
+    return hashRoute;
   }
 
-  // Render the component
-  renderOnDOM(View, props);
-} else {
-  console.log(
-    `${VIEW_NAME} is an invalid or empty name. please use one of the following: ${VALID_NAMES.join(
-      " "
-    )}`
-  );
+  // Fall back to data attribute
+  return elem.getAttribute("data-name")! || "DendronCalendarPanel";
 }
+
+// Initial render
+function renderComponent() {
+  const VIEW_NAME = getComponentName();
+
+  if (VALID_NAMES.includes(VIEW_NAME)) {
+    console.log("NAME VALID: ", VIEW_NAME);
+
+    // Get the component directly from our registry
+    const View =
+      COMPONENT_REGISTRY[VIEW_NAME as keyof typeof COMPONENT_REGISTRY];
+
+    // Configure props
+    let props = {
+      padding: "inherit",
+    };
+    if (VIEW_NAME === "DendronNotePreview") {
+      props = { padding: "33px" };
+    }
+
+    // Render the component
+    renderOnDOM(View, props);
+  } else {
+    console.log(
+      `${VIEW_NAME} is an invalid or empty name. please use one of the following: ${VALID_NAMES.join(
+        " "
+      )}`
+    );
+  }
+}
+
+// Listen for hash changes to support navigation
+window.addEventListener("hashchange", renderComponent);
+
+// Initial render
+renderComponent();
 
 // avoid --isolatedModules error
 export {};

@@ -16,7 +16,6 @@
       "packages/engine-test-utils",
       "packages/pods-core",
       "packages/dendron-cli",
-      "packages/nextjs-template",
       "packages/plugin-core",
       "packages/common-frontend",
       "packages/dendron-plugin-views",
