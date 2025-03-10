@@ -4,11 +4,12 @@ import {
   NoteProps,
   LookupModifierStatePayload,
   TreeMenu,
-  GraphThemeEnum,
 } from "@dendronhq/common-all";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // @ts-ignore
 import internal from "@reduxjs/toolkit/node_modules/immer/dist/internal";
+
+import { GraphThemeEnum } from "@dendronhq/common-all/src/types";
 
 type Theme = "light" | "dark" | "unknown";
 

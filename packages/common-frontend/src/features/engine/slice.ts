@@ -1,15 +1,19 @@
 import {
-  DendronApiV2,
   DEngineInitPayload,
   NoteProps,
   NotePropsByIdDict,
+} from "@dendronhq/common-all";
+
+import {
+  DendronApiV2,
   stringifyError,
   NoteUtils,
   NoteFnameDictUtils,
   NoteDictsUtils,
   DendronConfig,
   SchemaModuleDict,
-} from "@dendronhq/common-all";
+} from "@dendronhq/common-all/src";
+
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { EngineSliceState, LoadingStatus } from "../../types";

@@ -1,13 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-  CalendarViewMessageType,
-  ConfigUtils,
-  DMessageSource,
-  NoteProps,
-  Time,
-  VaultUtils,
-} from "@dendronhq/common-all";
-import { createLogger, engineHooks } from "@dendronhq/common-frontend";
+import { NoteProps } from "@dendronhq/common-all";
+import { engineHooks } from "@dendronhq/common-frontend/src/features/engine";
+
+import { createLogger } from "@dendronhq/common-frontend/src/utils";
 import {
   Badge,
   Button,
@@ -24,6 +19,13 @@ import { DendronProps } from "../types";
 import luxonGenerateConfig from "../utils/luxonGenerateConfig";
 import { postVSCodeMessage } from "../utils/vscode";
 import { DayPicker } from "react-day-picker";
+import { ConfigUtils } from "@dendronhq/common-all/src/utils";
+import { VaultUtils } from "@dendronhq/common-all/src/vault";
+import { Time } from "@dendronhq/common-all/src/time";
+import {
+  CalendarViewMessageType,
+  DMessageSource,
+} from "@dendronhq/common-all/src/types";
 
 const { useEngine } = engineHooks;
 
@@ -279,7 +281,17 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   return (
     <>
       <div className="calendar">
-        <DayPicker mode="single" />
+        {/* <DayPicker mode="single" /> */}
+        <Calendar
+          mode={activeMode}
+          onSelect={onSelect}
+          onPanelChange={onPanelChange}
+          /*
+          // @ts-ignore -- `null` initializes ant Calendar into a controlled component whereby it does not render an selected/visible date (today) when `activeDate` is `undefined`*/
+          value={activeDate || null}
+          dateFullCellRender={dateFullCellRender}
+          fullscreen={false}
+        />
       </div>
       <Divider plain style={{ marginTop: 0 }}>
         <Button type="primary" onClick={onClickToday}>
