@@ -724,7 +724,14 @@ export class WorkspaceActivator {
       });
 
       // Existing code...
-      const out = await ExtensionUtils.startServerProcess();
+      const out = await ExtensionUtils.startServerProcess({
+        context: ext.context,
+        wsService,
+        start: process.hrtime(),
+        onExit: () => {
+          WSUtils.reloadWorkspace();
+        },
+      });
 
       Logger.info({
         ctx: "verifyOrStartServerProcess",
@@ -737,7 +744,7 @@ export class WorkspaceActivator {
       Logger.error({
         ctx: "verifyOrStartServerProcess",
         msg: "Failed to start server process",
-        error,
+        error: error as any,
       });
       throw error;
     }

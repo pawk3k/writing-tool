@@ -18,7 +18,8 @@
       "packages/dendron-cli",
       "packages/common-frontend",
       "packages/dendron-plugin-views",
-      "packages/unified"
+      "packages/unified",
+      "packages/plugin-core"
     ],
     "nohoist": [
       "**/@types/mocha",
@@ -155,5 +156,5 @@
     "trim": "0.0.3",
     "d3-color": "3.1.0"
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "yarn@4.7.0"
 }

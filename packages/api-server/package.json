@@ -54,10 +54,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@dendronhq/common-all": "^0.124.0",
-    "@dendronhq/common-server": "^0.124.0",
-    "@dendronhq/engine-server": "^0.124.0",
-    "@dendronhq/unified": "^0.124.0",
+    "@dendronhq/common-all": "workspace:*",
+    "@dendronhq/common-server": "workspace:*",
+    "@dendronhq/engine-server": "workspace:*",
+    "@dendronhq/unified": "workspace:*",
     "@sentry/integrations": "7.11.1",
     "@sentry/node": "7.11.1",
     "cors": "^2.8.5",
