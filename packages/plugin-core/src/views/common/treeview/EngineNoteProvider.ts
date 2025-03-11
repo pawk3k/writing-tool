@@ -1,5 +1,5 @@
 import {
-  EngineEventEmitter,
+  type EngineEventEmitter,
   type ReducedDEngine,
   NotePropsMeta,
   TAGS_HIERARCHY_BASE,

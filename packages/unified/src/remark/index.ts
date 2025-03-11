@@ -9,17 +9,14 @@ export {
   mdastBuilder,
   select,
   selectAll,
-  LinkFilter,
   LINK_NAME,
   ALIAS_NAME,
   LINK_CONTENTS,
   visit,
-  ParseLinkV2Resp,
 } from "./utils";
-export { wikiLinks, WikiLinksOpts, matchWikiLink } from "./wikiLinks";
+export { wikiLinks, matchWikiLink } from "./wikiLinks";
 export {
   blockAnchors,
-  BlockAnchorOpts,
   matchBlockAnchor,
   BLOCK_LINK_REGEX_LOOSE,
 } from "./blockAnchors";
@@ -38,7 +35,6 @@ export {
 } from "./userTags";
 export {
   extendedImage,
-  ExtendedImageOpts,
   extendedImage2html,
   extendedImage2htmlRaw,
 } from "./extendedImage";

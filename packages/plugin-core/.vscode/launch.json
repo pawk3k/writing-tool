@@ -15,7 +15,7 @@
         "--extensionDevelopmentPath=${workspaceFolder}"
       ],
       "outFiles": [
-        "${workspaceFolder:plugin-core}/out/**/*.js"
+        "${workspaceFolder:plugin-core}/dist/**/*.js"
       ],
       "skipFiles": [
         "<node_internals>/**/*.js",
@@ -111,7 +111,7 @@
       "args": [
         "--disable-extensions",
         "--extensionDevelopmentPath=${workspaceFolder}",
-        "--extensionTestsPath=${workspaceFolder}/out/src/test/suite-integ/index"
+        "--extensionTestsPath=${workspaceFolder}/dist/src/test/suite-integ/index"
       ],
       "env": {
         "STAGE": "test",

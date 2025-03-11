@@ -370,17 +370,40 @@ function updateEngineAPI(
   port: number | string,
   ext: IDendronExtension
 ): EngineAPIService {
-  // set engine api ^9dr6chh7ah9v
-  const svc = EngineAPIService.createEngine({
-    port,
-    enableWorkspaceTrust: vscode.workspace.isTrusted,
-    vaults: ext.getDWorkspace().vaults,
-    wsRoot: ext.getDWorkspace().wsRoot,
-  });
-  ext.setEngine(svc);
-  ext.port = _.toInteger(port);
+  try {
+    // Add verbose logging
+    Logger.info({
+      ctx: "updateEngineAPI",
+      msg: "Creating engine",
+      port,
+      wsRoot: ext.getDWorkspace().wsRoot,
+      vaultsCount: ext.getDWorkspace().vaults.length,
+    });
 
-  return svc;
+    const svc = EngineAPIService.createEngine({
+      port,
+      enableWorkspaceTrust: vscode.workspace.isTrusted,
+      vaults: ext.getDWorkspace().vaults,
+      wsRoot: ext.getDWorkspace().wsRoot,
+    });
+
+    Logger.info({
+      ctx: "updateEngineAPI",
+      msg: "Engine created successfully",
+    });
+
+    ext.setEngine(svc);
+    ext.port = _.toInteger(port);
+
+    return svc;
+  } catch (error) {
+    Logger.error({
+      ctx: "updateEngineAPI",
+      msg: "Failed to create engine",
+      error: error as any,
+    });
+    throw error;
+  }
 }
 
 type WorkspaceActivatorValidateOpts = {
@@ -694,32 +717,29 @@ export class WorkspaceActivator {
     ext: IDendronExtension;
     wsService: WorkspaceService;
   }): Promise<number> {
-    const context = ext.context;
-    const start = process.hrtime();
-    if (ext.port) {
-      return ext.port;
-    }
+    try {
+      Logger.info({
+        ctx: "verifyOrStartServerProcess",
+        msg: "Starting server process",
+      });
 
-    const { port, subprocess } = await ExtensionUtils.startServerProcess({
-      context,
-      start,
-      wsService,
-      onExit: (type: SubProcessExitType) => {
-        const txt = "Restart Dendron";
-        vscode.window
-          .showErrorMessage("Dendron engine encountered an error", txt)
-          .then(async (resp) => {
-            if (resp === txt) {
-              AnalyticsUtils.track(VSCodeEvents.ServerCrashed, {
-                code: type,
-              });
-              await ExtensionUtils.activate();
-            }
-          });
-      },
-    });
-    ext.port = _.toInteger(port);
-    ext.serverProcess = subprocess;
-    return ext.port;
+      // Existing code...
+      const out = await ExtensionUtils.startServerProcess();
+
+      Logger.info({
+        ctx: "verifyOrStartServerProcess",
+        msg: "Server process started",
+        port: out.port,
+      });
+
+      return out.port;
+    } catch (error) {
+      Logger.error({
+        ctx: "verifyOrStartServerProcess",
+        msg: "Failed to start server process",
+        error,
+      });
+      throw error;
+    }
   }
 }

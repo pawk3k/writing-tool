@@ -7,7 +7,7 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
-node_modules
+
 build
 scripts/**
 fixtures/**
@@ -17,6 +17,3 @@ CHANGELOG.md
 *.log
 *.old
 assets
-**/node_modules/**
-../**
-../../**
