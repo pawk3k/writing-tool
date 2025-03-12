@@ -1,10 +1,14 @@
 {
   "name": "dendron",
+  "vsce": {
+    "dependencies": true,
+    "allowStarActivation": true
+  },
   "private": true,
   "displayName": "dendron",
   "description": "Dendron is a hierarchical note taking tool that grows as you do.",
   "publisher": "dendron",
-  "version": "0.125.0",
+  "version": "0.127.0",
   "sponsor": {
     "url": "https://accounts.dendron.so/account/subscribe"
   },
@@ -28,7 +32,6 @@
     "*"
   ],
   "main": "./dist/extension.js",
-  "browser": "./dist/web/extension.js",
   "extensionPack": [
     "dendron.dendron-paste-image"
   ],
@@ -1490,6 +1493,7 @@
     "build": "yarn compile",
     "build:dev": "yarn webpack",
     "build:prod": "yarn webpack:prod && ./scripts/varSub.sh && yarn package-web",
+    "package": "PATH=\"$PWD/scripts:$PATH\" node scripts/yarn-new.js --version && vsce package",
     "compile": "tsc -p tsconfig.build.json ",
     "test": "node ./out/src/test/runTestInteg.js",
     "test-web": "node ./out/src/web/test/runWebIntegTest.js",

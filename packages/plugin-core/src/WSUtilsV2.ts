@@ -90,7 +90,7 @@ export class WSUtilsV2 implements IWSUtilsV2 {
       // No vault
       return undefined;
     }
-    return (await engine.findNotes({ fname, vault }))[0];
+    return (await engine.findNotes({ fname, vault }))?.[0];
   }
 
   /**
