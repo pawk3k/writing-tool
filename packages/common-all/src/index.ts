@@ -18,7 +18,7 @@ export * from "./vault";
 export * from "./VaultUtilsV2";
 export * from "./user";
 export * from "./analytics";
-export type * from "./types";
+export * from "./types";
 export * from "./themes";
 export * from "./FuseEngine";
 export * from "./util";

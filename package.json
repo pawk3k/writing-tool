@@ -120,7 +120,7 @@
     "packages/*",
     "vendor/*"
   ],
-  "useWorkspaces": false,
+  "useWorkspaces": true,
   "husky": {
     "hooks": {
       "pre-commit": "yarn stash:unstaged && lint-staged && yarn hooks:pre-commit && yarn stash:pop",
