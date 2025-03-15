@@ -257,7 +257,7 @@ const FilterViewSection = ({
                       disabled={!entry.mutable}
                       defaultValue={(entry.value as number) || 1}
                       onChange={(newValue) => {
-                        updateConfigField(key, newValue);
+                        updateConfigField(key, newValue!);
                         updateGraphDepth(newValue as number);
                       }}
                     />
@@ -269,7 +269,7 @@ const FilterViewSection = ({
                     <Typography>{label}</Typography>
                     <InputNumber
                       value={entry?.value}
-                      onChange={(newValue) => updateConfigField(key, newValue)}
+                      onChange={(newValue) => updateConfigField(key, newValue!)}
                       disabled={!entry?.mutable}
                     />
                   </>

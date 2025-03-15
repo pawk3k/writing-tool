@@ -1,26 +1,32 @@
 import {
+  OnDidChangeActiveTextEditorMsg,
+  OnUpdatePreviewHTMLMsg,
+} from "@dendronhq/common-all";
+
+import {
   DMessageEnum,
   DMessageSource,
   GraphThemeEnum,
   GraphViewMessageEnum,
   LookupViewMessageEnum,
   NoteViewMessageEnum,
-  NoteUtils,
-  OnDidChangeActiveTextEditorMsg,
   SeedBrowserMessageType,
-  OnUpdatePreviewHTMLMsg,
-} from "@dendronhq/common-all";
+} from "@dendronhq/common-all/src/types";
 import {
-  combinedStore,
-  createLogger,
   engineHooks,
   engineSlice,
+} from "@dendronhq/common-frontend/src/features/engine";
+import {
   ideHooks,
   ideSlice,
-  LOG_LEVEL,
-  Provider,
+} from "@dendronhq/common-frontend/src/features/ide";
+
+import {
+  createLogger,
   setLogLevel,
-} from "@dendronhq/common-frontend";
+  LOG_LEVEL,
+} from "@dendronhq/common-frontend/src/utils";
+
 import { Layout } from "antd";
 import _ from "lodash";
 import React from "react";
@@ -28,6 +34,21 @@ import { useWorkspaceProps } from "../hooks";
 import "../styles/scss/main-plugin.scss";
 import { DendronComponent } from "../types";
 import { postVSCodeMessage, useVSCodeMessage } from "../utils/vscode";
+import { Provider } from "react-redux";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { NoteUtils } from "@dendronhq/common-all/src/dnode";
+
+const engine = engineSlice.reducer;
+const ide = ideSlice.reducer;
+
+const middleware = [...getDefaultMiddleware()];
+export const store = configureStore({
+  reducer: {
+    engine,
+    ide,
+  },
+  middleware,
+});
 
 const { Content } = Layout;
 
@@ -206,7 +227,7 @@ export type DendronAppProps = {
 
 function DendronApp(props: DendronAppProps) {
   return (
-    <Provider store={combinedStore}>
+    <Provider store={store}>
       <Layout
         style={{
           padding: props.opts.padding,

@@ -11,7 +11,7 @@ import { Processor } from "unified";
 import { DendronPubOpts } from "./remark/dendronPub";
 import { WikiLinksOpts } from "./remark/wikiLinks";
 
-export { Node as UnistNode } from "unist";
+export type { Node as UnistNode } from "unist";
 export { VFile } from "vfile";
 export { Processor };
 export { DendronASTDest };

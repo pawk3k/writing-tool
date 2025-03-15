@@ -1,9 +1,6 @@
-import {
-  DMessage,
-  DMessageEnum,
-  DMessageSource,
-  VSCodeMessage,
-} from "@dendronhq/common-all";
+import { DMessage, VSCodeMessage } from "@dendronhq/common-all";
+
+import { DMessageEnum, DMessageSource } from "@dendronhq/common-all/src/types";
 import React from "react";
 
 /**
@@ -19,11 +16,11 @@ export const postVSCodeMessage = (msg: DMessage) => {
 };
 
 export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
-  const listener = React.useCallback((msg: MessageEvent<DMessage>)=> {
-      const payload = msg.data || {}; // The JSON data our extension sent
-      if (payload.source === "vscode") {
-        setMsgHook(payload);
-      }
+  const listener = React.useCallback((msg: MessageEvent<DMessage>) => {
+    const payload = msg.data || {}; // The JSON data our extension sent
+    if (payload.source === "vscode") {
+      setMsgHook(payload);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   React.useEffect(() => {

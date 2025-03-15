@@ -14,7 +14,7 @@ import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
 import simpleGit, {
-  SimpleGit,
+  type SimpleGit,
   ResetMode as SimpleGitResetMode,
 } from "simple-git";
 import { parse } from "url";

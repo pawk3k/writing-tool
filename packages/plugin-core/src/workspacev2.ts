@@ -10,6 +10,7 @@ import fs, { FSWatcher } from "fs-extra";
 import _ from "lodash";
 import path from "path";
 import vscode, { window } from "vscode";
+import unist from "unist";
 
 export type DWorkspaceInitOpts = {
   onReady: ({}: { ws: DWorkspace }) => Promise<void>; // eslint-disable-line  no-empty-pattern

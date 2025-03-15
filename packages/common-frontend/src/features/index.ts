@@ -21,7 +21,7 @@ if (getStage() === `dev`) {
 const engine = engineSlice.reducer;
 const ide = ideSlice.reducer;
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     engine,
     ide,
