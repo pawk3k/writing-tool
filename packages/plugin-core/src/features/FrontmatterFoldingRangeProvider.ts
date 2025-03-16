@@ -31,7 +31,7 @@ export default class FrontmatterFoldingRangeProvider
       return [range];
     } catch (error) {
       Sentry.captureException(error);
-      // throw error;
+      throw error;
     }
   }
 }

@@ -6,7 +6,7 @@ import {
   VaultUtils,
 } from "@dendronhq/common-all";
 import { HistoryEvent } from "@dendronhq/engine-server";
-import { LinkUtils, ParseLinkV2Resp } from "@dendronhq/unified";
+import { LinkUtils } from "@dendronhq/unified";
 import _ from "lodash";
 import { Disposable, QuickPickItem, Range, TextEditor } from "vscode";
 import { LookupControllerV3CreateOpts } from "../components/lookup/LookupControllerV3Interface";
@@ -23,6 +23,7 @@ import { AutoCompletableRegistrar } from "../utils/registers/AutoCompletableRegi
 import { VSCodeUtils } from "../vsCodeUtils";
 import { WSUtils } from "../WSUtils";
 import { BasicCommand } from "./base";
+import type { ParseLinkV2Resp } from "@dendronhq/unified/src/remark/utils";
 
 type CommandOpts = {
   range: Range;
