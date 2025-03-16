@@ -1,3 +1,20 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "references": [
+    {
+      "path": "../api-server"
+    },
+    {
+      "path": "../common-all"
+    },
+    {
+      "path": "../common-server"
+    },
+    {
+      "path": "../engine-server"
+    },
+    {
+      "path": "../pods-core"
+    }
+  ]
 }

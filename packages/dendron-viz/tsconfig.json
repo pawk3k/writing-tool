@@ -4,7 +4,9 @@
     "jsx": "react",
     "module": "commonjs",
     "target": "ES2019",
-    "lib": ["es2019"],
+    "lib": [
+      "es2019"
+    ],
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -20,5 +22,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
-  }
+  },
+  "references": [
+    {
+      "path": "../common-all"
+    },
+    {
+      "path": "../engine-server"
+    }
+  ]
 }

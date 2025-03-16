@@ -3,7 +3,10 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "ES2019",
-    "lib": ["es2019", "DOM"],
+    "lib": [
+      "es2019",
+      "DOM"
+    ],
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -19,5 +22,10 @@
     // --- language features
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "references": [
+    {
+      "path": "../common-all"
+    }
+  ]
 }

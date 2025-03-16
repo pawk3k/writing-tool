@@ -1,41 +1,63 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
+    "composite": true,
     "baseUrl": ".",
     "strict": true,
     "noImplicitAny": true,
     "paths": {
       //"@dendronhq/*": ["packages/*/src"],
-      "@dendronhq/api-server": [
-        "packages/api-server/src"
-      ],
-      "@dendronhq/common-all": [
-        "packages/common-all/src"
-      ],
-      "@dendronhq/unified": [
-        "packages/unified/src"
-      ],
-      "@dendronhq/common-server": [
-        "packages/common-server/src"
-      ],
-      "@dendronhq/common-test-utils": [
-        "packages/common-test-utils/src"
-      ],
-      "@dendronhq/engine-test-utils": [
-        "packages/engine-test-utils/src"
-      ],
-      "@dendronhq/dendron-cli": [
-        "packages/dendron-cli/src"
-      ],
-      "@dendronhq/engine-server": [
-        "packages/engine-server/src"
-      ],
-      "@dendronhq/plugin-core": [
-        "packages/plugin-core/src"
-      ],
-      "@dendronhq/pods-core": [
-        "packages/pods-core/src"
-      ]
+      "@dendronhq/api-server": ["packages/api-server/src"],
+      "@dendronhq/common-all": ["packages/common-all/src"],
+      "@dendronhq/unified": ["packages/unified/src"],
+      "@dendronhq/common-server": ["packages/common-server/src"],
+      "@dendronhq/common-test-utils": ["packages/common-test-utils/src"],
+      "@dendronhq/engine-test-utils": ["packages/engine-test-utils/src"],
+      "@dendronhq/dendron-cli": ["packages/dendron-cli/src"],
+      "@dendronhq/engine-server": ["packages/engine-server/src"],
+      "@dendronhq/plugin-core": ["packages/plugin-core/src"],
+      "@dendronhq/pods-core": ["packages/pods-core/src"]
     }
-  }
+  },
+  "references": [
+    {
+      "path": "packages/common-all"
+    },
+    {
+      "path": "packages/common-server"
+    },
+    {
+      "path": "packages/common-test-utils"
+    },
+    {
+      "path": "packages/dendron-viz"
+    },
+    {
+      "path": "packages/engine-server"
+    },
+    {
+      "path": "packages/api-server"
+    },
+    {
+      "path": "packages/engine-test-utils"
+    },
+    {
+      "path": "packages/pods-core"
+    },
+    {
+      "path": "packages/dendron-cli"
+    },
+    {
+      "path": "packages/common-frontend"
+    },
+    {
+      "path": "packages/dendron-plugin-views"
+    },
+    {
+      "path": "packages/unified"
+    },
+    {
+      "path": "packages/plugin-core"
+    }
+  ]
 }

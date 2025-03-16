@@ -4,7 +4,10 @@
     "rootDir": "src",
     "module": "commonjs",
     "target": "ES2019",
-    "lib": ["es2019", "dom"],
+    "lib": [
+      "es2019",
+      "dom"
+    ],
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -21,5 +24,22 @@
     "emitDecoratorMetadata": true
   },
   "compileOnSave": true,
-  "exclude": ["node_modules", "lib", "local", ".vscode-test", "out"]
+  "exclude": [
+    "node_modules",
+    "lib",
+    "local",
+    ".vscode-test",
+    "out"
+  ],
+  "references": [
+    {
+      "path": "../common-all"
+    },
+    {
+      "path": "../common-server"
+    },
+    {
+      "path": "../pods-core"
+    }
+  ]
 }

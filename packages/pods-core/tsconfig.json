@@ -3,7 +3,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "ES2019",
-    "lib": ["es2019"],
+    "lib": [
+      "es2019"
+    ],
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -18,5 +20,19 @@
     // --- language features
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "references": [
+    {
+      "path": "../common-all"
+    },
+    {
+      "path": "../common-server"
+    },
+    {
+      "path": "../engine-server"
+    },
+    {
+      "path": "../unified"
+    }
+  ]
 }
