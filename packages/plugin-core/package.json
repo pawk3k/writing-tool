@@ -1543,6 +1543,7 @@
     "@dendronhq/engine-server": "workspace:*",
     "@dendronhq/pods-core": "workspace:*",
     "@types/vscode": "1.77.0",
+    "cross-path-sort": "1.0.0",
     "fs-extra": "9.1.0",
     "lodash": "4.17.15",
     "luxon": "1.25.0",
