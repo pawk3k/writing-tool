@@ -18,5 +18,11 @@
     // --- language features
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "references": [
+    { "path": "../common-all" },
+    { "path": "../common-server" },
+    { "path": "../engine-server" },
+    { "path": "../unified" }
+  ]
 }
