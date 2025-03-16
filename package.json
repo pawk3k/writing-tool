@@ -27,7 +27,7 @@
     ]
   },
   "devDependencies": {
-    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
+    "@types/node": "^22.13.10",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "chalk": "^4.1.1",
@@ -37,25 +37,19 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^26.1.5",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "execa": "^5.0.0",
     "husky": "^4.2.5",
     "jest": "^28.1.0",
+    "knip": "^5.46.0",
     "lerna": "3.19.0",
     "lint-staged": ">=10",
     "lodash": "^4.17.15",
     "madge": "^5.0.1",
     "prettier": "^2.0.4",
     "standard-version": "^8.0.0",
-    "ts-referent": "^1.2.0",
-    "typedoc": "^0.23.14",
-    "typedoc-plugin-markdown": "^3.13.6",
-    "typescript": "^5.8.2",
-    "verdaccio": "^5.1.3",
-    "verdaccio-auth-memory": "^10.0.1",
-    "vsce": "^2.10.0"
+    "typescript": "^5.8.2"
   },
   "scripts": {
     "setup": "yarn && yarn bootstrap:bootstrap && yarn bootstrap:build && yarn setup:cli",
@@ -137,18 +131,11 @@
     ]
   },
   "dependencies": {
-    "@babel/helper-string-parser": "^7.22.5",
     "@babel/preset-typescript": "7.16.7",
-    "@babel/types": "7.17.10",
-    "@dendronhq/conventional-changelog-dendron": "^5.0.11",
     "chalk": "^4.1.1",
     "cross-env": "^7.0.3",
     "execa": "^5.0.0",
-    "github-slugger": "^1.3.0",
-    "jest-serializer-path": "^0.1.15",
-    "unist": "^0.0.1",
-    "verdaccio-memory": "^10.0.1",
-    "webpack": "^5.74.0"
+    "jest-serializer-path": "^0.1.15"
   },
   "resolutions": {
     "trim": "0.0.3",

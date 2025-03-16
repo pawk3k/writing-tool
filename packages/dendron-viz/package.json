@@ -31,18 +31,7 @@
     "compile": "tsc -p tsconfig.build.json",
     "watch": "yarn copyNonTSFiles && yarn compile --watch"
   },
-  "dependencies": {
-    "@dendronhq/common-all": "workspace:*",
-    "@dendronhq/engine-server": "workspace:*",
-    "d3": "^7.6.1",
-    "lodash": "^4.17.21",
-    "micromatch": "^4.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "yargs": "^17.4.1"
-  },
   "devDependencies": {
-    "@types/micromatch": "^4.0.2",
     "rimraf": "^2.6.2"
   },
   "engines": {
