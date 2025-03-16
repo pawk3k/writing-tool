@@ -116,8 +116,10 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.176",
+    "@types/path-browserify": "^1",
     "@vitejs/plugin-react": "^4.3.4",
     "cross-env": "^7.0.3",
+    "path-browserify": "^1.0.1",
     "rimraf": "^3.0.2",
     "sass-embedded": "^1.85.1",
     "vite": "^6.2.1",

@@ -19,8 +19,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "src/index.ts",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format": "echo nop",
@@ -33,6 +32,7 @@
     "watch": "yarn compile --watch"
   },
   "dependencies": {
+    "@aws-amplify/core": "^4.0.2",
     "@reduxjs/toolkit": "^1.5.1",
     "react": "^17.0.2",
     "react-redux": "^7.2.3"

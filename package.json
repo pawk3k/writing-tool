@@ -111,7 +111,9 @@
     "test": "cross-env LOG_LEVEL=error yarn jest",
     "test:cli": "cross-env LOG_LEVEL=error npx jest --selectProjects non-plugin-tests --forceExit",
     "test:cli:update-snapshots": "yarn test:cli -u",
-    "vsce": "node scripts/vsce-wrapper.js"
+    "vsce": "node scripts/vsce-wrapper.js",
+    "build:extension": "yarn workspace dendron run vscode:prepublish",
+    "build:views": "yarn workspace @dendronhq/dendron-plugin-views run build"
   },
   "packages": [
     "packages/*",
