@@ -6,11 +6,8 @@
     // }
   },
   "references": [
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../unified"
-    }
+    { "path": "../common-all" },
+    { "path": "../unified" },
+    { "path": "../common-server" }
   ]
 }

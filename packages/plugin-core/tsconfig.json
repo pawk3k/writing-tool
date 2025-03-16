@@ -1,20 +1,11 @@
 {
   "extends": "../../tsconfig.json",
+  "exclude": ["**/test/**/*"],
   "references": [
-    {
-      "path": "../api-server"
-    },
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../common-server"
-    },
-    {
-      "path": "../engine-server"
-    },
-    {
-      "path": "../pods-core"
-    }
+    { "path": "../api-server" },
+    { "path": "../common-all" },
+    { "path": "../common-server" },
+    { "path": "../engine-server" },
+    { "path": "../pods-core" }
   ]
 }
