@@ -41,7 +41,7 @@ suite("GIVEN an EngineNoteProvider", () => {
 
     const root = await noteProvider.getChildren();
     assert.strictEqual(root?.length, 1);
-    assert.strictEqual(root[0], "root");
+    assert.strictEqual(root?.[0], "root");
 
     await noteProvider.prepNodeForReveal("bar.ch1.gch1.ggch1");
     assert.strictEqual(

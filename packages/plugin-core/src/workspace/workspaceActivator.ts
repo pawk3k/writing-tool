@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import { SubProcessExitType } from "@dendronhq/api-server";
 import * as Sentry from "@sentry/node";
 import {
   CONSTANTS,
@@ -11,9 +10,7 @@ import {
   GitEvents,
   RespV3,
   TreeViewItemLabelTypeEnum,
-  VaultUtils,
-  VSCodeEvents,
-  WorkspaceType,
+  VaultUtils, WorkspaceType
 } from "@dendronhq/common-all";
 import { getDurationMilliseconds, GitUtils } from "@dendronhq/common-server";
 import {

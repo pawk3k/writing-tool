@@ -6,7 +6,6 @@
     "strict": true,
     "noImplicitAny": true,
     "paths": {
-      //"@dendronhq/*": ["packages/*/src"],
       "@dendronhq/api-server": ["packages/api-server/src"],
       "@dendronhq/common-all": ["packages/common-all/src"],
       "@dendronhq/unified": ["packages/unified/src"],
@@ -20,44 +19,18 @@
     }
   },
   "references": [
-    {
-      "path": "packages/common-all"
-    },
-    {
-      "path": "packages/common-server"
-    },
-    {
-      "path": "packages/common-test-utils"
-    },
-    {
-      "path": "packages/dendron-viz"
-    },
-    {
-      "path": "packages/engine-server"
-    },
-    {
-      "path": "packages/api-server"
-    },
-    {
-      "path": "packages/engine-test-utils"
-    },
-    {
-      "path": "packages/pods-core"
-    },
-    {
-      "path": "packages/dendron-cli"
-    },
-    {
-      "path": "packages/common-frontend"
-    },
-    {
-      "path": "packages/dendron-plugin-views"
-    },
-    {
-      "path": "packages/unified"
-    },
-    {
-      "path": "packages/plugin-core"
-    }
+    { "path": "packages/common-all" },
+    { "path": "packages/common-server" },
+    { "path": "packages/common-test-utils" },
+    { "path": "packages/dendron-viz" },
+    { "path": "packages/engine-server" },
+    { "path": "packages/api-server" },
+    { "path": "packages/engine-test-utils" },
+    { "path": "packages/pods-core" },
+    { "path": "packages/dendron-cli" },
+    { "path": "packages/common-frontend" },
+    { "path": "packages/dendron-plugin-views" },
+    { "path": "packages/unified" },
+    { "path": "packages/plugin-core" }
   ]
 }
