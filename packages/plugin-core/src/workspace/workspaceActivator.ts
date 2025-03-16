@@ -10,7 +10,8 @@ import {
   GitEvents,
   RespV3,
   TreeViewItemLabelTypeEnum,
-  VaultUtils, WorkspaceType
+  VaultUtils,
+  WorkspaceType,
 } from "@dendronhq/common-all";
 import { getDurationMilliseconds, GitUtils } from "@dendronhq/common-server";
 import {
@@ -43,6 +44,8 @@ import { CreateNoteCommand } from "../commands/CreateNoteCommand";
 import { container } from "tsyringe";
 import { NativeTreeView } from "../views/common/treeview/NativeTreeView";
 import SparkMD5 from "spark-md5";
+import { EngineNoteProvider } from "../views/common/treeview/EngineNoteProvider";
+import { WSUtilsWeb } from "../web/utils/WSUtils";
 
 function _setupTreeViewCommands(
   treeView: NativeTreeView,
@@ -252,6 +255,28 @@ async function checkNoDuplicateVaultNames(vaults: DVault[]): Promise<boolean> {
 
 async function initTreeView({ context }: { context: vscode.ExtensionContext }) {
   const existingCommands = await vscode.commands.getCommands();
+
+  // Ensure NativeTreeView is registered with the container
+  if (!container.isRegistered(NativeTreeView)) {
+    // First register the dependencies if they're not already registered
+    if (!container.isRegistered(EngineNoteProvider)) {
+      container.register(EngineNoteProvider, { useClass: EngineNoteProvider });
+    }
+
+    if (!container.isRegistered(WSUtilsWeb)) {
+      container.register(WSUtilsWeb, { useClass: WSUtilsWeb });
+    }
+
+    // Then register NativeTreeView with explicit factory method
+    container.register(NativeTreeView, {
+      useFactory: (dependencyContainer) => {
+        const provider = dependencyContainer.resolve(EngineNoteProvider);
+        const wsUtils = dependencyContainer.resolve(WSUtilsWeb);
+        return new NativeTreeView(provider, wsUtils);
+      },
+    });
+  }
+
   const treeView = container.resolve(NativeTreeView);
   treeView.show();
   _setupTreeViewCommands(treeView, existingCommands);
