@@ -1506,7 +1506,7 @@
     "clean": "yarn rimraf out dist node_modules && yarn clean:assets",
     "clean:assets": "yarn rimraf assets/{static}",
     "rimraf": "npx rimraf",
-    "vscode:prepublish": "tsup src/extension.ts --external vscode",
+    "vscode:prepublish": "tsup src/extension.ts --external vscode && cp -r ../dendron-plugin-views/build/* ./dist/",
     "compile-web": "webpack --config webpack.webext.js",
     "watch-web": "webpack --watch --config webpack.webext.js",
     "package-web": "webpack --mode production --devtool hidden-source-map --config webpack.webext.js",
