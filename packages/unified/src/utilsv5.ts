@@ -29,6 +29,7 @@ import slug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remark from "remark";
 import abbrPlugin from "remark-abbr";
+import rehypeCallouts from "rehype-callouts";
 import footnotes from "remark-footnotes";
 import frontmatterPlugin from "remark-frontmatter";
 import remarkParse from "remark-parse";
@@ -271,6 +272,7 @@ export class MDUtilsV5 {
     opts = _.defaults(opts, { flavor: ProcFlavor.REGULAR });
     let proc = remark()
       .use(remarkParse, { gfm: true })
+
       .use(frontmatterPlugin, ["yaml"])
       .use(abbrPlugin)
       .use({ settings: { listItemIndent: "1", fences: true, bullet: "-" } })
@@ -281,6 +283,7 @@ export class MDUtilsV5 {
       .use(extendedImage)
       .use(footnotes)
       // .use(variables)
+      .use(remarkCallout)
       .use(backlinksHover, data.backlinkHoverOpts)
       .data("errors", errors);
 
@@ -435,6 +438,8 @@ export class MDUtilsV5 {
       .use(rehypePrism, { ignoreMissing: true })
       .use(wrap, { selector: "table", wrapper: "div.table-responsive" })
       .use(raw)
+      // @ts-expect-error
+      .use(rehypeCallouts)
       .use(slug);
 
     // apply plugins enabled by config

@@ -7,6 +7,7 @@ export default defineConfig(() => {
   return {
     plugins: [react(), svgr({ svgrOptions: { icon: true } }), tailwindcss()],
     build: {
+      sourcemap: true,
       outDir: "build",
       assetsDir: "static",
       rollupOptions: {

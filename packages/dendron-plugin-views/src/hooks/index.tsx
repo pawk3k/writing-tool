@@ -1,9 +1,3 @@
-// import {
-//   createLogger,
-//   engineHooks,
-//   engineSlice,
-// } from "@dendronhq/common-frontend";
-
 import React from "react";
 import { DendronProps, WorkspaceProps } from "../types";
 import type { NoteProps } from "@dendronhq/common-all/src/types/foundation";
