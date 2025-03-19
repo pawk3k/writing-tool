@@ -1,11 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "sourceMap": true,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,21 +15,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "references": [
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../common-frontend"
-    },
-    {
-      "path": "../common-server"
-    }
+    { "path": "../common-all" },
+    { "path": "../common-frontend" },
+    { "path": "../common-server" }
   ]
 }

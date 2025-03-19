@@ -1,20 +1,36 @@
 import LockFilled from "@ant-design/icons/lib/icons/LockFilled";
 import UnlockOutlined from "@ant-design/icons/lib/icons/UnlockOutlined";
-import {
-  DMessageSource,
-  FOOTNOTE_DEF_CLASS,
-  FOOTNOTE_REF_CLASS,
-  NoteViewMessageEnum,
-} from "@dendronhq/common-all";
-import { createLogger, DendronNote } from "@dendronhq/common-frontend";
+
 import { Button } from "antd";
 import _ from "lodash";
-import mermaid from "mermaid";
 import type { SyntheticEvent } from "react";
 import React from "react";
 import { useCurrentTheme, useMermaid, useRenderedNoteBody } from "../hooks";
-import { DendronComponent } from "../types";
 import { postVSCodeMessage } from "../utils/vscode";
+import { createLogger } from "@dendronhq/common-frontend/src/utils/logger";
+import { DendronNote } from "@dendronhq/common-frontend/src";
+import type { DendronComponent } from "../types";
+import {
+  FOOTNOTE_DEF_CLASS,
+  FOOTNOTE_REF_CLASS,
+} from "@dendronhq/common-all/src/constants/frontend";
+import {
+  DMessageSource,
+  NoteViewMessageEnum,
+} from "@dendronhq/common-all/src/types/typesv2";
+// // Replace this in your source files where you use Mermaid
+// import mermaid from 'mermaid';
+
+// With this more specific import
+import mermaidCore from "mermaid/dist/mermaid";
+
+const mermaid = {
+  ...mermaidCore,
+  initialize: (config: any) => {
+    config.theme = "default"; // Force default theme
+    return mermaidCore.initialize(config);
+  },
+};
 
 function isHTMLAnchorElement(element: Element): element is HTMLAnchorElement {
   return element.nodeName === "A";

@@ -13,10 +13,11 @@ import DendronSchemaGraphPanel from "./components/DendronSchemaGraphPanel";
 import DendronSideGraphPanel from "./components/DendronSideGraphPanel";
 import SeedBrowser from "./components/SeedBrowser";
 import DendronConfigure from "./components/DendronConfigure";
+import DendronNotePreview from "./components/DendronNotePreview";
 
 // Component registry that maps names to actual components
 const COMPONENT_REGISTRY = {
-  // DendronNotePreview,
+  DendronNotePreview,
   // SampleComponent,
   // DendronLookupPanel,
   DendronCalendarPanel,

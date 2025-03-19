@@ -21,11 +21,9 @@
   "references": [
     { "path": "packages/common-all" },
     { "path": "packages/common-server" },
-    { "path": "packages/common-test-utils" },
     { "path": "packages/dendron-viz" },
     { "path": "packages/engine-server" },
     { "path": "packages/api-server" },
-    { "path": "packages/engine-test-utils" },
     { "path": "packages/pods-core" },
     { "path": "packages/dendron-cli" },
     { "path": "packages/common-frontend" },

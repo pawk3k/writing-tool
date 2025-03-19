@@ -43,10 +43,7 @@ const ide = ideSlice.reducer;
 
 const middleware = [...getDefaultMiddleware()];
 export const store = configureStore({
-  reducer: {
-    engine,
-    ide,
-  },
+  reducer: { engine, ide },
   middleware,
 });
 

@@ -394,7 +394,7 @@ export class ErrorUtils {
   }
 
   static isDendronError(error: unknown): error is DendronError {
-    return _.get(error, "name", "") === "DendronError";
+    return typeof error === "object" && error !== null && (error as any).name === "DendronError";
   }
   /**
    * Given a RespV3, ensure it is an error resp.

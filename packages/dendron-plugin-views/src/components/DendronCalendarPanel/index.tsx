@@ -290,7 +290,7 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
       </div>
       <Divider plain style={{ marginTop: 0 }}>
         <Button type="primary" onClick={onClickToday}>
-          Today!!!
+          Today
         </Button>
       </Divider>
     </>

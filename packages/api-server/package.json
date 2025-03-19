@@ -57,17 +57,13 @@
     "@dendronhq/common-all": "workspace:*",
     "@dendronhq/common-server": "workspace:*",
     "@dendronhq/engine-server": "workspace:*",
-    "@dendronhq/unified": "workspace:*",
-    "@sentry/integrations": "7.11.1",
     "@sentry/node": "7.11.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "fs-extra": "^9.0.1",
-    "klaw": "^3.0.0",
     "lodash": "^4.17.20",
-    "morgan": "^1.10.0",
-    "querystring": "^0.2.1"
+    "morgan": "^1.10.0"
   },
   "nodemonConfig": {
     "watch": [

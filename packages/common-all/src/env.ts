@@ -41,7 +41,10 @@ export function getStage(): Stage {
     STAGE ||
     NODE_ENV ||
     process.env.NODE_ENV || // Webpack will do a direct text substitution on this value. See https://webpack.js.org/configuration/mode/
-    overrideStage;
+    overrideStage || 
+    // This probably not needed but I do it to build the extension for my self 
+    "production"
+    
   // TODO
   if (stageOut === "development") {
     stageOut = "dev";

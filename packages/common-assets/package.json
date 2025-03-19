@@ -11,15 +11,6 @@
   },
   "gitHead": "4ba39ff9fcec3bd1f0ba4fbd663cb3b49449609b",
   "devDependencies": {
-    "autoprefixer": "10.2.5",
-    "gulp": "4.0.2",
-    "gulp-csso": "4.0.1",
-    "gulp-debug": "4.0.0",
-    "gulp-less": "4.0.1",
-    "gulp-postcss": "9.0.0",
-    "less-plugin-npm-import": "2.1.0"
-  },
-  "dependencies": {
-    "postcss": "8.2.13"
+    "gulp": "4.0.2"
   }
 }

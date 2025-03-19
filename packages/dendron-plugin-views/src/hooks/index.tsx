@@ -1,18 +1,9 @@
-import { NoteProps } from "@dendronhq/common-all";
-// import {
-//   createLogger,
-//   engineHooks,
-//   engineSlice,
-// } from "@dendronhq/common-frontend";
-
-import {
-  engineHooks,
-  engineSlice,
-} from "@dendronhq/common-frontend/src/features/engine";
-
-import { Mermaid } from "mermaid";
 import React from "react";
 import { DendronProps, WorkspaceProps } from "../types";
+import type { NoteProps } from "@dendronhq/common-all/src/types/foundation";
+import { useEngineAppDispatch } from "@dendronhq/common-frontend/src/features/engine/hooks";
+import { renderNote } from "@dendronhq/common-frontend/src/features/engine/slice";
+import { createLogger } from "@dendronhq/common-frontend/src/utils/logger";
 
 export const useCurrentTheme = () => {
   const [currentTheme, setCurrentTheme] = React.useState<"light" | "dark">(
@@ -69,7 +60,7 @@ export const useRenderedNoteBody = ({
     noteContent = noteId ? engine.notesRendered[noteId] : undefined;
   }
   const renderedNoteContentHash = React.useRef<string>();
-  const dispatch = engineHooks.useEngineAppDispatch();
+  const dispatch = useEngineAppDispatch();
 
   React.useEffect(() => {
     if (!noteId) {
@@ -81,9 +72,7 @@ export const useRenderedNoteBody = ({
       (!noteContent || contentHash !== renderedNoteContentHash.current)
     ) {
       renderedNoteContentHash.current = contentHash;
-      dispatch(
-        engineSlice.renderNote({ ...workspace, id: noteId, note: noteProps })
-      );
+      dispatch(renderNote({ ...workspace, id: noteId, note: noteProps }));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noteId, contentHash]);
@@ -104,7 +93,7 @@ export const useMermaid = ({
   noteRenderedBody,
 }: {
   themeType: "light" | "dark";
-  mermaid: Mermaid;
+  mermaid: any;
   noteRenderedBody?: string;
 }) => {
   React.useEffect(() => {
