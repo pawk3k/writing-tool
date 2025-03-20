@@ -1,9 +1,5 @@
 {
   "name": "dendron",
-  "vsce": {
-    "dependencies": true,
-    "allowStarActivation": true
-  },
   "private": true,
   "displayName": "dendron",
   "description": "Dendron is a hierarchical note taking tool that grows as you do.",
@@ -1524,6 +1520,7 @@
     "@types/node": "^13.11.0",
     "@types/open-graph-scraper": "^4.7.0",
     "@types/semver": "^7.3.1",
+    "@types/string-similarity": "^4.0.0",
     "@vscode/test-web": "^0.0.27",
     "cross-env": "^7.0.3",
     "mocha": "^7.1.2",
@@ -1553,6 +1550,7 @@
     "open-graph-scraper": "4.7.1",
     "semver": "7.3.2",
     "string-similarity": "4.0.4",
+    "vscode-jsonrpc": "^5.0.1",
     "vscode-uri": "3.0.3"
   },
   "repository": {
@@ -1566,5 +1564,8 @@
       "description": "All features are enabled except for hooks.",
       "restrictedConfigurations": []
     }
+  },
+  "vsce": {
+    "allowStarActivation": true
   }
 }

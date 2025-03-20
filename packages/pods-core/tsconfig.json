@@ -1,8 +1,5 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "lib": ["Dom"]
-  },
 
   "references": [
     { "path": "../common-all" },

@@ -216,18 +216,17 @@ export class GoogleDocsExportPodV2
             parents: [`${parentFolderId}`],
           };
           const formData = new FormData();
-          // @ts-expect-error not now
+          // @ts-expect-error  not now
           formData.append("metadata", JSON.stringify(metadata), {
             contentType: "application/json",
           });
-          // @ts-expect-error not now
           formData.append("file", content);
           const response = await axios({
             method: "POST",
             url: "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&supportsAllDrives=true",
             headers: {
               Authorization: `Bearer ${accessToken}`,
-              // @ts-expect-error not now
+              // @ts-expect-error  not now
               "Content-Type": `multipart/related; boundary=${formData.getBoundary()}`,
             },
             data: formData,
