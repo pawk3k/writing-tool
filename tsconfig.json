@@ -1,6 +1,20 @@
 {
-  "extends": "./tsconfig.build.json",
   "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["es2019", "es2020.string"],
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "types": ["node", "jest"],
+    // --- checks
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // --- language features
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "composite": true,
     "module": "NodeNext",
     "moduleResolution": "nodenext",

@@ -1,8 +1,8 @@
-import type {
-  DMessage,
+import {
   DMessageEnum,
   DMessageSource,
-  VSCodeMessage,
+  type DMessage,
+  type VSCodeMessage,
 } from "@dendronhq/common-all/src/types";
 import { useEffect } from "react";
 

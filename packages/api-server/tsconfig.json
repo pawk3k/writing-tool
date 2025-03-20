@@ -1,17 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "references": [
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../common-server"
-    },
-    {
-      "path": "../engine-server"
-    },
-    {
-      "path": "../unified"
-    }
+    { "path": "../common-all" },
+    { "path": "../common-server" },
+    { "path": "../engine-server" },
+    { "path": "../unified" }
   ]
 }
