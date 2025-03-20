@@ -17514,6 +17514,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-depend@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "eslint-plugin-depend@npm:0.12.0"
+  dependencies:
+    fd-package-json: "npm:^1.2.0"
+    module-replacements: "npm:^2.1.0"
+    semver: "npm:^7.6.3"
+  checksum: 10c0/4d046a5718b09c7d969d9543e1cc82b00e85290b10b013f47afd39d7223237566e42e6bdf452bc0c54e28f17510f9d8730e959fec092070cb74e254e116b8ea5
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-flowtype@npm:^3.13.0":
   version: 3.13.0
   resolution: "eslint-plugin-flowtype@npm:3.13.0"
@@ -18509,6 +18520,15 @@ __metadata:
     setimmediate: "npm:^1.0.5"
     ua-parser-js: "npm:^0.7.30"
   checksum: 10c0/a7e1c64c349cde000e5d94ce0289c59b725a95fbdacc22529155c4dacea1dde37a4dae7e16f0f6602dca566f15978b42acd7ee973b620eaac612b5228687ffe0
+  languageName: node
+  linkType: hard
+
+"fd-package-json@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "fd-package-json@npm:1.2.0"
+  dependencies:
+    walk-up-path: "npm:^3.0.1"
+  checksum: 10c0/712a78a12bd8ec8482867b26bbcb2ff1dca9b096a416150c138e1512f1879c6d23dfb41b03b8e9226afc1e58a35df4738e9f9ae57032ff1dbbae75acfb70343b
   languageName: node
   linkType: hard
 
@@ -27067,6 +27087,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"module-replacements@npm:^2.1.0":
+  version: 2.6.0
+  resolution: "module-replacements@npm:2.6.0"
+  checksum: 10c0/a0d3b57d37d436042718a7ab00cd6503357528ff11fcd84059c6c5340699bf427a4f8ed5738dda2ad32213c3fcbbef34af4aaae510db546c81ff368cd194854a
+  languageName: node
+  linkType: hard
+
 "moment@npm:^2.15.1, moment@npm:^2.24.0, moment@npm:^2.29.2":
   version: 2.30.1
   resolution: "moment@npm:2.30.1"
@@ -32958,6 +32985,7 @@ __metadata:
     eslint: "npm:^7.32.0"
     eslint-config-airbnb: "npm:^18.1.0"
     eslint-config-prettier: "npm:^8.3.0"
+    eslint-plugin-depend: "npm:^0.12.0"
     eslint-plugin-import: "npm:^2.23.4"
     eslint-plugin-jest: "npm:^26.1.5"
     eslint-plugin-jsx-a11y: "npm:^6.2.3"
@@ -33578,7 +33606,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.3":
+"semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.3, semver@npm:^7.6.3":
   version: 7.7.1
   resolution: "semver@npm:7.7.1"
   bin:
@@ -37981,6 +38009,13 @@ __metadata:
   dependencies:
     xml-name-validator: "npm:^3.0.0"
   checksum: 10c0/92b8af34766f5bb8f37c505bc459ee1791b30af778d3a86551f7dd3b1716f79cb98c71d65d03f2bf6eba6b09861868eaf2be7e233b9202b26a9df7595f2bd290
+  languageName: node
+  linkType: hard
+
+"walk-up-path@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "walk-up-path@npm:3.0.1"
+  checksum: 10c0/3184738e0cf33698dd58b0ee4418285b9c811e58698f52c1f025435a85c25cbc5a63fee599f1a79cb29ca7ef09a44ec9417b16bfd906b1a37c305f7aa20ee5bc
   languageName: node
   linkType: hard
 
