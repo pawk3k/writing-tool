@@ -1,23 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2019",
-    "lib": ["es2019"],
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "declaration": true,
-    // --- checks
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    // --- language features
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "lib": ["Dom"]
   },
+
   "references": [
     { "path": "../common-all" },
     { "path": "../common-server" },
