@@ -26,6 +26,7 @@ import path from "path";
 import tmp, { DirResult, dirSync } from "tmp";
 import { resolvePath } from "./files";
 import { SchemaParserV2 } from "./parser";
+// @ts-expect-error
 import textextensionslist from "textextensions";
 
 /** Dendron should ignore any of these folders when watching or searching folders.
@@ -563,10 +564,12 @@ class FileUtils {
         )
         // we got to the end without a match
         .on("end", () => resolve({ data: false }))
-        .on("data", (chunk: Buffer) => {
+        .on("data", (chunk) => {
           // eslint-disable-next-line no-plusplus
           for (let i = 0; i < chunk.length; i++) {
-            const a = String.fromCharCode(chunk[i]);
+            const a = String.fromCharCode(
+              Buffer.isBuffer(chunk) ? chunk[i] : chunk.charCodeAt(i)
+            );
             // not a match, return
             if (a !== prefix[i]) {
               resolve({ data: false });
@@ -614,7 +617,7 @@ export class FileExtensionUtils {
   private static ensureTextExtensions() {
     if (this.textExtensions === undefined) {
       this.textExtensions = new Set(
-        textextensionslist.map((extension) => extension.toLowerCase())
+        textextensionslist.map((extension: any) => extension.toLowerCase())
       );
     }
   }

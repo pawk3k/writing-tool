@@ -283,7 +283,6 @@ export class MDUtilsV5 {
       .use(extendedImage)
       .use(footnotes)
       // .use(variables)
-      .use(remarkCallout)
       .use(backlinksHover, data.backlinkHoverOpts)
       .data("errors", errors);
 

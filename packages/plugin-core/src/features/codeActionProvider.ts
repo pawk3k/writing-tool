@@ -4,7 +4,6 @@ import {
 } from "@dendronhq/common-all";
 import { DoctorActionsEnum } from "@dendronhq/engine-server";
 import { BAD_FRONTMATTER_CODE } from "@dendronhq/unified";
-import isUrl from "is-url";
 import _ from "lodash";
 import {
   CodeAction,
@@ -30,6 +29,23 @@ import { EditorUtils } from "../utils/EditorUtils";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { DendronExtension } from "../workspace";
 import { WSUtilsV2 } from "../WSUtilsV2";
+import { URL } from "url";
+
+function isURL(input: string) {
+  let url;
+
+  try {
+    url = new URL(input);
+  } catch (_) {
+    return false;
+  }
+
+  return (
+    url.protocol === "http:" ||
+    url.protocol === "https:" ||
+    url.protocol === "ftp:"
+  );
+}
 
 function activate(context: ExtensionContext) {
   context.subscriptions.push(
@@ -200,7 +216,7 @@ export const refactorProvider: CodeActionProvider = {
         return;
       } else {
         //regex for url
-        if (!_.isUndefined(text) && isUrl(text)) {
+        if (!_.isUndefined(text) && isURL(text)) {
           return [WrapAsMarkdownLink];
         }
         return !_.isUndefined(header)

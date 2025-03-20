@@ -12,7 +12,6 @@ import {
   Time,
 } from "@dendronhq/common-all";
 import { JSONSchemaType } from "ajv";
-import FormData from "form-data";
 import { RateLimiter } from "limiter";
 import _ from "lodash";
 import {
@@ -217,6 +216,7 @@ export class GoogleDocsExportPodV2
             parents: [`${parentFolderId}`],
           };
           const formData = new FormData();
+          // @ts-expect-error  not now
           formData.append("metadata", JSON.stringify(metadata), {
             contentType: "application/json",
           });
@@ -226,6 +226,7 @@ export class GoogleDocsExportPodV2
             url: "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&supportsAllDrives=true",
             headers: {
               Authorization: `Bearer ${accessToken}`,
+              // @ts-expect-error  not now
               "Content-Type": `multipart/related; boundary=${formData.getBoundary()}`,
             },
             data: formData,

@@ -187,7 +187,7 @@ export class MarkdownExportPodV2
     dispose();
 
     const exportedNotes = result.filter(
-      (ent): ent is NoteProps => !_.isUndefined(ent)
+      (ent: any): ent is NoteProps => !_.isUndefined(ent)
     );
     if (errors.length > 0) {
       return {

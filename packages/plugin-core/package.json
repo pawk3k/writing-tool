@@ -1,9 +1,5 @@
 {
   "name": "dendron",
-  "vsce": {
-    "dependencies": true,
-    "allowStarActivation": true
-  },
   "private": true,
   "displayName": "dendron",
   "description": "Dendron is a hierarchical note taking tool that grows as you do.",
@@ -1519,10 +1515,12 @@
     "@types/fs-extra": "^9.0.1",
     "@types/lodash": "^4.14.155",
     "@types/luxon": "^1.25.0",
+    "@types/markdown-it": "^14",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.11.0",
     "@types/open-graph-scraper": "^4.7.0",
     "@types/semver": "^7.3.1",
+    "@types/string-similarity": "^4.0.0",
     "@vscode/test-web": "^0.0.27",
     "cross-env": "^7.0.3",
     "mocha": "^7.1.2",
@@ -1547,10 +1545,12 @@
     "fs-extra": "9.1.0",
     "lodash": "4.17.15",
     "luxon": "1.25.0",
+    "markdown-it": "^14.1.0",
     "open": "8.2.1",
     "open-graph-scraper": "4.7.1",
     "semver": "7.3.2",
     "string-similarity": "4.0.4",
+    "vscode-jsonrpc": "^5.0.1",
     "vscode-uri": "3.0.3"
   },
   "repository": {
@@ -1564,5 +1564,8 @@
       "description": "All features are enabled except for hooks.",
       "restrictedConfigurations": []
     }
+  },
+  "vsce": {
+    "allowStarActivation": true
   }
 }

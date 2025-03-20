@@ -1,18 +1,11 @@
 /* eslint-disable no-console, global-require, import/no-dynamic-require  */
 
 import { renderOnDOM } from "./bootstrap";
-import React from "react";
 
 // Import all components directly to ensure they're included in the bundle
 // import DendronNotePreview from "./components/DendronNotePreview";
-import SampleComponent from "./components/SampleComponent";
 // import DendronLookupPanel from "./components/DendronLookupPanel";
 import DendronCalendarPanel from "./components/DendronCalendarPanel";
-import DendronGraphPanel from "./components/DendronGraphPanel";
-import DendronSchemaGraphPanel from "./components/DendronSchemaGraphPanel";
-import DendronSideGraphPanel from "./components/DendronSideGraphPanel";
-import SeedBrowser from "./components/SeedBrowser";
-import DendronConfigure from "./components/DendronConfigure";
 import DendronNotePreview from "./components/DendronNotePreview";
 
 // Component registry that maps names to actual components
