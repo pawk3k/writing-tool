@@ -49,7 +49,7 @@
     "typecheck": "tsc --build packages/* --noEmit",
     "build:extension": "yarn workspace dendron run vscode:prepublish",
     "build:views": "yarn build:clean && yarn workspace @dendronhq/dendron-plugin-views run build",
-    "build": "yarn build:clean && yarn build:extension && yarn build:views"
+    "build": "yarn build:clean &&  yarn build:views && yarn build:extension"
   },
   "packages": [
     "packages/*",
