@@ -13,8 +13,6 @@ import {
   ProcFlavor,
 } from "@dendronhq/common-all";
 // @ts-ignore
-import rehypePrism from "@mapbox/rehype-prism";
-// @ts-ignore
 import mermaid from "@dendronhq/remark-mermaid";
 import _ from "lodash";
 import link from "rehype-autolink-headings";
@@ -51,6 +49,9 @@ import { wikiLinks, WikiLinksOpts } from "./remark/wikiLinks";
 import { DendronASTDest, UnistNode } from "./types";
 import path from "path";
 import { Parent } from "unist";
+import rehypeExpressiveCode, {
+  RehypeExpressiveCodeOptions,
+} from "rehype-expressive-code";
 
 export { ProcFlavor };
 
@@ -434,7 +435,10 @@ export class MDUtilsV5 {
     // add additional plugin for publishing
     let pRehype = pRemarkParse
       .use(remark2rehype, { allowDangerousHtml: true })
-      .use(rehypePrism, { ignoreMissing: true })
+      // @ts-expect-error
+      .use(rehypeExpressiveCode, {
+        themes: ["github-light"],
+      } as RehypeExpressiveCodeOptions)
       .use(wrap, { selector: "table", wrapper: "div.table-responsive" })
       .use(raw)
       // @ts-expect-error
