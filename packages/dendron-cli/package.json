@@ -21,11 +21,7 @@
   "keywords": [
     ""
   ],
-  "files": [
-    "lib"
-  ],
-  "main": "lib/src/index",
-  "types": "lib/src/index",
+  "main": "src/index.js",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format:old": "prettier --ignore-path='../../.prettierignore' --write .",

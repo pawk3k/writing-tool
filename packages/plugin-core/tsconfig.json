@@ -1,11 +1,15 @@
 {
   "extends": "../../tsconfig.json",
-  "exclude": ["**/test/**/*"],
+  // "exclude": ["**/test/**/*"],
+  "compilerOptions": {
+    "outDir": "out"
+  },
   "references": [
     { "path": "../api-server" },
     { "path": "../common-all" },
     { "path": "../common-server" },
     { "path": "../engine-server" },
-    { "path": "../pods-core" }
+    { "path": "../pods-core" },
+    { "path": "../dendron-viz" }
   ]
 }

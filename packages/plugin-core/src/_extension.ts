@@ -175,7 +175,7 @@ export async function _activate(
     // Temp: store the user's anonymous ID into global state so that we can link
     // local ext users to web ext users. If one already exists in global state,
     // then override that one with the segment client one.
-    context.globalState.setKeysForSync([GLOBAL_STATE_KEYS.ANONYMOUS_ID]);
+    context.globalState?.setKeysForSync?.([GLOBAL_STATE_KEYS.ANONYMOUS_ID]);
 
     const segmentAnonymousId = SegmentClient.instance().anonymousId;
 
