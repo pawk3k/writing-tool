@@ -8,6 +8,7 @@
     { "path": "../api-server" },
     { "path": "../common-all" },
     { "path": "../common-server" },
+    { "path": "../dendron-cli" },
     { "path": "../engine-server" },
     { "path": "../pods-core" },
     { "path": "../dendron-viz" }

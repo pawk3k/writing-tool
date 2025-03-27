@@ -18,8 +18,6 @@ import { DConfig } from "@dendronhq/common-server";
 import type { List, Root } from "mdast";
 
 type Direction = "next" | "prev";
-type CommandOpts = { direction: Direction };
-export { CommandOpts as GoToSiblingCommandOpts };
 
 type CommandOutput = {
   msg: "ok" | "no_editor" | "no_siblings" | "other_error";
@@ -27,7 +25,7 @@ type CommandOutput = {
 };
 
 export class CopyUnfinishedActionItemsCommand extends BasicCommand<
-  CommandOpts,
+  never,
   CommandOutput
 > {
   key = "dendron.copyActionItems";
@@ -36,42 +34,72 @@ export class CopyUnfinishedActionItemsCommand extends BasicCommand<
     return {};
   }
 
-  async execute(opts: CommandOpts) {
-    // check if editor exists
+  async execute(): Promise<CommandOutput> {
+    // Check if editor exists
     const textEditor = VSCodeUtils.getActiveTextEditor();
     if (!textEditor) {
       window.showErrorMessage("You need to be in a note to use this command");
-      return {
-        msg: "no_editor" as const,
-      };
+      return { msg: "no_editor" };
     }
 
     const fname = path.basename(textEditor.document.uri.fsPath, ".md");
     const ext = ExtensionProvider.getExtension();
     const workspace = ext.getDWorkspace();
-    const activeNote = await this.getActiveNote(workspace.engine, fname);
 
-    // check if a Dendron note is active
+    // Get active note
+    const activeNote = await this.getActiveNote(workspace.engine, fname);
     if (!activeNote) {
       window.showErrorMessage("Please open a Dendron note to use this command");
-      return {
-        msg: "other_error" as const,
-      };
+      return { msg: "other_error" };
     }
 
-    const resp = await this.getSiblingForJournalNote(
+    // Get sibling note
+    const siblingResp = await this.getSiblingForJournalNote(
       workspace.engine,
       activeNote,
-      opts.direction
+      "prev"
     );
 
-    if (resp.error) {
-      VSCodeUtils.showMessage(MessageSeverity.WARN, resp.error.message, {});
-      return { msg: "other_error" } as CommandOutput;
+    if (siblingResp.error) {
+      VSCodeUtils.showMessage(
+        MessageSeverity.WARN,
+        siblingResp.error.message,
+        {}
+      );
+      return { msg: "other_error" };
     }
-    const siblingNote = resp.data.sibling;
-    const note = siblingNote;
 
+    // Extract unfinished items from sibling note
+    const siblingNote = siblingResp.data.sibling;
+    const unfinishedItems = await this.extractUnfinishedItems(
+      workspace,
+      siblingNote
+    );
+
+    if (!unfinishedItems) {
+      return { msg: "ok" };
+    }
+
+    // Insert unfinished items at the end of current note
+    await textEditor.edit((callback) => {
+      callback.insert(
+        textEditor.document.lineAt(textEditor.document.lineCount - 1).range.end,
+        `\n\n${unfinishedItems}`
+      );
+    });
+
+    return { msg: "ok", data: unfinishedItems };
+  }
+
+  /**
+   * Extract unfinished (unchecked) action items from a note
+   */
+  private async extractUnfinishedItems(
+    workspace: any,
+    note: NotePropsMeta
+  ): Promise<string | null> {
+    // Parse note content
+    const config = DConfig.readConfigSync(workspace.engine.wsRoot);
     const proc = MDUtilsV5.procRemarkParse(
       { mode: ProcMode.FULL },
       {
@@ -79,177 +107,168 @@ export class CopyUnfinishedActionItemsCommand extends BasicCommand<
         dest: DendronASTDest.MD_DENDRON,
         vault: note.vault,
         fname: note.fname,
-        config: DConfig.readConfigSync(workspace.engine.wsRoot),
+        config,
       }
     );
 
     const ast: Root = proc.parse(note.body) as any;
-
     const lists = ast.children.filter((node) => node.type === "list");
 
     // Return early if no lists found
     if (lists.length === 0) {
-      return { msg: "ok" as const };
+      return null;
     }
 
-    // Create a recursive function to filter checked items at all levels
-    const filterCheckedItemsRecursively = (node: List): any => {
-      // Base case: if no children, return the node as is
-      if (!node.children || node.children.length === 0) {
-        return node;
-      }
+    // Process all lists to keep only unchecked items
+    const processedLists = lists.map((list) => this.filterCheckedItems(list));
 
-      // Filter unchecked items at this level
-      const filteredChildren = node.children
-        .filter((item) => item.checked !== null && !item.checked)
-        .map((item) => {
-          // If this item has children (potentially a nested list), process recursively
-          if (item.children && item.children.length > 0) {
-            return {
-              ...item,
-              children: item.children.map((child) => {
-                if (child.type === "list") {
-                  return filterCheckedItemsRecursively(child as List);
-                }
-                return child;
-              }),
-            };
-          }
-          return item;
-        });
-
-      return {
-        ...node,
-        children: filteredChildren,
-      };
-    };
-
-    // Process all lists, not just the first one
-    const transformedLists = lists.map((list) =>
-      filterCheckedItemsRecursively(list)
-    );
-
-    // Combine all lists into a single string
-    const stringResults = transformedLists
-      .map((list) => proc().stringify(list))
+    // Convert lists back to markdown and join them
+    return processedLists
+      .map((list) => proc().stringify(list as any))
       .join("\n\n");
-
-    textEditor.edit((callback) => {
-      // Insert action items at the end
-      callback.insert(
-        textEditor.document.lineAt(textEditor.document.lineCount - 1).range.end,
-        `\n\n${stringResults}`
-      );
-    });
-
-    return { msg: "ok" as const, data: stringResults };
   }
 
+  /**
+   * Recursively filter out checked items from a list
+   */
+  private filterCheckedItems(list: List): List {
+    // Create a new list with only unchecked items
+    const filteredChildren = list.children
+      .filter((item: any) => {
+        // Keep only unchecked items (not checked and has checkbox)
+        return item.checked !== null && !item.checked;
+      })
+      .map((item: any) => {
+        // Process nested lists if present
+        if (item.children) {
+          return {
+            ...item,
+            children: item.children.map((child: any) => {
+              if (child.type === "list") {
+                return this.filterCheckedItems(child as List);
+              }
+              return child;
+            }),
+          };
+        }
+        return item;
+      });
+
+    // Return new list with filtered children
+    return {
+      ...list,
+      children: filteredChildren,
+    };
+  }
+
+  /**
+   * Get active note metadata
+   */
   async getActiveNote(
     engine: DEngineClient,
     fname: string
   ): Promise<NotePropsMeta | null> {
     const vault = PickerUtilsV2.getVaultForOpenEditor();
-    const hitNotes = await engine.findNotesMeta({ fname, vault });
-    return hitNotes.length !== 0 ? hitNotes[0] : null;
+    const notes = await engine.findNotesMeta({ fname, vault });
+    return notes.length > 0 ? notes[0] : null;
   }
 
+  /**
+   * Get sibling journal note (next or previous)
+   */
   private async getSiblingForJournalNote(
     engine: ReducedDEngine,
     currNote: NotePropsMeta,
     direction: Direction
   ): Promise<RespV3<{ sibling: NotePropsMeta }>> {
-    const journalNotes = await this.getSiblingsForJournalNote(engine, currNote);
-    // If the active note is the only journal note in the workspace, there is no sibling
-    if (journalNotes.length === 1) {
+    // Get all journal notes
+    const journalNotes = await this.getAllJournalNotes(engine, currNote);
+
+    // Handle case with no siblings
+    if (journalNotes.length <= 1) {
       return {
         error: {
           name: "no_siblings",
-          message:
-            "There is no sibling journal note. Currently open note is the only journal note in the current workspace",
+          message: "There is no sibling journal note available",
         },
       };
     }
-    // Sort all journal notes in the workspace
-    const sortedJournalNotes = _.sortBy(journalNotes, [
+
+    // Sort by date
+    const sortedNotes = _.sortBy(journalNotes, [
       (note) => this.getDateFromJournalNote(note).valueOf(),
     ]);
-    const currNoteIdx = _.findIndex(sortedJournalNotes, { id: currNote.id });
-    // Get the sibling based on the direction.
-    let sibling: NotePropsMeta;
+
+    // Find current note index
+    const currentIndex = _.findIndex(sortedNotes, { id: currNote.id });
+
+    // Get next or previous sibling
+    let siblingIndex: number;
     if (direction === "next") {
-      sibling =
-        currNoteIdx !== sortedJournalNotes.length - 1
-          ? sortedJournalNotes[currNoteIdx + 1]
-          : // If current note is the latest journal note, get the earliest note as the sibling
-            sortedJournalNotes[0];
+      siblingIndex =
+        currentIndex === sortedNotes.length - 1 ? 0 : currentIndex + 1;
     } else {
-      sibling =
-        currNoteIdx !== 0
-          ? sortedJournalNotes[currNoteIdx - 1]
-          : // If current note is the earliest journal note, get the last note as the sibling
-            _.last(sortedJournalNotes)!;
+      siblingIndex =
+        currentIndex === 0 ? sortedNotes.length - 1 : currentIndex - 1;
     }
-    return { data: { sibling } };
+
+    return { data: { sibling: sortedNotes[siblingIndex] } };
   }
 
-  private getSiblingsForJournalNote = async (
+  /**
+   * Get all journal notes in the hierarchy
+   */
+  private async getAllJournalNotes(
     engine: ReducedDEngine,
     currNote: NotePropsMeta
-  ): Promise<NotePropsMeta[]> => {
+  ): Promise<NotePropsMeta[]> {
     if (!currNote.parent) {
       return [];
     }
+
+    // Navigate up to find the journal root
     const monthNote = await engine.getNoteMeta(currNote.parent);
-    if (!monthNote.data) {
-      return [];
-    }
-    if (!monthNote.data.parent) {
-      return [];
-    }
+    if (!monthNote.data?.parent) return [];
+
     const yearNote = await engine.getNoteMeta(monthNote.data.parent);
-    if (!yearNote.data) {
-      return [];
-    }
-    if (!yearNote.data.parent) {
-      return [];
-    }
-    const parentNote = await engine.getNoteMeta(yearNote.data.parent!);
-    if (!parentNote.data) {
-      return [];
-    }
+    if (!yearNote.data?.parent) return [];
 
-    const siblings = await Promise.all(
-      parentNote.data.children.flatMap(async (yearNoteId) => {
-        const yearNote = await engine.getNoteMeta(yearNoteId);
-        if (yearNote.data) {
-          const children = await engine.bulkGetNotesMeta(
-            yearNote.data.children
-          );
-          const results = await Promise.all(
-            children.data.flatMap(async (monthNote) => {
-              const monthChildren = await engine.bulkGetNotesMeta(
-                monthNote.children
-              );
+    const journalRoot = await engine.getNoteMeta(yearNote.data.parent);
+    if (!journalRoot.data) return [];
 
-              return monthChildren.data;
-            })
-          );
-          return results.flat();
-        } else {
-          return [];
-        }
+    // Collect all day notes from all years and months
+    const allDayNotes = await Promise.all(
+      journalRoot.data.children.flatMap(async (yearId) => {
+        const year = await engine.getNoteMeta(yearId);
+        if (!year.data) return [];
+
+        // Get all months in this year
+        const months = await engine.bulkGetNotesMeta(year.data.children);
+
+        // Get all days from all months
+        const days = await Promise.all(
+          months.data.map(async (month) => {
+            const dayNotes = await engine.bulkGetNotesMeta(month.children);
+            return dayNotes.data;
+          })
+        );
+
+        return days.flat();
       })
     );
-    // Filter out stub notes
-    return siblings.flat().filter((note) => !note.stub);
-  };
 
+    // Return only non-stub notes
+    return allDayNotes.flat().filter((note) => !note.stub);
+  }
+
+  /**
+   * Extract date from journal note filename
+   */
   private getDateFromJournalNote(note: NotePropsMeta): Date {
-    const [year, month, date] = note.fname
+    const [year, month, day] = note.fname
       .split("")
       .slice(-3)
       .map((str) => parseInt(str, 10));
-    return new Date(year, month - 1, date);
+    return new Date(year, month - 1, day);
   }
 }

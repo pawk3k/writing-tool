@@ -39,9 +39,7 @@ suite("CopyUnfinishedActionItems", () => {
         // Open the current day's note
         await openNote(ext, "journal.2022.07.06");
 
-        const { data } = await new CopyUnfinishedActionItemsCommand().execute({
-          direction: "prev",
-        });
+        const { data } = await new CopyUnfinishedActionItemsCommand().execute();
 
         const trimmedData = data?.trim();
 
