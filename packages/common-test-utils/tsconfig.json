@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "lib",
+    "module": "CommonJS",
     "rootDir": "src",
     "target": "ES2019",
     "lib": ["es2019", "dom"],
@@ -22,14 +23,8 @@
   "compileOnSave": true,
   "exclude": ["node_modules", "lib", "local", ".vscode-test", "out"],
   "references": [
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../common-server"
-    },
-    {
-      "path": "../pods-core"
-    }
+    { "path": "../common-all" },
+    { "path": "../common-server" },
+    { "path": "../pods-core" }
   ]
 }

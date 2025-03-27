@@ -89,6 +89,7 @@ import { CopyAsCommand } from "./CopyAsCommand";
 import { RemoveVaultCommand } from "./RemoveVaultCommand";
 import { CreateNewVaultCommand } from "./CreateNewVaultCommand";
 import { AddExistingVaultCommand } from "./AddExistingVaultCommand";
+import { CopyUnfinishedActionItemsCommand } from "./CopyUnfinishedActionItemsCommand";
 
 /**
  * Note: this does not contain commands that have parametered constructors, as
@@ -99,6 +100,7 @@ const ALL_COMMANDS = [
   ArchiveHierarchyCommand,
   BrowseNoteCommand,
   ChangeWorkspaceCommand,
+  CopyUnfinishedActionItemsCommand,
   ConfigureCommand,
   ConfigureLocalOverride,
   ConfigurePodCommand,

@@ -1,10 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    // "paths": {
-    //   "@dendronhq/common-server": ["node_modules/@dendronhq/common-server"]
-    // }
-  },
+  "compilerOptions": {},
   "references": [
     { "path": "../common-all" },
     { "path": "../unified" },

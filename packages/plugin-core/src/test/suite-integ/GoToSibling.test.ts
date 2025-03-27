@@ -1,49 +1,20 @@
-import { DVault, WorkspaceOpts } from "@dendronhq/common-all";
-import {
-  CreateNoteOptsV4,
-  NoteTestUtilsV4,
-} from "@dendronhq/common-test-utils";
+import { NoteTestUtilsV4 } from "@dendronhq/common-test-utils";
 import fs from "fs";
 import { describe } from "mocha";
 import path from "path";
 import vscode from "vscode";
 import { GoToSiblingCommand } from "../../commands/GoToSiblingCommand";
-import { IDendronExtension } from "../../dendronExtensionInterface";
 import { ExtensionProvider } from "../../ExtensionProvider";
 import { VSCodeUtils } from "../../vsCodeUtils";
-import { WSUtilsV2 } from "../../WSUtilsV2";
 import { expect } from "../testUtilsv2";
 import { describeMultiWS, describeSingleWS } from "../testUtilsV3";
 
-const createNotes = async ({
-  opts,
-  fnames,
-}: {
-  opts: Omit<CreateNoteOptsV4, "fname">;
-  fnames: string[];
-}) => {
-  Promise.all(
-    fnames.map(async (fname) => NoteTestUtilsV4.createNote({ ...opts, fname }))
-  );
-};
-
-const getPostSetupHookForNonJournalNotes =
-  (fnames: string[]) =>
-  async ({ wsRoot, vaults }: WorkspaceOpts) => {
-    await createNotes({
-      opts: { wsRoot, vault: vaults[0] },
-      fnames,
-    });
-  };
-
-const getPostHostSetupHookForJournalNotes =
-  (fnames: string[]) =>
-  async ({ wsRoot, vaults }: WorkspaceOpts) => {
-    await createNotes({
-      opts: { wsRoot, vault: vaults[0], props: { traits: ["journalNote"] } },
-      fnames: fnames.map((name) => "journal." + name),
-    });
-  };
+import {
+  getPostSetupHookForNonJournalNotes,
+  getPostHostSetupHookForJournalNotes,
+  getActiveDocumentFname,
+  openNote,
+} from "../common/utils";
 
 suite("GoToSibling", () => {
   describe("WHEN non-journal note is open", async () => {
@@ -381,17 +352,3 @@ suite("GoToSibling", () => {
     );
   });
 });
-
-const getActiveDocumentFname = () =>
-  VSCodeUtils.getActiveTextEditor()?.document.uri.fsPath;
-
-const openNote = async (
-  ext: IDendronExtension,
-  fname: string,
-  vault?: DVault
-) => {
-  const { engine } = ext.getDWorkspace();
-  const hitNotes = await engine.findNotesMeta({ fname, vault });
-  if (hitNotes.length === 0) throw Error("Cannot find the active note");
-  await new WSUtilsV2(ext).openNote(hitNotes[0]);
-};

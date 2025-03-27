@@ -235,7 +235,7 @@ export type NoteProps = DNodeProps<any, any>;
 /**
  * Dendron note metadata
  */
-export type NotePropsMeta = Omit<NoteProps, "body">;
+export type NotePropsMeta = NoteProps;
 
 /**
  * Dendron note with optional custom props

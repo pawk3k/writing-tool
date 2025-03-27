@@ -27,7 +27,6 @@ import slug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remark from "remark";
 import abbrPlugin from "remark-abbr";
-import rehypeCallouts from "rehype-callouts";
 import footnotes from "remark-footnotes";
 import frontmatterPlugin from "remark-frontmatter";
 import remarkParse from "remark-parse";
@@ -49,9 +48,6 @@ import { wikiLinks, WikiLinksOpts } from "./remark/wikiLinks";
 import { DendronASTDest, UnistNode } from "./types";
 import path from "path";
 import { Parent } from "unist";
-import rehypeExpressiveCode, {
-  RehypeExpressiveCodeOptions,
-} from "rehype-expressive-code";
 
 export { ProcFlavor };
 
@@ -435,14 +431,8 @@ export class MDUtilsV5 {
     // add additional plugin for publishing
     let pRehype = pRemarkParse
       .use(remark2rehype, { allowDangerousHtml: true })
-      // @ts-expect-error
-      .use(rehypeExpressiveCode, {
-        themes: ["github-light"],
-      } as RehypeExpressiveCodeOptions)
       .use(wrap, { selector: "table", wrapper: "div.table-responsive" })
       .use(raw)
-      // @ts-expect-error
-      .use(rehypeCallouts)
       .use(slug);
 
     // apply plugins enabled by config

@@ -49,24 +49,8 @@
     "typecheck": "tsc --build packages/* --noEmit",
     "build:extension": "yarn workspace dendron run vscode:prepublish",
     "build:views": "yarn build:clean && yarn workspace @dendronhq/dendron-plugin-views run build",
-    "build": "yarn build:clean &&  yarn build:views && yarn build:extension"
-  },
-  "packages": [
-    "packages/*",
-    "vendor/*"
-  ],
-  "useWorkspaces": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn stash:unstaged && lint-staged && yarn hooks:pre-commit && yarn stash:pop",
-      "pre-push": "yarn hooks:pre-push"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --config prettier.config.js --loglevel debug --write",
-      "eslint"
-    ]
+    "build": "yarn build:clean &&  yarn build:views && yarn build:extension",
+    "publish": "yarn workspace dendron run vsce package --no-dependencies"
   },
   "dependencies": {
     "@babel/preset-typescript": "7.16.7",

@@ -19,7 +19,7 @@
   "files": [
     "lib"
   ],
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format": "echo nop",
