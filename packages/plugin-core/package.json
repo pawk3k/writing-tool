@@ -4,12 +4,12 @@
   "displayName": "dendron",
   "description": "Dendron is a hierarchical note taking tool that grows as you do.",
   "publisher": "dendron",
-  "version": "0.127.0",
+  "version": "0.128.0",
   "sponsor": {
     "url": "https://accounts.dendron.so/account/subscribe"
   },
   "engines": {
-    "vscode": "^1.77.0"
+    "vscode": "^1.98.0"
   },
   "categories": [
     "Other"
