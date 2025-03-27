@@ -5982,7 +5982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdast@npm:^4.0.0":
+"@types/mdast@npm:^4.0.0, @types/mdast@npm:^4.0.4":
   version: 4.0.4
   resolution: "@types/mdast@npm:4.0.4"
   dependencies:
@@ -11249,6 +11249,7 @@ __metadata:
     "@types/lodash": "npm:^4.14.155"
     "@types/luxon": "npm:^1.25.0"
     "@types/markdown-it": "npm:^14"
+    "@types/mdast": "npm:^4.0.4"
     "@types/mocha": "npm:^10.0.1"
     "@types/node": "npm:^13.11.0"
     "@types/open-graph-scraper": "npm:^4.7.0"

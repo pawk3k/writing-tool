@@ -229,6 +229,10 @@
         "title": "Dendron: Go to Note"
       },
       {
+        "command": "dendron.copyActionItems",
+        "title": "Dendron: Copy Action Items"
+      },
+      {
         "command": "dendron.createSchemaFromHierarchy",
         "title": "Dendron: Create Schema From Note Hierarchy"
       },
@@ -1516,6 +1520,7 @@
     "@types/lodash": "^4.14.155",
     "@types/luxon": "^1.25.0",
     "@types/markdown-it": "^14",
+    "@types/mdast": "^4.0.4",
     "@types/mocha": "^10.0.1",
     "@types/node": "^13.11.0",
     "@types/open-graph-scraper": "^4.7.0",
