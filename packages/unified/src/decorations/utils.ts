@@ -18,7 +18,6 @@ export type DecoratorOut<D extends Decoration = Decoration> = {
 };
 
 export type DecoratorIn<
-// @ts-expect-error error
   N extends Omit<DendronASTNode, "children"> = Omit<Node, "children">
 > = {
   node: NonOptional<N, "position">;

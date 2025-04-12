@@ -95,9 +95,9 @@ import path from "path";
 import { NotesFileSystemCache } from "./cache/notesFileSystemCache";
 import { NoteParserV2 } from "./drivers/file/NoteParserV2";
 import { SchemaParser } from "./drivers/file/schemaParser";
-import { NodeJSFileStore } from "./store";
 import { HookUtils, RequireHookResp } from "./topics/hooks";
 import { EngineUtils } from "./utils/engineUtils";
+import { NodeJSFileStore } from "./store/NodeJSFileStore";
 
 type DendronEngineOptsV3 = {
   wsRoot: string;

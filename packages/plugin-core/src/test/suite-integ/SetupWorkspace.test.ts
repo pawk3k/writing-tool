@@ -42,7 +42,8 @@ import {
   resetCodeWorkspace,
 } from "../testUtilsv2";
 import { describeSingleWS, stubSetupWorkspace } from "../testUtilsV3";
-import { VSCodeTestUtils, WorkspaceTestUtils } from "../utils";
+import { VSCodeTestUtils } from "../utils/vscode-test-utils";
+import { WorkspaceTestUtils } from "../utils/workspace";
 
 function lapsedMessageTest({
   done,

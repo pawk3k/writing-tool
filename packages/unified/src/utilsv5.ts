@@ -34,7 +34,6 @@ import remark2rehype from "remark-rehype";
 // import rehypeWrap from "rehype-wrap";
 import { wrap } from "./rehype/wrap";
 import { Processor } from "unified";
-import { hierarchies } from "./remark";
 import { backlinks } from "./remark/backlinks";
 import { BacklinkOpts, backlinksHover } from "./remark/backlinksHover";
 import { blockAnchors } from "./remark/blockAnchors";
@@ -48,6 +47,7 @@ import { wikiLinks, WikiLinksOpts } from "./remark/wikiLinks";
 import { DendronASTDest, UnistNode } from "./types";
 import path from "path";
 import { Parent } from "unist";
+import { hierarchies } from "./remark/hierarchies";
 
 export { ProcFlavor };
 

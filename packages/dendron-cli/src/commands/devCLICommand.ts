@@ -26,7 +26,6 @@ import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
 import yargs from "yargs";
-import { CLIAnalyticsUtils, setupEngine } from "..";
 import {
   BuildUtils,
   ExtensionType,
@@ -35,6 +34,8 @@ import {
   SemverVersion,
 } from "../utils/build";
 import { CLICommand, CommandCommonProps } from "./base";
+import { CLIAnalyticsUtils } from "../utils/analytics";
+import { setupEngine } from "./utils";
 
 type CommandCLIOpts = {
   cmd: DevCommands;

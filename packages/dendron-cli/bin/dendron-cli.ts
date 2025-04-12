@@ -3,7 +3,6 @@
 import { env } from "@dendronhq/common-all";
 import _ from "lodash";
 import yargs from "yargs";
-import { PublishCLICommand } from "../src/commands";
 import { DevCLICommand } from "../src/commands/devCLICommand";
 import { DoctorCLICommand } from "../src/commands/doctor";
 import { ExportPodCLICommand } from "../src/commands/exportPod";
@@ -16,6 +15,8 @@ import { SeedCLICommand } from "../src/commands/seedCLICommand";
 import { VaultCLICommand } from "../src/commands/vaultCLICommand";
 import { WorkspaceCLICommand } from "../src/commands/workspaceCLICommand";
 import { VisualizeCLICommand } from "../src/commands/visualizeCLICommand";
+import { PublishCLICommand } from "../src/commands/publishCLICommand";
+
 // import { WorkspaceCLICommand } from "../src/commands/workspace";
 
 if (_.isUndefined(env("LOG_LEVEL", { shouldThrow: false }))) {

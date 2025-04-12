@@ -5,7 +5,7 @@ import Unified, { Plugin } from "unified";
 import { BlockAnchor, DendronASTDest } from "../types";
 import { Element } from "hast";
 import { html } from "mdast-builder";
-import { MDUtilsV5 } from "..";
+import { MDUtilsV5 } from "../utilsv5";
 
 // Letters, digits, dashes, and underscores.
 // The underscores are an extension over Obsidian.

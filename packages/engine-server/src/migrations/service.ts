@@ -8,9 +8,9 @@ import {
 import { createDisposableLogger, DLogger } from "@dendronhq/common-server";
 import _ from "lodash";
 import semver from "semver";
-import { WorkspaceService } from "../workspace";
 import { MIGRATION_ENTRIES } from "./migrations";
 import { MigrationChangeSetStatus, Migrations } from "./types";
+import { WorkspaceService } from "../workspace/service";
 
 type ApplyMigrationRuleOpts = {
   currentVersion: string;

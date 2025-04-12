@@ -31,8 +31,8 @@ import { DConfig, DLogger, vault2Path } from "@dendronhq/common-server";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import { createCacheEntry, EngineUtils } from "../../utils";
 import { NotesFileSystemCache } from "../../cache/notesFileSystemCache";
+import { EngineUtils } from "../../utils/engineUtils";
 
 // NOTE: This file has been forked in plugin-core to enable Dendron Web
 // Extension

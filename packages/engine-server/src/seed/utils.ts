@@ -8,8 +8,8 @@ import {
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import { WorkspaceService } from "../workspace";
 import { DEFAULT_SEED_PUBLISHER } from "./constants";
+import { WorkspaceService } from "../workspace/service";
 
 export class SeedUtils {
   static exists({ id, wsRoot }: { id: string; wsRoot: string }) {

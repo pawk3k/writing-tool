@@ -58,7 +58,7 @@ import {
   SQLiteMetadataStore,
 } from "./drivers/SQLiteMetadataStore";
 import { HistoryService } from "./history";
-import { EngineUtils } from "./utils";
+import { EngineUtils } from "./utils/engineUtils";
 
 type DendronEngineClientOpts = {
   vaults: DVault[];

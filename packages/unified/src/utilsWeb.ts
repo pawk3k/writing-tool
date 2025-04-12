@@ -23,7 +23,6 @@ import footnotes from "remark-footnotes";
 import frontmatterPlugin from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import remark2rehype from "remark-rehype";
-import { hierarchies } from "./remark";
 import { backlinks } from "./remark/backlinks";
 import { backlinksHover } from "./remark/backlinksHover";
 import { blockAnchors } from "./remark/blockAnchors";
@@ -37,6 +36,7 @@ import { wikiLinks } from "./remark/wikiLinks";
 import { DendronASTDest } from "./types";
 import { MDUtilsV5, ProcDataFullOptsV5, ProcMode, ProcOptsV5 } from "./utilsv5";
 import { Processor } from "unified";
+import { hierarchies } from "./remark/hierarchies";
 
 /**
  * Special version of MDUtilsV5 to get preview working in the web extension.

@@ -68,7 +68,6 @@ import {
   NodeJSUtils,
 } from "@dendronhq/common-server";
 import _ from "lodash";
-import { EngineUtils } from ".";
 import { FileStorage } from "./drivers/file/storev2";
 import {
   MDUtilsV5,
@@ -78,6 +77,7 @@ import {
   getParsingDependencyDicts,
 } from "@dendronhq/unified";
 import { HookUtils } from "./topics/hooks";
+import { EngineUtils } from "./utils/index";
 
 type CreateStoreFunc = (engine: DEngineClient) => DStore;
 type DendronEngineOptsV2 = {

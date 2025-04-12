@@ -69,13 +69,13 @@ import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
 import { URI } from "vscode-uri";
-import { NotesFileSystemCache } from "../../cache";
 import { HookUtils, RequireHookResp } from "../../topics/hooks";
 import { InMemoryNoteCache } from "../../util/inMemoryNoteCache";
-import { EngineUtils } from "../../utils";
 import { SQLiteMetadataStore } from "../SQLiteMetadataStore";
 import { NoteParser } from "./noteParser";
 import { SchemaParser } from "./schemaParser";
+import { NotesFileSystemCache } from "../../cache/notesFileSystemCache";
+import { EngineUtils } from "../../utils/engineUtils";
 
 export type DEngineInitSchemaResp = RespWithOptError<SchemaModuleProps[]>;
 

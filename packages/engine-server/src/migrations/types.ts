@@ -3,7 +3,7 @@ import {
   DendronError,
   WorkspaceSettings,
 } from "@dendronhq/common-all";
-import { WorkspaceService } from "../workspace";
+import { WorkspaceService } from "../workspace/service";
 
 export type MigrateFunction = (opts: {
   dendronConfig: DendronConfig;

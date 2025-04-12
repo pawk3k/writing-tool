@@ -14,9 +14,10 @@ import { DConfig, simpleGit, writeYAML } from "@dendronhq/common-server";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import { WorkspaceService, WorkspaceUtils } from "../workspace";
 import { SeedRegistry } from "./registry";
 import { SeedUtils } from "./utils";
+import { WorkspaceService } from "../workspace/service";
+import { WorkspaceUtils } from "../workspace/utils";
 
 export enum SeedInitMode {
   CREATE_WORKSPACE = "create_workspace",

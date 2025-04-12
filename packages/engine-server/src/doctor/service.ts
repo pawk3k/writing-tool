@@ -30,7 +30,6 @@ import throttle from "@jcoreio/async-throttle";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import { DEPRECATED_PATHS, Git, WorkspaceService } from "..";
 import {
   ProcMode,
   MDUtilsV5,
@@ -38,6 +37,9 @@ import {
   RemarkUtils,
   DendronASTDest,
 } from "@dendronhq/unified";
+import { DEPRECATED_PATHS } from "../migrations/index";
+import { Git } from "../topics/git";
+import { WorkspaceService } from "../workspace/index";
 
 export enum DoctorActionsEnum {
   FIX_FRONTMATTER = "fixFrontmatter",

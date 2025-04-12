@@ -35,7 +35,7 @@ import {
 } from "./diagnostics";
 import _ from "lodash";
 import visit from "unist-util-visit";
-import { MdastUtils } from "..";
+import { MdastUtils } from "../utils";
 
 /** Dispatches the correct decorator based on the type of AST node. */
 function runDecorator(
@@ -132,6 +132,7 @@ export async function runAllDecorators(
   // Check for frontmatter diagnostics. Diagnostics always run on the whole note because they need to be active even when they are not visible.
   let frontmatter: FrontmatterContent | undefined;
   const fullTree = proc.parse(opts.text);
+  // @ts-expect-error probably was before
   visit(fullTree, ["yaml"], (node: FrontmatterContent) => {
     frontmatter = node;
     return false; // stop iterating

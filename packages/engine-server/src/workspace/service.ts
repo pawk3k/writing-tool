@@ -50,29 +50,27 @@ import _ from "lodash";
 import os from "os";
 import path, { basename } from "path";
 import { URI } from "vscode-uri";
-import { WorkspaceUtils } from ".";
-import { MetadataService } from "../metadata";
-import {
-  // CONFIG_MIGRATIONS,
-  MigrationChangeSetStatus,
-  MigrationService,
-} from "../migrations";
-import { SeedService, SeedUtils } from "../seed";
 import { Git } from "../topics/git";
 import { WSMeta } from "../types";
-import {
-  EngineUtils,
-  getWSMetaFilePath,
-  openWSMetaFile,
-  removeCache,
-  writeWSMetaFile,
-} from "../utils";
 import { WorkspaceConfig } from "./vscode";
 import {
   IWorkspaceService,
   SyncActionResult,
   SyncActionStatus,
 } from "./workspaceServiceInterface";
+import { WorkspaceUtils } from "./utils";
+import { MetadataService } from "../metadata/service";
+import { MigrationChangeSetStatus } from "../migrations/types";
+import { MigrationService } from "../migrations/service";
+import { SeedService } from "../seed/service";
+import { SeedUtils } from "../seed/utils";
+import { EngineUtils } from "../utils/engineUtils";
+import {
+  getWSMetaFilePath,
+  openWSMetaFile,
+  removeCache,
+  writeWSMetaFile,
+} from "../utils";
 
 const DENDRON_WS_NAME = CONSTANTS.DENDRON_WS_NAME;
 

@@ -34,10 +34,11 @@ import { DConfig, DLogger, vault2Path } from "@dendronhq/common-server";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import { createCacheEntry, EngineUtils } from "../../utils";
 import { ParserBase } from "./parseBase";
 import { NotesFileSystemCache } from "../../cache/notesFileSystemCache";
 import { SQLiteMetadataStore } from "../SQLiteMetadataStore";
+import { EngineUtils } from "../../utils/engineUtils";
+import { createCacheEntry } from "../../utils";
 
 export type FileMeta = {
   // file name: eg. foo.md, name = foo

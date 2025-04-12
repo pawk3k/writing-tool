@@ -15,12 +15,7 @@ import {
 import fs, { FSWatcher } from "fs-extra";
 import _ from "lodash";
 import { DendronEngineClient } from "../engineClient";
-import {
-  EngineUtils,
-  getWSMetaFilePath,
-  openPortFile,
-  openWSMetaFile,
-} from "../utils";
+import { EngineUtils, openPortFile } from "../utils/engineUtils";
 
 export type EngineConnectorTarget = "cli" | "workspace";
 
