@@ -1,6 +1,9 @@
 import axios, { AxiosInstance } from "axios";
 import _ from "lodash";
 import * as querystring from "qs";
+import { DendronCompositeError, DendronError } from "./error";
+import { DVault } from "./types/DVault";
+import { FindNoteOpts } from "./types/FindNoteOpts";
 import {
   BulkGetNoteMetaResp,
   BulkGetNoteResp,
@@ -15,9 +18,7 @@ import {
   RenameNoteOpts,
   SchemaModuleProps,
   WriteNoteResp,
-} from ".";
-import { ThemeTarget, ThemeType } from "./constants";
-import { DendronCompositeError, DendronError } from "./error";
+} from "./types/index";
 import {
   BulkWriteNotesResp,
   DeleteNoteResp,
@@ -34,12 +35,11 @@ import {
   RenderNoteOpts,
   RenderNoteResp,
   RespV3,
-  VSRange,
   WriteSchemaResp,
-  DendronConfig,
-} from "./types";
-import { DVault } from "./types/DVault";
-import { FindNoteOpts } from "./types/FindNoteOpts";
+} from "./types/typesv2";
+import { VSRange } from "./types/compat";
+import { DendronConfig } from "./types/configs/index";
+import type { ThemeTarget, ThemeType } from "./constants";
 
 // === Types
 

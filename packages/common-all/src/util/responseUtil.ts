@@ -1,6 +1,6 @@
 import _ from "lodash";
-import { RespV2 } from "../types";
 import { DendronError } from "../error";
+import { RespV2 } from "../types/typesv2";
 
 /** Utility for {@link RespV2} */
 export class ResponseUtil {

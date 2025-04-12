@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { DLinkUtils } from "./DLinkUtils";
-import { DLink, NotePropsMeta } from "./types";
+import { DLink, NotePropsMeta } from "./types/foundation";
 
 type BackLink = Omit<DLink, "type"> & { type: "backlink" };
 export class BacklinkUtils {

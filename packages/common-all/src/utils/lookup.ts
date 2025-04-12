@@ -1,12 +1,7 @@
 import _ from "lodash";
-import {
-  DEngineClient,
-  FuseExtendedSearchConstants,
-  NoteProps,
-  NotePropsByIdDict,
-  NoteUtils,
-  ReducedDEngine,
-} from "..";
+import { DEngineClient, NoteProps, NotePropsByIdDict, ReducedDEngine } from "../types/index";
+import { FuseExtendedSearchConstants } from "../FuseEngine";
+import { NoteUtils } from "../dnode";
 
 const PAGINATE_LIMIT = 50;
 

@@ -1,11 +1,10 @@
 import _ from "lodash";
 import path from "path";
-import { FOLDERS, normalizeUnixPath } from ".";
-import { CONSTANTS } from "./constants";
 import { DendronError } from "./error";
-import { WorkspaceFolderRaw } from "./types";
 import { DVault } from "./types/DVault";
-import { NonOptional } from "./utils";
+import { CONSTANTS, FOLDERS } from "./constants/index";
+import { normalizeUnixPath, type NonOptional } from "./utils/index";
+import { WorkspaceFolderRaw } from "./types/typesv2";
 
 export type SelfContainedVault = Omit<DVault, "selfContained"> & {
   selfContained: true;

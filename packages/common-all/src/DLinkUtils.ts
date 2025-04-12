@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { DLink, DLoc, Position } from "./types";
+import { DLink, DLoc, Position } from "./types/foundation";
 
 export class DLinkUtils {
   static isEquivalent(linkA: DLink, linkB: DLink): boolean {

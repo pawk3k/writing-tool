@@ -7,7 +7,8 @@
  */
 
 import _ from "lodash";
-import { DNodeUtils, NoteProps } from ".";
+import { DNodeUtils } from "./dnode";
+import { NoteProps } from "./types/index";
 
 export type NonEmptyArray<T> = [T, ...T[]];
 

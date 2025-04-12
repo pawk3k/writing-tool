@@ -14,7 +14,7 @@ import {
   InsertNoteLinkAliasModeEnum,
 } from "../../types/configs/commands/insertNoteLink";
 import { InsertNoteIndexConfig } from "../../types/configs/commands/insertNoteIndex";
-import { CopyNoteLinkConfig } from "../../types";
+import { CopyNoteLinkConfig } from "../../types/configs/index";
 
 /**
  * Lookup

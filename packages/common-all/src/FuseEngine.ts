@@ -1,19 +1,18 @@
 import Fuse from "fuse.js";
 import _, { ListIterator, NotVoid } from "lodash";
+import { DVault } from "./types/DVault";
+import { levenshteinDistance } from "./util/stringUtil";
+import { ConfigUtils } from "./utils/index";
 import {
-  ConfigUtils,
   DEngineMode,
-  DNodeUtils,
   NoteProps,
   NotePropsByIdDict,
   SchemaModuleDict,
   SchemaModuleProps,
   SchemaProps,
-  SchemaUtils,
-} from ".";
-import { NoteChangeEntry } from "./types";
-import { DVault } from "./types/DVault";
-import { levenshteinDistance } from "./util/stringUtil";
+} from "./types/index";
+import { DNodeUtils, SchemaUtils } from "./dnode";
+import { NoteChangeEntry } from "./types/typesv2";
 
 export type NoteIndexProps = {
   id: string;

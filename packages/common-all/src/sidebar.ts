@@ -1,16 +1,14 @@
 import _ from "lodash";
-import type {
-  NotePropsByIdDict,
-  DuplicateNoteBehavior,
-  DNodePointer,
-} from "./types";
-import type { Option } from "./utils";
-import { PublishUtils, err, fromThrowable, Result } from "./utils";
 import { z, parse } from "./parse";
 import type { IDendronError } from "./error";
 import { DendronError, assertUnreachable } from "./error";
+import { NotePropsByIdDict } from "./types/typesv2";
+import { DuplicateNoteBehavior } from "./types/configs/index";
+import { DNodePointer } from "./types/foundation";
+import { PublishUtils } from "./utils/publishUtils";
+import { Result, err, fromThrowable } from "neverthrow";
 import { ERROR_STATUS } from "./constants";
-
+import type { Option } from "./utils";
 export type SidebarResult<T> = Result<T, IDendronError>;
 
 const noteLiteral = z.literal("note");

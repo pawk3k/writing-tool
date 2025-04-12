@@ -1,4 +1,5 @@
-import { Point, Position, VSPosition, VSRange } from "../types";
+import { Point, Position } from "../types/foundation";
+import { VSPosition, VSRange } from "../types/compat";
 
 export type PointOffset = { line?: number; column?: number };
 

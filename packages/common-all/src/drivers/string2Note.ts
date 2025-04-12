@@ -2,8 +2,8 @@ import matter from "gray-matter";
 import YAML from "js-yaml";
 import _ from "lodash";
 import { DNodeUtils } from "../dnode";
-import { DNodeImplicitPropsEnum } from "../types";
 import { DVault } from "../types/DVault";
+import { DNodeImplicitPropsEnum } from "../types/foundation";
 import { genHash } from "../utils";
 
 /**

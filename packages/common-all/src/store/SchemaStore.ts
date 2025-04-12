@@ -2,11 +2,12 @@ import { URI, Utils } from "vscode-uri";
 import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
 import { SchemaUtils } from "../dnode";
 import { DendronError } from "../error";
-import { RespV3, SchemaModuleProps, WriteSchemaOpts } from "../types";
 import { VaultUtils } from "../vault";
 import { IDataStore } from "./IDataStore";
 import { IFileStore } from "./IFileStore";
 import { ISchemaStore } from "./ISchemaStore";
+import { RespV3, SchemaModuleProps } from "../types/typesv2";
+import { WriteSchemaOpts } from "../types/store";
 
 export class SchemaStore implements ISchemaStore<string> {
   private _fileStore: IFileStore;

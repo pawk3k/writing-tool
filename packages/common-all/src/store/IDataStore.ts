@@ -1,4 +1,5 @@
-import { Disposable, RespV3 } from "../types";
+import { Disposable } from "../types/compat";
+import { RespV3 } from "../types/typesv2";
 
 /**
  * Interface responsible for interacting with data store

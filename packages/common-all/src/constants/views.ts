@@ -1,4 +1,4 @@
-import { ErrorFactory } from "..";
+import { ErrorFactory } from "../error";
 
 export type DendronWebViewEntry = {
   label: string;

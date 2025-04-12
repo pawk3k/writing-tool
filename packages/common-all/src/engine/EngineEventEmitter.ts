@@ -1,4 +1,6 @@
-import { Disposable, Event, NoteChangeEntry } from "../types";
+import { Disposable } from "../types/compat";
+import { Event } from "../types/events";
+import { NoteChangeEntry } from "../types/typesv2";
 
 /**
  * Interface providing events signaling changes that have been made to engine

@@ -1,14 +1,13 @@
 import _ from "lodash";
+import { DVault } from "./types/DVault";
+import { VaultUtils } from "./vault";
 import {
   NotePropsByIdDict,
   NotePropsByFnameDict,
-  NoteProps,
   NoteDicts,
-  NotePropsMeta,
-} from "./types";
-import { DVault } from "./types/DVault";
+} from "./types/typesv2";
+import { NoteProps, NotePropsMeta } from "./types/foundation";
 import { cleanName, isNotUndefined } from "./utils";
-import { VaultUtils } from "./vault";
 
 /**
  * Utilities for working with NoteDicts. The reason NoteDicts is not a class is due to needing

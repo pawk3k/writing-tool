@@ -1,6 +1,6 @@
 import YAML from "js-yaml";
 import _ from "lodash";
-import { SchemaData, SchemaTemplate } from "./types";
+import { SchemaData, SchemaTemplate } from "./types/foundation";
 
 export type SchemaInMaking = {
   id?: string;

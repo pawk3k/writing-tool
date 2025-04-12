@@ -1,5 +1,5 @@
 import { ErrorFactory } from "./error";
-import { RespV3 } from "./types";
+import { RespV3 } from "./types/typesv2";
 
 const NANOS_IN_SECOND = 1000000000;
 const NANOS_IN_MILLI_SEC = 1000000;

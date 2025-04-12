@@ -6,53 +6,20 @@ import minimatch from "minimatch";
 import path from "path";
 import title from "title";
 import { URI } from "vscode-uri";
-import {
-  CONSTANTS,
-  ERROR_STATUS,
-  InvalidFilenameReason,
-  TAGS_HIERARCHY,
-} from "./constants";
 import { DendronError } from "./error";
 import { NoteDictsUtils } from "./noteDictsUtils";
 import { Time } from "./time";
-import {
-  DEngineClient,
-  DNodeExplicitPropsEnum,
-  DNodeImplicitPropsEnum,
-  DNodeOpts,
-  DNodeProps,
-  DNodePropsQuickInputV2,
-  DNoteLoc,
-  NoteChangeEntry,
-  NoteDicts,
-  NoteLocalConfig,
-  NoteOpts,
-  NoteProps,
-  NotePropsByIdDict,
-  NotePropsMeta,
-  NoteQuickInputV2,
-  ReducedDEngine,
-  RespV3,
-  SchemaData,
-  SchemaModuleDict,
-  SchemaModuleOpts,
-  SchemaModuleProps,
-  SchemaOpts,
-  SchemaProps,
-  SchemaPropsDict,
-  SchemaRaw,
-} from "./types";
 import { DVault } from "./types/DVault";
-import {
-  getSlugger,
-  isNotUndefined,
-  normalizeUnixPath,
-  randomColor,
-} from "./utils";
 import { genUUID } from "./uuid";
 import { VaultUtils } from "./vault";
 
 import YAML, { JSON_SCHEMA } from "js-yaml";
+import { InvalidFilenameReason } from "./constants/lookup";
+import { DEngineClient, DNodeOpts, DNodePropsQuickInputV2, NoteChangeEntry, NoteDicts, NoteOpts, NotePropsByIdDict, NoteQuickInputV2, RespV3, SchemaModuleDict, SchemaModuleOpts, SchemaModuleProps, SchemaOpts, SchemaPropsDict, SchemaRaw } from "./types/typesv2";
+import { DNodeExplicitPropsEnum, DNodeImplicitPropsEnum, DNodeProps, DNoteLoc, NoteLocalConfig, NoteProps, NotePropsMeta, SchemaData, SchemaProps } from "./types/foundation";
+import { ReducedDEngine } from "./types/ReducedDEngine";
+import { CONSTANTS, ERROR_STATUS, TAGS_HIERARCHY } from "./constants";
+import { getSlugger, isNotUndefined, normalizeUnixPath, randomColor } from "./utils";
 
 export type ValidateFnameResp =
   | {

@@ -1,6 +1,6 @@
 import { URI } from "vscode-uri";
-import { DendronGlobalConfig } from ".";
 import { DVault } from "./DVault";
+import { DendronGlobalConfig } from "./configs/index";
 
 export interface Point {
   /**

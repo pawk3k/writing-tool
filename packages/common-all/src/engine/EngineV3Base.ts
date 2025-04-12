@@ -2,18 +2,20 @@
 /* eslint-disable no-empty-function */
 import _ from "lodash";
 import { BacklinkUtils } from "../BacklinkUtils";
-import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
 import { DLogger } from "../DLogger";
 import { DNodeUtils, NoteUtils } from "../dnode";
 import { DendronCompositeError, DendronError } from "../error";
-import { INoteStore, IQueryStore } from "../store";
+import { DVault } from "../types/DVault";
+import { FindNoteOpts } from "../types/FindNoteOpts";
+import { VaultUtils } from "../vault";
+import { INoteStore } from "../store/INoteStore";
+import { IQueryStore } from "../store/IDataQuery";
 import {
   BulkGetNoteMetaResp,
   BulkGetNoteResp,
   BulkWriteNotesOpts,
   BulkWriteNotesResp,
   DeleteNoteResp,
-  DLink,
   EngineDeleteOpts,
   EngineWriteOptsV2,
   FindNotesMetaResp,
@@ -21,20 +23,17 @@ import {
   GetNoteMetaResp,
   GetNoteResp,
   NoteChangeEntry,
-  NoteProps,
-  NotePropsMeta,
   QueryNotesOpts,
   QueryNotesResp,
-  ReducedDEngine,
   RenameNoteOpts,
   RenameNoteResp,
   RespV3,
   WriteNoteResp,
-} from "../types";
-import { DVault } from "../types/DVault";
-import { FindNoteOpts } from "../types/FindNoteOpts";
+} from "../types/typesv2";
+import { DLink, NoteProps, NotePropsMeta } from "../types/foundation";
+import { ReducedDEngine } from "../types/ReducedDEngine";
 import { isNotUndefined } from "../utils";
-import { VaultUtils } from "../vault";
+import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
 
 /**
  * Abstract base class that contains common logic between DendronEngineV3 and

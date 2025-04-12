@@ -1,5 +1,5 @@
 import { URI } from "vscode-uri";
-import { RespV3 } from "../types";
+import { RespV3 } from "../types/typesv2";
 
 export type GetAllFilesOpts = {
   root: URI;

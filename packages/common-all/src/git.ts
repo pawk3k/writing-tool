@@ -1,9 +1,11 @@
 import _ from "lodash";
 import path from "path";
-import type { DVault, DendronConfig, NoteProps } from "./types";
-import { RESERVED_KEYS, FOLDERS } from "./constants";
-import { ConfigUtils } from "./utils";
 import { VaultUtils } from "./vault";
+import { RESERVED_KEYS, FOLDERS } from "./constants";
+import { DVault } from "./types/DVault";
+import { DendronConfig } from "./types/configs/index";
+import { NoteProps } from "./types/foundation";
+import { ConfigUtils } from "./utils";
 
 const formatString = (opts: { txt: string; note: NoteProps }) => {
   const { txt, note } = opts;

@@ -1,8 +1,8 @@
 import YAML from "js-yaml";
 import { fromThrowable, Result } from "neverthrow";
-import type { AnyJson } from "./types";
-import { ERROR_SEVERITY } from "./constants";
 import { DendronError } from "./error";
+import { AnyJson } from "./types/typesv2";
+import { ERROR_SEVERITY } from "./constants";
 
 const load = fromThrowable(YAML.load, (error) => {
   return new DendronError({

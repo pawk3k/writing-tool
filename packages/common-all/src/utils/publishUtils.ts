@@ -1,6 +1,8 @@
 import path from "path";
+import { DendronConfig } from "../types/configs/index";
+import { NoteProps, SEOProps } from "../types/foundation";
+import type { DendronSiteFM } from "../types";
 import { ConfigUtils } from ".";
-import { DendronConfig, DendronSiteFM, NoteProps, SEOProps } from "../types";
 
 export class PublishUtils {
   static getPublishFM(note: NoteProps): DendronSiteFM {

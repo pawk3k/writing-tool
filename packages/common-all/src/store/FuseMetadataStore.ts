@@ -4,14 +4,9 @@ import { ResultAsync } from "neverthrow";
 import { SchemaUtils } from "../dnode";
 import { DendronError } from "../error";
 import { FuseEngine } from "../FuseEngine";
-import {
-  NoteChangeEntry,
-  NotePropsByIdDict,
-  NotePropsMeta,
-  SchemaModuleDict,
-  SchemaModuleProps,
-} from "../types";
 import { INoteQueryOpts, IQueryStore } from "./IDataQuery";
+import { NoteChangeEntry, NotePropsByIdDict, SchemaModuleDict, SchemaModuleProps } from "../types/typesv2";
+import { NotePropsMeta } from "../types/foundation";
 
 export class FuseQueryStore implements IQueryStore {
   fuseEngine: FuseEngine;

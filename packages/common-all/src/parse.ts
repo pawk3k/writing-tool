@@ -1,8 +1,7 @@
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import type { ZodType } from "zod";
-import { ok, err } from "./utils";
-import type { Result } from "neverthrow";
+import { Result, ok, err } from "neverthrow";
 import { DendronError } from "./error";
 
 export { z };

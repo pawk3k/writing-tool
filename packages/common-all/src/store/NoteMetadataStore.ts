@@ -1,12 +1,13 @@
 import _ from "lodash";
-import { ERROR_STATUS, ERROR_SEVERITY } from "../constants";
 import { DendronError } from "../error";
 import { NoteFnameDictUtils } from "../noteDictsUtils";
-import { NotePropsMeta, NotePropsByFnameDict, RespV3 } from "../types";
 import { FindNoteOpts } from "../types/FindNoteOpts";
-import { cleanName, isNotUndefined } from "../utils";
 import { VaultUtils } from "../vault";
 import { INoteMetadataStore } from "./IMetadataStore";
+import { NotePropsMeta } from "../types/foundation";
+import { NotePropsByFnameDict, RespV3 } from "../types/typesv2";
+import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
+import { cleanName, isNotUndefined } from "../utils";
 
 export class NoteMetadataStore implements INoteMetadataStore {
   /**

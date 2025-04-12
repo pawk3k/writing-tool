@@ -1,11 +1,13 @@
 import _ from "lodash";
 import { z } from "../parse";
-import { DendronError } from "..";
-import { TAGS_HIERARCHY, TAGS_HIERARCHY_BASE } from "../constants";
-import { NotePropsByIdDict, NoteProps, RespV3 } from "../types";
 import { VaultUtils } from "../vault";
+
+import { TAGS_HIERARCHY, TAGS_HIERARCHY_BASE } from "../constants";
 import { assertUnreachable } from "../error";
 import type { Sidebar, SidebarItem } from "../sidebar";
+import { DendronError } from "../error";
+import { NotePropsByIdDict, RespV3 } from "../types/typesv2";
+import { NoteProps } from "../types/foundation";
 
 type TreeMenuNodeIcon = "numberOutlined" | "plusOutlined";
 

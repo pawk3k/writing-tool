@@ -1,13 +1,8 @@
-import {
-  Disposable,
-  DNoteLoc,
-  NoteProps,
-  NotePropsMeta,
-  RespV3,
-  WriteNoteMetaOpts,
-  WriteNoteOpts,
-} from "../types";
 import { FindNoteOpts } from "../types/FindNoteOpts";
+import { Disposable } from "../types/compat";
+import { DNoteLoc, NoteProps, NotePropsMeta } from "../types/foundation";
+import { RespV3 } from "../types/typesv2";
+import { WriteNoteMetaOpts, WriteNoteOpts } from "../types/store";
 
 /**
  * Interface responsible for interacting with NoteProps storage layer

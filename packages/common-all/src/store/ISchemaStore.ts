@@ -1,9 +1,6 @@
-import {
-  SchemaModuleProps,
-  RespV3,
-  WriteSchemaOpts,
-  Disposable,
-} from "../types";
+import { SchemaModuleProps, RespV3 } from "../types/typesv2";
+import { WriteSchemaOpts } from "../types/store";
+import { Disposable } from "../types/compat";
 
 /**
  * Interface responsible for interacting with SchemaModuleProps storage layer

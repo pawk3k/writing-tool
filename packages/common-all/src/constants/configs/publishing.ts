@@ -20,7 +20,7 @@ import {
   ENABLE_HASHES_FOR_FM_TAGS,
   ENABLE_BACK_LINKS,
 } from "./global";
-import { GiscusConfig } from "../../types";
+import { GiscusConfig } from "../../types/configs/index";
 
 const GITHUB_EDIT_VIEW_MODE: Record<
   GithubEditViewModeEnum,

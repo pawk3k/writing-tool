@@ -1,8 +1,8 @@
 import _ from "lodash";
 import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
 import { DendronError } from "../error";
-import { RespV3, SchemaModuleProps } from "../types";
 import { IDataStore } from "./IDataStore";
+import { RespV3, SchemaModuleProps } from "../types/typesv2";
 
 export class SchemaMetadataStore
   implements IDataStore<string, SchemaModuleProps>

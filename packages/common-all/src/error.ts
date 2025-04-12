@@ -1,8 +1,9 @@
 import { StatusCodes } from "http-status-codes";
 import _ from "lodash";
 import { AxiosError } from "axios";
+
 import { ERROR_SEVERITY, ERROR_STATUS } from "./constants";
-import { RespV3, RespV3ErrorResp } from "./types";
+import { RespV3, RespV3ErrorResp } from "./types/typesv2";
 
 export type DendronErrorProps<TCode = StatusCodes | undefined> = {
   /**
@@ -228,12 +229,12 @@ export class DendronServerError
   /**
    * Optional HTTP status code for error
    */
-  declare public code?: StatusCodes;
+  public declare code?: StatusCodes;
 
   /**
    * Custom status errors
    */
-  declare public status?: string;
+  public declare status?: string;
 }
 
 export class IllegalOperationError extends DendronError {}
@@ -394,7 +395,11 @@ export class ErrorUtils {
   }
 
   static isDendronError(error: unknown): error is DendronError {
-    return typeof error === "object" && error !== null && (error as any).name === "DendronError";
+    return (
+      typeof error === "object" &&
+      error !== null &&
+      (error as any).name === "DendronError"
+    );
   }
   /**
    * Given a RespV3, ensure it is an error resp.

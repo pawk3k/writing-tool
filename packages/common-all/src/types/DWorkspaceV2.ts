@@ -1,7 +1,7 @@
 import { URI } from "vscode-uri";
 import { DEngineClient } from "./typesv2";
 import { DVault } from "./DVault";
-import { DendronConfig } from "./configs";
+import { DendronConfig } from "./configs/dendronConfig";
 
 export enum WorkspaceType {
   NATIVE = "NATIVE",

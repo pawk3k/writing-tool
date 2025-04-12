@@ -1,4 +1,4 @@
-import { Theme } from "../publishing";
+import { Theme } from "../publishing/publishing";
 
 /**
  * Namespace for all preview related configurations

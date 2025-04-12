@@ -8,18 +8,11 @@ import normalizePath from "normalize-path";
 import querystring from "querystring";
 import semver from "semver";
 import type { Result } from "neverthrow";
-import { DateTime, LruCache, NotePropsMeta, VaultUtils } from "..";
 import { parse, z, schemaForType } from "../parse";
 import { COLORS_LIST } from "../colors";
 import SparkMD5 from "spark-md5";
-import {
-  CompatUtils,
-  CONFIG_TO_MINIMUM_COMPAT_MAPPING,
-  ERROR_SEVERITY,
-} from "../constants";
 import { DENDRON_CONFIG } from "../constants/configs/dendronConfig";
 import { DendronError, ErrorMessages, IDendronError } from "../error";
-import { DHookDict, NoteChangeEntry, NoteProps } from "../types";
 import { GithubConfig } from "../types/configs/publishing/github";
 import {
   DendronPublishingConfig,
@@ -32,21 +25,20 @@ import {
 import { TaskConfig } from "../types/configs/workspace/task";
 import { isWebUri } from "../util/regex";
 import { DVault } from "../types/DVault";
-import {
-  DendronConfig,
-  DendronCommandConfig,
-  DendronPreviewConfig,
-  DendronWorkspaceConfig,
-  genDefaultCommandConfig,
-  genDefaultPreviewConfig,
-  genDefaultWorkspaceConfig,
-  GiscusConfig,
-  JournalConfig,
-  LookupConfig,
-  NonNoteFileLinkAnchorType,
-  NoteLookupConfig,
-  ScratchConfig,
-} from "../types/configs";
+import { LruCache } from "../util/index";
+import { NotePropsMeta } from "../types/index";
+import { VaultUtils } from "../vault";
+import { CompatUtils, CONFIG_TO_MINIMUM_COMPAT_MAPPING } from "../constants/configs/compat";
+import { DHookDict } from "../types/hooks";
+import { NoteChangeEntry } from "../types/typesv2";
+import { NoteProps } from "../types/foundation";
+import { DendronConfig } from "../types/configs/dendronConfig";
+import { DendronCommandConfig, genDefaultCommandConfig, LookupConfig, NonNoteFileLinkAnchorType, NoteLookupConfig } from "../types/configs/commands/index";
+import { DendronPreviewConfig, genDefaultPreviewConfig } from "../types/configs/preview/index";
+import { DendronWorkspaceConfig, genDefaultWorkspaceConfig, JournalConfig, ScratchConfig } from "../types/configs/workspace/index";
+import { GiscusConfig } from "../types/configs/publishing/index";
+import { ERROR_SEVERITY } from "../constants";
+import { DateTime } from "luxon";
 
 export {
   ok,

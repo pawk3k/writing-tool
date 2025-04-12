@@ -3,20 +3,15 @@ import { URI, Utils } from "vscode-uri";
 import { ERROR_SEVERITY, ERROR_STATUS } from "../constants";
 import { NoteUtils } from "../dnode";
 import { DendronError } from "../error";
-import {
-  DNoteLoc,
-  NoteProps,
-  NotePropsMeta,
-  RespV3,
-  WriteNoteMetaOpts,
-  WriteNoteOpts,
-} from "../types";
 import { FindNoteOpts } from "../types/FindNoteOpts";
 import { genHash, isNotUndefined } from "../utils";
 import { VaultUtils } from "../vault";
 import { IDataStore } from "./IDataStore";
 import { IFileStore } from "./IFileStore";
 import { INoteStore } from "./INoteStore";
+import { DNoteLoc, NoteProps, NotePropsMeta } from "../types/foundation";
+import { RespV3 } from "../types/typesv2";
+import { WriteNoteMetaOpts, WriteNoteOpts } from "../types/store";
 
 /**
  * Responsible for storing NoteProps non-metadata and NoteProps metadata
@@ -151,6 +146,7 @@ export class NoteStore implements INoteStore<string> {
    */
   async write(opts: WriteNoteOpts<string>): Promise<RespV3<string>> {
     const { key, note } = opts;
+    // @ts-expect-error This is fun error
     const notePropsMeta: NotePropsMeta = _.omit(note, ["body"]);
     const content = NoteUtils.serialize(note, { excludeStub: true });
     const noteMeta = {
