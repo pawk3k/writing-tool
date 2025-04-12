@@ -10,6 +10,7 @@
     { "path": "../common-server" },
     { "path": "../engine-server" },
     { "path": "../pods-core" },
-    { "path": "../dendron-viz" }
+    { "path": "../dendron-viz" },
+    { "path": "../engine-test-utils" }
   ]
 }

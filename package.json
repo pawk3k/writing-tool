@@ -44,7 +44,8 @@
     "title": "^3.4.4",
     "ts-morph": "^25.0.1",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vscode-test": "^1.6.1"
   },
   "scripts": {
     "build:clean": "tsc --build --clean",

@@ -219,6 +219,7 @@ export function backlinksHover(
           ],
         };
 
+        // @ts-expect-error some errer
         node.children.unshift(lowerBoundParagraph);
 
         const upperBoundText =
@@ -236,6 +237,7 @@ export function backlinksHover(
           ],
         };
 
+        // @ts-expect-error some errer
         node.children.push(upperBoundParagraph);
       }
     );

@@ -1,64 +1,14 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "outDir": "lib",
-    "rootDir": "src",
-    "module": "commonjs",
-    "target": "ES2019",
-    "lib": [
-      "es2019",
-      "dom"
-    ],
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "declaration": true,
-    // --- checks
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    // --- language features
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  },
-  "compileOnSave": true,
-  "exclude": [
-    "node_modules",
-    "lib",
-    "local",
-    ".vscode-test",
-    "out"
-  ],
+  "extends": "../../tsconfig.json",
   "references": [
-    {
-      "path": "../api-server"
-    },
-    {
-      "path": "../common-all"
-    },
-    {
-      "path": "../common-frontend"
-    },
-    {
-      "path": "../common-server"
-    },
-    {
-      "path": "../common-test-utils"
-    },
-    {
-      "path": "../dendron-cli"
-    },
-    {
-      "path": "../engine-server"
-    },
-    {
-      "path": "../pods-core"
-    },
-    {
-      "path": "../unified"
-    }
+    { "path": "../api-server" },
+    { "path": "../common-all" },
+    { "path": "../common-frontend" },
+    { "path": "../common-server" },
+    { "path": "../common-test-utils" },
+    { "path": "../dendron-cli" },
+    { "path": "../engine-server" },
+    { "path": "../pods-core" },
+    { "path": "../unified" }
   ]
 }
