@@ -19,7 +19,7 @@ import { VaultSelectionModeConfigUtils } from "../components/lookup/vaultSelecti
 type CommandOpts = NoteLookupRunOpts;
 type CommandOutput = void;
 
-export { CommandOpts as CreateJournalNoteOpts };
+;
 
 export class CreateJournalNoteCommand extends BasicCommand<
   CommandOpts,

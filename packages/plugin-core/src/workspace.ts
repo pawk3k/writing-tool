@@ -70,11 +70,11 @@ import { IWSUtilsV2 } from "./WSUtilsV2Interface";
 
 let _DendronWorkspace: DendronExtension | null;
 
-export type ServerConfiguration = {
+type ServerConfiguration = {
   serverPort: string;
 };
 
-export function whenGlobalState(key: string, cb?: () => boolean): boolean {
+function whenGlobalState(key: string, cb?: () => boolean): boolean {
   cb =
     cb ||
     function alwaysTrue() {
@@ -107,21 +107,21 @@ export function getExtension(): DendronExtension {
 /**
  * @deprecated: If need static access use ExtensionProvider.getEngine().
  * Or preferably pass IDendronExtension to constructors of your classes.*/
-export function getEngine() {
+function getEngine() {
   return getExtension().getEngine();
 }
 
-export function resolveRelToWSRoot(fpath: string): string {
+function resolveRelToWSRoot(fpath: string): string {
   const { wsRoot } = ExtensionProvider.getDWorkspace();
   return resolvePath(fpath, wsRoot);
 }
 
 /** Given file uri that is within a vault within the current workspace returns the vault. */
-export function getVaultFromUri(fileUri: Uri) {
+function getVaultFromUri(fileUri: Uri) {
   return WSUtilsV2.instance().getVaultFromUri(fileUri);
 }
 
-export const NO_WORKSPACE_IMPLEMENTATION = "no workspace implementation";
+const NO_WORKSPACE_IMPLEMENTATION = "no workspace implementation";
 
 // --- Main
 export class DendronExtension implements IDendronExtension {

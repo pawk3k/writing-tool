@@ -1,7 +1,7 @@
 import { QuickInputButton, ThemeIcon } from "vscode";
 import { DoctorQuickPickItem, DoctorScopeType } from "./types";
 
-export type DoctorQuickPicker = DoctorQuickPickItem & {
+type DoctorQuickPicker = DoctorQuickPickItem & {
   /**
    * Buttons control modifiers for doctor
    */
@@ -9,9 +9,9 @@ export type DoctorQuickPicker = DoctorQuickPickItem & {
   nonInteractive?: boolean;
 };
 
-export type ButtonType = DoctorScopeType;
+type ButtonType = DoctorScopeType;
 
-export type ButtonHandleOpts = { quickPick: DoctorQuickPicker };
+type ButtonHandleOpts = { quickPick: DoctorQuickPicker };
 
 export type IDoctorQuickInputButton = QuickInputButton & {
   type: ButtonType;

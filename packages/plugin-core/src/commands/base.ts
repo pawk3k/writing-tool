@@ -16,7 +16,7 @@ export type CodeCommandInstance = {
   run: (opts?: any) => Promise<void>;
 };
 
-export type AnalyticProps = {
+type AnalyticProps = {
   props?: any;
 };
 

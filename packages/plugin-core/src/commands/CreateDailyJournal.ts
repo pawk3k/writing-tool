@@ -26,7 +26,7 @@ import {
   CreateNoteWithTraitCommand,
 } from "./CreateNoteWithTraitCommand";
 
-export type CreateDailyJournalData = {
+type CreateDailyJournalData = {
   isFirstTime: boolean;
   isTemplateCreated: boolean;
   isSchemaCreated: boolean;

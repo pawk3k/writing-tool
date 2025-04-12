@@ -112,7 +112,7 @@ function _setupTreeViewCommands(
   }
 }
 
-export function trackTopLevelRepoFound(opts: { wsService: WorkspaceService }) {
+function trackTopLevelRepoFound(opts: { wsService: WorkspaceService }) {
   const { wsService } = opts;
   return wsService.getTopLevelRemoteUrl().then((remoteUrl) => {
     if (remoteUrl !== undefined) {

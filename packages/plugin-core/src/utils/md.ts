@@ -37,7 +37,7 @@ import vscode, {
 import { ExtensionProvider } from "../ExtensionProvider";
 import { VSCodeUtils } from "../vsCodeUtils";
 
-export type RefT = {
+type RefT = {
   label: string;
   /** If undefined, then the file this reference is located in is the ref */
   ref?: string;
@@ -55,10 +55,10 @@ export type FoundRefT = {
 };
 
 const markdownExtRegex = /\.md$/i;
-export const refPattern = "(\\[\\[)([^\\[\\]]+?)(\\]\\])";
-export const mdImageLinkPattern = "(\\[)([^\\[\\]]*)(\\]\\()([^\\[\\]]+?)(\\))";
+const refPattern = "(\\[\\[)([^\\[\\]]+?)(\\]\\])";
+const mdImageLinkPattern = "(\\[)([^\\[\\]]*)(\\]\\()([^\\[\\]]+?)(\\))";
 const partialRefPattern = "(\\[\\[)([^\\[\\]]+)";
-export const REGEX_FENCED_CODE_BLOCK =
+const REGEX_FENCED_CODE_BLOCK =
   /^( {0,3}|\t)```[^`\r\n]*$[\w\W]+?^( {0,3}|\t)``` *$/gm;
 export { sortPaths };
 const REGEX_CODE_SPAN = /`[^`]*?`/gm;
@@ -66,7 +66,7 @@ const REGEX_CODE_SPAN = /`[^`]*?`/gm;
 // const isResourceAutocomplete = linePrefix.match(/\!\[\[\w*$/);
 //   const isDocsAutocomplete = linePrefix.match(/\[\[\w*$/);
 const uncPathRegex = /^[\\\/]{2,}[^\\\/]+[\\\/]+[^\\\/]+/; // eslint-disable-line no-useless-escape
-export const otherExts = [
+const otherExts = [
   "doc",
   "docx",
   "rtf",
@@ -94,11 +94,11 @@ export const otherExts = [
   "flac",
 ];
 
-export const imageExts = ["png", "jpg", "jpeg", "svg", "gif", "webp"];
+const imageExts = ["png", "jpg", "jpeg", "svg", "gif", "webp"];
 const imageExtsRegex = new RegExp(`[.](${imageExts.join("|")})$`, "i");
 export const isUncPath = (path: string): boolean => uncPathRegex.test(path);
 const otherExtsRegex = new RegExp(`[.](${otherExts.join("|")})$`, "i");
-export const containsOtherKnownExts = (pathParam: string): boolean =>
+const containsOtherKnownExts = (pathParam: string): boolean =>
   !!otherExtsRegex.exec(path.parse(pathParam).ext);
 
 export class MarkdownUtils {
@@ -113,7 +113,7 @@ export class MarkdownUtils {
   }
 }
 
-export const isInFencedCodeBlock = (
+const isInFencedCodeBlock = (
   documentOrContent: TextDocument | string,
   lineNum: number
 ): boolean => {
@@ -172,7 +172,7 @@ export const getURLAt = (editor: vscode.TextEditor | undefined): string => {
   return "";
 };
 
-export const positionToOffset = (
+const positionToOffset = (
   content: string,
   position: { line: number; column: number }
 ) => {
@@ -194,7 +194,7 @@ export const positionToOffset = (
   return 0;
 };
 
-export const lineBreakOffsetsByLineIndex = (value: string): number[] => {
+const lineBreakOffsetsByLineIndex = (value: string): number[] => {
   const result = [];
   let index = value.indexOf("\n");
 
@@ -208,7 +208,7 @@ export const lineBreakOffsetsByLineIndex = (value: string): number[] => {
   return result;
 };
 
-export const isInCodeSpan = (
+const isInCodeSpan = (
   documentOrContent: TextDocument | string,
   lineNum: number,
   offset: number
@@ -401,7 +401,7 @@ export async function getReferenceAtPosition({
   };
 }
 
-export const parseRef = (rawRef: string): RefT => {
+const parseRef = (rawRef: string): RefT => {
   const parsed = LinkUtils.parseNoteRef(rawRef);
   if (_.isNull(parsed)) throw new Error(`Unable to parse reference ${rawRef}`);
   const { fname, alias } = parsed.from;
@@ -416,7 +416,7 @@ export const parseRef = (rawRef: string): RefT => {
   };
 };
 
-export const parseAnchor = (
+const parseAnchor = (
   anchorValue?: string
 ): DNoteAnchorBasic | undefined => {
   // If undefined or empty string
@@ -436,15 +436,15 @@ export const parseAnchor = (
   }
 };
 
-export const containsUnknownExt = (pathParam: string): boolean =>
+const containsUnknownExt = (pathParam: string): boolean =>
   path.parse(pathParam).ext !== "" &&
   !containsMarkdownExt(pathParam) &&
   !containsImageExt(pathParam) &&
   !containsOtherKnownExts(pathParam);
 
-export const isLongRef = (path: string) => path.split("/").length > 1;
+const isLongRef = (path: string) => path.split("/").length > 1;
 
-export const containsNonMdExt = (ref: string) => {
+const containsNonMdExt = (ref: string) => {
   return (
     containsImageExt(ref) ||
     containsOtherKnownExts(ref) ||
@@ -452,7 +452,7 @@ export const containsNonMdExt = (ref: string) => {
   );
 };
 
-export const noteLinks2Locations = (note: NoteProps) => {
+const noteLinks2Locations = (note: NoteProps) => {
   const refs: {
     location: Location;
     matchText: string;
@@ -614,18 +614,18 @@ export const findReferences = async (fname: string): Promise<FoundRefT[]> => {
   });
 };
 
-export const containsMarkdownExt = (pathParam: string): boolean =>
+const containsMarkdownExt = (pathParam: string): boolean =>
   !!markdownExtRegex.exec(path.parse(pathParam).ext);
 
-export const trimLeadingSlash = (value: string) =>
+const trimLeadingSlash = (value: string) =>
   value.replace(/^\/+|^\\+/g, "");
-export const trimTrailingSlash = (value: string) =>
+const trimTrailingSlash = (value: string) =>
   value.replace(/\/+$|\\+$/g, "");
-export const trimSlashes = (value: string) =>
+const trimSlashes = (value: string) =>
   trimLeadingSlash(trimTrailingSlash(value));
-export const normalizeSlashes = (value: string) => value.replace(/\\/gi, "/");
+const normalizeSlashes = (value: string) => value.replace(/\\/gi, "/");
 
-export const fsPathToRef = ({
+const fsPathToRef = ({
   path: fsPath,
   keepExt,
   basePath,

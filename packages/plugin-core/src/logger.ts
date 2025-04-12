@@ -20,9 +20,9 @@ import {
 import { CONFIG, DENDRON_CHANNEL_NAME } from "./constants";
 import { FileItem } from "./external/fileutils/FileItem";
 
-export type TraceLevel = "debug" | "info" | "warn" | "error" | "fatal";
+type TraceLevel = "debug" | "info" | "warn" | "error" | "fatal";
 const levels = ["debug", "info", "warn", "error", "fatal"];
-export type LogPayload = Partial<{
+type LogPayload = Partial<{
   ctx: string;
   error: IDendronError;
   msg: string;

@@ -60,7 +60,7 @@ export const codeActionProvider = {
   activate,
 };
 
-export const doctorFrontmatterProvider: CodeActionProvider = {
+const doctorFrontmatterProvider: CodeActionProvider = {
   provideCodeActions: sentryReportingCallback(
     (
       _document: TextDocument,
@@ -104,7 +104,7 @@ export const doctorFrontmatterProvider: CodeActionProvider = {
  * 3. Refactor Extract for highlighted text
  * (Similar to the current functionality of creating a new note in 'Selection Extract' mode)
  */
-export const refactorProvider: CodeActionProvider = {
+const refactorProvider: CodeActionProvider = {
   provideCodeActions: sentryReportingCallback(
     async (
       _document: TextDocument,

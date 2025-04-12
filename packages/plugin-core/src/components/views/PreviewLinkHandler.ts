@@ -253,6 +253,6 @@ export class PreviewLinkHandler implements IPreviewLinkHandler {
   }
 }
 
-export class ShowPreviewAssetOpener {
+class ShowPreviewAssetOpener {
   static openWithDefaultApp = PluginFileUtils.openWithDefaultApp;
 }

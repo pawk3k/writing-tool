@@ -77,7 +77,7 @@ export class HierarchyLevel {
   }
 }
 
-export class Hierarchy {
+class Hierarchy {
   fname: string;
   levels: HierarchyLevel[];
   tokens: string[];
@@ -110,7 +110,7 @@ export class Hierarchy {
   }
 }
 
-export type SchemaCandidate = {
+type SchemaCandidate = {
   note: NotePropsMeta;
   label: string;
   detail: string;
@@ -152,7 +152,7 @@ function getSchemaUri(vault: DVault, schemaName: string) {
   return uri;
 }
 
-export enum StopReason {
+enum StopReason {
   SCHEMA_WITH_TOP_ID_ALREADY_EXISTS = "SCHEMA_WITH_TOP_ID_ALREADY_EXISTS",
   NOTE_DID_NOT_HAVE_REQUIRED_DEPTH = "NOTE_DID_NOT_HAVE_REQUIRED_DEPTH",
   DID_NOT_PICK_HIERARCHY_LEVEL = "DID_NOT_PICK_HIERARCHY_LEVEL",
@@ -176,7 +176,7 @@ type PatternsFromCandidateRes = {
  * Encapsulates methods that are responsible for user interaction when
  * asking user for input data.
  * */
-export class UserQueries {
+class UserQueries {
   static async promptUserForSchemaFileName(
     hierarchyLevel: HierarchyLevel,
     vault: DVault
@@ -395,7 +395,7 @@ export class UserQueries {
 
 /**
  * Responsible for forming the schema body from the hierarchical files that user chose. */
-export class SchemaCreator {
+class SchemaCreator {
   static makeSchemaBody({
     candidates,
     hierarchyLevel,

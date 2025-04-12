@@ -23,7 +23,7 @@ import { Logger } from "../logger";
 import path from "path";
 import os from "os";
 
-export type SegmentContext = Partial<{
+type SegmentContext = Partial<{
   app: Partial<{ name: string; version: string; build: string }>;
   os: Partial<{ name: string; version: string }>;
   userAgent: string;

@@ -21,7 +21,7 @@ import { CONFIG } from "./constants";
 import { ExtensionProvider } from "./ExtensionProvider";
 import { Logger } from "./logger";
 
-export { Snippets };
+;
 
 export class Extensions extends EngineExtension {
   /**
@@ -57,7 +57,7 @@ export class WorkspaceConfig extends EngineWorkspaceConfig {
   }
 }
 
-export class Settings extends EngineSettings {
+class Settings extends EngineSettings {
   /**
    * Upgrade config
    * @param config config to upgrade

@@ -13,7 +13,7 @@ type CommandOpts = {};
 type CommandInput = { podChoice: PodItemV4 };
 
 type CommandOutput = SnapshotExportPodResp;
-export { CommandOpts as SnapshotVaultCommandOpts };
+;
 
 export class SnapshotVaultCommand extends BaseCommand<
   CommandOpts,

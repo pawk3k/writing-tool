@@ -38,7 +38,7 @@ import { ExtensionProvider } from "../ExtensionProvider";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { getReferenceAtPosition } from "./md";
 
-export type ProcessSelectionOpts = {
+type ProcessSelectionOpts = {
   qs?: string;
   vault?: DVault;
   anchor?: DNoteAnchorBasic;

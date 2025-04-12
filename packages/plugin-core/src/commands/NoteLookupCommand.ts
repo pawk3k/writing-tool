@@ -102,7 +102,7 @@ type CommandGatherOutput = {
 /**
  * Passed into execute command
  */
-export type CommandOpts = {
+type CommandOpts = {
   selectedItems: readonly NoteQuickInput[];
   /** source of the command. Added for contextual UI analytics. */
   source?: string;
@@ -120,7 +120,7 @@ type OnDidAcceptReturn = {
   resp?: any;
 };
 
-export { CommandOpts as LookupCommandOptsV3 };
+;
 
 /**
  * Note look up command instance that is used by the UI.

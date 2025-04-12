@@ -19,7 +19,7 @@ type CommandOpts = {
 
 type CommandOutput = { vaults: DVault[] };
 
-export { CommandOpts as VaultAddCommandOpts };
+;
 
 export class CreateNewVaultCommand extends BasicCommand<
   CommandOpts,

@@ -10,7 +10,7 @@ import { BasicCommand } from "./base";
 const L = createLogger("UpgradeSettingsCommand");
 
 type UpgradeSettingsCommandOpts = {};
-export type UpgradeSettingsCommandResp = {
+type UpgradeSettingsCommandResp = {
   configUpdate: CodeConfigChanges;
 };
 

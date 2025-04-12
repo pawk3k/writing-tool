@@ -21,7 +21,7 @@ import { ExportPodCommand } from "../commands/ExportPod";
 import { ExtensionProvider } from "../ExtensionProvider";
 import { VSCodeUtils } from "../vsCodeUtils";
 
-export const getSiteRootDirPath = () => {
+const getSiteRootDirPath = () => {
   const ws = ExtensionProvider.getDWorkspace();
   const wsRoot = ws.wsRoot;
   const config = ws.config;

@@ -20,7 +20,7 @@ type CommandOutput = {
   addBehavior: NoteAddBehaviorEnum;
 };
 
-export { CommandOpts as CreateTaskOpts };
+;
 
 export class CreateTaskCommand extends BasicCommand<
   CommandOpts,

@@ -9,7 +9,7 @@ import {
 import { CodeConfigKeys } from "./types";
 
 export const extensionQualifiedId = `dendron.dendron`;
-export const DEFAULT_LEGACY_VAULT_NAME = "vault";
+const DEFAULT_LEGACY_VAULT_NAME = "vault";
 
 export enum DendronContext {
   PLUGIN_ACTIVE = "dendron:pluginActive",
@@ -57,7 +57,7 @@ const args = {
 const encodedArgs = encodeURIComponent(JSON.stringify(args));
 const commandUri = `command:dendron.launchTutorialWorkspace?${encodedArgs}`;
 
-export const DENDRON_VIEWS_WELCOME = [
+const DENDRON_VIEWS_WELCOME = [
   {
     view: DendronTreeViewKey.BACKLINKS,
     contents: "There are no backlinks to this note.",
@@ -72,7 +72,7 @@ export const DENDRON_VIEWS_WELCOME = [
   },
 ];
 
-export const DENDRON_VIEWS_CONTAINERS = {
+const DENDRON_VIEWS_CONTAINERS = {
   activitybar: [
     {
       id: "dendron-view",
@@ -82,7 +82,7 @@ export const DENDRON_VIEWS_CONTAINERS = {
   ],
 };
 
-export const DENDRON_VIEWS = [
+const DENDRON_VIEWS = [
   {
     ...treeViewConfig2VSCodeEntry(DendronTreeViewKey.SAMPLE_VIEW),
     when: DendronContext.DEV_MODE,
@@ -176,7 +176,7 @@ export const ICONS = {
   WIKILINK: "link",
   SCHEMA: "repo",
 };
-export const DENDRON_WORKSPACE_FILE = "dendron.code-workspace";
+const DENDRON_WORKSPACE_FILE = "dendron.code-workspace";
 
 export const DENDRON_REMOTE_VAULTS: Entry[] = [
   {
@@ -207,7 +207,7 @@ type CommandPaletteEntry = {
 };
 
 // TODO: fomarlize
-export const DENDRON_MENUS = {
+const DENDRON_MENUS = {
   commandPalette: [] as CommandPaletteEntry[],
   "view/title": [
     /**
@@ -1156,7 +1156,7 @@ export enum WORKSPACE_ACTIVATION_CONTEXT {
   "SEED_BROWSER", // Open with Seed Browser Webview
 }
 
-export type ConfigKey = keyof typeof CONFIG;
+type ConfigKey = keyof typeof CONFIG;
 
 export const _noteAddBehaviorEnum = [
   "childOfDomain",
@@ -1326,7 +1326,7 @@ export const INCOMPATIBLE_EXTENSIONS = [
   "dendron.dendron-markdown-links",
 ];
 
-export type osType = "Linux" | "Darwin" | "Windows_NT";
+type osType = "Linux" | "Darwin" | "Windows_NT";
 
 export function isOSType(str: string): str is osType {
   return str === "Linux" || str === "Darwin" || str === "Windows_NT";

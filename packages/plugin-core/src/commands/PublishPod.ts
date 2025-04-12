@@ -21,7 +21,7 @@ type CommandOpts = CommandInput & { noteByName: string; config: any };
 type CommandInput = { podChoice: PodItemV4 };
 
 type CommandOutput = string;
-export { CommandOpts as PublishPodCommandOpts };
+;
 
 export class PublishPodCommand extends BaseCommand<
   CommandOpts,

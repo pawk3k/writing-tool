@@ -24,7 +24,7 @@ import semver from "semver";
 type CommandOpts = NoteLookupRunOpts;
 type CommandOutput = void;
 
-export { CommandOpts as LookupScratchNoteOpts };
+;
 
 export class CreateScratchNoteCommand extends BasicCommand<
   CommandOpts,

@@ -13,7 +13,7 @@ import {
   PriorTools,
 } from "@dendronhq/engine-server";
 
-export class DendronQuickInputSurvey {
+class DendronQuickInputSurvey {
   opts: {
     title: string;
     ignoreFocusOut: boolean;
@@ -50,7 +50,7 @@ export class DendronQuickInputSurvey {
     return result;
   }
 }
-export class DendronQuickPickSurvey {
+class DendronQuickPickSurvey {
   choices: readonly vscode.QuickPickItem[];
   opts: {
     canPickMany: boolean;
@@ -106,7 +106,7 @@ export class DendronQuickPickSurvey {
   }
 }
 
-export class ContextSurvey extends DendronQuickPickSurvey {
+class ContextSurvey extends DendronQuickPickSurvey {
   static CHOICES: { [index: string]: string } = {
     "For work": "work",
     "For personal use": "personal",
@@ -150,7 +150,7 @@ export class ContextSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class BackgroundSurvey extends DendronQuickPickSurvey {
+class BackgroundSurvey extends DendronQuickPickSurvey {
   async onAnswer(result: vscode.QuickPickItem) {
     let maybeOtherResult: string | undefined;
     if (result.label === "Other") {
@@ -189,7 +189,7 @@ export class BackgroundSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class UseCaseSurvey extends DendronQuickPickSurvey {
+class UseCaseSurvey extends DendronQuickPickSurvey {
   async onAnswer(results: vscode.QuickPickItem[]) {
     let maybeOtherResult: string | undefined;
     if (results.some((result) => result.label === "Other")) {
@@ -227,7 +227,7 @@ export class UseCaseSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class PriorToolsSurvey extends DendronQuickPickSurvey {
+class PriorToolsSurvey extends DendronQuickPickSurvey {
   async onAnswer(results: vscode.QuickPickItem[]) {
     let maybeOtherResult: string | undefined;
     if (results.some((result) => result.label === "Other")) {
@@ -276,7 +276,7 @@ export class PriorToolsSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class PublishingUseCaseSurvey extends DendronQuickPickSurvey {
+class PublishingUseCaseSurvey extends DendronQuickPickSurvey {
   static CHOICES: { [index: string]: string } = {
     "Yes, publishing is a very important use case for me.": "yes/important",
     "Yes, but I would only like to publish my notes to people I choose to.":
@@ -308,7 +308,7 @@ export class PublishingUseCaseSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class NewsletterSubscriptionSurvey extends DendronQuickInputSurvey {
+class NewsletterSubscriptionSurvey extends DendronQuickInputSurvey {
   async onAnswer(result: string) {
     AnalyticsUtils.identify({ email: result });
     AnalyticsUtils.track(SurveyEvents.NewsletterSubscriptionAnswered);
@@ -326,7 +326,7 @@ export class NewsletterSubscriptionSurvey extends DendronQuickInputSurvey {
   }
 }
 
-export class LapsedUserReasonSurvey extends DendronQuickPickSurvey {
+class LapsedUserReasonSurvey extends DendronQuickPickSurvey {
   async onAnswer(result: vscode.QuickPickItem) {
     const label = result.label;
     let extra: string | undefined;
@@ -399,7 +399,7 @@ export class LapsedUserReasonSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class LapsedUserOnboardingSurvey extends DendronQuickPickSurvey {
+class LapsedUserOnboardingSurvey extends DendronQuickPickSurvey {
   CALENDLY_URL = "https://calendly.com/d/mqtk-rf7q/onboard";
   openOnboardingLink: boolean = false;
 
@@ -438,7 +438,7 @@ export class LapsedUserOnboardingSurvey extends DendronQuickPickSurvey {
   }
 }
 
-export class LapsedUserAdditionalCommentSurvey extends DendronQuickInputSurvey {
+class LapsedUserAdditionalCommentSurvey extends DendronQuickInputSurvey {
   async onAnswer(result: string) {
     AnalyticsUtils.track(SurveyEvents.LapsedUserAdditionalCommentAnswered, {
       result,
@@ -457,7 +457,7 @@ export class LapsedUserAdditionalCommentSurvey extends DendronQuickInputSurvey {
   }
 }
 
-export class LapsedUserPlugDiscordSurvey extends DendronQuickPickSurvey {
+class LapsedUserPlugDiscordSurvey extends DendronQuickPickSurvey {
   DISCORD_URL = "https://discord.gg/AE3NRw9";
   openDiscordLink: boolean = false;
 

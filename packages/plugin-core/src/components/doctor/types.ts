@@ -2,7 +2,7 @@ import { QuickPick } from "vscode";
 
 export type DoctorScopeType = "workspace" | "file";
 
-export type DoctorQuickInput = {
+type DoctorQuickInput = {
   label: string;
   detail?: string;
   alwaysShow?: boolean;
@@ -10,7 +10,7 @@ export type DoctorQuickInput = {
 
 export type DoctorQuickPickItem = QuickPick<DoctorQuickInput>;
 
-export type CreateQuickPickOpts = {
+type CreateQuickPickOpts = {
   title: string;
   placeholder: string;
   /**

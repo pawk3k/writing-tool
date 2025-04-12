@@ -29,8 +29,6 @@
     "watch": "yarn compile --watch"
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.1",
-    "@types/lodash": "^4.14.161",
     "@types/node": "13.11.0",
     "rimraf": "^2.6.2"
   },
@@ -41,22 +39,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@dendronhq/common-all": "workspace:*",
-    "@dendronhq/common-frontend": "workspace:*",
-    "@dendronhq/common-server": "workspace:*",
-    "@dendronhq/common-test-utils": "workspace:*",
-    "@dendronhq/dendron-cli": "workspace:*",
-    "@dendronhq/engine-server": "workspace:*",
-    "@dendronhq/pods-core": "workspace:*",
-    "@dendronhq/unified": "workspace:*",
-    "@reduxjs/toolkit": "^1.6.0",
-    "@types/sinon": "^9.0.9",
-    "fs-extra": "^9.0.1",
-    "jest": "^28.1.0",
-    "lodash": "^4.17.20",
-    "prompts": "^2.4.2",
-    "react": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "sinon": "^9.2.1"
+    "jest": "^28.1.0"
   }
 }

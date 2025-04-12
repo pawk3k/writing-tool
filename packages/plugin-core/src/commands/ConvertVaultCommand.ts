@@ -24,7 +24,7 @@ type CommandOpts = {
 
 type CommandOutput = { updatedVault: DVault | null };
 
-export { CommandOpts as ConvertVaultCommandOpts };
+;
 
 export class ConvertVaultCommand extends BasicCommand<
   CommandOpts,

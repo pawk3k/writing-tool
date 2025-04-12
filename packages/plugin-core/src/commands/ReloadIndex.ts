@@ -37,7 +37,7 @@ enum AutoFixAction {
   CREATE_ROOT_NOTE = "create root note",
 }
 
-export const FIX_CONFIG_SELF_CONTAINED = "Fix configuration";
+const FIX_CONFIG_SELF_CONTAINED = "Fix configuration";
 
 function categorizeActions(actions: (AutoFixAction | undefined)[]) {
   return {

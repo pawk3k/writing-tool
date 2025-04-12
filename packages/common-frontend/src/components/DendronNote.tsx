@@ -6,11 +6,7 @@ type Props = {
   noteContent: string;
 };
 
-export const useMermaid = ({
-  noteRenderedBody,
-}: {
-  noteRenderedBody?: string;
-}) => {
+const useMermaid = ({ noteRenderedBody }: { noteRenderedBody?: string }) => {
   React.useEffect(() => {
     const logger = createLogger("useMermaid");
     // @ts-ignore

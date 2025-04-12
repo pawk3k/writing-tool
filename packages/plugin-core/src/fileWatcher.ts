@@ -198,7 +198,7 @@ export class FileWatcher {
   }
 }
 
-export class PluginFileWatcher implements FileWatcherAdapter {
+class PluginFileWatcher implements FileWatcherAdapter {
   private watcher: vscode.FileSystemWatcher;
   constructor(pattern: vscode.GlobPattern) {
     this.watcher = vscode.workspace.createFileSystemWatcher(

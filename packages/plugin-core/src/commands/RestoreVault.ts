@@ -14,7 +14,7 @@ type CommandOpts = { src: string };
 type CommandInput = { data: string };
 
 type CommandOutput = void;
-export { CommandOpts as RestoreVaultCommandOpts };
+;
 
 export class RestoreVaultCommand extends BaseCommand<
   CommandOpts,

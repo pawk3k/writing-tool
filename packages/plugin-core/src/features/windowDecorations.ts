@@ -63,7 +63,7 @@ const TASK_NOTE_DECORATION_COLOR = new ThemeColor(
 /** Color used for the border of the colored square of hashtags. */
 const HASHTAG_BORDER_COLOR = new ThemeColor("foreground");
 
-export const EDITOR_DECORATION_TYPES: {
+const EDITOR_DECORATION_TYPES: {
   [key in keyof typeof DECORATION_TYPES]: TextEditorDecorationType;
 } = {
   timestamp: window.createTextEditorDecorationType({}),
@@ -100,7 +100,7 @@ export const EDITOR_DECORATION_TYPES: {
   }),
 };
 
-export type DendronDecoration<T = any> = {
+type DendronDecoration<T = any> = {
   /**
    * type: mapping of {@link: DECORATION_TYPES} -> {@link: TextEditorDecorationType}
    */
@@ -275,7 +275,7 @@ async function addInlineNoteRefs(opts: {
 }
 
 // see [[Decorations|dendron://dendron.docs/pkg.plugin-core.ref.decorations]] for further docs
-export async function updateDecorations(editor: TextEditor): Promise<{
+async function updateDecorations(editor: TextEditor): Promise<{
   allDecorations?: Map<TextEditorDecorationType, DecorationOptions[]>;
   allWarnings?: Diagnostic[];
 }> {

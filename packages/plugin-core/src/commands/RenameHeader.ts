@@ -42,7 +42,7 @@ type CommandOpts =
       note?: NoteProps;
     }
   | undefined;
-export type CommandOutput = RenameNoteResp | undefined;
+type CommandOutput = RenameNoteResp | undefined;
 
 export class RenameHeaderCommand extends BasicCommand<
   CommandOpts,

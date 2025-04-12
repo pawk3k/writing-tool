@@ -19,7 +19,7 @@ import type { List, Root } from "mdast";
 
 type Direction = "next" | "prev";
 type CommandOpts = { direction: Direction };
-export { CommandOpts as GoToSiblingCommandOpts };
+;
 
 type CommandOutput = {
   msg: "ok" | "no_editor" | "no_siblings" | "other_error";

@@ -1,7 +1,7 @@
 import { FoundRefT } from "../utils/md";
 import vscode, { TreeItemCollapsibleState } from "vscode";
 
-export type BacklinkFoundRef = FoundRefT & {
+type BacklinkFoundRef = FoundRefT & {
   parentBacklink: Backlink | undefined;
 };
 

@@ -26,7 +26,7 @@ export type GoToNoteCommandOpts = {
    */
   originNote?: NoteProps;
 };
-export { GoToNoteCommandOpts as GotoNoteCommandOpts };
+;
 
 export enum GotoFileType {
   BINARY = "binary",

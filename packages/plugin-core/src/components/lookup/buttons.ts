@@ -13,7 +13,7 @@ import {
 } from "./ButtonTypes";
 import { DendronQuickPickerV2 } from "./types";
 
-export type ButtonType =
+type ButtonType =
   | LookupEffectType
   | LookupNoteType
   | LookupSelectionType
@@ -21,7 +21,7 @@ export type ButtonType =
   | LookupFilterType
   | "other";
 
-export type ButtonCategory =
+type ButtonCategory =
   | "selection"
   | "note"
   | "split"
@@ -29,7 +29,7 @@ export type ButtonCategory =
   | "effect"
   | "other";
 
-export type ButtonHandleOpts = { quickPick: DendronQuickPickerV2 };
+type ButtonHandleOpts = { quickPick: DendronQuickPickerV2 };
 
 export class Selection2LinkBtn extends DendronBtn {
   static create(pressed?: boolean) {
@@ -208,7 +208,7 @@ export class VaultSelectButton extends DendronBtn {
   }
 }
 
-export function createAllButtons(
+function createAllButtons(
   typesToTurnOn: ButtonType[] = []
 ): DendronBtn[] {
   const buttons = [

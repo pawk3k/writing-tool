@@ -122,7 +122,7 @@ export const useMermaid = ({
  * @param param0
  * @returns
  */
-export const useNoteProps = ({
+const useNoteProps = ({
   engine,
   noteId,
 }: DendronProps & { noteId: string }) => {

@@ -1,5 +1,5 @@
-export type EngineFlavor = "note" | "schema";
-export type EngineOpts = {
+type EngineFlavor = "note" | "schema";
+type EngineOpts = {
   flavor: EngineFlavor;
 };
 

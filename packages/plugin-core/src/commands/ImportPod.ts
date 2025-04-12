@@ -28,7 +28,7 @@ import { ReloadIndexCommand } from "./ReloadIndex";
 
 type CommandOutput = NoteProps[];
 
-export type CommandInput = { podChoice: PodItemV4 };
+type CommandInput = { podChoice: PodItemV4 };
 
 export type CommandOpts = CommandInput & { config: any };
 

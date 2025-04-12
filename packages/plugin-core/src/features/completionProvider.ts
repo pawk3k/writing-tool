@@ -175,7 +175,7 @@ async function provideCompletionsForTag({
   );
 }
 
-export const provideCompletionItems = sentryReportingCallback(
+const provideCompletionItems = sentryReportingCallback(
   async (
     document: TextDocument,
     position: Position
@@ -346,13 +346,13 @@ export const provideCompletionItems = sentryReportingCallback(
  *
  * related discussion: https://github.com/dendronhq/dendron/pull/3116#discussion_r902075154
  */
-export const debouncedProvideCompletionItems = _.debounce(
+const debouncedProvideCompletionItems = _.debounce(
   provideCompletionItems,
   100,
   { leading: true, trailing: true }
 );
 
-export const resolveCompletionItem = sentryReportingCallback(
+const resolveCompletionItem = sentryReportingCallback(
   async (
     item: CompletionItem,
     token: CancellationToken
@@ -438,7 +438,7 @@ const PARTIAL_WIKILINK_WITH_ANCHOR_REGEX = new RegExp("" +
   "g"
 );
 
-export async function provideBlockCompletionItems(
+async function provideBlockCompletionItems(
   document: TextDocument,
   position: Position,
   token?: CancellationToken
@@ -614,7 +614,7 @@ export async function provideBlockCompletionItems(
   return completions;
 }
 
-export const activate = (context: ExtensionContext) => {
+const activate = (context: ExtensionContext) => {
   context.subscriptions.push(
     languages.registerCompletionItemProvider(
       "markdown",

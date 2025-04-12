@@ -17,7 +17,7 @@ type CommandOutput = {
   newVault: DVault | null;
 };
 
-export enum MigrateVaultContinueOption {
+enum MigrateVaultContinueOption {
   continue = "continue",
   cancel = "cancel",
 }

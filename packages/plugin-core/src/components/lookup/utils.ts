@@ -42,16 +42,16 @@ import {
   VaultSelectionMode,
 } from "./types";
 
-export const UPDATET_SOURCE = {
+const UPDATET_SOURCE = {
   UPDATE_PICKER_FILTER: "UPDATE_PICKER_FILTER",
 };
 
 // Vault Recommendation Detail Descriptions
-export const CONTEXT_DETAIL = "current note context";
-export const HIERARCHY_MATCH_DETAIL = "hierarchy match";
-export const FULL_MATCH_DETAIL = "hierarchy match and current note context";
+const CONTEXT_DETAIL = "current note context";
+const HIERARCHY_MATCH_DETAIL = "hierarchy match";
+const FULL_MATCH_DETAIL = "hierarchy match and current note context";
 
-export type VaultPickerItem = { vault: DVault; label: string } & Partial<
+type VaultPickerItem = { vault: DVault; label: string } & Partial<
   Omit<QuickPickItem, "label">
 >;
 
@@ -64,7 +64,7 @@ function isDVaultArray(
   );
 }
 
-export function createNoActiveItem(vault: DVault): DNodePropsQuickInputV2 {
+function createNoActiveItem(vault: DVault): DNodePropsQuickInputV2 {
   const props = DNodeUtils.create({
     fname: CREATE_NEW_LABEL,
     type: "note",
@@ -78,7 +78,7 @@ export function createNoActiveItem(vault: DVault): DNodePropsQuickInputV2 {
   };
 }
 
-export function createMoreResults(): DNodePropsQuickInputV2 {
+function createMoreResults(): DNodePropsQuickInputV2 {
   // @ts-ignore
   return {
     label: MORE_RESULTS_LABEL,
@@ -96,7 +96,7 @@ export function node2Uri(node: DNodeProps): Uri {
   return Uri.file(path.join(vpath, nodePath));
 }
 
-export async function showDocAndHidePicker(
+async function showDocAndHidePicker(
   uris: Uri[],
   picker: DendronQuickPickerV2
 ) {
@@ -138,7 +138,7 @@ export type OldNewLocation = {
   newLoc: DNoteLoc & { note?: NoteProps };
 };
 
-export type NewLocation = {
+type NewLocation = {
   newLoc: DNoteLoc & { note?: NoteProps };
 };
 

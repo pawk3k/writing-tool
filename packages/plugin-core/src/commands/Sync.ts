@@ -21,10 +21,10 @@ import { AnalyticsUtils } from "../utils/analytics";
 import { MessageSeverity, VSCodeUtils } from "../vsCodeUtils";
 import { BasicCommand } from "./base";
 
-export const UPDATE_SEED_CONFIG_PROMPT = "Update configuration";
+const UPDATE_SEED_CONFIG_PROMPT = "Update configuration";
 
 /** If the configuration for a seed vault has changed, prompt to suggest updating the configuration. */
-export async function detectOutOfDateSeeds({
+async function detectOutOfDateSeeds({
   wsRoot,
   seedSvc,
 }: {

@@ -36,7 +36,7 @@ export type CommandOpts = {
   vaultOverride?: DVault;
 };
 
-export type CommandInput = {
+type CommandInput = {
   fname: string;
 };
 

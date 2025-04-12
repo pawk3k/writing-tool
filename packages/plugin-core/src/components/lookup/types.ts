@@ -8,7 +8,7 @@ import {
 import { QuickPick, TextEditor, Uri } from "vscode";
 import { DendronBtn } from "./ButtonTypes";
 
-export type FilterQuickPickFunction = (
+type FilterQuickPickFunction = (
   items: NoteQuickInput[]
 ) => NoteQuickInput[];
 type ModifyPickerValueFunc = (value?: string) => {
@@ -32,7 +32,7 @@ export enum DendronQuickPickState {
   PENDING_NEXT_PICK = "PENDING_NEXT_PICK",
 }
 
-export type DendronQuickPickItemV2 = QuickPick<DNodePropsQuickInputV2>;
+type DendronQuickPickItemV2 = QuickPick<DNodePropsQuickInputV2>;
 export type DendronQuickPickerV2 = DendronQuickPickItemV2 & {
   // --- Private State
   _justActivated?: boolean;

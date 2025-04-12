@@ -46,7 +46,7 @@ type CommandOpts = {
 
 type CommandOutput = { vaults: DVault[] };
 
-export { CommandOpts as VaultAddCommandOpts };
+;
 
 type SourceQuickPickEntry = QuickPickItem & { src: string };
 

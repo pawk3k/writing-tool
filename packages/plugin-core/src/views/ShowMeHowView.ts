@@ -1,6 +1,6 @@
 import vscode from "vscode";
 
-export type showMeHowViewOpts = {
+type showMeHowViewOpts = {
   name: string;
   src: string;
   href: string;

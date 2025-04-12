@@ -18,7 +18,7 @@ type CommandOpts = {
 
 type CommandOutput = { vault: DVault };
 
-export { CommandOpts as RemoveVaultCommandOpts };
+;
 
 export class RemoveVaultCommand extends BasicCommand<
   CommandOpts,

@@ -5,7 +5,7 @@ import { QuickInputButton, ThemeIcon } from "vscode";
 
 export type LookupFilterType = "directChildOnly";
 
-export enum LookupEffectTypeEnum {
+enum LookupEffectTypeEnum {
   "copyNoteLink" = "copyNoteLink",
   "copyNoteRef" = "copyNoteRef",
   "multiSelect" = "multiSelect",
@@ -17,8 +17,8 @@ export enum LookupSplitTypeEnum {
 export type LookupSplitType = "horizontal";
 
 export type LookupEffectType = "copyNoteLink" | "copyNoteRef" | "multiSelect";
-export type LookupNoteExistBehavior = "open" | "overwrite";
-export type LookupSelectVaultType = "selectVault";
+type LookupNoteExistBehavior = "open" | "overwrite";
+type LookupSelectVaultType = "selectVault";
 
 export type ButtonType =
   | LookupEffectType
@@ -28,7 +28,7 @@ export type ButtonType =
   | LookupFilterType
   | LookupSelectVaultType;
 
-export type ButtonCategory =
+type ButtonCategory =
   | "selection"
   | "note"
   | "split"

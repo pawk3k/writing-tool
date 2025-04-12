@@ -22,7 +22,7 @@ async function initWorkspace() {
  * video formats are supported above vscode version 1.71. For users below this version,
  * we render gif in welcome page
  */
-export enum WelcomePageMedia {
+enum WelcomePageMedia {
   "gif" = "gif",
   "video" = "video",
 }

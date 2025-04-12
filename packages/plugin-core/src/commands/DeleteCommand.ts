@@ -28,8 +28,7 @@ import { InputArgCommand } from "./base";
 
 type CommandOpts = any;
 
-type CommandOutput = DeleteNoteResp | void;
-export type { CommandOutput as DeleteNodeCommandOutput };
+type CommandOutput = DeleteNoteResp | void;;
 
 function formatDeletedMsg({
   fsPath,

@@ -45,7 +45,7 @@ type CommandOpts = CommandInput & {
 
 type CommandOutput = { wsVault?: DVault; additionalVaults?: DVault[] };
 
-export { CommandOpts as SetupWorkspaceOpts };
+;
 
 const CODE_WS_LABEL = "Code Workspace";
 const CODE_WS_DETAIL = undefined;
