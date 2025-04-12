@@ -1,10 +1,10 @@
 import _ from "lodash";
 import { useEffect } from "react";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { engineSliceUtils } from ".";
-import { createLogger } from "../../utils";
 import { EngineState, InitNoteOpts, initNotes, syncConfig } from "./slice";
 import { AppDispatch, RootState } from "./store";
+import { createLogger } from "../../utils/logger";
+import { engineSliceUtils } from ".";
 
 export const useEngineAppDispatch = () => useDispatch<AppDispatch>();
 export const useEngineAppSelector: TypedUseSelectorHook<RootState> =

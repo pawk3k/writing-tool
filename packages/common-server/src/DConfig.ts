@@ -20,9 +20,9 @@ import fs from "fs-extra";
 import _ from "lodash";
 import os from "os";
 import path from "path";
-import { BackupKeyEnum, BackupService } from "./backup";
 import { DConfigLegacy } from "./oneoff/ConfigCompat";
 import { readYAML, writeYAML, writeYAMLAsync, readString } from "./files";
+import { BackupKeyEnum, BackupService } from "./backup/service";
 
 export enum LocalConfigScope {
   WORKSPACE = "WORKSPACE",

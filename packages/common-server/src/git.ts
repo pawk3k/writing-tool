@@ -18,8 +18,8 @@ import simpleGit, {
   ResetMode as SimpleGitResetMode,
 } from "simple-git";
 import { parse } from "url";
-import { readYAMLAsync } from ".";
 import { vault2Path } from "./filesv2";
+import { readYAMLAsync } from "./files";
 
 export { simpleGit, SimpleGit, SimpleGitResetMode };
 

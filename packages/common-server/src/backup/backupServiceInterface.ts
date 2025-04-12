@@ -1,5 +1,5 @@
 import { RespV3 } from "@dendronhq/common-all";
-import { BackupKeyEnum } from ".";
+import { BackupKeyEnum } from "./service";
 
 export interface IBackupService {
   /**

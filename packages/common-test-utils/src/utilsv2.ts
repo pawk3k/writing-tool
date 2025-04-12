@@ -5,13 +5,13 @@ import {
   WorkspaceOpts,
 } from "@dendronhq/common-all";
 import _ from "lodash";
+import { PostSetupHookFunction, PreSetupHookFunction } from "./types";
 import {
   CreateEngineFunction,
   GenTestResults,
   RunEngineTestFunctionV4,
   SetupTestFunctionV4,
-} from ".";
-import { PostSetupHookFunction, PreSetupHookFunction } from "./types";
+} from "./utils";
 
 type EngineOverride = {
   [P in keyof DEngineClient]: (opts: WorkspaceOpts) => DEngineClient[P];
