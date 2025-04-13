@@ -1,4 +1,103 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`H1_TO_TITLE > basic 1`] = `
+{
+  "anchors": {},
+  "body": "## Foo Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "foo",
+  "id": "foo",
+  "links": [],
+  "parent": null,
+  "title": "Foo Header",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`H1_TO_TITLE > basic 2`] = `
+{
+  "anchors": {},
+  "body": "## Bar Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "bar",
+  "id": "bar",
+  "links": [],
+  "parent": null,
+  "title": "Bar Header",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`H1_TO_TITLE > basic pass candidates opts 1`] = `
+{
+  "anchors": {},
+  "body": "## Foo Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "foo",
+  "id": "foo",
+  "links": [],
+  "parent": null,
+  "title": "Foo Header",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`H1_TO_TITLE > basic pass candidates opts 2`] = `
+{
+  "anchors": {},
+  "body": "# Bar Header
+## Bar Content",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "bar",
+  "id": "bar",
+  "links": [],
+  "parent": null,
+  "title": "Bar",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
 
 exports[`H1_TO_TITLE basic 1`] = `
 Object {
@@ -94,6 +193,105 @@ Object {
   "type": "note",
   "updated": 1,
   "vault": Object {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`h1 to h2 > basic pass candidates opt 1`] = `
+{
+  "anchors": {},
+  "body": "## Foo Header
+
+## Foo Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "foo",
+  "id": "foo",
+  "links": [],
+  "parent": null,
+  "title": "Foo",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`h1 to h2 > basic pass candidates opt 2`] = `
+{
+  "anchors": {},
+  "body": "# Bar Header
+## Bar Content",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "bar",
+  "id": "bar",
+  "links": [],
+  "parent": null,
+  "title": "Bar",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`h1 to h2 > dry run 1`] = `
+{
+  "anchors": {},
+  "body": "# Foo Header
+## Foo Content",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "foo",
+  "id": "foo",
+  "links": [],
+  "parent": null,
+  "title": "Foo",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`h1 to h2 > dry run 2`] = `
+{
+  "anchors": {},
+  "body": "# Bar Header
+## Bar Content",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "bar",
+  "id": "bar",
+  "links": [],
+  "parent": null,
+  "title": "Bar",
+  "type": "note",
+  "updated": 1,
+  "vault": {
     "fsPath": "vault1",
   },
 }

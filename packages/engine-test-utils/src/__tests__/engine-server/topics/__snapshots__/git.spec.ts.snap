@@ -1,4 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`isRepo > no repo 1`] = `false`;
+
+exports[`isRepo > yes repo 1`] = `true`;
 
 exports[`isRepo no repo 1`] = `false`;
 

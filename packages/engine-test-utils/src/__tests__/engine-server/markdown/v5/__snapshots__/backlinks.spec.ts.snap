@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`GIVEN dendron.yml default WHEN enableBackLinks = false AND WHEN no note override "HTML: THEN backlinks are not generated: PUBLISHING" 1`] = `
 VFile {

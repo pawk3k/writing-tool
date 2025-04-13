@@ -1,4 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GIVEN dendronPub (old tests - need to be migrated) > in IMPORT mode 1`] = `
+VFile {
+  "contents": "Testing publishing in IMPORT mode
+
+",
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
+}
+`;
 
 exports[`GIVEN dendronPub (old tests - need to be migrated) enablePrettyRefs WHEN config sets enablePrettyRefs false AND note overrides to true THEN renders with pretty refs (enableExperimentalIFrameNoteRef) 1`] = `
 VFile {

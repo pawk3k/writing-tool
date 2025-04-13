@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`WHEN using html publish pod to publish note THEN generate correct HTML 1`] = `
 "<h1 id=\\"foo\\">Foo</h1>

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`WHEN run 'dendron note lookup_legacy' AND WHEN lookup note and --output = markdown_dendron THEN get note body in markdown_dendron 1`] = `
 "---

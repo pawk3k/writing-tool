@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`user tags WHEN disabled in config THEN user tags don't get parsed or processed 1`] = `
 VFile {

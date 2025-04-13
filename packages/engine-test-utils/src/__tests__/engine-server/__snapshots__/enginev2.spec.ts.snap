@@ -1,4 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`engine, notes/ > render > %p CUSTOM_FM 1`] = `undefined`;
+
+exports[`engine, notes/ > render > %p EMPTY_NOTE 1`] = `undefined`;
 
 exports[`engine, notes/ render "CUSTOM_FM" 1`] = `
 "<h1 id=\\"fm\\">Fm</h1>

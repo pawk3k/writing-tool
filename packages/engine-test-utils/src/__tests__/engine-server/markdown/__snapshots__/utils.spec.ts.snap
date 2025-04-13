@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`MDUtils.proc "HTML: NOTE_REF_RECURSIVE_WITH_REHYPE" 1`] = `
 "<h1 id=\\"foo\\">Foo</h1>
