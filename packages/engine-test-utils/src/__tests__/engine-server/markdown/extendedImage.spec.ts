@@ -35,6 +35,7 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
 }
 
 function getExtendedImage(node: UnistNode): ExtendedImage {
+  // @ts-expect-error error
   return getDescendantNode<ExtendedImage>(expect, node, 0, 0);
 }
 

@@ -31,8 +31,11 @@ describe("GIVEN syncNote", () => {
           // --- setup engineSlice
           // sync new note to redux engine
           const initNotesOpts = { ws: wsRoot, url };
+          // @ts-expect-error TS2345 - Argument of type 'string' is not assignable to parameter of type 'VaultName'.
           await combinedStore.dispatch(engineSlice.initNotes(initNotesOpts));
+
           await combinedStore.dispatch(
+            // @ts-expect-error TS2345 - Argument of type 'string' is not assignable to parameter of type 'VaultName'.
             engineSlice.syncNote({ ...initNotesOpts, note: newNote })
           );
 
@@ -64,8 +67,11 @@ describe("GIVEN syncNote", () => {
           const url = APIUtils.getLocalEndpoint(port!);
 
           const initNotesOpts = { ws: wsRoot, url };
+
+          // @ts-expect-error TS2345 - Argument of type 'string' is not assignable to parameter of type 'VaultName'.
           await combinedStore.dispatch(engineSlice.initNotes(initNotesOpts));
           await combinedStore.dispatch(
+            // @ts-expect-error TS2345 - Argument of type 'string' is not assignable to parameter of type 'VaultName'.
             engineSlice.syncNote({ ...initNotesOpts, note })
           );
           const notesDict = combinedStore.getState().engine.notes;

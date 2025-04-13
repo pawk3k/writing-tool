@@ -110,6 +110,7 @@ async function getBacklinkDependencies(
 function getNoteDependencies(ast: Node<Data>): DNodeCompositeKey[] {
   const renderDependencies: DNodeCompositeKey[] = [];
 
+  // @ts-expect-error TS2769 - No overload matches this call.
   visit(
     ast,
     [DendronASTTypes.WIKI_LINK],
@@ -121,12 +122,14 @@ function getNoteDependencies(ast: Node<Data>): DNodeCompositeKey[] {
     }
   );
 
+  // @ts-expect-error TS2769 - No overload matches this call.
   visit(ast, [DendronASTTypes.HASHTAG], (hashtag: HashTag, _index) => {
     renderDependencies.push({
       fname: hashtag.fname,
     });
   });
 
+  // @ts-expect-error TS2769 - No overload matches this call.
   visit(ast, [DendronASTTypes.USERTAG], (noteRef: UserTag, _index) => {
     renderDependencies.push({
       fname: noteRef.fname,
@@ -150,6 +153,7 @@ async function getRecursiveNoteDependencies(
   const renderDependencies: DNodeCompositeKey[] = [];
   const wildCards: { fname: string; vaultName?: string }[] = [];
 
+  // @ts-expect-error TS2769 - No overload matches this call.
   visit(
     ast,
     [DendronASTTypes.REF_LINK_V2],

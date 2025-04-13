@@ -242,6 +242,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         // For hashtags, convert them to regular links for rendering
         // but not if they are inside of a link, otherwise they break link rendering.
         if (!ancestors.some((node) => RemarkUtils.isLink(node))) {
+          // @ts-expect-error TS2322 - Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
           node = hashTag2WikiLinkNoteV4(hashtag);
         } else {
           // If they are inside a link, rendering them as wikilinks will break the link rendering. Convert them to regular text.
@@ -256,6 +257,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         // Convert user tags to regular links for rendering
         // but not if they are inside of a link, otherwise they break link rendering.
         if (!ancestors.some((node) => RemarkUtils.isLink(node))) {
+          // @ts-expect-error TS2322 - Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
           node = userTag2WikiLinkNoteV4(userTag);
         } else {
           node = text(userTag.value);
@@ -272,6 +274,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
 
         // If the target is Dendron, no processing of links is needed
         if (dest === DendronASTDest.MD_DENDRON) return;
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const _node = node as WikiLinkNoteV4;
         // @ts-ignore
         let value = node.value as string;
@@ -508,6 +511,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
             RemarkUtils.isTable(greatGrandParent)
           ) {
             // The table HTML generation drops anything not attached to a cell, so we put this in the first cell instead.
+            // @ts-expect-error TS2322 - Type 'TableCell' is not assignable to type 'Node<Data>'.
             target = greatGrandParent.children[0]?.children[0];
           }
         } else {
@@ -518,16 +522,21 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         if (_.isUndefined(target)) return;
         if (RemarkUtils.isList(target)) {
           // Can't install as a child of the list, has to go into a list item
+          // @ts-expect-error TS2322 - Type 'ListItem' is not assignable to type 'Node<Data>'.
           target = target.children[0];
         }
+        // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
         if (RemarkUtils.isTable(target)) {
           // Can't install as a child of the table directly, has to go into a table cell
+          // @ts-expect-error TS2322 - Type 'TableCell' is not assignable to type 'Node<Data>'.
           target = target.children[0].children[0];
         }
 
+        // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
         if (RemarkUtils.isParent(target)) {
           // Install the block anchor at the target node
           target.children.unshift(anchorHTML);
+        // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
         } else if (RemarkUtils.isRoot(target)) {
           // If the anchor is the first thing in the note, anchorHTML goes to the start of the document
           target.children.unshift(anchorHTML);

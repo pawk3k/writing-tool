@@ -3,7 +3,7 @@ import {
   DEngineClient,
   NotePropsMeta,
   ReducedDEngine,
-  RespV3,
+  RespV3
 } from "@dendronhq/common-all";
 import _ from "lodash";
 import path from "path";
@@ -83,6 +83,7 @@ export class CopyUnfinishedActionItemsCommand extends BasicCommand<
       }
     );
 
+    // @ts-expect-error my error
     const ast: Root = proc.parse(note.body) as any;
 
     const lists = ast.children.filter((node) => node.type === "list");

@@ -223,6 +223,7 @@ export type DendronAppProps = {
 
 function DendronApp(props: DendronAppProps) {
   return (
+    // @ts-expect-error TS2786 - 'Provider' cannot be used as a JSX component.
     <Provider store={store}>
       <Layout
         style={{

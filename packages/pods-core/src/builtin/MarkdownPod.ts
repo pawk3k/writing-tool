@@ -326,8 +326,10 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     const linkPrefix = note.fname.substring(0, note.fname.lastIndexOf(".") + 1);
     const lines = note.body.split("\n");
 
+    // @ts-expect-error TS2352 - Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
     const links: WikiLinkNoteV4[] = selectAll(
       DendronASTTypes.WIKI_LINK,
+      // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
       tree
     ) as WikiLinkNoteV4[];
 
@@ -351,6 +353,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
 
       lines[start.line - 1] = [
         line.slice(undefined, start.column - 1),
+        // @ts-expect-error TS2345 - Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data>'.
         proc.stringify(link),
         line.slice(end.column - 1, undefined),
       ].join("");
@@ -375,7 +378,9 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     proc: ReturnType<typeof MDUtilsV5["procRemarkFull"]>;
   }) {
     const assetReferences = [
+      // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
       ...selectAll(DendronASTTypes.IMAGE, tree),
+      // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
       ...selectAll(DendronASTTypes.LINK, tree),
     ] as unknown as (Image | Link)[];
     const lines = note.body.split("\n");
@@ -408,6 +413,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
           const line = lines[start.line - 1];
           lines[start.line - 1] = [
             line.slice(undefined, start.column - 1),
+            // @ts-expect-error TS2345 - Argument of type 'Image | Link' is not assignable to parameter of type 'Node<Data>'.
             proc.stringify(asset),
             line.slice(end.column - 1, undefined),
           ].join("");

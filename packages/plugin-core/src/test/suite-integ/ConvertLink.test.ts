@@ -3,6 +3,7 @@ import {
   CreateNoteOptsV4,
   NoteTestUtilsV4,
 } from "@dendronhq/common-test-utils";
+// @ts-expect-error TS2305 - Module '"@dendronhq/unified"' has no exported member 'ParseLinkV2Resp'.
 import { LinkUtils, ParseLinkV2Resp } from "@dendronhq/unified";
 import _ from "lodash";
 import { afterEach, beforeEach } from "mocha";

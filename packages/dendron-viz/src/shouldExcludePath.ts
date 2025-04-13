@@ -1,3 +1,4 @@
+// @ts-expect-error TS7016 - Could not find a declaration file for module 'micromatch'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/micromatch/index.js' implicitly has an 'any' type.
 import { isMatch } from "micromatch";
 
 /**

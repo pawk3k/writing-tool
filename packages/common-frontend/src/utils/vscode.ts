@@ -20,11 +20,13 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
   useEffect(() => {
     // @ts-ignore
     window.addEventListener("message", listener);
+    // @ts-expect-error TS2304 - Cannot find name 'window'.
     if (window.parent !== window) {
       // If using TypeScript, next line should be:
       // let listener = (e: KeyboardEvent) =>
       const keyListener = (e: any) => {
         console.log("sending key event");
+        // @ts-expect-error TS2304 - Cannot find name 'window'.
         window.parent.postMessage(
           JSON.stringify({
             altKey: e.altKey,
@@ -41,8 +43,11 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
         );
       };
 
+      // @ts-expect-error TS2304 - Cannot find name 'window'.
       if (!window.hasOwnProperty("keyhookInstalled")) {
+        // @ts-expect-error TS2304 - Cannot find name 'window'.
         (window as any).keyhookInstalled = true;
+        // @ts-expect-error TS2304 - Cannot find name 'window'.
         window.addEventListener("keydown", keyListener);
       }
     }
@@ -56,6 +61,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
     return () => {
       // @ts-ignore
       window.removeEventListener("message", listener);
+      // @ts-expect-error TS2304 - Cannot find name 'window'.
       delete (window as any)["keyhookInstalled"];
     };
   }, []);

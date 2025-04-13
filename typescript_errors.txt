@@ -1,0 +1,675 @@
+packages/unified/src/remark/backlinks.ts(96,26): error TS2345: Argument of type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to parameter of type 'RootContent'.
+  Type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to type 'Strong'.
+    Types of property 'children' are incompatible.
+      Type '{ type: string; value: string; }[]' is not assignable to type 'PhrasingContent[]'.
+        Type '{ type: string; value: string; }' is not assignable to type 'PhrasingContent'.
+          Type '{ type: string; value: string; }' is not assignable to type 'InlineCode'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"inlineCode"'.
+packages/unified/src/remark/backlinks.ts(124,25): error TS2345: Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
+  Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+        Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/dendronPub.ts(245,11): error TS2322: Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/dendronPub.ts(259,11): error TS2322: Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/dendronPub.ts(275,23): error TS2352: Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/unified/src/remark/dendronPub.ts(511,13): error TS2322: Type 'TableCell' is not assignable to type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'TableCellData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'TableCellData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'TableCellData'.
+packages/unified/src/remark/dendronPub.ts(521,11): error TS2322: Type 'ListItem' is not assignable to type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'ListItemData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'ListItemData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'ListItemData'.
+packages/unified/src/remark/dendronPub.ts(523,33): error TS2345: Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
+  Type 'undefined' is not assignable to type 'Node<Data>'.
+packages/unified/src/remark/dendronPub.ts(525,11): error TS2322: Type 'TableCell' is not assignable to type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'TableCellData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'TableCellData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'TableCellData'.
+packages/unified/src/remark/dendronPub.ts(528,34): error TS2345: Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
+  Type 'undefined' is not assignable to type 'Node<Data>'.
+packages/unified/src/remark/dendronPub.ts(531,39): error TS2345: Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
+  Type 'undefined' is not assignable to type 'Node<Data>'.
+packages/unified/src/remark/hierarchies.ts(48,41): error TS2345: Argument of type 'BlockContent | DefinitionContent' is not assignable to parameter of type 'Node<Data>'.
+  Type 'Table' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TableData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TableData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TableData'.
+packages/unified/src/remark/hierarchies.ts(59,5): error TS2322: Type 'BlockContent | DefinitionContent' is not assignable to type 'Node<Data>'.
+  Type 'Table' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TableData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TableData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TableData'.
+packages/unified/src/remark/hierarchies.ts(107,41): error TS2345: Argument of type 'Root' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'RootData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'RootData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'RootData'.
+packages/unified/src/remark/hierarchies.ts(115,9): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'Root' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'RootData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'RootData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'RootData'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'Root' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'RootData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'RootData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'RootData'.
+packages/unified/src/remark/hierarchies.ts(176,17): error TS2345: Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
+  Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+        Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/hierarchies.ts(215,11): error TS2345: Argument of type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to parameter of type 'RootContent'.
+  Type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to type 'Strong'.
+    Types of property 'children' are incompatible.
+      Type '{ type: string; value: string; }[]' is not assignable to type 'PhrasingContent[]'.
+        Type '{ type: string; value: string; }' is not assignable to type 'PhrasingContent'.
+          Type '{ type: string; value: string; }' is not assignable to type 'InlineCode'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"inlineCode"'.
+packages/unified/src/remark/hierarchies.ts(222,27): error TS2345: Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
+  Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+        Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/noteRefsV2.ts(189,30): error TS2345: Argument of type 'NoteRefNoteRawV4' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'Data & NoteRefDataRawV4' is not assignable to type 'Data | undefined'.
+      Type 'Data & NoteRefDataRawV4' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'Data & NoteRefDataRawV4'.
+packages/unified/src/remark/noteRefsV2.ts(204,30): error TS2345: Argument of type 'NoteRefNoteV4' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'Data & NoteRefDataV4' is not assignable to type 'Data | undefined'.
+      Type 'Data & NoteRefDataV4' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'Data & NoteRefDataV4'.
+packages/unified/src/remark/noteRefsV2.ts(698,7): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/noteRefsV2.ts(772,53): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/noteRefsV2.ts(790,7): error TS2345: Argument of type 'RootContent[]' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
+  Type 'RootContent[]' is not assignable to type 'Node<Data>[]'.
+    Type 'RootContent' is not assignable to type 'Node<Data>'.
+      Type 'Image' is not assignable to type 'Node<Data>'.
+        Types of property 'data' are incompatible.
+          Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+            Type 'ImageData' is not assignable to type 'Data'.
+              Index signature for type 'string' is missing in type 'ImageData'.
+packages/unified/src/remark/noteRefsV2.ts(797,23): error TS2345: Argument of type 'FootnoteDefinition' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'FootnoteDefinitionData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'FootnoteDefinitionData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'FootnoteDefinitionData'.
+packages/unified/src/remark/noteRefsV2.ts(866,37): error TS2322: Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
+  Type 'RootContent[]' is not assignable to type 'Node<Data>[]'.
+    Type 'RootContent' is not assignable to type 'Node<Data>'.
+      Type 'Image' is not assignable to type 'Node<Data>'.
+        Types of property 'data' are incompatible.
+          Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+            Type 'ImageData' is not assignable to type 'Data'.
+              Index signature for type 'string' is missing in type 'ImageData'.
+packages/unified/src/remark/noteRefsV2.ts(869,35): error TS2322: Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
+  Type 'RootContent[]' is not assignable to type 'Node<Data>[]'.
+    Type 'RootContent' is not assignable to type 'Node<Data>'.
+      Type 'Image' is not assignable to type 'Node<Data>'.
+        Types of property 'data' are incompatible.
+          Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+            Type 'ImageData' is not assignable to type 'Data'.
+              Index signature for type 'string' is missing in type 'ImageData'.
+packages/unified/src/remark/noteRefsV2.ts(871,30): error TS2322: Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
+  Type 'RootContent[]' is not assignable to type 'Node<Data>[]'.
+    Type 'RootContent' is not assignable to type 'Node<Data>'.
+      Type 'Image' is not assignable to type 'Node<Data>'.
+        Types of property 'data' are incompatible.
+          Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+            Type 'ImageData' is not assignable to type 'Data'.
+              Index signature for type 'string' is missing in type 'ImageData'.
+packages/unified/src/remark/publishSite.ts(27,23): error TS2352: Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/unified/src/remark/transformLinks.ts(22,21): error TS2352: Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/unified/src/remark/transformLinks.ts(34,21): error TS2352: Conversion of type 'Node<Data>' to type 'NoteRefNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.REF_LINK_V2; value: string; data: NoteRefDataV4; }'.
+packages/unified/src/remark/utils.ts(193,9): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/utils.ts(194,13): error TS18046: 'node' is of type 'unknown'.
+packages/unified/src/remark/utils.ts(311,5): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+          Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+            Index signature for type 'string' is missing in type 'Data'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+          Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+            Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/utils.ts(390,5): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+          Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+            Index signature for type 'string' is missing in type 'Data'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+          Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+            Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/utils.ts(1038,11): error TS2345: Argument of type 'Heading' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'HeadingData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'HeadingData'.
+packages/unified/src/remark/utils.ts(1039,15): error TS18046: 'node' is of type 'unknown'.
+packages/unified/src/remark/utils.ts(1070,7): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'Heading' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'HeadingData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'HeadingData'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'Heading' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'HeadingData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'HeadingData'.
+packages/unified/src/remark/utils.ts(1263,71): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Heading' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'HeadingData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'HeadingData'.
+packages/unified/src/remark/utils.ts(1292,43): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Paragraph' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'ParagraphData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'ParagraphData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'ParagraphData'.
+packages/unified/src/remark/utils.ts(1296,39): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Table' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TableData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TableData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TableData'.
+packages/unified/src/remark/utils.ts(1300,42): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'TableRow' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TableRowData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TableRowData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TableRowData'.
+packages/unified/src/remark/utils.ts(1304,43): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'TableCell' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TableCellData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TableCellData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TableCellData'.
+packages/unified/src/remark/utils.ts(1308,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'List' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'ListData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'ListData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'ListData'.
+packages/unified/src/remark/utils.ts(1312,43): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'NoteRefNoteV4' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'Data & NoteRefDataV4' is not assignable to type 'Data | undefined'.
+        Type 'Data & NoteRefDataV4' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'Data & NoteRefDataV4'.
+packages/unified/src/remark/utils.ts(1316,39): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Image' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'ImageData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'ImageData'.
+packages/unified/src/remark/utils.ts(1320,47): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'ExtendedImage' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type '(Data & ImageData) | undefined' is not assignable to type 'Data | undefined'.
+        Type 'Data & ImageData' is not assignable to type 'Data | undefined'.
+packages/unified/src/remark/utils.ts(1324,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Text' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'TextData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'TextData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'TextData'.
+packages/unified/src/remark/utils.ts(1328,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Link' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'LinkData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'LinkData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'LinkData'.
+packages/unified/src/remark/utils.ts(1332,42): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'WikiLinkNoteV4' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+        Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/unified/src/remark/utils.ts(1336,52): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'FootnoteDefinition' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'FootnoteDefinitionData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'FootnoteDefinitionData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'FootnoteDefinitionData'.
+packages/unified/src/remark/utils.ts(1340,45): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Yaml' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'YamlData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'YamlData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'YamlData'.
+packages/unified/src/remark/utils.ts(1344,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Html' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'HtmlData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'HtmlData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'HtmlData'.
+packages/unified/src/remark/utils.ts(1348,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Code' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'CodeData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'CodeData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'CodeData'.
+packages/unified/src/remark/utils.ts(1352,38): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'Yaml' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'YamlData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'YamlData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'YamlData'.
+packages/unified/src/remark/utils.ts(1356,41): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'HashTag' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+          Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/utils.ts(1360,41): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'UserTag' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+        Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+          Index signature for type 'string' is missing in type 'Data'.
+packages/unified/src/remark/utils.ts(1380,45): error TS2352: Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Node<Data>' is not comparable to type 'WikiLinkNoteV4'.
+    Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/unified/src/remark/utils.ts(1382,11): error TS2345: Argument of type 'DendronASTRoot' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'RootData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'RootData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'RootData'.
+packages/unified/src/remark/utils.ts(1432,45): error TS2352: Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Node<Data>' is not comparable to type 'WikiLinkNoteV4'.
+    Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/unified/src/remark/utils.ts(1434,11): error TS2345: Argument of type 'DendronASTRoot' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'RootData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'RootData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'RootData'.
+packages/unified/src/remark/utils.ts(1657,9): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(listItem: ListItem) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'listItem' and 'node' are incompatible.
+        Property 'children' is missing in type 'Node<Data>' but required in type 'ListItem'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/remark/utils.ts(1661,13): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'ListItem' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'ListItemData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'ListItemData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'ListItemData'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'ListItem' is not assignable to parameter of type 'Node<Data>'.
+      Types of property 'data' are incompatible.
+        Type 'ListItemData | undefined' is not assignable to type 'Data | undefined'.
+          Type 'ListItemData' is not assignable to type 'Data'.
+            Index signature for type 'string' is missing in type 'ListItemData'.
+packages/unified/src/remark/utils.ts(1676,34): error TS2345: Argument of type 'ListItem' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'ListItemData | undefined' is not assignable to type 'Data | undefined'.
+      Type 'ListItemData' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'ListItemData'.
+packages/unified/src/remark/utils.ts(1714,5): error TS2322: Type 'Node<Data>[]' is not assignable to type 'FootnoteDefinition[]'.
+  Type 'Node<Data>' is missing the following properties from type 'FootnoteDefinition': children, identifier
+packages/unified/src/remark/utils.ts(1730,5): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(frontmatter: YAML) => false' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'frontmatter' and 'node' are incompatible.
+        Property 'value' is missing in type 'Node<Data>' but required in type 'Yaml'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/utilities/getParsingDependencyDicts.ts(113,3): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(wikilink: WikiLinkNoteV4, _index: number) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'wikilink' and 'node' are incompatible.
+        Type 'Node<Data>' is not assignable to type 'WikiLinkNoteV4'.
+          Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/utilities/getParsingDependencyDicts.ts(124,3): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(hashtag: HashTag, _index: number) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'hashtag' and 'node' are incompatible.
+        Type 'Node<Data>' is not assignable to type 'HashTag'.
+          Property 'children' is missing in type 'Node<Data>' but required in type 'Parent'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/utilities/getParsingDependencyDicts.ts(130,3): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(noteRef: UserTag, _index: number) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'noteRef' and 'node' are incompatible.
+        Type 'Node<Data>' is not assignable to type 'UserTag'.
+          Property 'children' is missing in type 'Node<Data>' but required in type 'Parent'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/utilities/getParsingDependencyDicts.ts(153,3): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(noteRef: NoteRefNoteV4, _index: number) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'noteRef' and 'node' are incompatible.
+        Type 'Node<Data>' is not assignable to type 'NoteRefNoteV4'.
+          Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.REF_LINK_V2; value: string; data: NoteRefDataV4; }'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/unified/src/utils.ts(90,30): error TS2345: Argument of type 'Heading' is not assignable to parameter of type 'Node<Data> | Node<Data>[]'.
+  Type 'Heading' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'HeadingData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'HeadingData'.
+packages/unified/src/utils.ts(94,7): error TS2345: Argument of type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to parameter of type 'Node<Data>[]'.
+  Type 'RootContent[]' is not assignable to type 'Node<Data>[]'.
+    Type 'RootContent' is not assignable to type 'Node<Data>'.
+      Type 'Image' is not assignable to type 'Node<Data>'.
+        Types of property 'data' are incompatible.
+          Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+            Type 'ImageData' is not assignable to type 'Data'.
+              Index signature for type 'string' is missing in type 'ImageData'.
+packages/engine-server/src/DendronEngineV3.ts(240,15): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-server/src/drivers/file/NoteParserV2.ts(425,7): error TS2304: Cannot find name 'createCacheEntry'.
+packages/engine-server/src/topics/connector.ts(172,23): error TS2304: Cannot find name 'getWSMetaFilePath'.
+packages/engine-server/src/topics/connector.ts(179,20): error TS2304: Cannot find name 'openWSMetaFile'.
+packages/engine-server/src/utils/index.ts(185,5): error TS2322: Type 'Pick<NoteProps, "schema" | "vault" | "data" | "contentHash" | "type" | "stub" | "parent" | "fname" | "children" | keyof DNodeExplicitProps | "links" | ... 6 more ... | "traits">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Pick<NoteProps, "schema" | "vault" | "data" | "contentHash" | "type" | "stub" | "parent" | "fname" | "children" | keyof DNodeExplicitProps | "links" | ... 6 more ... | "traits">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/pods-core/src/builtin/MarkdownPod.ts(329,37): error TS2352: Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Node<Data>' is not comparable to type 'WikiLinkNoteV4'.
+    Property 'value' is missing in type 'Node<Data>' but required in type '{ type: DendronASTTypes.WIKI_LINK; value: string; data: WikiLinkDataV4; }'.
+packages/pods-core/src/builtin/MarkdownPod.ts(331,7): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/pods-core/src/builtin/MarkdownPod.ts(354,24): error TS2345: Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'Data & WikiLinkDataV4' is not assignable to type 'Data | undefined'.
+      Type 'Data & WikiLinkDataV4' is not assignable to type 'Data'.
+        Index signature for type 'string' is missing in type 'Data & WikiLinkDataV4'.
+packages/pods-core/src/builtin/MarkdownPod.ts(378,43): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/pods-core/src/builtin/MarkdownPod.ts(379,42): error TS2345: Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/pods-core/src/builtin/MarkdownPod.ts(411,28): error TS2345: Argument of type 'Image | Link' is not assignable to parameter of type 'Node<Data>'.
+  Type 'Image' is not assignable to type 'Node<Data>'.
+    Types of property 'data' are incompatible.
+      Type 'ImageData | undefined' is not assignable to type 'Data | undefined'.
+        Type 'ImageData' is not assignable to type 'Data'.
+          Index signature for type 'string' is missing in type 'ImageData'.
+packages/pods-core/src/builtin/NextjsExportPod.ts(125,22): error TS2345: Argument of type 'WriteStream' is not assignable to parameter of type 'WritableStream'.
+  Types of property 'end' are incompatible.
+    Type '{ (callback?: (() => void) | undefined): WriteStream; (buffer: string | Uint8Array<ArrayBufferLike>, callback?: (() => void) | undefined): WriteStream; (str: string | Uint8Array<...>, encoding?: BufferEncoding | undefined, callback?: (() => void) | undefined): WriteStream; }' is not assignable to type '{ (cb?: (() => void) | undefined): void; (data: string | Uint8Array<ArrayBufferLike>, cb?: (() => void) | undefined): void; (str: string, encoding?: string | undefined, cb?: (() => void) | undefined): void; (cb?: (() => void) | undefined): WritableStream; (data: string | Uint8Array<...>, cb?: (() => void) | undefine...'.
+      Types of parameters 'callback' and 'data' are incompatible.
+        Type 'string | Uint8Array<ArrayBufferLike>' is not assignable to type '(() => void) | undefined'.
+          Type 'string' is not assignable to type '() => void'.
+packages/pods-core/src/builtin/NextjsExportPod.ts(221,24): error TS2345: Argument of type 'WriteStream' is not assignable to parameter of type 'WritableStream'.
+  Types of property 'end' are incompatible.
+    Type '{ (callback?: (() => void) | undefined): WriteStream; (buffer: string | Uint8Array<ArrayBufferLike>, callback?: (() => void) | undefined): WriteStream; (str: string | Uint8Array<...>, encoding?: BufferEncoding | undefined, callback?: (() => void) | undefined): WriteStream; }' is not assignable to type '{ (cb?: (() => void) | undefined): void; (data: string | Uint8Array<ArrayBufferLike>, cb?: (() => void) | undefined): void; (str: string, encoding?: string | undefined, cb?: (() => void) | undefined): void; (cb?: (() => void) | undefined): WritableStream; (data: string | Uint8Array<...>, cb?: (() => void) | undefine...'.
+      Types of parameters 'callback' and 'data' are incompatible.
+        Type 'string | Uint8Array<ArrayBufferLike>' is not assignable to type '(() => void) | undefined'.
+          Type 'string' is not assignable to type '() => void'.
+packages/pods-core/src/builtin/NextjsExportPod.ts(234,22): error TS2345: Argument of type 'WriteStream' is not assignable to parameter of type 'WritableStream'.
+  Types of property 'end' are incompatible.
+    Type '{ (callback?: (() => void) | undefined): WriteStream; (buffer: string | Uint8Array<ArrayBufferLike>, callback?: (() => void) | undefined): WriteStream; (str: string | Uint8Array<...>, encoding?: BufferEncoding | undefined, callback?: (() => void) | undefined): WriteStream; }' is not assignable to type '{ (cb?: (() => void) | undefined): void; (data: string | Uint8Array<ArrayBufferLike>, cb?: (() => void) | undefined): void; (str: string, encoding?: string | undefined, cb?: (() => void) | undefined): void; (cb?: (() => void) | undefined): WritableStream; (data: string | Uint8Array<...>, cb?: (() => void) | undefine...'.
+      Types of parameters 'callback' and 'data' are incompatible.
+        Type 'string | Uint8Array<ArrayBufferLike>' is not assignable to type '(() => void) | undefined'.
+          Type 'string' is not assignable to type '() => void'.
+packages/dendron-viz/src/shouldExcludePath.ts(1,25): error TS7016: Could not find a declaration file for module 'micromatch'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/micromatch/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/micromatch` if it exists or add a new declaration (.d.ts) file containing `declare module 'micromatch';`
+packages/common-frontend/src/utils/vscode.ts(23,9): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(23,27): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(28,9): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(44,12): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(45,10): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(46,9): error TS2304: Cannot find name 'window'.
+packages/common-frontend/src/utils/vscode.ts(59,15): error TS2304: Cannot find name 'window'.
+packages/common-test-utils/src/utils.ts(12,61): error TS2322: Type 'undefined' is not assignable to type 'R'.
+  'R' could be instantiated with an arbitrary type which could be unrelated to 'undefined'.
+packages/dendron-cli/src/commands/exportPodV2.ts(34,23): error TS7016: Could not find a declaration file for module 'clipboardy'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/clipboardy/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/clipboardy` if it exists or add a new declaration (.d.ts) file containing `declare module 'clipboardy';`
+packages/dendron-cli/src/commands/importPod.ts(6,21): error TS7016: Could not find a declaration file for module 'prompts'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/prompts/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/prompts` if it exists or add a new declaration (.d.ts) file containing `declare module 'prompts';`
+packages/dendron-cli/src/commands/importPod.ts(66,28): error TS7006: Parameter 'title' implicitly has an 'any' type.
+packages/dendron-cli/src/commands/pod.ts(19,21): error TS7016: Could not find a declaration file for module 'prompts'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/prompts/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/prompts` if it exists or add a new declaration (.d.ts) file containing `declare module 'prompts';`
+packages/dendron-cli/src/commands/pod.ts(255,16): error TS7006: Parameter 'choice' implicitly has an 'any' type.
+packages/dendron-cli/src/commands/publishCLICommand.ts(26,21): error TS7016: Could not find a declaration file for module 'prompts'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/prompts/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/prompts` if it exists or add a new declaration (.d.ts) file containing `declare module 'prompts';`
+packages/dendron-cli/src/utils/build.ts(56,22): error TS2345: Argument of type 'WriteStream' is not assignable to parameter of type 'WritableStream'.
+  The types returned by 'end(...)' are incompatible between these types.
+    Type 'void' is not assignable to type 'WritableStream'.
+packages/engine-test-utils/src/__tests__/api-server/engine.spec.ts(21,17): error TS2345: Argument of type '(_key: any, TestCase: any) => Promise<void>' is not assignable to parameter of type '(...args: any[] | [any]) => any'.
+  Types of parameters '_key' and 'args' are incompatible.
+    Type 'any[] | [any]' is not assignable to type '[_key: any, TestCase: any]'.
+      Type 'any[]' is not assignable to type '[_key: any, TestCase: any]'.
+        Target requires 2 element(s) but source may have fewer.
+packages/engine-test-utils/src/__tests__/common-all/store/noteStore.spec.ts(383,13): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-test-utils/src/__tests__/common-all/store/noteStore.spec.ts(398,9): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-test-utils/src/__tests__/common-all/store/noteStore.spec.ts(409,9): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-test-utils/src/__tests__/common-all/store/noteStore.spec.ts(451,15): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-test-utils/src/__tests__/common-all/store/noteStore.spec.ts(452,15): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.
+packages/engine-test-utils/src/__tests__/common-frontend/features/engine/slice.spec.tsx(34,40): error TS2345: Argument of type 'AsyncThunkAction<DEngineInitResp, { url: string; ws: string; }, { state?: unknown; dispatch?: Dispatch<AnyAction> | undefined; extra?: unknown; rejectValue?: unknown; serializedErrorType?: unknown; pendingMeta?: unknown; fulfilledMeta?: unknown; rejectedMeta?: unknown; }>' is not assignable to parameter of type 'AnyAction'.
+packages/engine-test-utils/src/__tests__/common-frontend/features/engine/slice.spec.tsx(36,13): error TS2345: Argument of type 'AsyncThunkAction<RespV3ErrorResp | RespV3SuccessResp<QueryNotesResp>, { url: string; ws: string; note: NoteProps; }, { state?: unknown; ... 6 more ...; rejectedMeta?: unknown; }>' is not assignable to parameter of type 'AnyAction'.
+packages/engine-test-utils/src/__tests__/common-frontend/features/engine/slice.spec.tsx(67,40): error TS2345: Argument of type 'AsyncThunkAction<DEngineInitResp, { url: string; ws: string; }, { state?: unknown; dispatch?: Dispatch<AnyAction> | undefined; extra?: unknown; rejectValue?: unknown; serializedErrorType?: unknown; pendingMeta?: unknown; fulfilledMeta?: unknown; rejectedMeta?: unknown; }>' is not assignable to parameter of type 'AnyAction'.
+packages/engine-test-utils/src/__tests__/common-frontend/features/engine/slice.spec.tsx(69,13): error TS2345: Argument of type 'AsyncThunkAction<RespV3ErrorResp | RespV3SuccessResp<QueryNotesResp>, { url: string; ws: string; note: NoteProps; }, { state?: unknown; ... 6 more ...; rejectedMeta?: unknown; }>' is not assignable to parameter of type 'AnyAction'.
+packages/engine-test-utils/src/__tests__/dendron-cli/commands/publishCLICommand.spec.ts(12,21): error TS7016: Could not find a declaration file for module 'prompts'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/prompts/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/prompts` if it exists or add a new declaration (.d.ts) file containing `declare module 'prompts';`
+packages/engine-test-utils/src/__tests__/engine-server/DendronEngineV3.spec.ts(78,17): error TS2345: Argument of type '(_key: any, TestCase: any) => Promise<void>' is not assignable to parameter of type '(...args: any[] | [any]) => any'.
+  Types of parameters '_key' and 'args' are incompatible.
+    Type 'any[] | [any]' is not assignable to type '[_key: any, TestCase: any]'.
+      Type 'any[]' is not assignable to type '[_key: any, TestCase: any]'.
+        Target requires 2 element(s) but source may have fewer.
+packages/engine-test-utils/src/__tests__/engine-server/enginev2.spec.ts(31,17): error TS2345: Argument of type '(_key: any, TestCase: any) => Promise<void>' is not assignable to parameter of type '(...args: any[] | [any]) => any'.
+  Types of parameters '_key' and 'args' are incompatible.
+    Type 'any[] | [any]' is not assignable to type '[_key: any, TestCase: any]'.
+      Type 'any[]' is not assignable to type '[_key: any, TestCase: any]'.
+        Target requires 2 element(s) but source may have fewer.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/blockAnchors.spec.ts(56,28): error TS2344: Type 'BlockAnchor' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/blockAnchors.spec.ts(98,40): error TS2344: Type 'BlockAnchor' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/blockAnchors.spec.ts(107,40): error TS2344: Type 'BlockAnchor' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/extendedImage.spec.ts(38,28): error TS2344: Type 'ExtendedImage' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type '(Data & ImageData) | undefined' is not assignable to type 'Data | undefined'.
+      Type 'Data & ImageData' is not assignable to type 'Data | undefined'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/hashtag.spec.ts(57,28): error TS2344: Type 'HashTag' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/remarkUtils.spec.ts(12,3): error TS2305: Module '"@dendronhq/unified"' has no exported member 'LinkFilter'.
+packages/engine-test-utils/src/__tests__/engine-server/markdown/userTags.spec.ts(45,28): error TS2344: Type 'UserTag' does not satisfy the constraint 'Node<Data>'.
+  Types of property 'data' are incompatible.
+    Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data | undefined' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data | undefined'.
+      Type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/mdast/index").Data' is not assignable to type 'import("/Users/pravliv/Documents/int/ssh/dendron/node_modules/@types/unist/index").Data'.
+        Index signature for type 'string' is missing in type 'Data'.
+packages/engine-test-utils/src/__tests__/engine-server/segmentClient.spec.ts(201,58): error TS2345: Argument of type '(opts: SegmentEventProps) => Promise<RespV2<SegmentEventProps>>' is not assignable to parameter of type '(...args: unknown[]) => unknown'.
+  Types of parameters 'opts' and 'args' are incompatible.
+    Type 'unknown' is not assignable to type 'SegmentEventProps'.
+packages/plugin-core/src/commands/MoveHeader.ts(151,5): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(heading: Heading, index: number) => false' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'heading' and 'node' are incompatible.
+        Type 'Node<Data>' is missing the following properties from type 'Heading': depth, children
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/plugin-core/src/commands/MoveHeader.ts(348,31): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(array: List<Node<Data>> | null | undefined, values: List<Node<Data>>, comparator: Comparator2<Node<Data>, Node<Data>>): Node<...>[]', gave the following error.
+    Argument of type 'Anchor[]' is not assignable to parameter of type 'ArrayLike<Node<Data>>'.
+      'number' index signatures are incompatible.
+        Type 'Anchor' is not assignable to type 'Node<Data>'.
+          Type 'Heading' is not assignable to type 'Node<Data>'.
+            Types of property 'data' are incompatible.
+              Type 'HeadingData | undefined' is not assignable to type 'Data | undefined'.
+                Type 'HeadingData' is not assignable to type 'Data'.
+                  Index signature for type 'string' is missing in type 'HeadingData'.
+  Overload 2 of 4, '(array: List<Anchor> | null | undefined, values1: List<Anchor>, values2: List<unknown>, ...values: (List<unknown> | Comparator2<Anchor, unknown>)[]): Anchor[]', gave the following error.
+    Argument of type '(a: Node<Data>, b: Node<Data>) => boolean' is not assignable to parameter of type 'List<unknown>'.
+      Index signature for type 'number' is missing in type '(a: Node<Data>, b: Node<Data>) => boolean'.
+  Overload 3 of 4, '(array: List<Anchor> | null | undefined, ...values: List<Anchor>[]): Anchor[]', gave the following error.
+    Argument of type '(a: Node<Data>, b: Node<Data>) => boolean' is not assignable to parameter of type 'List<Anchor>'.
+      Index signature for type 'number' is missing in type '(a: Node<Data>, b: Node<Data>) => boolean'.
+packages/plugin-core/src/commands/MoveHeader.ts(358,5): error TS2322: Type 'boolean[]' is not assignable to type 'string[]'.
+  Type 'boolean' is not assignable to type 'string'.
+packages/plugin-core/src/commands/RenameHeader.ts(84,7): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(heading: Heading) => false' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'heading' and 'node' are incompatible.
+        Type 'Node<Data>' is missing the following properties from type 'Heading': depth, children
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/plugin-core/src/commands/RenameHeader.ts(150,5): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(node: Heading) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'node' and 'node' are incompatible.
+        Type 'Node<Data>' is missing the following properties from type 'Heading': depth, children
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/plugin-core/src/components/views/PreviewPanel.ts(341,7): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(tree: Node<Data>, test: any[] | Test<Node<Data>>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type '(image: Image) => void' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Types of parameters 'image' and 'node' are incompatible.
+        Property 'url' is missing in type 'Node<Data>' but required in type 'Image'.
+  Overload 2 of 2, '(tree: Node<Data>, visitor: Visitor<Node<Data>>, reverse?: boolean | undefined): void', gave the following error.
+    Argument of type 'DendronASTTypes[]' is not assignable to parameter of type 'Visitor<Node<Data>>'.
+      Type 'DendronASTTypes[]' provides no match for the signature '(node: Node<Data>, index: number, parent: Parent<Node<Data>, Data> | undefined): number | void | Action | ActionTuple'.
+packages/plugin-core/src/test/suite-integ/ConvertLink.test.ts(6,21): error TS2305: Module '"@dendronhq/unified"' has no exported member 'ParseLinkV2Resp'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(183,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(234,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(288,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(353,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(440,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(512,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(567,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(618,15): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/test/suite-integ/DoctorCommand.test.ts(789,17): error TS2352: Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = string, TResult2 = never>(onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | null | undefined) => Promise<...>' is not comparable to type '<TResult1 = QuickPickItem, TResult2 = never>(onfulfilled?: ((value: QuickPickItem) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => PromiseLike<...>'.
+      Types of parameters 'onfulfilled' and 'onfulfilled' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'string' is not comparable to type 'QuickPickItem'.
+packages/plugin-core/src/web/engine/DendronEngineV3Web.ts(98,15): error TS2322: Type 'Omit<NoteProps, "body">' is not assignable to type 'NoteProps'.
+  Property 'body' is missing in type 'Omit<NoteProps, "body">' but required in type '{ fname: string; links: DLink[]; anchors: { [index: string]: DNoteAnchorPositioned | undefined; }; type: DNodeType; stub?: boolean | undefined; ... 12 more ...; traits?: string[] | undefined; }'.

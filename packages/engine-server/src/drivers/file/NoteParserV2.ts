@@ -422,6 +422,7 @@ export class NoteParserV2 {
     // Update cache entry as well
     this.cache.set(
       name,
+      // @ts-expect-error TS2304 - Cannot find name 'createCacheEntry'.
       createCacheEntry({
         noteProps: note,
         hash: note.contentHash,

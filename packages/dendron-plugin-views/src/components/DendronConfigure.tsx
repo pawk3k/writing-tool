@@ -80,15 +80,20 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
       .filter((config) => _.lowerCase(config).includes(_.lowerCase(submenu)))
       .map((conf) => {
         return (
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <Card
             title={cleanTitle(conf.substring(conf.lastIndexOf(".") + 1))}
             id={conf}
           >
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Typography.Paragraph>
               {dendronConfig[conf]?.type !== "boolean"
                 ? ConfigUtils.getConfigDescription(conf)
                 : null}
             </Typography.Paragraph>
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <ConfigureElement
               {...dendronConfig[conf]}
               name={conf}
@@ -100,15 +105,26 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
   };
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Layout style={{ height: "100vh", overflow: "hidden" }}>
       {!config ? (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <Spin />
       ) : (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <>
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <Header className="header">
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Input placeholder="search config" onChange={handleSearch} />
           </Header>
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <Layout>
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Sider
               width={160}
               style={{
@@ -118,17 +134,23 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                 padding: "20px 16px 0 21px",
               }}
             >
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Anchor
                 getContainer={() =>
+                  // @ts-expect-error TS2584 - Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
                   document.getElementById("configure-content")!
                 }
               >
+                {/*
+                 // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                 <Space
                   direction="vertical"
                   size="middle"
                   style={{ display: "flex" }}
                 >
                   {menuItems.map((item) => (
+                    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                     <Anchor.Link
                       key={item.key}
                       href={`#${item.label.toLowerCase()}`}
@@ -138,7 +160,11 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                 </Space>
               </Anchor>
             </Sider>
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Layout>
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Content
                 id="configure-content"
                 style={{
@@ -149,6 +175,8 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                   overflowY: "scroll",
                 }}
               >
+                {/*
+                 // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                 <Space
                   direction="vertical"
                   size="middle"
@@ -161,10 +189,14 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                     .map((conf) => {
                       const submenu = conf.substring(0, conf.lastIndexOf("."));
                       return (
+                        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                         <>
                           {!configGroupMap.has(dendronConfig[conf]?.group) &&
                           configGroupMap.set(dendronConfig[conf]?.group, "") ? (
+                            // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                             <Divider orientation="left">
+                              {/*
+                               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                               <Typography.Title
                                 level={2}
                                 id={dendronConfig[conf]?.group}
@@ -176,7 +208,10 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                           {conf.split(".").length > 2 ? (
                             !configSubMenuMap.has(submenu) &&
                             configSubMenuMap.set(submenu, "") && (
+                              // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                               <Card title={cleanTitle(submenu)} id={submenu}>
+                                {/*
+                                 // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                                 <Space
                                   direction="vertical"
                                   size="middle"
@@ -187,12 +222,17 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
                               </Card>
                             )
                           ) : (
+                            // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                             <Card title={cleanTitle(conf)} id={conf}>
+                              {/*
+                               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                               <Typography.Paragraph>
                                 {dendronConfig[conf]?.type !== "boolean"
                                   ? ConfigUtils.getConfigDescription(conf)
                                   : null}
                               </Typography.Paragraph>
+                              {/*
+                               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                               <ConfigureElement
                                 {...dendronConfig[conf]}
                                 name={conf}

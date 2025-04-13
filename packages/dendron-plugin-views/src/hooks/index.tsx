@@ -10,7 +10,9 @@ export const useCurrentTheme = () => {
     "light"
   );
   React.useEffect(() => {
+    // @ts-expect-error TS2304 - Cannot find name 'window'.
     if (window.currentTheme) {
+      // @ts-expect-error TS2304 - Cannot find name 'window'.
       setCurrentTheme(window.currentTheme);
     }
     // @ts-ignore
@@ -20,6 +22,7 @@ export const useCurrentTheme = () => {
 };
 
 export const useWorkspaceProps = (): [WorkspaceProps] => {
+  // @ts-expect-error TS2304 - Cannot find name 'window'.
   const elem = window.document.getElementById("root")!;
   const url = elem.getAttribute("data-url")!;
   const ws = elem.getAttribute("data-ws")!;

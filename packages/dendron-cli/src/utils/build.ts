@@ -53,7 +53,7 @@ const $$ = (
 ) => {
   const out = execa.command(cmd, { shell: true, ...opts });
   if (!opts?.quiet) {
-    out.stdout?.pipe(process.stdout);
+    out.stdout?.pipe(process.stdout as any);
   }
   return out;
 };

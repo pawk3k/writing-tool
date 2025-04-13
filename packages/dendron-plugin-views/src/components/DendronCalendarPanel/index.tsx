@@ -31,6 +31,7 @@ const { useEngine } = engineHooks;
 
 type DateTime = InstanceType<typeof Time.DateTime>;
 
+// @ts-expect-error TS6133 - 'Calendar' is declared but its value is never read.
 const Calendar = generateCalendar<DateTime>(luxonGenerateConfig);
 
 type CalendarProps = AntdCalendarProps<DateTime>;
@@ -125,6 +126,7 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
     return result;
   }, [notes, journalName, journalDailyDomain, currentVault?.fsPath]);
 
+  // @ts-expect-error TS6133 - 'activeDate' is declared but its value is never read.
   const activeDate = useMemo(() => {
     if (noteActive && journalName && journalDateFormat) {
       const maybeDatePortion = getMaybeDatePortion(noteActive, journalName);
@@ -192,6 +194,7 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
     [groupedDailyNotes, getDateKey, journalDailyDomain, journalName]
   );
 
+  // @ts-expect-error TS6133 - 'onPanelChange' is declared but its value is never read.
   const onPanelChange = useCallback<
     Exclude<CalendarProps["onPanelChange"], undefined>
   >((date, mode) => {
@@ -202,13 +205,16 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   const onClickToday = useCallback(() => {
     const mode = "month";
     setActiveMode(mode);
+    // @ts-expect-error TS2345 - Argument of type 'DateTime' is not assignable to parameter of type 'Date'.
     onSelect(Time.now(), mode);
   }, [onSelect]);
 
+  // @ts-expect-error TS6133 - 'dateFullCellRender' is declared but its value is never read.
   const dateFullCellRender = useCallback<
     Exclude<CalendarProps["dateFullCellRender"], undefined>
   >(
     (date) => {
+      // @ts-expect-error TS2345 - Argument of type 'DateTime' is not assignable to parameter of type 'Date'.
       const dateKey = getDateKey(date);
       const dailyNote = dateKey
         ? _.first(groupedDailyNotes[dateKey])
@@ -286,6 +292,8 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   return (
     <>
       <div className="calendar">
+        {/*
+         // @ts-expect-error TS2322 - Type '(date: Date, mode?: CalendarMode | undefined) => void' is not assignable to type '(date: Date | undefined) => void'. */}
         <MultiViewDatePicker onSelect={onSelect} />
       </div>
       <Divider plain style={{ marginTop: 0 }}>

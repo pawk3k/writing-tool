@@ -36,6 +36,7 @@ export function GoToSiteButton({
           source: DMessageSource.webClient,
         } as SeedBrowserMessage);
       } else {
+        // @ts-expect-error TS2304 - Cannot find name 'window'.
         window.open(url);
       }
     }
@@ -43,13 +44,19 @@ export function GoToSiteButton({
 
   if (url) {
     return (
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       <Tooltip placement="top" title="Go to Site">
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <GlobalOutlined key="website" onClick={onClick} />
       </Tooltip>
     );
   } else {
     return (
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       <Tooltip placement="top" title="Site Unavailable">
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <DisconnectOutlined key="website" onClick={onClick} />
       </Tooltip>
     );
@@ -79,13 +86,19 @@ export function AddToWorkspaceButton({
 
   if (!existsInWorkspace) {
     return (
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       <Tooltip placement="top" title="Add to Workspace">
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <DownloadOutlined key="download" onClick={onClick} />
       </Tooltip>
     );
   }
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Tooltip placement="top" title="Already in Workspace">
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <CheckCircleOutlined key="installed" disabled />
     </Tooltip>
   );

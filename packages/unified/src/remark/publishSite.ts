@@ -24,6 +24,7 @@ function plugin(this: Unified.Processor, opts: PluginOpts): Transformer {
     }
     visit(tree, (node, _idx, _parent) => {
       if (node.type === DendronASTTypes.WIKI_LINK) {
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const cnode = node as WikiLinkNoteV4;
         const value = cnode.value;
         const href = PublishUtils.getSiteUrl(config);

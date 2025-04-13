@@ -1,3 +1,4 @@
+// @ts-expect-error TS2305 - Module '"vite"' has no exported member 'defineConfig'.
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
@@ -19,6 +20,7 @@ export default defineConfig(() => {
           interop: "auto",
           freeze: false,
           externalLiveBindings: false,
+          // @ts-expect-error TS7030 - Not all code paths return a value.
           manualChunks(id) {
             if (id.includes("mermaid") && id.includes("themes")) {
               return "mermaid-themes";

@@ -180,6 +180,7 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("cancelled") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -231,6 +232,7 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -285,6 +287,7 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -350,6 +353,7 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -437,6 +441,7 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -509,6 +514,7 @@ suite("REGENERATE_NOTE_ID", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -564,6 +570,7 @@ suite("REGENERATE_NOTE_ID", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -615,6 +622,7 @@ suite("REGENERATE_NOTE_ID", function () {
           quickPickStub
             .onCall(0)
             .returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
               Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
             );
           await cmd.run();
@@ -786,6 +794,7 @@ suite("FIX_INVALID_FILENAMES", function () {
             quickPickStub
               .onCall(0)
               .returns(
+                // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
                 Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
               );
             await cmd.run();

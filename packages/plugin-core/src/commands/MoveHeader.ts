@@ -148,6 +148,7 @@ export class MoveHeaderCommand extends BasicCommand<
     let targetIndex: number | undefined;
     // Find the first occurring heading node in selected line.
     // This should be our target.
+    // @ts-expect-error TS2769 - No overload matches this call.
     visit(parsedLine, [DendronASTTypes.HEADING], (heading: Heading, index) => {
       targetHeader = heading;
       targetIndex = index;
@@ -345,6 +346,7 @@ export class MoveHeaderCommand extends BasicCommand<
   ): string[] {
     const anchorsBefore = RemarkUtils.findAnchors(originDeepCopy.body);
     const anchorsAfter = RemarkUtils.findAnchors(modifiedOriginContent);
+    // @ts-expect-error TS2769 - No overload matches this call.
     const anchorsToUpdate = _.differenceWith(
       anchorsBefore,
       anchorsAfter,
@@ -355,6 +357,7 @@ export class MoveHeaderCommand extends BasicCommand<
       const payload = AnchorUtils.anchorNode2anchor(anchor, slugger);
       return payload![0];
     });
+    // @ts-expect-error TS2322 - Type 'boolean[]' is not assignable to type 'string[]'.
     return anchorNamesToUpdate;
   }
 

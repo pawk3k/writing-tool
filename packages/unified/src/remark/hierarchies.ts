@@ -45,6 +45,7 @@ function footnoteDef2html(definition: FootnoteDefinition) {
     `<a class="${FOOTNOTE_DEF_CLASS}" href="#${FOOTNOTE_REF_ID_PREFIX}${definition.identifier}">${FOOTNOTE_RETURN_SYMBOL}</a>`
   );
   const lastChild = _.last(definition.children);
+  // @ts-expect-error TS2345 - Argument of type 'BlockContent | DefinitionContent' is not assignable to parameter of type 'Node<Data>'.
   if (lastChild && RemarkUtils.isParent(lastChild)) {
     lastChild.children.push(backArrow as any);
   } else {
@@ -56,6 +57,7 @@ function footnoteDef2html(definition: FootnoteDefinition) {
     html(
       `<span id="${FOOTNOTE_DEF_ID_PREFIX}${definition.identifier}" style="width: 0; height: 0;"></span>`
     ),
+    // @ts-expect-error TS2322 - Type 'BlockContent | DefinitionContent' is not assignable to type 'Node<Data>'.
     ...definition.children,
   ]);
 }
@@ -104,6 +106,7 @@ const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
     function addFootnotes() {
       /** Maps footnote identifiers to their definitions. */
       const footnotes = new Map(
+        // @ts-expect-error TS2345 - Argument of type 'Root' is not assignable to parameter of type 'Node<Data>'.
         RemarkUtils.extractFootnoteDefs(root).map((definition) => [
           definition.identifier,
           definition,
@@ -112,6 +115,7 @@ const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
       /** All footnote definitions that have been referenced in this document. */
       const usedFootnotes = new Set<FootnoteDefinition>();
       visit(
+        // @ts-expect-error TS2769 - No overload matches this call.
         root,
         [DendronASTTypes.FOOTNOTE_REFERENCE],
         (reference: FootnoteReference, index, parent) => {
@@ -173,6 +177,7 @@ const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
           _.map(tags, (tag) =>
             listItem(
               paragraph(
+                // @ts-expect-error TS2345 - Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
                 frontmatterTag2WikiLinkNoteV4(tag, enableHashesForFMTags)
               )
             )
@@ -212,6 +217,7 @@ const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
       if (!_.isEmpty(children)) {
         addBreak();
         root.children.push(
+          // @ts-expect-error TS2345 - Argument of type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to parameter of type 'RootContent'.
           u("strong", [{ type: "text", value: hierarchyDisplayTitle }])
         );
         root.children.push(
@@ -219,6 +225,7 @@ const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
             "ordered",
             _.sortBy(children, ["custom.nav_order", "title"]).map((note) => {
               return listItem(
+                // @ts-expect-error TS2345 - Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
                 paragraph({
                   type: DendronASTTypes.WIKI_LINK,
                   value: note.fname,

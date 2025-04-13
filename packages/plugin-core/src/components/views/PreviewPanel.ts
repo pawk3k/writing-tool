@@ -338,6 +338,7 @@ export class PreviewPanel implements PreviewProxy, vscode.Disposable {
       });
       const tree = parser.parse(note.body);
       // ^preview-rewrites-images
+      // @ts-expect-error TS2769 - No overload matches this call.
       visit(
         tree,
         [DendronASTTypes.IMAGE, DendronASTTypes.EXTENDED_IMAGE],

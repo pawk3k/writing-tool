@@ -45,3 +45,4 @@ packages/**/*.d.ts
 packages/**/tsconfig.tsbuildinfo
 .yarn
 
+.yarn/install-state.gz

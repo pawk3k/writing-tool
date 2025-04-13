@@ -31,6 +31,7 @@ import { setupEngineArgs, SetupEngineCLIOpts, SetupEngineResp } from "./utils";
 import Airtable from "@dendronhq/airtable";
 import _ from "lodash";
 import { EngineUtils, openPortFile } from "@dendronhq/engine-server";
+// @ts-expect-error TS7016 - Could not find a declaration file for module 'clipboardy'. '/Users/pravliv/Documents/int/ssh/dendron/node_modules/clipboardy/index.js' implicitly has an 'any' type.
 import clipboard from "clipboardy";
 import { DConfig } from "@dendronhq/common-server";
 

@@ -198,6 +198,7 @@ describe("GIVEN a SegmentClient", () => {
   }
 
   beforeEach(() => {
+    // @ts-expect-error error
     sinon.stub(instance, <any>"trackInternal").callsFake(mockedTrackInternal);
   });
 

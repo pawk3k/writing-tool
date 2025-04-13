@@ -53,7 +53,8 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
 }
 
 function getBlockAnchor(node: UnistNode): BlockAnchor {
-  return getDescendantNode<BlockAnchor>(expect, node, 0, 0);
+  // @ts-expect-error error
+  return getDescendantNode(expect, node, 0, 0);
 }
 
 describe("blockAnchors", () => {
@@ -95,6 +96,8 @@ describe("blockAnchors", () => {
       const resp = proc().parse("Lorem ipsum ^block-id");
       const text = getDescendantNode(expect, resp, 0, 0);
       expect(text.type).toEqual("text");
+
+      // @ts-expect-error error
       const anchor = getDescendantNode<BlockAnchor>(expect, resp, 0, 1);
       expect(anchor.type).toEqual(DendronASTTypes.BLOCK_ANCHOR);
       expect(anchor.id).toEqual("block-id");
@@ -104,6 +107,7 @@ describe("blockAnchors", () => {
       const resp = proc().parse("# Lorem ipsum ^block-id");
       const header = getDescendantNode<Text>(expect, resp, 0, 0);
       expect(header.value.trim()).toEqual("Lorem ipsum");
+      // @ts-expect-error error
       const anchor = getDescendantNode<BlockAnchor>(expect, resp, 0, 1);
       expect(anchor.type).toEqual(DendronASTTypes.BLOCK_ANCHOR);
       expect(anchor.id).toEqual("block-id");

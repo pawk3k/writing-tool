@@ -42,6 +42,7 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
 }
 
 function getUserTag(node: UnistNode): UserTag {
+  // @ts-expect-error error
   return getDescendantNode<UserTag>(expect, node, 0, 0);
 }
 

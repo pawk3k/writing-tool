@@ -1503,7 +1503,7 @@ export class DendronEngineV3 extends EngineV3Base implements DEngine {
     flavor: ProcFlavor;
     dest: DendronASTDest;
   }): Promise<string> {
-    let proc: ReturnType<typeof MDUtilsV5["procRehypeFull"]>;
+    let proc: ReturnType<(typeof MDUtilsV5)["procRehypeFull"]>;
     const { data: config } = DConfig.readConfigAndApplyLocalOverrideSync(
       this.wsRoot
     );

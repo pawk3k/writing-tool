@@ -122,7 +122,7 @@ export class NextjsExportPodUtils {
     const { nextPath } = opts;
     const cmdDev = "npm run build:sitemap";
     const out = $$(cmdDev, { cwd: nextPath });
-    out.stdout?.pipe(process.stdout);
+    out.stdout?.pipe(process.stdout as any);
     return out.pid;
   }
 

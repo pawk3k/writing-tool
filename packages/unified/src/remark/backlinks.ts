@@ -93,6 +93,7 @@ const plugin: Plugin = function (this: Unified.Processor) {
       root.children.push({
         type: "thematicBreak",
       });
+      // @ts-expect-error TS2345 - Argument of type '{ type: "strong"; children: { type: string; value: string; }[]; }' is not assignable to parameter of type 'RootContent'.
       root.children.push(u("strong", [{ type: "text", value: "Backlinks" }]));
       root.children.push(
         list(
@@ -121,6 +122,7 @@ const plugin: Plugin = function (this: Unified.Processor) {
               alias = `Unable to find backlinked note ${mdLink.from.fname!}.`;
             }
             return listItem(
+              // @ts-expect-error TS2345 - Argument of type 'WikiLinkNoteV4' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
               paragraph({
                 type: DendronASTTypes.WIKI_LINK,
                 value: mdLink.from.fname,

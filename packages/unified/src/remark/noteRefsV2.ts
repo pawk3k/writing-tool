@@ -186,6 +186,7 @@ function attachParser(proc: Unified.Processor) {
           },
           value,
         };
+        // @ts-expect-error TS2345 - Argument of type 'NoteRefNoteRawV4' is not assignable to parameter of type 'Node<Data>'.
         return eat(match[0])(refNote);
       } else {
         const link = LinkUtils.parseNoteRef(linkMatch);
@@ -201,6 +202,7 @@ function attachParser(proc: Unified.Processor) {
           },
           value,
         };
+        // @ts-expect-error TS2345 - Argument of type 'NoteRefNoteV4' is not assignable to parameter of type 'Node<Data>'.
         return eat(match[0])(refNote);
       }
     }
@@ -695,6 +697,7 @@ export function prepareNoteRefIndices<T>({
       start.type === "header" ? start.node.depth : 99;
     // anchor end is next header that is smaller or equal
     const nodes = RemarkUtils.extractHeaderBlock(
+      // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
       bodyAST,
       startHeaderDepth,
       start.index,
@@ -769,6 +772,7 @@ function convertNoteRefToMDAST(
     note.body
   ) as DendronASTNode;
   // Make sure to get all footnote definitions, including ones not within the range, in case they are used inside the range
+  // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
   const footnotes = RemarkUtils.extractFootnoteDefs(bodyAST);
   const { anchorStart, anchorEnd, anchorStartOffset } = _.defaults(link.data, {
     anchorStartOffset: 0,
@@ -787,6 +791,7 @@ function convertNoteRefToMDAST(
   // slice of interested range
   try {
     const out = root(
+      // @ts-expect-error TS2345 - Argument of type 'RootContent[]' is not assignable to parameter of type 'Node<Data> | Node<Data>[] | (() => Node<Data> | Node<Data>[]) | undefined'.
       bodyAST.children.slice(
         (start ? start.index : 0) + anchorStartOffset,
         end ? end.index + 1 : undefined
@@ -794,6 +799,7 @@ function convertNoteRefToMDAST(
     );
     // Add all footnote definitions back. We might be adding duplicates if the definition was already in range, but rendering handles this correctly.
     // We also might be adding definitions that weren't used in this range, but rendering will simply ignore those.
+    // @ts-expect-error TS2345 - Argument of type 'FootnoteDefinition' is not assignable to parameter of type 'Node<Data>'.
     out.children.push(...footnotes);
 
     const data = noteRefProc.runSync(out) as Parent;
@@ -863,11 +869,14 @@ function findAnchor({
   if (isBlockAnchor(match)) {
     const anchorId = match.slice(1);
     if (isBeginBlockAnchorId(anchorId)) {
+      // @ts-expect-error TS2322 - Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
       return findBeginBlockAnchor({ nodes });
     }
     if (isEndBlockAnchorId(anchorId)) {
+      // @ts-expect-error TS2322 - Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
       return findEndBlockAnchor({ nodes });
     }
+    // @ts-expect-error TS2322 - Type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to type 'Node<Data>[]'.
     return findBlockAnchor({ nodes, match: anchorId });
   } else {
     return MdastUtils.findHeader({ nodes, match, slugger: getSlugger() });

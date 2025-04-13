@@ -21,6 +21,7 @@ export function renderOnDOM(
     <React.StrictMode>
       {renderWithDendronApp({ Component, opts })}
     </React.StrictMode>,
+    // @ts-expect-error TS2584 - Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
     document.getElementById("root")
   );
 

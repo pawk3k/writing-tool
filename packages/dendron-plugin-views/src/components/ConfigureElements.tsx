@@ -51,6 +51,7 @@ const ConfigureElement = (props: ConfigureElementProps) => {
   switch (props.type) {
     case "number":
       return (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <InputNumber
           name={name}
           defaultValue={props.default}
@@ -59,6 +60,7 @@ const ConfigureElement = (props: ConfigureElementProps) => {
       );
     case "boolean":
       return (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <Checkbox
           name={name}
           defaultChecked={props.default}
@@ -69,6 +71,7 @@ const ConfigureElement = (props: ConfigureElementProps) => {
       );
     case "string":
       return (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <Input
           name={name}
           defaultValue={props.default}
@@ -77,12 +80,14 @@ const ConfigureElement = (props: ConfigureElementProps) => {
       );
     case "select":
       return (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <Select
           style={{ width: "100%" }}
           defaultValue={props.default}
           onChange={(e) => handleSelectChange(e, props.name)}
         >
           {props.enum?.map((val: any) => (
+            // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
             <Option key={val} value={val}>
               {val}
             </Option>
@@ -90,17 +95,21 @@ const ConfigureElement = (props: ConfigureElementProps) => {
         </Select>
       );
     case "array":
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       return <ListView {...props} />;
     case "list":
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       return <TableView {...props} />;
 
     case "object":
       return (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <Typography.Link onClick={handleLink}>
           Edit in dendron.yml
         </Typography.Link>
       );
     default:
+      // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
       return <></>;
   }
 };
@@ -128,14 +137,17 @@ const ListView = (props: ConfigureElementProps) => {
   };
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <>
       {listItems.length > 0 && (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <List
           itemLayout="vertical"
           dataSource={listItems as string[]}
           bordered
           size="small"
           renderItem={(item) => (
+            // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
             <List.Item
               key={item}
               style={{
@@ -143,8 +155,13 @@ const ListView = (props: ConfigureElementProps) => {
                 justifyContent: "space-between",
               }}
             >
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Typography.Paragraph>{item}</Typography.Paragraph>
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Button
+                // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                 icon={<DeleteOutlined />}
                 onClick={() => deleteListItem(item)}
               />
@@ -152,6 +169,8 @@ const ListView = (props: ConfigureElementProps) => {
           )}
         />
       )}
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <div
         style={{
           display: "flex",
@@ -159,11 +178,15 @@ const ListView = (props: ConfigureElementProps) => {
           marginTop: "10px",
         }}
       >
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Input
           value={addItems}
           style={{ width: "75%" }}
           onChange={handleChange}
         />
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Button onClick={addItem}>Add Item</Button>
       </div>
     </>
@@ -217,21 +240,28 @@ const TableView = (props: ConfigureElementProps) => {
       dataIndex: "action",
       render: (_: any, record: { key: string }) =>
         tableItems.length >= 1 ? (
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <DeleteOutlined onClick={() => handleDelete(record.key)} />
         ) : null,
     },
   ];
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <>
       {tableItems.length > 0 && (
+        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
         <>
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <Table
             size="small"
             pagination={false}
             dataSource={tableItems}
             columns={columns}
           />
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <Form
             form={form}
             name="basic"
@@ -239,6 +269,8 @@ const TableView = (props: ConfigureElementProps) => {
             onFinish={handleRowAdd}
             style={{ display: "flex", paddingTop: "10px" }}
           >
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Form.Item
               name="key"
               style={{ padding: "5px" }}
@@ -248,9 +280,13 @@ const TableView = (props: ConfigureElementProps) => {
                 },
               ]}
             >
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Input />
             </Form.Item>
 
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Form.Item
               name="value"
               style={{ padding: "5px" }}
@@ -260,10 +296,16 @@ const TableView = (props: ConfigureElementProps) => {
                 },
               ]}
             >
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Input />
             </Form.Item>
 
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <Form.Item style={{ padding: "5px" }}>
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <Button htmlType="submit" type="primary">
                 Add
               </Button>

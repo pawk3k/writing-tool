@@ -19,6 +19,7 @@ function plugin(this: Unified.Processor, opts: PluginOpts): Transformer {
   function transformer(tree: Node, _file: VFile) {
     visit(tree, (node, _idx, _parent) => {
       if (node.type === DendronASTTypes.WIKI_LINK) {
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         let cnode = node as WikiLinkNoteV4;
         if (cnode.value.toLowerCase() === opts.from.fname.toLowerCase()) {
           cnode.value = opts.to.fname;
@@ -31,6 +32,7 @@ function plugin(this: Unified.Processor, opts: PluginOpts): Transformer {
         }
       }
       if (node.type === DendronASTTypes.REF_LINK_V2) {
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'NoteRefNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         let cnode = node as NoteRefNoteV4;
         if (
           cnode.data.link.from.fname.toLowerCase() ===

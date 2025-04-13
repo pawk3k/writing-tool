@@ -75,6 +75,7 @@ describe("engine, schemas/", () => {
           _.map(presetByNodeType, (v, k) => {
             return [k, v];
           })
+          // @ts-expect-error error
         )("%p", async (_key, TestCase) => {
           // @ts-ignore
           const { testFunc, ...opts } = TestCase;

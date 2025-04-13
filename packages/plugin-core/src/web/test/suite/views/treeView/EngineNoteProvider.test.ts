@@ -22,7 +22,7 @@ suite("GIVEN an EngineNoteProvider", () => {
     // initialize the tree (this mirrors what vscode internals will do)
     const root = await noteProvider.getChildren();
     assert.strictEqual(root?.length, 1);
-    assert.strictEqual(root[0], "root");
+    assert.strictEqual(root?.[0], "root");
 
     const rootChildren = await noteProvider.getChildren("root");
     assert.strictEqual(rootChildren?.length, 3);

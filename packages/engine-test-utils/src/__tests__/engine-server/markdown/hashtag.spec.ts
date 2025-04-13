@@ -54,7 +54,7 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
 }
 
 function getHashtag(node: UnistNode): HashTag {
-  return getDescendantNode<HashTag>(expect, node, 0, 0);
+  return getDescendantNode(expect, node, 0, 0) as HashTag;
 }
 
 describe("hashtag", () => {

@@ -169,6 +169,7 @@ export class EngineConnector {
     wsRoot: string;
   }): Promise<false | { engine: DendronEngineClient; port: number }> {
     const resp = EngineUtils.getPortFilePath(opts);
+    // @ts-expect-error TS2304 - Cannot find name 'getWSMetaFilePath'.
     const metaFpath = getWSMetaFilePath(opts);
     const ctx = "EngineConnector:_connect";
     if (resp.error) {
@@ -176,6 +177,7 @@ export class EngineConnector {
     }
 
     const portFilePath = resp.data;
+    // @ts-expect-error TS2304 - Cannot find name 'openWSMetaFile'.
     const wsMeta = openWSMetaFile({ fpath: metaFpath });
     const wsActivation = wsMeta.activationTime;
     // get time when port was created

@@ -9,7 +9,6 @@ import { NoteTestUtilsV4 } from "@dendronhq/common-test-utils";
 import {
   DendronASTDest,
   DendronASTTypes,
-  LinkFilter,
   LinkUtils,
   MDUtilsV5,
   RemarkUtils,
@@ -18,6 +17,7 @@ import _ from "lodash";
 import { runEngineTestV5, testWithEngine } from "../../../engine";
 import { ENGINE_HOOKS } from "../../../presets";
 import { checkString } from "../../../utils";
+import type { LinkFilter } from "@dendronhq/unified/src/remark/utils";
 
 const checkLink = ({ src, target }: { src: Partial<DLink>; target: DLink }) => {
   const allTrue = _.every([

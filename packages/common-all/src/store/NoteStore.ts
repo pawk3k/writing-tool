@@ -146,7 +146,6 @@ export class NoteStore implements INoteStore<string> {
    */
   async write(opts: WriteNoteOpts<string>): Promise<RespV3<string>> {
     const { key, note } = opts;
-    // @ts-expect-error This is fun error
     const notePropsMeta: NotePropsMeta = _.omit(note, ["body"]);
     const content = NoteUtils.serialize(note, { excludeStub: true });
     const noteMeta = {

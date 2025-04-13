@@ -22,6 +22,7 @@ import {
 // import mermaid from 'mermaid';
 
 // With this more specific import
+// @ts-expect-error TS2307 - Cannot find module 'mermaid/dist/mermaid' or its corresponding type declarations.
 import mermaidCore from "mermaid/dist/mermaid";
 
 const mermaid = {
@@ -33,6 +34,7 @@ const mermaid = {
 };
 
 function isHTMLAnchorElement(element: Element): element is HTMLAnchorElement {
+  // @ts-expect-error TS2812 - Property 'nodeName' does not exist on type 'Element'. Try changing the 'lib' compiler option to include 'dom'.
   return element.nodeName === "A";
 }
 
@@ -53,6 +55,7 @@ const useClickHandler = (noteId?: string) => {
       // Propagate clicks to wikilinks, but not clicks to elements like footnotes
       if (isHTMLAnchorElement(target)) {
         if (
+          // @ts-expect-error TS2812 - Property 'classList' does not exist on type 'Element'. Try changing the 'lib' compiler option to include 'dom'.
           _.some(target.classList, (class_) =>
             DEFAULT_ACTION_ANCHOR_CLASSES.has(class_)
           )
@@ -65,6 +68,7 @@ const useClickHandler = (noteId?: string) => {
           postVSCodeMessage({
             type: NoteViewMessageEnum.onClick,
             data: {
+              // @ts-expect-error TS2812 - Property 'href' does not exist on type 'Element'. Try changing the 'lib' compiler option to include 'dom'.
               href: target.href,
               id: noteId,
             },
@@ -76,8 +80,10 @@ const useClickHandler = (noteId?: string) => {
     [noteId]
   );
   React.useEffect(() => {
+    // @ts-expect-error TS2304 - Cannot find name 'window'.
     window.addEventListener("click", onClickHandler);
     return () => {
+      // @ts-expect-error TS2304 - Cannot find name 'window'.
       window.removeEventListener("click", onClickHandler);
     };
   }, [onClickHandler]);
@@ -124,6 +130,7 @@ const DendronNotePreview: DendronComponent = (props) => {
   const isLocked = props.ide.isLocked;
 
   const handleLock = (event: SyntheticEvent<HTMLElement>) => {
+    // @ts-expect-error TS2693 - 'HTMLElement' only refers to a type, but is being used as a value here.
     if (!(event.currentTarget instanceof HTMLElement)) {
       return;
     }

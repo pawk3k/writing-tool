@@ -18,6 +18,7 @@ describe("engine, schemas/", () => {
           _.map(presets[nodeType], (v, k) => {
             return [k, v];
           })
+          // @ts-expect-error error
         )("%p", async (_key, TestCase) => {
           const { testFunc, ...opts } = TestCase;
           await runEngineTestV5(testFunc, { ...opts, createEngine, expect });

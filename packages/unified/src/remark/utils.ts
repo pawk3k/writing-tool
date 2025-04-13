@@ -190,7 +190,9 @@ const getLinks = ({
 }) => {
   const wikiLinks: WikiLinkNoteV4[] = [];
   const noteRefs: NoteRefNoteV4[] = [];
+  // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
   visit(ast, (node) => {
+    // @ts-expect-error TS18046 - 'node' is of type 'unknown'.
     switch (node.type) {
       case DendronASTTypes.WIKI_LINK:
         wikiLinks.push(node as WikiLinkNoteV4);
@@ -308,6 +310,7 @@ const getLinkCandidates = async ({
 }) => {
   const textNodes: Text[] = [];
   visit(
+    // @ts-expect-error TS2769 - No overload matches this call.
     ast,
     [DendronASTTypes.TEXT],
     (node: Text, _index: number, parent: Parent | undefined) => {
@@ -387,6 +390,7 @@ const getLinkCandidatesSync = ({
 }) => {
   const textNodes: Text[] = [];
   visit(
+    // @ts-expect-error TS2769 - No overload matches this call.
     ast,
     [DendronASTTypes.TEXT],
     (node: Text, _index: number, parent: Parent | undefined) => {
@@ -1035,7 +1039,9 @@ export class AnchorUtils {
    */
   static headerText(header: Heading): string {
     const headerText: string[] = [];
+    // @ts-expect-error TS2345 - Argument of type 'Heading' is not assignable to parameter of type 'Node<Data>'.
     visit(header, (node) => {
+      // @ts-expect-error TS18046 - 'node' is of type 'unknown'.
       switch (node.type) {
         case DendronASTTypes.TEXT:
           headerText.push((node as Text).value);
@@ -1067,6 +1073,7 @@ export class AnchorUtils {
     let start: Point | undefined;
     let end: Point | undefined;
     visit(
+      // @ts-expect-error TS2769 - No overload matches this call.
       header,
       [
         DendronASTTypes.TEXT,
@@ -1260,6 +1267,7 @@ export class RemarkUtils {
     ];
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isHeading(node: Node, text: string, depth?: number): node is Heading {
     if (node.type !== DendronASTTypes.HEADING) {
       return false;
@@ -1289,74 +1297,92 @@ export class RemarkUtils {
     return _.isArray((node as Parent).children);
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isParagraph(node: Node): node is Paragraph {
     return node.type === DendronASTTypes.PARAGRAPH;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isTable(node: Node): node is Table {
     return node.type === DendronASTTypes.TABLE;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isTableRow(node: Node): node is TableRow {
     return node.type === DendronASTTypes.TABLE_ROW;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isTableCell(node: Node): node is TableCell {
     return node.type === DendronASTTypes.TABLE_CELL;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isList(node: Node): node is List {
     return node.type === DendronASTTypes.LIST;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isNoteRefV2(node: Node): node is NoteRefNoteV4 {
     return node.type === DendronASTTypes.REF_LINK_V2;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isImage(node: Node): node is Image {
     return node.type === DendronASTTypes.IMAGE;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isExtendedImage(node: Node): node is ExtendedImage {
     return node.type === DendronASTTypes.EXTENDED_IMAGE;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isText(node: Node): node is Text {
     return node.type === DendronASTTypes.TEXT;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isLink(node: Node): node is Link {
     return node.type === DendronASTTypes.LINK;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isWikiLink(node: Node): node is WikiLinkNoteV4 {
     return node.type === DendronASTTypes.WIKI_LINK;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isFootnoteDefinition(node: Node): node is FootnoteDefinition {
     return node.type === DendronASTTypes.FOOTNOTE_DEFINITION;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isFrontmatter(node: Node): node is FrontmatterContent {
     return node.type === DendronASTTypes.FRONTMATTER;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isHTML(node: Node): node is HTML {
     return node.type === DendronASTTypes.HTML;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isCode(node: Node): node is Code {
     return node.type === DendronASTTypes.CODE;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isYAML(node: Node): node is YAML {
     return node.type === DendronASTTypes.YAML;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isHashTag(node: Node): node is HashTag {
     return node.type === DendronASTTypes.HASHTAG;
   }
 
+  // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isUserTag(node: Node): node is UserTag {
     return node.type === DendronASTTypes.USERTAG;
   }
@@ -1377,8 +1403,10 @@ export class RemarkUtils {
     return function (this: Processor) {
       return (tree: Node, _vfile: VFile) => {
         const root = tree as DendronASTRoot;
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const wikiLinks: WikiLinkNoteV4[] = selectAll(
           DendronASTTypes.WIKI_LINK,
+          // @ts-expect-error TS2345 - Argument of type 'DendronASTRoot' is not assignable to parameter of type 'Node<Data>'.
           root
         ) as WikiLinkNoteV4[];
 
@@ -1429,8 +1457,10 @@ export class RemarkUtils {
     return function (this: Processor) {
       return async (tree: Node, _vfile: VFile) => {
         const root = tree as DendronASTRoot;
+        // @ts-expect-error TS2352 - Conversion of type 'Node<Data>[]' to type 'WikiLinkNoteV4[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const wikiLinks: WikiLinkNoteV4[] = selectAll(
           DendronASTTypes.WIKI_LINK,
+          // @ts-expect-error TS2345 - Argument of type 'DendronASTRoot' is not assignable to parameter of type 'Node<Data>'.
           root
         ) as WikiLinkNoteV4[];
         let dirty = false;
@@ -1654,10 +1684,12 @@ export class RemarkUtils {
       // Extract list items out of lists. We also extract them from nested lists,
       // because block anchors can't refer to nested lists, only items inside of them
       if (node.type === DendronASTTypes.LIST) {
+        // @ts-expect-error TS2769 - No overload matches this call.
         visit(node, [DendronASTTypes.LIST_ITEM], (listItem: ListItem) => {
           // The list item might have a block anchor inside of it.
           let anchor: DNoteAnchorPositioned | undefined;
           visit(
+            // @ts-expect-error TS2769 - No overload matches this call.
             listItem,
             [DendronASTTypes.BLOCK_ANCHOR, DendronASTTypes.LIST],
             (inListItem) => {
@@ -1673,6 +1705,7 @@ export class RemarkUtils {
           );
 
           blocks.push({
+            // @ts-expect-error TS2345 - Argument of type 'ListItem' is not assignable to parameter of type 'Node<Data>'.
             text: proc.stringify(listItem),
             anchor,
             // position can only be undefined for generated nodes, not for parsed ones
@@ -1711,6 +1744,7 @@ export class RemarkUtils {
   }
 
   static extractFootnoteDefs(root: Node): FootnoteDefinition[] {
+    // @ts-expect-error TS2322 - Type 'Node<Data>[]' is not assignable to type 'FootnoteDefinition[]'.
     return selectAll(DendronASTTypes.FOOTNOTE_DEFINITION, root).filter(
       RemarkUtils.isFootnoteDefinition
     );
@@ -1727,6 +1761,7 @@ export class RemarkUtils {
       {},
       { dest: DendronASTDest.MD_DENDRON }
     ).parse(body);
+    // @ts-expect-error TS2769 - No overload matches this call.
     visit(noteAST, [DendronASTTypes.FRONTMATTER], (frontmatter: YAML) => {
       parsed = parseFrontmatter(frontmatter);
       return false; // stop traversing, there is only one frontmatter

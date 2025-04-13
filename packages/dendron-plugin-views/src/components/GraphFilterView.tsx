@@ -46,10 +46,12 @@ const GraphFilterView = ({
   const [showView, setShowView] = useState(false);
   const { currentTheme } = useCurrentTheme();
 
+  // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
   if (!currentTheme) return <></>;
   const isVisible = showView && isGraphReady;
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Space
       direction="vertical"
       style={{
@@ -61,13 +63,18 @@ const GraphFilterView = ({
         minWidth: AntThemes[currentTheme].graph.filterView.minWidth,
       }}
     >
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Tooltip
         title={`${isVisible ? "Hide" : "Show"} Graph Configuration`}
         placement="right"
       >
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Button
           type="primary"
           shape="circle"
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           icon={isVisible ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
           onClick={() => setShowView((v) => !v)}
           style={{
@@ -76,41 +83,63 @@ const GraphFilterView = ({
           }}
         />
       </Tooltip>
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Collapse
         style={{
           background: AntThemes[currentTheme].graph.filterView.background,
           display: isVisible ? "block" : "none",
         }}
       >
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Panel header="Vaults" key="vaults">
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <FilterViewSection
             section="vaults"
             config={config}
             updateConfigField={updateConfigField}
           />
         </Panel>
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Panel header="Connections" key="connections">
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <FilterViewSection
             section="connections"
             config={config}
             updateConfigField={updateConfigField}
           />
         </Panel>
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Panel header="Filter" key="filter">
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <FilterViewSection
             section="filter"
             config={config}
             updateConfigField={updateConfigField}
           />
         </Panel>
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Panel header="Options" key="options">
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <FilterViewSection
             section="options"
             config={config}
             updateConfigField={updateConfigField}
           />
         </Panel>
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Panel header="Information" key="information">
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <FilterViewSection
             section="information"
             config={config}
@@ -118,7 +147,10 @@ const GraphFilterView = ({
           />
         </Panel>
         {type === "note" && (
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <Panel header="Graph Theme" key="graphTheme">
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <FilterViewSection
               section="graphTheme"
               config={config}
@@ -165,14 +197,21 @@ const FilterViewStringInput = ({
   };
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Space direction="vertical" style={{ margin: "0.5rem 0rem" }}>
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Typography>{label}</Typography>
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Input
         defaultValue={entry.value}
+        // @ts-expect-error TS2339 - Property 'value' does not exist on type 'EventTarget & HTMLInputElement'.
         onChange={(newValue) => handleChange(newValue.target.value)}
         disabled={!entry.mutable}
         placeholder={entry.placeholder || ""}
         suffix={
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <Spin
             size="small"
             style={{
@@ -201,6 +240,7 @@ const FilterViewSection = ({
   customCSS?: string;
 }) => {
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Space direction="vertical" style={{ width: "100%" }}>
       {Object.entries(config)
         .filter(([key]) => key.includes(section))
@@ -214,17 +254,23 @@ const FilterViewSection = ({
               .join(" ")}`;
 
           return (
+            // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
             <Space
               direction="horizontal"
               style={{ justifyContent: "space-between", width: "100%" }}
               key={key}
             >
               {_.isString(entry.value) && entry.singleSelect && (
+                // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                 <>
+                  {/*
+                   // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                   <RadioButton
                     value={entry.value as GraphThemeEnum}
                     customCSS={customCSS}
                   />
+                  {/*
+                   // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                   <Button
                     type="primary"
                     size="small"
@@ -238,8 +284,13 @@ const FilterViewSection = ({
                 </>
               )}
               {_.isBoolean(entry?.value) && (
+                // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                 <>
+                  {/*
+                   // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                   <Typography>{label}</Typography>
+                  {/*
+                   // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                   <Switch
                     checked={entry?.value}
                     onChange={(newValue) => updateConfigField(key, newValue)}
@@ -249,8 +300,13 @@ const FilterViewSection = ({
               )}
               {entry.label === config["filter.depth"].label &&
                 config["options.show-local-graph"]?.value && (
+                  // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                   <>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <Typography>{label}</Typography>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <InputNumber
                       min={1}
                       max={3}
@@ -265,8 +321,13 @@ const FilterViewSection = ({
                 )}
               {_.isNumber(entry?.value) &&
                 entry.label !== config["filter.depth"].label && (
+                  // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                   <>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <Typography>{label}</Typography>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <InputNumber
                       value={entry?.value}
                       onChange={(newValue) => updateConfigField(key, newValue!)}
@@ -278,7 +339,10 @@ const FilterViewSection = ({
                 !_.isUndefined(entry) &&
                 !_.isUndefined(key) &&
                 !entry.singleSelect && (
+                  // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                   <>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <FilterViewStringInput
                       fieldKey={key}
                       label={label}
@@ -312,6 +376,7 @@ const RadioButton = ({
   }
   const ideDispatch = ideHooks.useIDEAppDispatch();
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <Radio.Group
       onChange={(e) => {
         updateGraphTheme(e.target.value);
@@ -319,8 +384,11 @@ const RadioButton = ({
       }}
       value={value}
     >
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Space direction="vertical">
         {singleSelectOptions.map((option) => (
+          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <Radio key={option} value={option}>
             {option}
           </Radio>

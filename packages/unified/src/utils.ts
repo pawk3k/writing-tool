@@ -87,10 +87,12 @@ export class MdastUtils {
     const cSlugger = slugger ?? getSlugger();
     const cMatchText = _.isString(match)
       ? match
+      // @ts-expect-error TS2345 - Argument of type 'Heading' is not assignable to parameter of type 'Node<Data> | Node<Data>[]'.
       : normalizev2(toString(match), getSlugger());
     let foundNode: Node | undefined;
 
     const foundIndex = MdastUtils.findIndex(
+      // @ts-expect-error TS2345 - Argument of type 'RootContent[] | (RootContent[] & DendronASTNode[])' is not assignable to parameter of type 'Node<Data>[]'.
       nodes,
       (node: Node, idx: number) => {
         if (idx === 0 && match === "*") {

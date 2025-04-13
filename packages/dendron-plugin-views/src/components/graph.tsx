@@ -488,6 +488,7 @@ const makePopperWithTippy = (
   const ref = node.popperRef(); // used only for positioning
 
   //A dummy element must be passed as tippy only accepts dom element(s) as the target
+  // @ts-expect-error TS2584 - Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
   const dummyDomEle = document.createElement("div");
 
   const tooltip = tippy(dummyDomEle, {
@@ -500,6 +501,7 @@ const makePopperWithTippy = (
      * content prop can be used when the target is a single element
      */
     content: () => {
+      // @ts-expect-error TS2584 - Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
       const content = document.createElement("div");
       const nodeData = node.data();
       const fname = nodeData["fname"];

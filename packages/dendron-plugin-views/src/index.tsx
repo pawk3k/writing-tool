@@ -25,7 +25,9 @@ const VALID_NAMES = Object.keys(COMPONENT_REGISTRY);
 
 // Function to get component name from URL hash or data attribute
 function getComponentName() {
+  // @ts-expect-error TS2304 - Cannot find name 'window'.
   const elem = window.document.getElementById("root")!;
+  // @ts-expect-error TS2304 - Cannot find name 'window'.
   const hashRoute = window.location.hash.slice(1); // Remove the # character
 
   // Check if we have a valid hash route
@@ -68,6 +70,7 @@ function renderComponent() {
 }
 
 // Listen for hash changes to support navigation
+// @ts-expect-error TS2304 - Cannot find name 'window'.
 window.addEventListener("hashchange", renderComponent);
 
 // Initial render

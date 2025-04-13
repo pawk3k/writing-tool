@@ -16,6 +16,7 @@ export const postVSCodeMessage = (msg: DMessage) => {
 };
 
 export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
+  // @ts-expect-error TS2315 - Type 'MessageEvent' is not generic.
   const listener = React.useCallback((msg: MessageEvent<DMessage>) => {
     const payload = msg.data || {}; // The JSON data our extension sent
     if (payload.source === "vscode") {
@@ -25,6 +26,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
   }, []);
   React.useEffect(() => {
     // set listener for all messages
+    // @ts-expect-error TS2304 - Cannot find name 'window'.
     window.addEventListener("message", listener);
 
     postVSCodeMessage({
@@ -34,6 +36,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
     });
 
     return () => {
+      // @ts-expect-error TS2304 - Cannot find name 'window'.
       window.removeEventListener("message", listener);
     };
   }, [listener]);

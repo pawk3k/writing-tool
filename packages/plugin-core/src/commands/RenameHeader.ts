@@ -81,6 +81,7 @@ export class RenameHeaderCommand extends BasicCommand<
       );
       const parsedLine = proc.parse(line);
       let header: Heading | undefined;
+      // @ts-expect-error TS2769 - No overload matches this call.
       visit(parsedLine, [DendronASTTypes.HEADING], (heading: Heading) => {
         header = heading;
         return false; // There can only be one header in a line
@@ -147,6 +148,7 @@ export class RenameHeaderCommand extends BasicCommand<
       { dest: DendronASTDest.MD_DENDRON }
     );
     const parsed = proc.parse(`## ${newHeader}`);
+    // @ts-expect-error TS2769 - No overload matches this call.
     visit(parsed, [DendronASTTypes.HEADING], (node: Heading) => {
       newAnchorHeader = AnchorUtils.headerText(node);
     });

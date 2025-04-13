@@ -29,16 +29,29 @@ const SeedBrowser: DendronComponent = (props) => {
   const { Content } = Layout;
 
   return (
+    // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
     <>
+      {/*
+       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
       <Layout className={seedStyles.layout}>
+        {/*
+         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
         <Content style={{ padding: "0 50px" }}>
+          {/*
+           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
           <div className={seedStyles.contentDiv}>
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <PageHeader
               className={seedStyles.siteHeader}
               title="Dendron Seed Registry"
               subTitle="Add Knowledge Bases to your Workspace"
             />
+            {/*
+             // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
             <div className={seedStyles.listDiv}>
+              {/*
+               // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
               <List
                 grid={{
                   gutter: 24,
@@ -51,15 +64,21 @@ const SeedBrowser: DendronComponent = (props) => {
                 }}
                 dataSource={seedDataToRender}
                 renderItem={(item) => (
+                  // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                   <List.Item>
+                    {/*
+                     // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                     <Card
                       className={seedStyles.card}
                       hoverable
                       actions={[
+                        // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                         <GoToSiteButton
                           url={item!.site ? item!.site.url : undefined}
                           inVscode={!browser}
                         />,
+                        {/*
+                         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                         <AddToWorkspaceButton
                           seedId={item?.id!}
                           existsInWorkspace={
@@ -68,9 +87,12 @@ const SeedBrowser: DendronComponent = (props) => {
                         />,
                       ]}
                     >
+                      {/*
+                       // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
                       <Meta
                         className={seedStyles.cardMeta}
                         avatar={
+                          // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                           <Avatar
                             src={
                               item?.assets
