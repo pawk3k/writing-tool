@@ -218,6 +218,7 @@ export class NextjsExportPodUtils {
       out = await $$(cmd, { cwd: nextPath });
     } else {
       out = $$(cmd, { cwd: nextPath });
+      // @ts-expect-error error
       out.stdout?.pipe(process.stdout);
     }
     return out;
@@ -231,6 +232,7 @@ export class NextjsExportPodUtils {
     const { nextPath, quiet, windowsHide } = opts;
     const cmdDev = quiet ? "npm run --silent dev" : "npm run dev";
     const out = $$(cmdDev, { cwd: nextPath, windowsHide });
+    // @ts-expect-error error
     out.stdout?.pipe(process.stdout);
     return out.pid;
   }
