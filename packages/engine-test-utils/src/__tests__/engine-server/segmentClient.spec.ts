@@ -21,132 +21,145 @@ describe("SegmentClient", () => {
     sinon.restore();
   });
 
-  test("enabled by default", (done) => {
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+  test("enabled by default", () =>
+    new Promise<void>((done) => {
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    done();
-  });
+      done();
+    }));
 
-  test("enabled by command", (done) => {
-    SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
+  test("enabled by command", () =>
+    new Promise<void>((done) => {
+      SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    done();
-  });
+      done();
+    }));
 
-  test("enabled by config", (done) => {
-    SegmentClient.enable(TelemetryStatus.ENABLED_BY_CONFIG);
+  test("enabled by config", () =>
+    new Promise<void>((done) => {
+      SegmentClient.enable(TelemetryStatus.ENABLED_BY_CONFIG);
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    done();
-  });
+      done();
+    }));
 
-  test("disabled by command", (done) => {
-    SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
+  test("disabled by command", () =>
+    new Promise<void>((done) => {
+      SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    done();
-  });
+      done();
+    }));
 
-  test("disabled by vscode config", (done) => {
-    SegmentClient.disable(TelemetryStatus.DISABLED_BY_VSCODE_CONFIG);
+  test("disabled by vscode config", () =>
+    new Promise<void>((done) => {
+      SegmentClient.disable(TelemetryStatus.DISABLED_BY_VSCODE_CONFIG);
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    done();
-  });
+      done();
+    }));
 
-  test("disabled by workspace config", (done) => {
-    SegmentClient.disable(TelemetryStatus.DISABLED_BY_WS_CONFIG);
+  test("disabled by workspace config", () =>
+    new Promise<void>((done) => {
+      SegmentClient.disable(TelemetryStatus.DISABLED_BY_WS_CONFIG);
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    done();
-  });
+      done();
+    }));
 
-  test("still recognizes legacy disable", (done) => {
-    const disablePath = SegmentClient.getDisableConfigPath();
-    writeFileSync(disablePath, "");
+  test("still recognizes legacy disable", () =>
+    new Promise<void>((done) => {
+      const disablePath = SegmentClient.getDisableConfigPath();
+      writeFileSync(disablePath, "");
 
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    done();
-  });
+      done();
+    }));
 
-  test("enable command overrides legacy disable", (done) => {
-    const disablePath = SegmentClient.getDisableConfigPath();
-    writeFileSync(disablePath, "");
+  test("enable command overrides legacy disable", () =>
+    new Promise<void>((done) => {
+      const disablePath = SegmentClient.getDisableConfigPath();
+      writeFileSync(disablePath, "");
 
-    SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
-    const instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+      SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
+      const instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    done();
-  });
+      done();
+    }));
 
-  test("disabled then enabled with command", (done) => {
-    SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
+  test("disabled then enabled with command", () =>
+    new Promise<void>((done) => {
+      SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
 
-    let instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      let instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
+      SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
 
-    instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+      instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    done();
-  });
+      done();
+    }));
 
-  test("enabled then disabled with command", (done) => {
-    SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
+  test("enabled then disabled with command", () =>
+    new Promise<void>((done) => {
+      SegmentClient.enable(TelemetryStatus.ENABLED_BY_COMMAND);
 
-    let instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(false);
+      let instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(false);
 
-    SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
+      SegmentClient.disable(TelemetryStatus.DISABLED_BY_COMMAND);
 
-    instance = SegmentClient.instance({ forceNew: true });
-    expect(instance.hasOptedOut).toEqual(true);
+      instance = SegmentClient.instance({ forceNew: true });
+      expect(instance.hasOptedOut).toEqual(true);
 
-    done();
-  });
+      done();
+    }));
 
   describe("WHEN: Enabled by CLI command", () => {
-    test("THEN: recognized as enabled", (done) => {
-      SegmentClient.enable(TelemetryStatus.ENABLED_BY_CLI_COMMAND);
-      const instance = SegmentClient.instance({ forceNew: true });
-      expect(instance.hasOptedOut).toBeFalsy();
-      done();
-    });
+    test("THEN: recognized as enabled", () =>
+      new Promise<void>((done) => {
+        SegmentClient.enable(TelemetryStatus.ENABLED_BY_CLI_COMMAND);
+        const instance = SegmentClient.instance({ forceNew: true });
+        expect(instance.hasOptedOut).toBeFalsy();
+        done();
+      }));
   });
 
   describe("WHEN: Disabled by CLI command", () => {
-    test("THEN: recognized as disabled", (done) => {
-      SegmentClient.disable(TelemetryStatus.DISABLED_BY_CLI_COMMAND);
-      const instance = SegmentClient.instance({ forceNew: true });
-      expect(instance.hasOptedOut).toBeTruthy();
-      done();
-    });
+    test("THEN: recognized as disabled", () =>
+      new Promise<void>((done) => {
+        SegmentClient.disable(TelemetryStatus.DISABLED_BY_CLI_COMMAND);
+        const instance = SegmentClient.instance({ forceNew: true });
+        expect(instance.hasOptedOut).toBeTruthy();
+        done();
+      }));
   });
 
   describe("WHEN: Enabled by CLI as default", () => {
-    test("THEN: recognized as enabled", (done) => {
-      SegmentClient.enable(TelemetryStatus.ENABLED_BY_CLI_DEFAULT);
-      const instance = SegmentClient.instance({ forceNew: true });
-      expect(instance.hasOptedOut).toBeFalsy();
-      done();
-    });
+    test("THEN: recognized as enabled", () =>
+      new Promise<void>((done) => {
+        SegmentClient.enable(TelemetryStatus.ENABLED_BY_CLI_DEFAULT);
+        const instance = SegmentClient.instance({ forceNew: true });
+        expect(instance.hasOptedOut).toBeFalsy();
+        done();
+      }));
   });
 });
 
@@ -222,10 +235,11 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN residual cache should be empty", (done) => {
-      expect(fs.pathExistsSync(filepath)).toBeFalsy();
-      done();
-    });
+    test("THEN residual cache should be empty", () =>
+      new Promise<void>((done) => {
+        expect(fs.pathExistsSync(filepath)).toBeFalsy();
+        done();
+      }));
   });
 
   describe("WHEN we track an event but we cannot connect to Segment backend", () => {
@@ -244,11 +258,12 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN residual cache should be non-empty", (done) => {
-      const fileContents = fs.readFileSync(filepath, "utf-8");
-      expect(fileContents).toMatchSnapshot();
-      done();
-    });
+    test("THEN residual cache should be non-empty", () =>
+      new Promise<void>((done) => {
+        const fileContents = fs.readFileSync(filepath, "utf-8");
+        expect(fileContents).toMatchSnapshot();
+        done();
+      }));
   });
 
   describe("WHEN a valid payload exists and we try to flush it while we can connect to Segment backend", () => {
@@ -265,18 +280,20 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN data should be sent", (done) => {
-      expect(results.successCount).toEqual(1);
-      expect(results.nonRetryableErrorCount).toEqual(0);
-      expect(results.retryableErrorCount).toEqual(0);
-      done();
-    });
+    test("THEN data should be sent", () =>
+      new Promise<void>((done) => {
+        expect(results.successCount).toEqual(1);
+        expect(results.nonRetryableErrorCount).toEqual(0);
+        expect(results.retryableErrorCount).toEqual(0);
+        done();
+      }));
 
-    test("AND the file should be empty afterward", (done) => {
-      const fileContents = fs.readFileSync(filepath, "utf-8");
-      expect(fileContents).toEqual("");
-      done();
-    });
+    test("AND the file should be empty afterward", () =>
+      new Promise<void>((done) => {
+        const fileContents = fs.readFileSync(filepath, "utf-8");
+        expect(fileContents).toEqual("");
+        done();
+      }));
   });
 
   describe("WHEN a valid payload exists and we try to flush it but we cannot connect to Segment backend", () => {
@@ -293,19 +310,21 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN data should not be sent", (done) => {
-      expect(results.successCount).toEqual(0);
-      expect(results.nonRetryableErrorCount).toEqual(0);
-      expect(results.retryableErrorCount).toEqual(1);
-      done();
-    });
+    test("THEN data should not be sent", () =>
+      new Promise<void>((done) => {
+        expect(results.successCount).toEqual(0);
+        expect(results.nonRetryableErrorCount).toEqual(0);
+        expect(results.retryableErrorCount).toEqual(1);
+        done();
+      }));
 
-    test("AND the file should keep the payload contents (for a later retry)", (done) => {
-      const fileContents = fs.readFileSync(filepath, "utf-8");
-      expect(fileContents).toMatchSnapshot();
+    test("AND the file should keep the payload contents (for a later retry)", () =>
+      new Promise<void>((done) => {
+        const fileContents = fs.readFileSync(filepath, "utf-8");
+        expect(fileContents).toMatchSnapshot();
 
-      done();
-    });
+        done();
+      }));
   });
 
   describe("WHEN an unparsable payload exists and we try to flush it", () => {
@@ -326,18 +345,20 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN data should not be sent", (done) => {
-      expect(results.successCount).toEqual(0);
-      expect(results.nonRetryableErrorCount).toEqual(1);
-      expect(results.retryableErrorCount).toEqual(0);
-      done();
-    });
+    test("THEN data should not be sent", () =>
+      new Promise<void>((done) => {
+        expect(results.successCount).toEqual(0);
+        expect(results.nonRetryableErrorCount).toEqual(1);
+        expect(results.retryableErrorCount).toEqual(0);
+        done();
+      }));
 
-    test("AND the file should still be empty afterward (not worth retrying unparsable data)", (done) => {
-      const fileContents = fs.readFileSync(filepath, "utf-8");
-      expect(fileContents).toEqual("");
-      done();
-    });
+    test("AND the file should still be empty afterward (not worth retrying unparsable data)", () =>
+      new Promise<void>((done) => {
+        const fileContents = fs.readFileSync(filepath, "utf-8");
+        expect(fileContents).toEqual("");
+        done();
+      }));
   });
 
   describe("WHEN a valid payload exists and we try to flush it, some data can get sent but some doesn't (flaky connection)", () => {
@@ -361,35 +382,39 @@ describe("GIVEN a SegmentClient", () => {
       }
     });
 
-    test("THEN some data should be sent", (done) => {
-      expect(results.successCount).toEqual(1);
-      expect(results.nonRetryableErrorCount).toEqual(1);
-      expect(results.retryableErrorCount).toEqual(1);
-      done();
-    });
+    test("THEN some data should be sent", () =>
+      new Promise<void>((done) => {
+        expect(results.successCount).toEqual(1);
+        expect(results.nonRetryableErrorCount).toEqual(1);
+        expect(results.retryableErrorCount).toEqual(1);
+        done();
+      }));
 
-    test("AND the file should keep the payload contents of ONLY data that was not sent", (done) => {
-      const fileContents = fs.readFileSync(filepath, "utf-8");
-      expect(fileContents).toMatchSnapshot();
-      done();
-    });
+    test("AND the file should keep the payload contents of ONLY data that was not sent", () =>
+      new Promise<void>((done) => {
+        const fileContents = fs.readFileSync(filepath, "utf-8");
+        expect(fileContents).toMatchSnapshot();
+        done();
+      }));
   });
 });
 
 describe("Instantiation safeguard", () => {
   describe("WHEN SegmentClient is locked", () => {
-    test("THEN SegmentClient.instance() throws", (done) => {
-      expect(SegmentClient.instance).toThrow();
-      done();
-    });
+    test("THEN SegmentClient.instance() throws", () =>
+      new Promise<void>((done) => {
+        expect(SegmentClient.instance).toThrow();
+        done();
+      }));
   });
 
   describe("WHEN SegmentClient is unlocked", () => {
-    test("THEN SegmentClient.instance() is accessible", (done) => {
-      SegmentClient.unlock();
-      const out = SegmentClient.instance();
-      expect(out instanceof SegmentClient).toBeTruthy();
-      done();
-    });
+    test("THEN SegmentClient.instance() is accessible", () =>
+      new Promise<void>((done) => {
+        SegmentClient.unlock();
+        const out = SegmentClient.instance();
+        expect(out instanceof SegmentClient).toBeTruthy();
+        done();
+      }));
   });
 });

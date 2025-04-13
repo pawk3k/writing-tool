@@ -23,31 +23,36 @@ describe.skip("connector", () => {
     );
   }, 9000);
 
-  test("basic: wait for init", async (done) => {
-    let connector: EngineConnector;
-    await runEngineTestV5(
-      async () => {
-        connector.init({
-          onReady: async () => {
-            const engineNotes = await connector.engine.findNotesMeta({
-              excludeStub: false,
+  test(
+    "basic: wait for init",
+    () =>
+      new Promise<void>(async (done) => {
+        let connector: EngineConnector;
+        await runEngineTestV5(
+          async () => {
+            connector.init({
+              onReady: async () => {
+                const engineNotes = await connector.engine.findNotesMeta({
+                  excludeStub: false,
+                });
+                expect(engineNotes.length).toEqual(5);
+                done();
+              },
             });
-            expect(engineNotes.length).toEqual(5);
-            done();
           },
-        });
-      },
-      {
-        expect,
-        createEngine: createEngineFromServer,
-        preSetupHook: async (opts) => {
-          connector = EngineConnector.getOrCreate({
-            wsRoot: opts.wsRoot,
-            force: true,
-          });
-          await ENGINE_HOOKS.setupBasic(opts);
-        },
-      }
-    );
-  }, 9000);
+          {
+            expect,
+            createEngine: createEngineFromServer,
+            preSetupHook: async (opts) => {
+              connector = EngineConnector.getOrCreate({
+                wsRoot: opts.wsRoot,
+                force: true,
+              });
+              await ENGINE_HOOKS.setupBasic(opts);
+            },
+          }
+        );
+      }),
+    9000
+  );
 });

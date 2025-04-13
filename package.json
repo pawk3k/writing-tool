@@ -46,9 +46,11 @@
     "ts-morph": "^25.0.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
+    "vitest": "^3.1.1",
     "vscode-test": "^1.6.1"
   },
   "scripts": {
+    "test": "vitest",
     "build:clean": "tsc --build --clean",
     "typecheck": "tsc --build packages/plugin-core",
     "build:extension": "yarn workspace dendron run vscode:prepublish",

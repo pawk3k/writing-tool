@@ -6,7 +6,7 @@ const createEngine = createEngineFromServer;
 describe("GIVEN setupEngine", () => {
   jest.setTimeout(15000);
   describe("WHEN --attach option", () => {
-    test("THEN attach to running engine", (done) => {
+    test("THEN attach to running engine",  () => new Promise<void>(done => {
       runEngineTestV5(
         async ({ wsRoot, port }) => {
           const resp = await setupEngine({
@@ -25,6 +25,6 @@ describe("GIVEN setupEngine", () => {
           createEngine,
         }
       );
-    });
+    }));
   });
 });

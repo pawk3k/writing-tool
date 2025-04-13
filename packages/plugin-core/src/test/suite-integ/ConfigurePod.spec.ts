@@ -24,56 +24,58 @@ suite("ConfigurePod", function () {
     },
   });
 
-  test("no config", (done) => {
-    runLegacyMultiWorkspaceTest({
-      ctx,
-      preSetupHook: ENGINE_HOOKS.setupBasic,
-      onInit: async () => {
-        const cmd = new ConfigurePodCommand(ExtensionProvider.getExtension());
-        const podChoice = podClassEntryToPodItemV4(JSONExportPod);
-        cmd.gatherInputs = async () => {
-          return { podClass: podChoice.podClass };
-        };
-        await cmd.run();
-        const activePath =
-          VSCodeUtils.getActiveTextEditor()?.document.uri.fsPath;
-        expect(
-          activePath?.endsWith("pods/dendron.json/config.export.yml")
-        ).toBeTruthy();
-        done();
-      },
-    });
-  });
+  test("no config", () =>
+    new Promise<void>((done) => {
+      runLegacyMultiWorkspaceTest({
+        ctx,
+        preSetupHook: ENGINE_HOOKS.setupBasic,
+        onInit: async () => {
+          const cmd = new ConfigurePodCommand(ExtensionProvider.getExtension());
+          const podChoice = podClassEntryToPodItemV4(JSONExportPod);
+          cmd.gatherInputs = async () => {
+            return { podClass: podChoice.podClass };
+          };
+          await cmd.run();
+          const activePath =
+            VSCodeUtils.getActiveTextEditor()?.document.uri.fsPath;
+          expect(
+            activePath?.endsWith("pods/dendron.json/config.export.yml")
+          ).toBeTruthy();
+          done();
+        },
+      });
+    }));
 
-  test("config present", (done) => {
-    runLegacyMultiWorkspaceTest({
-      ctx,
-      preSetupHook: ENGINE_HOOKS.setupBasic,
-      onInit: async () => {
-        const cmd = new ConfigurePodCommand(ExtensionProvider.getExtension());
-        const podChoice = podClassEntryToPodItemV4(JSONExportPod);
-        const podClass = podChoice.podClass;
-        cmd.gatherInputs = async () => {
-          return { podClass };
-        };
+  test("config present", () =>
+    new Promise<void>((done) => {
+      runLegacyMultiWorkspaceTest({
+        ctx,
+        preSetupHook: ENGINE_HOOKS.setupBasic,
+        onInit: async () => {
+          const cmd = new ConfigurePodCommand(ExtensionProvider.getExtension());
+          const podChoice = podClassEntryToPodItemV4(JSONExportPod);
+          const podClass = podChoice.podClass;
+          cmd.gatherInputs = async () => {
+            return { podClass };
+          };
 
-        // setup
-        const configPath = PodUtils.getConfigPath({ podsDir, podClass });
-        const exportDest = path.join(
-          PodUtils.getPath({ podsDir, podClass }),
-          "export.json"
-        );
-        ensureDirSync(path.dirname(configPath));
+          // setup
+          const configPath = PodUtils.getConfigPath({ podsDir, podClass });
+          const exportDest = path.join(
+            PodUtils.getPath({ podsDir, podClass }),
+            "export.json"
+          );
+          ensureDirSync(path.dirname(configPath));
 
-        writeYAML(configPath, { dest: exportDest });
-        await cmd.run();
-        const activePath =
-          VSCodeUtils.getActiveTextEditor()?.document.uri.fsPath;
-        expect(
-          activePath?.endsWith("pods/dendron.json/config.export.yml")
-        ).toBeTruthy();
-        done();
-      },
-    });
-  });
+          writeYAML(configPath, { dest: exportDest });
+          await cmd.run();
+          const activePath =
+            VSCodeUtils.getActiveTextEditor()?.document.uri.fsPath;
+          expect(
+            activePath?.endsWith("pods/dendron.json/config.export.yml")
+          ).toBeTruthy();
+          done();
+        },
+      });
+    }));
 });
