@@ -1,6 +1,6 @@
 import _ from "lodash";
-import ora from "ora";
 import { DENDRON_EMOJIS } from "@dendronhq/common-all";
+import ora from "ora";
 
 export class CLIUtils {
   /**
@@ -39,15 +39,17 @@ export class SpinnerUtils {
    * @param opts
    */
   static renderAndContinue(opts: {
-    spinner: ora.Ora;
+    spinner: typeof ora;
     text?: string;
     symbol?: string;
   }) {
     const { spinner, text, symbol } = opts;
+    // @ts-expect-error TS2339 - Property 'stopAndPersist' does not exist on type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
     spinner.stopAndPersist({
       text: text || undefined,
       symbol: symbol || DENDRON_EMOJIS.SEEDLING,
     });
+    // @ts-expect-error TS2339 - Property 'start' does not exist on type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
     spinner.start();
   }
 }

@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@dendronhq/engine-server": "workspace:*",
+    "ora": "5.4.1",
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "@types/node": "13.11.0",
     "@types/yargs": "^15.0.5",
     "rimraf": "^3.0.2"
   },

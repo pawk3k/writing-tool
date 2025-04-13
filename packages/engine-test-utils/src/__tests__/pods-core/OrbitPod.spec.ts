@@ -4,12 +4,10 @@ import { VaultUtils, MergeConflictOptions } from "@dendronhq/common-all";
 import { OrbitImportPod } from "@dendronhq/pods-core";
 import { ENGINE_HOOKS } from "../../presets";
 
-jest.mock("axios");
+vi.mock("axios");
 
 const utilityMethods = {
-  handleConflict: jest
-    .fn()
-    .mockReturnValue(MergeConflictOptions.OVERWRITE_LOCAL),
+  handleConflict: vi.fn().mockReturnValue(MergeConflictOptions.OVERWRITE_LOCAL),
 };
 
 describe("Given Orbit Import Pod", () => {
@@ -55,8 +53,8 @@ describe("Given Orbit Import Pod", () => {
         async ({ engine, vaults, wsRoot }) => {
           const pod = new OrbitImportPod();
           const vaultName = VaultUtils.getName(vaults[0]);
-          const mockedAxios = axios as jest.Mocked<typeof axios>;
-          mockedAxios.get.mockResolvedValue(response);
+          const mockedAxios = vi.mocked(axios.get);
+          mockedAxios.mockResolvedValue(response);
           const { importedNotes } = await pod.execute({
             engine,
             vaults,
@@ -85,8 +83,8 @@ describe("Given Orbit Import Pod", () => {
         async ({ engine, vaults, wsRoot }) => {
           const pod = new OrbitImportPod();
           const vaultName = VaultUtils.getName(vaults[0]);
-          const mockedAxios = axios as jest.Mocked<typeof axios>;
-          mockedAxios.get.mockResolvedValue(response);
+          const mockedAxios = vi.mocked(axios.get);
+          mockedAxios.mockResolvedValue(response);
           const { importedNotes } = await pod.execute({
             engine,
             vaults,
@@ -115,8 +113,8 @@ describe("Given Orbit Import Pod", () => {
         async ({ engine, vaults, wsRoot }) => {
           const pod = new OrbitImportPod();
           const vaultName = VaultUtils.getName(vaults[0]);
-          const mockedAxios = axios as jest.Mocked<typeof axios>;
-          mockedAxios.get.mockResolvedValue(response);
+          const mockedAxios = vi.mocked(axios.get);
+          mockedAxios.mockResolvedValue(response);
           const { importedNotes } = await pod.execute({
             engine,
             vaults,
@@ -158,8 +156,8 @@ describe("Given Orbit Import Pod", () => {
               email: "fooxyz@gmail.com",
             },
           });
-          const mockedAxios = axios as jest.Mocked<typeof axios>;
-          mockedAxios.get.mockResolvedValue(response);
+          const mockedAxios = vi.mocked(axios.get);
+          mockedAxios.mockResolvedValue(response);
           const { importedNotes } = await pod.execute({
             engine,
             vaults,
@@ -187,7 +185,7 @@ describe("Given Orbit Import Pod", () => {
           async ({ engine, vaults, wsRoot }) => {
             const pod = new OrbitImportPod();
             const vaultName = VaultUtils.getName(vaults[0]);
-            const mockedAxios = axios as jest.Mocked<typeof axios>;
+            const mockedAxios = vi.mocked(axios.get);
             response.data.data.push({
               attributes: {
                 name: null,
@@ -200,7 +198,7 @@ describe("Given Orbit Import Pod", () => {
                 website: null,
               },
             });
-            mockedAxios.get.mockResolvedValue(response);
+            mockedAxios.mockResolvedValue(response);
             const { importedNotes } = await pod.execute({
               engine,
               vaults,

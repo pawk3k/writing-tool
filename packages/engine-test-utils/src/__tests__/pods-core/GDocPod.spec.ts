@@ -7,7 +7,7 @@ import axios from "axios";
 import sinon from "sinon";
 import { window } from "../../__mocks__/vscode";
 
-jest.mock("axios");
+vi.mock("axios");
 
 const stubWindow = (resp: any) => {
   sinon.stub(window, "showInformationMessage").resolves(resp);
@@ -47,10 +47,10 @@ describe("GDoc import pod", () => {
         const pod = new GDocImportPod();
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         PodUtils.downloadImage = vi.fn().mockReturnValue(`${text}`);
         result = response;
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
           vaults,
@@ -90,9 +90,9 @@ describe("GDoc import pod", () => {
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         pod.getDataFromGDoc = vi.fn().mockReturnValue(response);
         PodUtils.downloadImage = vi.fn();
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = comments;
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
           vaults,
@@ -135,9 +135,9 @@ describe("GDoc import pod", () => {
         };
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         pod.getDataFromGDoc = vi.fn().mockReturnValue(response);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = comments;
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
           vaults,
@@ -170,10 +170,10 @@ describe("GDoc import pod", () => {
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = response;
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
           vaults,
@@ -202,11 +202,11 @@ describe("GDoc import pod", () => {
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = response;
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         await pod.execute({
           engine,
           vaults,
@@ -239,12 +239,12 @@ describe("GDoc import pod", () => {
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = response;
         existingNote.custom.revisionId = "jslkdhsal";
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         stubWindow(undefined);
         const { importedNotes } = await pod.execute({
           engine,
@@ -274,12 +274,12 @@ describe("GDoc import pod", () => {
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxios = vi.mocked(axios.get);
         result = response;
         existingNote.custom.revisionId = "jslkdhsa";
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxios.mockResolvedValue(result);
         const resp = {
           title: "Yes",
         };
@@ -312,14 +312,14 @@ describe("GDoc import pod", () => {
     await runEngineTestV5(
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
-        PodUtils.downloadImage = jest
+        PodUtils.downloadImage = vitest
           .fn()
           .mockReturnValue(`${text}![image](assets/image.png)`);
         pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         const vaultName = VaultUtils.getName(vaults[0]);
-        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        const mockedAxiosGet = vi.mocked(axios.get);
         result = response;
-        mockedAxios.get.mockResolvedValue(result);
+        mockedAxiosGet.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
           vaults,

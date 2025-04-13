@@ -345,7 +345,7 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       await runEngineTestV5(
         async ({ engine, vaults, wsRoot }) => {
           const vaultName = VaultUtils.getName(vaults[0]);
-          pod.createDiscussion = jest
+          pod.createDiscussion = vi
             .fn()
             .mockReturnValue("https://github.com/foo");
           issue.custom.category = "Ideas";
@@ -390,7 +390,7 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       await runEngineTestV5(
         async ({ engine, vaults, wsRoot }) => {
           const vaultName = VaultUtils.getName(vaults[0]);
-          pod.createDiscussion = jest
+          pod.createDiscussion = vi
             .fn()
             .mockReturnValue("https://github.com/foo");
           issue.custom.category = "abcd";

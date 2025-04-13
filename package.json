@@ -36,7 +36,6 @@
     "lint-staged": ">=10",
     "lodash": "^4.17.15",
     "luxon": "^1.25.0",
-    "madge": "^5.0.1",
     "minimatch": "5.1.0",
     "neverthrow": "^5.0.0",
     "prettier": "^2.0.4",

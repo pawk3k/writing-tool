@@ -192,6 +192,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
           }
           if (opts.noBuild) {
             SpinnerUtils.renderAndContinue({
+              // @ts-expect-error TS2741 - Property 'promise' is missing in type 'Ora' but required in type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
               spinner,
               text: "skipping build...",
             });
@@ -210,6 +211,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
           }
           if (opts.noBuild) {
             SpinnerUtils.renderAndContinue({
+              // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
               spinner,
               text: "skipping build...",
             });
@@ -344,6 +346,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
         });
       } catch (err) {
         SpinnerUtils.renderAndContinue({
+          // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
           spinner,
           text: `failed to update next NextJS template working copy (${err}); cloning fresh`,
         });
@@ -364,6 +367,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
     const { spinner, wsRoot } = opts;
     spinner.start();
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: "checking if NextJS template is initialized",
     });
@@ -371,6 +375,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
       wsRoot,
     });
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `NextJS template is ${
         isInitialized ? "already" : "not"
@@ -383,6 +388,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
     const { spinner, nextPath } = opts;
     const nextPathBase = path.basename(nextPath);
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `checking if ${nextPathBase} directory exists.`,
     });
@@ -390,6 +396,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
       nextPath,
     });
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `${nextPathBase} directory ${
         nextPathExists ? "exists" : "does not exist"
@@ -401,6 +408,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
   async _updateNextTemplate(opts: { nextPath: string; spinner: ora.Ora }) {
     const { spinner, nextPath } = opts;
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `updating NextJS template.`,
     });
@@ -409,6 +417,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
     });
     await this._installDependencies(opts);
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `updated NextJS template.`,
     });
@@ -421,6 +430,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
       nextPath,
     });
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: `existing ${nextPathBase} directory deleted.`,
     });
@@ -429,6 +439,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
   async _initialize(opts: { nextPath: string; spinner: ora.Ora }) {
     const { spinner } = opts;
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: "Initializing NextJS template.",
     });
@@ -443,6 +454,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
 
     await NextjsExportPodUtils.cloneTemplate({ nextPath });
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: "Successfully cloned.",
     });
@@ -454,6 +466,7 @@ export class PublishCLICommand extends CLICommand<CommandOpts, CommandOutput> {
     spinner.start("Installing dependencies... This may take a while.");
     await NextjsExportPodUtils.installDependencies({ nextPath });
     SpinnerUtils.renderAndContinue({
+      // @ts-expect-error TS2322 - Type 'Ora' is not assignable to type '{ (options?: string | Options | undefined): Ora; promise(action: PromiseLike<unknown>, options?: string | Options | undefined): Ora; }'.
       spinner,
       text: "All dependencies installed.",
     });
