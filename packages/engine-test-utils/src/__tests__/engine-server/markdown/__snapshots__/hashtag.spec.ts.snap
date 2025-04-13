@@ -1,5 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`hashtag > rendering > WHEN hashtag with prefix > %p HTML: THEN hashtag has prefix: PUBLISHING 1`] = `
+VFile {
+  "contents": "<h1 id="one">One<a aria-hidden="true" class="anchor-heading icon-link" href="#one"></a></h1>
+<p><a class="color-tag" style="--tag-color: #c95efb;" href="/foo/notes/tags.my-hash.tag0">#my-hash.tag0</a></p>",
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
+}
+`;
+
 exports[`hashtag rendering WHEN disabled in config THEN hashtags don't get parsed or processed 1`] = `
 VFile {
   "contents": "<h1 id=\\"root\\">Root</h1>

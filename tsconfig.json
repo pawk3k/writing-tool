@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    
+
     "lib": ["es2019", "es2020.string"],
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "declaration": true,
-    "types": ["node", "jest"],
+    "types": ["node", "vitest/globals"],
     // --- checks
     "noUnusedLocals": true,
     "noImplicitReturns": true,

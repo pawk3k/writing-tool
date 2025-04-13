@@ -31,11 +31,11 @@ describe("GDoc import pod", () => {
   };
   const docIdsHashMap = { foo: "1dejjityws", bar: "skdeugndk" };
   const utilityMethods = {
-    showInputBox: jest.fn().mockResolvedValue("gdoc.meet"),
-    getGlobalState: jest.fn().mockResolvedValue(undefined),
-    updateGlobalState: jest.fn().mockResolvedValue(undefined),
-    openFileInEditor: jest.fn().mockResolvedValue(undefined),
-    showDocumentQuickPick: jest.fn().mockResolvedValue({ label: "foo" }),
+    showInputBox: vi.fn().mockResolvedValue("gdoc.meet"),
+    getGlobalState: vi.fn().mockResolvedValue(undefined),
+    updateGlobalState: vi.fn().mockResolvedValue(undefined),
+    openFileInEditor: vi.fn().mockResolvedValue(undefined),
+    showDocumentQuickPick: vi.fn().mockResolvedValue({ label: "foo" }),
   };
 
   afterEach(() => {
@@ -45,10 +45,10 @@ describe("GDoc import pod", () => {
     await runEngineTestV5(
       async ({ engine, vaults, wsRoot }) => {
         const pod = new GDocImportPod();
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         const vaultName = VaultUtils.getName(vaults[0]);
         const mockedAxios = axios as jest.Mocked<typeof axios>;
-        PodUtils.downloadImage = jest.fn().mockReturnValue(`${text}`);
+        PodUtils.downloadImage = vi.fn().mockReturnValue(`${text}`);
         result = response;
         mockedAxios.get.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
@@ -87,9 +87,9 @@ describe("GDoc import pod", () => {
           },
           body: text,
         };
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
-        pod.getDataFromGDoc = jest.fn().mockReturnValue(response);
-        PodUtils.downloadImage = jest.fn();
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
+        pod.getDataFromGDoc = vi.fn().mockReturnValue(response);
+        PodUtils.downloadImage = vi.fn();
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = comments;
         mockedAxios.get.mockResolvedValue(result);
@@ -133,8 +133,8 @@ describe("GDoc import pod", () => {
           },
           body: text,
         };
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
-        pod.getDataFromGDoc = jest.fn().mockReturnValue(response);
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
+        pod.getDataFromGDoc = vi.fn().mockReturnValue(response);
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = comments;
         mockedAxios.get.mockResolvedValue(result);
@@ -172,7 +172,7 @@ describe("GDoc import pod", () => {
         const vaultName = VaultUtils.getName(vaults[0]);
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = response;
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         mockedAxios.get.mockResolvedValue(result);
         const { importedNotes } = await pod.execute({
           engine,
@@ -204,7 +204,7 @@ describe("GDoc import pod", () => {
         const vaultName = VaultUtils.getName(vaults[0]);
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = response;
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
         mockedAxios.get.mockResolvedValue(result);
         await pod.execute({
@@ -242,7 +242,7 @@ describe("GDoc import pod", () => {
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = response;
         existingNote.custom.revisionId = "jslkdhsal";
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
         mockedAxios.get.mockResolvedValue(result);
         stubWindow(undefined);
@@ -277,7 +277,7 @@ describe("GDoc import pod", () => {
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = response;
         existingNote.custom.revisionId = "jslkdhsa";
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         await engine.writeNote(existingNote);
         mockedAxios.get.mockResolvedValue(result);
         const resp = {
@@ -315,7 +315,7 @@ describe("GDoc import pod", () => {
         PodUtils.downloadImage = jest
           .fn()
           .mockReturnValue(`${text}![image](assets/image.png)`);
-        pod.getAllDocuments = jest.fn().mockReturnValue({ docIdsHashMap });
+        pod.getAllDocuments = vi.fn().mockReturnValue({ docIdsHashMap });
         const vaultName = VaultUtils.getName(vaults[0]);
         const mockedAxios = axios as jest.Mocked<typeof axios>;
         result = response;

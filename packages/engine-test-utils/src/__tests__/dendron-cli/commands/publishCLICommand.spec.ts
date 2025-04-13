@@ -64,8 +64,7 @@ describe("WHEN run `dendron publish build`", () => {
     sinon.restore();
   });
 
-  test("THEN succeed", async () => {
-    jest.setTimeout(15000);
+  test("THEN succeed", { timeout: 15000 }, async () => {
     await runEngineTestV5(
       async ({ wsRoot }) => {
         await runPublishCmd({ cmd, wsRoot });

@@ -51,7 +51,7 @@ describe("GithubIssuePod import pod", () => {
         const pod = new GithubIssueImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
 
-        pod.getDataFromGithub = jest.fn().mockReturnValue(result);
+        pod.getDataFromGithub = vi.fn().mockReturnValue(result);
 
         await pod.execute({
           engine,
@@ -90,7 +90,7 @@ describe("GithubIssuePod import pod", () => {
         const pod = new GithubIssueImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
 
-        pod.getDataFromGithub = jest.fn().mockReturnValue(result);
+        pod.getDataFromGithub = vi.fn().mockReturnValue(result);
 
         await pod.execute({
           engine,
@@ -128,7 +128,7 @@ describe("GithubIssuePod import pod", () => {
         const pod = new GithubIssueImportPod();
         const vaultName = VaultUtils.getName(vaults[0]);
 
-        pod.getDataFromGithub = jest.fn().mockReturnValue(result);
+        pod.getDataFromGithub = vi.fn().mockReturnValue(result);
 
         await pod.execute({
           engine,
@@ -190,10 +190,10 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       },
     };
     pod = new GithubIssuePublishPod();
-    pod.createDiscussion = jest.fn();
-    pod.createIssue = jest.fn();
-    pod.updateIssue = jest.fn();
-    pod.getDataFromGithub = jest.fn().mockReturnValue({
+    pod.createDiscussion = vi.fn();
+    pod.createIssue = vi.fn();
+    pod.updateIssue = vi.fn();
+    pod.getDataFromGithub = vi.fn().mockReturnValue({
       labelsHashMap: { "area.misc": "sfgdjio", "type.bug": "gsfahhj" },
       discussionCategoriesHashMap: { Ideas: "sfgdjio", General: "gsfahhj" },
       assigneesHashMap: { john: "dhdjdj", doe: "dhdjdk" },
@@ -202,8 +202,8 @@ describe("GIVEN: Github publish pod is run for a note", () => {
 
   const utilityMethods = {
     showMessage: {
-      info: jest.fn(),
-      warning: jest.fn(),
+      info: vi.fn(),
+      warning: vi.fn(),
     },
   };
   describe("WHEN a note has issueID and status in FM", () => {
@@ -211,7 +211,7 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       await runEngineTestV5(
         async ({ engine, vaults, wsRoot }) => {
           const vaultName = VaultUtils.getName(vaults[0]);
-          pod.updateIssue = jest.fn().mockReturnValue("https://github.com/foo");
+          pod.updateIssue = vi.fn().mockReturnValue("https://github.com/foo");
 
           const rootNote = (
             await engine.findNotesMeta({
@@ -300,7 +300,7 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       await runEngineTestV5(
         async ({ engine, vaults, wsRoot }) => {
           const vaultName = VaultUtils.getName(vaults[0]);
-          pod.createIssue = jest.fn().mockReturnValue("https://github.com/foo");
+          pod.createIssue = vi.fn().mockReturnValue("https://github.com/foo");
           const scratchIssue: NoteProps = _.omit(issue, "custom");
           const rootNote = (
             await engine.findNotesMeta({
@@ -438,7 +438,7 @@ describe("GIVEN: Github publish pod is run for a note", () => {
       await runEngineTestV5(
         async ({ engine, vaults, wsRoot }) => {
           const vaultName = VaultUtils.getName(vaults[0]);
-          pod.updateIssue = jest.fn().mockReturnValue("https://github.com/foo");
+          pod.updateIssue = vi.fn().mockReturnValue("https://github.com/foo");
           issue.custom.assignees = ["john", "doe"];
           const rootNote = (
             await engine.findNotesMeta({

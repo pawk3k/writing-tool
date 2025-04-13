@@ -17,7 +17,7 @@ type LaunchOpts = {
 };
 
 export type ServerClose = ReturnType<
-  typeof express["application"]["listen"]
+  (typeof express)["application"]["listen"]
 >["close"];
 export type Server = {
   close: ServerClose;
@@ -32,15 +32,14 @@ function launchv2(
   const LOG_DST = opts?.logPath ? opts.logPath : "stdout";
   configureLogger({ logPath: LOG_DST });
 
-  return new Promise((resolve) => {
-    // eslint-disable-next-line global-require
-    const appModule = require("./Server").appModule;
+  return new Promise(async (resolve) => {
+    const appModule = (await import("./Server.js")).appModule;
     const app = appModule({
       logPath: LOG_DST,
       nextServerUrl: opts?.nextServerUrl,
       nextStaticRoot: opts?.nextStaticRoot,
       googleOauthClientId: opts?.googleOauthClientId,
-      googleOauthClientSecret: opts?.googleOauthClientSecret,
+      googleOauthClientSecret: opts?.googleOauthClientSecret || "",
     });
 
     const serverSockets = new Set<Socket>();

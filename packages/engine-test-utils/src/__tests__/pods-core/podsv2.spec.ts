@@ -310,133 +310,136 @@ describe("GIVEN an ExternalConnectionManager class", () => {
 /**
  * GoogleDocsExportPod
  */
-describe("GIVEN a Google Docs Export Pod with a particular config", () => {
-  // pod tests can take a long time to run
-  jest.setTimeout(60000);
+describe(
+  "GIVEN a Google Docs Export Pod with a particular config",
+  { timeout: 60000 },
+  () => {
+    // pod tests can take a long time to run
 
-  describe("WHEN exporting a note", () => {
-    test("THEN expect gdoc to be created", async () => {
-      await runEngineTestV5(
-        async (opts) => {
-          const podConfig: RunnableGoogleDocsV2PodConfig = {
-            exportScope: PodExportScope.Note,
-            accessToken: "test",
-            refreshToken: "test",
-            expirationTime: Time.now().toSeconds() + 5000,
-            connectionId: "foo",
-          };
-          const { wsRoot } = opts;
-          const fpath = EngineUtils.getPortFilePathForCLI({ wsRoot });
-          const port = openPortFile({ fpath });
-          const pod = new GoogleDocsExportPodV2({
-            podConfig,
-            engine: opts.engine,
-            port,
-          });
-          const response = {
-            data: [
-              {
-                documentId: "testdoc",
-                revisionId: "test",
-                dendronId: "foo",
-              },
-            ],
-            errors: [],
-          };
-          pod.createGdoc = jest.fn().mockResolvedValue(response);
-          const props = (
-            await opts.engine.findNotes({
-              fname: "simple-wikilink",
-              vault: opts.vaults[0],
-            })
-          )[0];
+    describe("WHEN exporting a note", () => {
+      test("THEN expect gdoc to be created", async () => {
+        await runEngineTestV5(
+          async (opts) => {
+            const podConfig: RunnableGoogleDocsV2PodConfig = {
+              exportScope: PodExportScope.Note,
+              accessToken: "test",
+              refreshToken: "test",
+              expirationTime: Time.now().toSeconds() + 5000,
+              connectionId: "foo",
+            };
+            const { wsRoot } = opts;
+            const fpath = EngineUtils.getPortFilePathForCLI({ wsRoot });
+            const port = openPortFile({ fpath });
+            const pod = new GoogleDocsExportPodV2({
+              podConfig,
+              engine: opts.engine,
+              port,
+            });
+            const response = {
+              data: [
+                {
+                  documentId: "testdoc",
+                  revisionId: "test",
+                  dendronId: "foo",
+                },
+              ],
+              errors: [],
+            };
+            pod.createGdoc = vi.fn().mockResolvedValue(response);
+            const props = (
+              await opts.engine.findNotes({
+                fname: "simple-wikilink",
+                vault: opts.vaults[0],
+              })
+            )[0];
 
-          const result = await pod.exportNotes([props]);
-          const entCreate = result.data?.created!;
-          const entUpdate = result.data?.updated!;
-          expect(entCreate.length).toEqual(1);
-          expect(entCreate[0]?.documentId).toEqual("testdoc");
-          expect(entUpdate.length).toEqual(0);
-        },
-        {
-          expect,
-          preSetupHook: async ({ wsRoot, vaults }) => {
-            await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE.create({
-              wsRoot,
-              vault: vaults[0],
-            });
-            await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE_TARGET.create({
-              wsRoot,
-              vault: vaults[0],
-            });
-            await fs.writeFileSync(
-              path.join(wsRoot, ".dendron.port.cli"),
-              "300"
-            );
+            const result = await pod.exportNotes([props]);
+            const entCreate = result.data?.created!;
+            const entUpdate = result.data?.updated!;
+            expect(entCreate.length).toEqual(1);
+            expect(entCreate[0]?.documentId).toEqual("testdoc");
+            expect(entUpdate.length).toEqual(0);
           },
-        }
-      );
+          {
+            expect,
+            preSetupHook: async ({ wsRoot, vaults }) => {
+              await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE.create({
+                wsRoot,
+                vault: vaults[0],
+              });
+              await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE_TARGET.create({
+                wsRoot,
+                vault: vaults[0],
+              });
+              await fs.writeFileSync(
+                path.join(wsRoot, ".dendron.port.cli"),
+                "300"
+              );
+            },
+          }
+        );
+      });
     });
-  });
 
-  describe("WHEN there is an error in response", () => {
-    test("THEN expect gdoc to return error message", async () => {
-      await runEngineTestV5(
-        async (opts) => {
-          const podConfig: RunnableGoogleDocsV2PodConfig = {
-            exportScope: PodExportScope.Note,
-            accessToken: "test",
-            refreshToken: "test",
-            expirationTime: Time.now().toSeconds() + 5000,
-            connectionId: "foo",
-          };
-          const { wsRoot } = opts;
-          const fpath = EngineUtils.getPortFilePathForCLI({ wsRoot });
-          const port = openPortFile({ fpath });
-          const pod = new GoogleDocsExportPodV2({
-            podConfig,
-            engine: opts.engine,
-            port,
-          });
-          const response = {
-            data: [],
-            errors: [
-              {
-                data: {},
-                error: "error with status code 501",
-              },
-            ],
-          };
-          pod.createGdoc = jest.fn().mockResolvedValue(response);
-          const props = (
-            await opts.engine.findNotes({
-              fname: "simple-wikilink",
-              vault: opts.vaults[0],
-            })
-          )[0];
-
-          const result = await pod.exportNotes([props]);
-          const entCreate = result.data?.created!;
-          expect(entCreate.length).toEqual(0);
-          expect(ResponseUtil.hasError(result)).toBeTruthy();
-        },
-        {
-          expect,
-          preSetupHook: async ({ wsRoot, vaults }) => {
-            await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE.create({
-              wsRoot,
-              vault: vaults[0],
+    describe("WHEN there is an error in response", () => {
+      test("THEN expect gdoc to return error message", async () => {
+        await runEngineTestV5(
+          async (opts) => {
+            const podConfig: RunnableGoogleDocsV2PodConfig = {
+              exportScope: PodExportScope.Note,
+              accessToken: "test",
+              refreshToken: "test",
+              expirationTime: Time.now().toSeconds() + 5000,
+              connectionId: "foo",
+            };
+            const { wsRoot } = opts;
+            const fpath = EngineUtils.getPortFilePathForCLI({ wsRoot });
+            const port = openPortFile({ fpath });
+            const pod = new GoogleDocsExportPodV2({
+              podConfig,
+              engine: opts.engine,
+              port,
             });
-            await fs.writeFileSync(
-              path.join(wsRoot, ".dendron.port.cli"),
-              "300"
-            );
+            const response = {
+              data: [],
+              errors: [
+                {
+                  data: {},
+                  error: "error with status code 501",
+                },
+              ],
+            };
+            pod.createGdoc = vi.fn().mockResolvedValue(response);
+            const props = (
+              await opts.engine.findNotes({
+                fname: "simple-wikilink",
+                vault: opts.vaults[0],
+              })
+            )[0];
+
+            const result = await pod.exportNotes([props]);
+            const entCreate = result.data?.created!;
+            expect(entCreate.length).toEqual(0);
+            expect(ResponseUtil.hasError(result)).toBeTruthy();
           },
-        }
-      );
+          {
+            expect,
+            preSetupHook: async ({ wsRoot, vaults }) => {
+              await NOTE_PRESETS_V4.NOTE_WITH_WIKILINK_SIMPLE.create({
+                wsRoot,
+                vault: vaults[0],
+              });
+              await fs.writeFileSync(
+                path.join(wsRoot, ".dendron.port.cli"),
+                "300"
+              );
+            },
+          }
+        );
+      });
     });
-  });
-});
+  }
+);
 
 /**
  * Notion Export Pod
@@ -471,8 +474,8 @@ describe("GIVEN a Notion Export Pod with a particular config", () => {
             ],
             errors: [],
           };
-          pod.convertMdToNotionBlock = jest.fn();
-          pod.createPagesInNotion = jest.fn().mockResolvedValue(response);
+          pod.convertMdToNotionBlock = vi.fn();
+          pod.createPagesInNotion = vi.fn().mockResolvedValue(response);
           const result = await pod.exportNotes([props]);
           const entCreate = result.data?.created!;
           expect(entCreate.length).toEqual(1);

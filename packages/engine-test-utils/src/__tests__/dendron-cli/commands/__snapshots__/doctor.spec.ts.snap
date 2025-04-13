@@ -198,6 +198,60 @@ Object {
 }
 `;
 
+exports[`h1 to h2 > basic 1`] = `
+{
+  "anchors": {},
+  "body": "## Foo Header
+
+## Foo Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "foo",
+  "id": "foo",
+  "links": [],
+  "parent": null,
+  "title": "Foo",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
+exports[`h1 to h2 > basic 2`] = `
+{
+  "anchors": {},
+  "body": "## Bar Header
+
+## Bar Content
+
+",
+  "children": [],
+  "contentHash": undefined,
+  "created": 1,
+  "custom": {},
+  "data": {},
+  "desc": "",
+  "fname": "bar",
+  "id": "bar",
+  "links": [],
+  "parent": null,
+  "title": "Bar",
+  "type": "note",
+  "updated": 1,
+  "vault": {
+    "fsPath": "vault1",
+  },
+}
+`;
+
 exports[`h1 to h2 > basic pass candidates opt 1`] = `
 {
   "anchors": {},

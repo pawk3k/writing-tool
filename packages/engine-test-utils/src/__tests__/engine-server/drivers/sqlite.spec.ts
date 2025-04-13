@@ -12,11 +12,10 @@ import { ENGINE_HOOKS, runEngineTestV5 } from "../../..";
 // const describeSkipWindows =
 //   os.platform() === "win32" ? describe.skip : describe;
 
-describe.skip("GIVEN sqlite store", () => {
+describe.skip("GIVEN sqlite store", { timeout: 10e3 }, () => {
   afterEach(async () => {
     await SQLiteMetadataStore.prisma().$disconnect();
   });
-  jest.setTimeout(10e3);
 
   test("WHEN initialize, THEN metadata has all notes", async () => {
     await runEngineTestV5(
@@ -25,7 +24,9 @@ describe.skip("GIVEN sqlite store", () => {
         expect(dirList).toMatchSnapshot();
         expect(dirList.includes("metadata.db")).toBeTruthy();
         const notes = await SQLiteMetadataStore.prisma().note.findMany();
-        const engineNotes = await engine.findNotesMeta({ excludeStub: false });
+        const engineNotes = await engine.findNotesMeta({
+          excludeStub: false,
+        });
         expect(engineNotes.length).toEqual(notes.length);
       },
       {
@@ -46,7 +47,9 @@ describe.skip("GIVEN sqlite store", () => {
         expect(dirList).toMatchSnapshot();
         expect(dirList.includes("metadata.db")).toBeTruthy();
         const notes = await SQLiteMetadataStore.prisma().note.findMany();
-        const engineNotes = await engine.findNotesMeta({ excludeStub: false });
+        const engineNotes = await engine.findNotesMeta({
+          excludeStub: false,
+        });
         expect(engineNotes.length).toEqual(notes.length);
 
         const { error } = await engine.init();
@@ -72,7 +75,9 @@ describe.skip("GIVEN sqlite store", () => {
         expect(dirList).toMatchSnapshot();
         expect(dirList.includes("metadata.db")).toBeTruthy();
         const notes = await SQLiteMetadataStore.prisma().note.findMany();
-        const engineNotes = await engine.findNotesMeta({ excludeStub: false });
+        const engineNotes = await engine.findNotesMeta({
+          excludeStub: false,
+        });
         expect(engineNotes.length).toEqual(notes.length);
         const newNote = NoteUtils.create({
           id: "new-note",
