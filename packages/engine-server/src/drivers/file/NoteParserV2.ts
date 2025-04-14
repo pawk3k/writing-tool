@@ -33,6 +33,7 @@ import _ from "lodash";
 import path from "path";
 import { NotesFileSystemCache } from "../../cache/notesFileSystemCache";
 import { EngineUtils } from "../../utils/engineUtils";
+import { createCacheEntry } from "../../utils";
 
 // NOTE: This file has been forked in plugin-core to enable Dendron Web
 // Extension
@@ -422,7 +423,6 @@ export class NoteParserV2 {
     // Update cache entry as well
     this.cache.set(
       name,
-      // @ts-expect-error TS2304 - Cannot find name 'createCacheEntry'.
       createCacheEntry({
         noteProps: note,
         hash: note.contentHash,
