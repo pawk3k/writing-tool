@@ -140,6 +140,8 @@ export class MoveNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
     );
 
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: Disposable;
 
       NoteLookupProviderUtils.subscribe({

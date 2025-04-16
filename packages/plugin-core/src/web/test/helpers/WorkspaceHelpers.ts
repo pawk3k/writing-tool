@@ -1,6 +1,5 @@
- 
 import { CONSTANTS } from "@dendronhq/common-all";
-import YAML from "js-yaml";
+import { dump, JSON_SCHEMA } from "js-yaml";
 import * as vscode from "vscode";
 import { URI, Utils } from "vscode-uri";
 
@@ -10,9 +9,13 @@ export class WorkspaceHelpers {
    * workspace root. This function works in the browser environment
    */
   static async createTestWorkspaceDirectory(): Promise<URI> {
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const os = require("os");
     const tmp = os.tmpDir();
 
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const randomUUID = require("crypto-randomuuid");
 
     const tmpDirectory = Utils.joinPath(URI.file(tmp), randomUUID());
@@ -38,7 +41,7 @@ export class WorkspaceHelpers {
    * @param config
    */
   static async createTestYAMLConfigFile(wsRoot: URI, config: any) {
-    const out = YAML.dump(config, { indent: 4, schema: YAML.JSON_SCHEMA });
+    const out = dump(config, { indent: 4, schema: JSON_SCHEMA });
 
     await vscode.workspace.fs.writeFile(
       Utils.joinPath(wsRoot, CONSTANTS.DENDRON_CONFIG_FILE),

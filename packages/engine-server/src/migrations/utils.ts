@@ -6,14 +6,16 @@ type mappedConfigPath = {
   /**
    * legacy config path to target.
    */
-  target: string;
+  target: string
   /**
    * How we want to map the config.
    * if "skip", don't map.
    *   use this when it is a namespace that itself has properties.
    * if undefined, identity mapping is assumed (_.identity)
    */
-  iteratee?: Function | "skip";
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  iteratee?: Function | "skip"
   /**
    * Set to true to mark that legacy path should be preserved.
    */
@@ -262,6 +264,8 @@ export class MigrationUtils {
    * @param pred predicate to use for recursively omitting
    * @returns obj, with properties omitted by pred
    */
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   static deepCleanObjBy(obj: any, pred: Function): any {
     const out = _.omitBy(obj, pred);
     _.keys(out).forEach((key) => {

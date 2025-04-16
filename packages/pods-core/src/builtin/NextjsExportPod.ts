@@ -252,6 +252,8 @@ export class NextjsExportPodUtils {
     }
 
      
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require(path.resolve(sidebarFilePath));
   }
 }

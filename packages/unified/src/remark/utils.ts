@@ -85,6 +85,8 @@ import {
 import { MDUtilsV5, ProcFlavor, ProcMode } from "../utilsv5";
 import { getFrontmatterTags, parseFrontmatter } from "../yaml";
 
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const toString = require("mdast-util-to-string");
 
 export { select, selectAll } from "unist-util-select";
@@ -103,6 +105,8 @@ export function getNoteOrError(
   hint: any
 ): { error: DendronError | undefined; note: undefined | NoteProps } {
   let error: DendronError | undefined;
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line prefer-const
   let note: NoteProps | undefined;
   if (_.isUndefined(notes)) {
     error = new DendronError({ message: `no note found. ${hint}` });

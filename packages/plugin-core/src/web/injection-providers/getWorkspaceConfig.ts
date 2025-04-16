@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { CONSTANTS, DendronConfig } from "@dendronhq/common-all";
-import YAML from "js-yaml";
+import { JSON_SCHEMA, load } from "js-yaml";
 import * as vscode from "vscode";
 import { Uri } from "vscode";
 
@@ -16,8 +16,8 @@ async function readYAML(path: Uri, overwriteDuplicate?: boolean): Promise<any> {
   const textDecoder = new TextDecoder(); // This line of code is browser specific. For Node, we need to use the utils version of TextDecoder
   const file = await vscode.workspace.fs.readFile(path);
   const bar = textDecoder.decode(file);
-  return YAML.load(bar, {
-    schema: YAML.JSON_SCHEMA,
+  return load(bar, {
+    schema: JSON_SCHEMA,
     json: overwriteDuplicate ?? false,
   });
 }

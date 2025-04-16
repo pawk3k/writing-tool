@@ -19,7 +19,7 @@ import anymatch from "anymatch";
 import { assign, CommentJSONValue, parse, stringify } from "comment-json";
 import { FSWatcher } from "fs";
 import fs from "fs-extra";
-import YAML, { JSON_SCHEMA } from "js-yaml";
+import  { dump, JSON_SCHEMA, load } from "js-yaml";
 import _ from "lodash";
 import path from "path";
 import tmp, { DirResult, dirSync } from "tmp";
@@ -97,6 +97,8 @@ async function _createFileWatcher(
   if (numTries <= 0) {
     throw new DendronError({ message: "exceeded numTries" });
   }
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, _reject) => {
     if (!fs.existsSync(fpath)) {
       console.log({ fpath, msg: "not exist" });
@@ -118,7 +120,7 @@ export async function file2Schema(
 ): Promise<SchemaModuleProps> {
   const root = { fsPath: path.dirname(fpath) };
   const fname = path.basename(fpath, ".schema.yml");
-  const schemaOpts = YAML.load(
+  const schemaOpts = load(
     await fs.readFile(fpath, { encoding: "utf8" })
   ) as SchemaModuleOpts;
   return SchemaParserV2.parseRaw(schemaOpts, { root, fname, wsRoot });
@@ -135,7 +137,7 @@ export async function string2Schema({
   fname: string;
   wsRoot: string;
 }) {
-  const schemaOpts = YAML.load(content) as SchemaModuleOpts;
+  const schemaOpts = load(content) as SchemaModuleOpts;
   return SchemaParserV2.parseRaw(schemaOpts, {
     root: vault,
     fname,
@@ -339,7 +341,7 @@ function serializeModuleOpts(moduleOpts: SchemaModuleOpts) {
       SchemaUtils.serializeSchemaProps(ent)
     ),
   };
-  return YAML.dump(out, { schema: JSON_SCHEMA });
+  return dump(out, { schema: JSON_SCHEMA });
 }
 
 export function schemaModuleOpts2File(

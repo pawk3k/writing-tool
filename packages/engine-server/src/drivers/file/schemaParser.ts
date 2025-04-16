@@ -8,7 +8,7 @@ import { DLogger, SchemaParserV2, vault2Path } from "@dendronhq/common-server";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import YAML from "js-yaml";
+import { load } from "js-yaml";
 
 export class SchemaParser {
   private logger: DLogger;
@@ -26,7 +26,7 @@ export class SchemaParser {
     const fname = path.basename(fpath, ".schema.yml");
     const wsRoot = this.wsRoot;
     const vpath = vault2Path({ vault: root, wsRoot });
-    const schemaOpts: any = YAML.load(
+    const schemaOpts: any = load(
       await fs.readFile(path.join(vpath, fpath), "utf8")
     );
 

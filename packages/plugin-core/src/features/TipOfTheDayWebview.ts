@@ -1,5 +1,7 @@
 import { VSCodeEvents } from "@dendronhq/common-all";
 import { MetadataService } from "@dendronhq/engine-server";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _md from "markdown-it";
 import * as vscode from "vscode";
 import {

@@ -189,6 +189,8 @@ function shouldInsertTitle({ proc }: { proc: Processor }) {
 }
 
 function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   const { vault, vaults, wsRoot } = MDUtilsV5.getProcData(proc);
   const pOpts = MDUtilsV5.getProcOpts(proc);

@@ -5,6 +5,8 @@ import {
   VaultUtils,
   type ReducedDEngine,
 } from "@dendronhq/common-all";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { inject, injectable } from "tsyringe";
 import vscode from "vscode";

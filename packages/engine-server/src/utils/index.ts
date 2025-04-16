@@ -211,6 +211,8 @@ export function stripLocalOnlyTags(doc: string) {
     matches = doc.match(re);
     if (matches) {
       // @ts-expect-error TODO: fix this supression
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { raw, body } = matches.groups;
       doc = doc.replace(raw, "");
     }

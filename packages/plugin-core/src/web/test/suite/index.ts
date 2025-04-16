@@ -1,4 +1,6 @@
 // imports mocha for the browser, defining the `mocha` global.
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require("mocha/mocha");
 
 export function run(): Promise<void> {

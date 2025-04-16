@@ -1,3 +1,5 @@
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import fs from "fs-extra";
 import { GOOGLE_OAUTH_ID, GOOGLE_OAUTH_SECRET } from "../src/types/global";
@@ -5,7 +7,6 @@ import { GOOGLE_OAUTH_ID, GOOGLE_OAUTH_SECRET } from "../src/types/global";
 /**
  * Workaround to substitute values for global consts during vsix packaging
  */
-// @ts-ignore
 function main() {
   const pathToUpdate = "./out/src/types/global.js";
   const globalfile = fs.readFileSync(pathToUpdate);

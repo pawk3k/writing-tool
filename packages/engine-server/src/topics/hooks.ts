@@ -89,6 +89,8 @@ export class HookUtils {
   }): Promise<RequireHookResp> => {
     const logger = createLogger();
     logger.info({ ctx: "requireHook", msg: "using webpack require" });
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const req = require(`./webpack-require-hack.js`);
     logger.info({ ctx: "requireHook", fpath, wsRoot });
     return await req(fpath)({

@@ -16,6 +16,8 @@ type PluginOpts = {
  * Rewrite index note
  */
 function plugin(this: Unified.Processor, opts: PluginOpts): Transformer {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   const { dest, config } = MDUtilsV5.getProcData(proc);
   function transformer(tree: Node, _file: VFile) {

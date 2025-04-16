@@ -371,10 +371,14 @@ export class DendronExtension implements IDendronExtension {
     context: vscode.ExtensionContext,
     opts?: { skipSetup?: boolean }
   ) {
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     opts = _.defaults(opts, { skipSetup: false });
     this.context = context;
     // set the default
     this.type = WorkspaceType.CODE;
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     _DendronWorkspace = this;
     this.L = Logger;
     this._disposableStore = new DisposableStore();

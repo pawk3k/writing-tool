@@ -5,6 +5,8 @@ import {
 } from "@dendronhq/common-test-utils";
 
 const WILDCARD_LINK_V4 = new TestPresetEntryV4(
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-empty-pattern
   async ({}) => {
     // TODO: this isn't done
     return [];

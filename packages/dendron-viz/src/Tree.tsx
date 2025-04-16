@@ -1,3 +1,5 @@
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line react/no-array-index-key
 /* eslint-disable react/no-array-index-key */
 
 /* eslint-disable react/require-default-props */
@@ -11,6 +13,8 @@ import flatten from "lodash/flatten";
 import { CircleText } from "./CircleText";
 import { keepBetween, keepCircleInsideCircle, truncateString } from "./utils";
 
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const loadModule = require("./loadModule");
 
 //TODO: Set default colors for different file types. Adjust this so that different types of notes (ex. schemas or journals)

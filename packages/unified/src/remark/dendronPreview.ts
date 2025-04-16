@@ -97,6 +97,8 @@ export function dendronHoverPreview(
   this: Unified.Processor,
   _opts?: PluginOpts
 ): Transformer {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   function transformer(tree: Node, _file: VFile) {
     visit(

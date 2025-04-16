@@ -32,6 +32,8 @@ function launchv2(
   const LOG_DST = opts?.logPath ? opts.logPath : "stdout";
   configureLogger({ logPath: LOG_DST });
 
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve) => {
     const appModule = (await import("./Server.js")).appModule;
     const app = appModule({

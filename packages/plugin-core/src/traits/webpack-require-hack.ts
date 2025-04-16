@@ -9,6 +9,8 @@ const webpackRequire = (importPath) => {
   // allows us to do 'hot-reloading' of the .js files in Traits.
   delete require.cache[require.resolve(importPath)];
 
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const module = require(importPath);
   return module;
 };

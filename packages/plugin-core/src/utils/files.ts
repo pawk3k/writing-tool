@@ -1,6 +1,8 @@
 import open from "open";
 import { DendronError, ERROR_STATUS } from "@dendronhq/common-all";
 import { Logger } from "../logger";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 
 export class PluginFileUtils {

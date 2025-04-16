@@ -248,7 +248,9 @@ export class DevCLICommand extends CLICommand<CommandOpts, CommandOutput> {
     );
     const configType = "ConfigForSchemaGenerator";
     // NOTE: this is removed by webpack when building plugin which is why we're loading this dynamically
-     
+
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const tsj = require("ts-json-schema-generator");
     const schema = tsj
       .createGenerator({

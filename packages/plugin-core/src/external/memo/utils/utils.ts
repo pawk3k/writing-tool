@@ -277,6 +277,8 @@ export const replaceRefs = ({
 
         const nextContent = content.replace(
           new RegExp(pattern, "gi"),
+          // TODO: Please fix and remove the suppression
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           ($0, $1, offset) => {
             // const pos = document.positionAt(offset);
 

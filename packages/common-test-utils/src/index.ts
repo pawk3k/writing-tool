@@ -33,6 +33,8 @@ export * from "./utils";
 export * from "./utilsv2";
 
 export function filterDotFiles(filenames: string[]) {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-useless-escape
   return filenames.filter((filename) => !/(^|\/)\.[^\/\.]/g.test(filename));
 }
 

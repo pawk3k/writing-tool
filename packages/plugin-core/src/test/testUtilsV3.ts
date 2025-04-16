@@ -49,7 +49,6 @@ import _ from "lodash";
 import { after, afterEach, before, beforeEach, describe } from "mocha";
 import os from "os";
 import { performance } from "perf_hooks";
-import sinon from "sinon";
 import {
   CancellationToken,
   ExtensionContext,
@@ -78,6 +77,7 @@ import {
   stubWorkspaceFile,
   stubWorkspaceFolders,
 } from "./testUtilsv2";
+import { restore, stub } from "sinon";
 
 const TIMEOUT = 60 * 1000 * 5;
 
@@ -389,19 +389,19 @@ export function setupBeforeAfter(
       // in describeMultiWS > [[../packages/plugin-core/src/test/testUtilsV3.ts#^lk3whwd4kh4k]]
       // TODO: keep in place until we completely remove `setupBeforeAndAfter`
       try {
-        sinon
-          .stub(VSCodeUtils, "getInstallStatusForExtension")
-          .returns(InstallStatus.NO_CHANGE);
+        stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+          InstallStatus.NO_CHANGE
+        );
       } catch (e) {
         // eat it.
-        sinon.restore();
-        sinon
-          .stub(VSCodeUtils, "getInstallStatusForExtension")
-          .returns(InstallStatus.NO_CHANGE);
+        restore();
+        stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+          InstallStatus.NO_CHANGE
+        );
       }
     }
 
-    sinon.stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
+    stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
 
     if (opts?.beforeHook) {
       await opts.beforeHook(ctx);
@@ -413,7 +413,7 @@ export function setupBeforeAfter(
     if (opts?.afterHook) {
       await opts.afterHook();
     }
-    sinon.restore();
+    restore();
   });
   return ctx;
 }
@@ -455,7 +455,7 @@ export const stubVaultInput = (opts: {
   sourceName?: string;
 }): void => {
   if (opts.cmd) {
-    sinon.stub(opts.cmd, "gatherInputs").returns(
+    stub(opts.cmd, "gatherInputs").returns(
       Promise.resolve({
         type: opts.sourceType,
         name: opts.sourceName,
@@ -704,11 +704,11 @@ export function setupWorkspaceStubs(opts: {
 }): ExtensionContext {
   // workspace has not upgraded
   if (!opts.noSetInstallStatus) {
-    sinon
-      .stub(VSCodeUtils, "getInstallStatusForExtension")
-      .returns(InstallStatus.NO_CHANGE);
+    stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+      InstallStatus.NO_CHANGE
+    );
   }
-  sinon.stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
+  stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
   Logger.configure(opts.ctx, "info");
   return opts.ctx;
 }
@@ -718,7 +718,7 @@ export function cleanupWorkspaceStubs(ctx: ExtensionContext): void {
   cleanupVSCodeContextSubscriptions(ctx);
   const ext = ExtensionProvider.getExtension();
   ext.deactivate();
-  sinon.restore();
+  restore();
 }
 
 /**

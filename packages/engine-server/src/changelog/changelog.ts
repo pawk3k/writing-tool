@@ -3,6 +3,8 @@ import { DConfig } from "@dendronhq/common-server";
 import * as Diff2Html from "diff2html";
 import execa from "execa";
 import fs from "fs-extra";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import path from "path";
 import { SiteUtils } from "../topics/site";
@@ -40,10 +42,12 @@ async function getLastCommit(wsRoot: string) {
   return stdout.slice(1, -1);
 }
 
-async function canShowDiff(opts: {
-  engine: DEngineClient;
-  filePath: string;
-}): Promise<boolean> {
+async function canShowDiff(
+  opts: {
+    engine: DEngineClient;
+    filePath: string;
+  }
+): Promise<boolean> {
   const { engine, filePath } = opts;
   const { vaults, wsRoot } = engine;
   const config = DConfig.readConfigSync(wsRoot);
@@ -72,6 +76,8 @@ async function canShowDiff(opts: {
  * Return undefined if no changes, otherwise string with last commit
  */
 // @ts-expect-error TODO: fix this supression
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getLastChangelogCommit(engine: DEngineClient): undefined | string {
   const buildDir = path.join(engine.wsRoot, "build");
   const changesPath = path.join(buildDir, "changes.json");

@@ -61,6 +61,8 @@ export function createMockQuickPick({
   return qp as DendronQuickPickerV2;
 }
 
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export function onWSInit(cb: Function) {
   HistoryService.instance().subscribe(
     "extension",
@@ -77,7 +79,9 @@ export function onExtension({
   cb,
 }: {
   action: HistoryEventAction;
-  cb: Function;
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  cb: Function
 }) {
   HistoryService.instance().subscribe(
     "extension",
@@ -94,7 +98,9 @@ export function onWatcher({
   cb,
 }: {
   action: HistoryEventAction;
-  cb: Function;
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  cb: Function
 }) {
   HistoryService.instance().subscribe(
     "watcher",

@@ -25,6 +25,7 @@ export default tseslint.config(
         {
           vars: "all",
           args: "after-used",
+          caughtErrors: "none",
           ignoreRestSiblings: true,
           argsIgnorePattern: "^_",
         },

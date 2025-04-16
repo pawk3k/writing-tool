@@ -67,6 +67,8 @@ export function fetchPodClassV4(
       throw Error("podPkg not defined");
     }
 
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const podEntries = require(`${path.join(
       opts.wsRoot,
       "node_modules",

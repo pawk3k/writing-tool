@@ -31,6 +31,8 @@ export class UserDefinedTraitV1 implements NoteTrait {
    * methods will be invoked.
    */
   async initialize() {
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const hack = require(`./webpack-require-hack.js`);
     const trait: UserDefinedTraitV1 = hack(this.scriptPath);
 
@@ -65,7 +67,11 @@ export class UserDefinedTraitV1 implements NoteTrait {
     return function (args: any) {
       const objectPrototype = Object.prototype as any;
 
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const _ = require("lodash");
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const luxon = require("luxon");
 
       try {

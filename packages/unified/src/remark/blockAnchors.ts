@@ -1,3 +1,5 @@
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { DendronError } from "@dendronhq/common-all";
 import { Eat } from "remark-parse";

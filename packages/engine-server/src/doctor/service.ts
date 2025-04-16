@@ -76,8 +76,12 @@ export type DoctorServiceOpts = {
 export class DoctorService implements Disposable {
   public L: ReturnType<typeof createDisposableLogger>["logger"];
   private loggerDispose: ReturnType<typeof createDisposableLogger>["dispose"];
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   private print: Function;
 
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   constructor(opts?: { printFunc?: Function }) {
     const { logger, dispose } = createDisposableLogger("DoctorService");
     this.L = logger;

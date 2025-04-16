@@ -15,10 +15,18 @@ export class NoteLookupProviderUtils {
     id: string;
     controller: ILookupControllerV3;
     logger: DLogger;
-    onDone?: Function;
-    onError?: Function;
-    onChangeState?: Function;
-    onHide?: Function;
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    onDone?: Function
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    onError?: Function
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    onChangeState?: Function
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    onHide?: Function
   }): Promise<any | undefined> {
     const { id, controller, logger, onDone, onError, onChangeState, onHide } =
       opts;

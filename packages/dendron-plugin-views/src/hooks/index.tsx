@@ -15,7 +15,6 @@ export const useCurrentTheme = () => {
       // @ts-expect-error TS2304 - Cannot find name 'window'.
       setCurrentTheme(window.currentTheme);
     }
-    // @ts-ignore
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.currentTheme]);
   return { currentTheme, setCurrentTheme };
@@ -110,9 +109,8 @@ export const useMermaid = ({
       theme: (themeType === "light" ? "forest" : "dark") as any,
     });
     // use for debugging
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this
     window._mermaid = mermaid;
-    // @ts-ignore
     mermaid.init();
     logger.info({ msg: "init mermaid library", themeType });
 
