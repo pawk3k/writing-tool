@@ -24,7 +24,7 @@ export const matchExtendedImage = (
   return undefined;
 };
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 const plugin: Plugin<[PluginOpts?]> = function (
   this: Unified.Processor,

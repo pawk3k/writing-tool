@@ -7,8 +7,7 @@ import { expect } from "../testUtilsv2";
 import { runLegacyMultiWorkspaceTest, setupBeforeAfter } from "../testUtilsV3";
 
 suite("notes", function () {
-  let ctx: vscode.ExtensionContext;
-  ctx = setupBeforeAfter(this);
+  const ctx: vscode.ExtensionContext = setupBeforeAfter(this);
 
   test("basic", (done) => {
     runLegacyMultiWorkspaceTest({

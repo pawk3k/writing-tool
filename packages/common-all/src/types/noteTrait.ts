@@ -86,6 +86,6 @@ export type onCreateProps = {
   setVault?(): string;
 };
 
-export type onDescendantLifecycleEvent = {};
+export type onDescendantLifecycleEvent = object;
 
-export type onSiblingLifecycleEvent = {};
+export type onSiblingLifecycleEvent = object;

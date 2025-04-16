@@ -87,7 +87,7 @@ export class HashTagUtils {
   };
 }
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 const plugin: Plugin<[PluginOpts?]> = function plugin(
   this: Unified.Processor,

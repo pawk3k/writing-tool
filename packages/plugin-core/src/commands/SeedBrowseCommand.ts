@@ -14,7 +14,7 @@ import { WebViewUtils } from "../views/utils";
 import { SeedAddCommand } from "./SeedAddCommand";
 import { SeedCommandBase } from "./SeedCommandBase";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = void;
 

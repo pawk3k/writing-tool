@@ -13,7 +13,7 @@ import {
 import { ExtensionProvider } from "../ExtensionProvider";
 import { maybeSendMeetingNoteTelemetry } from "../utils/MeetingTelemHelper";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = {
   lookup: Promise<NoteLookupOutput | undefined>;

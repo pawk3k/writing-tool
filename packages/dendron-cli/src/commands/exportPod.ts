@@ -7,7 +7,7 @@ import { setupEngineArgs, SetupEngineCLIOpts, SetupEngineResp } from "./utils";
 
 export { CommandCLIOpts as ExportPodCLIOpts };
 
-type CommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+type CommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 type CommandOpts = CommandCLIOpts & {
   podClass: any;

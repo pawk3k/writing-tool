@@ -10,7 +10,7 @@ import { BasicCommand } from "./base";
 
 const L = Logger;
 
-type DiagnosticsReportCommandOpts = {};
+type DiagnosticsReportCommandOpts = object;
 
 export class DiagnosticsReportCommand extends BasicCommand<
   DiagnosticsReportCommandOpts,

@@ -11,7 +11,7 @@ import { DendronExtension } from "../workspace";
 import { WSUtils } from "../WSUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = string | undefined;
 

@@ -5,9 +5,9 @@ import { DENDRON_COMMANDS } from "../constants";
 import { AnalyticsUtils } from "../utils/analytics";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
-type CommandInput = {};
+type CommandInput = object;
 
 type CommandOutput = void;
 

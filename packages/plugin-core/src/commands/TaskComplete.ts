@@ -6,9 +6,9 @@ import { IDendronExtension } from "../dendronExtensionInterface";
 import { TaskStatusCommand } from "./TaskStatus";
 import { ConfigureCommand } from "./ConfigureCommand";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
-type CommandOutput = {} | undefined;
+type CommandOutput = object | undefined;
 
 export class TaskCompleteCommand extends BasicCommand<
   CommandOpts,

@@ -24,7 +24,7 @@ import { GotoNoteCommand } from "./GotoNote";
 import { GoToNoteCommandOutput, TargetKind } from "./GoToNoteInterface";
 import { OpenLinkCommand } from "./OpenLink";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = RespV3<GoToNoteCommandOutput>;
 

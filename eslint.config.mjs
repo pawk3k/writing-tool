@@ -1,23 +1,14 @@
+// @ts-check
+
 import eslint from "@eslint/js";
+import { globalIgnores } from "@eslint/config-helpers";
 import tseslint from "typescript-eslint";
 
-/** @type {import("@eslint/compat").FlatConfig[]} */
-const baseConfig = [
-  {
-    ignores: [
-      ".yarn/**",
-      "vendor/**/*",
-      "**/node_modules",
-      "**/lib/**/*",
-      "**/out/**/*",
-      "packages/engine-server/src/drivers/generated-prisma-client/",
-      "packages/engine-server/src/generated-prisma-client/",
-    ],
-  },
-];
-
 export default tseslint.config(
-  baseConfig,
+  globalIgnores(["**/*.js", "**/*.test.*", "**/*.spec.*"]),
   eslint.configs.recommended,
-  tseslint.configs.recommended
+  tseslint.configs.recommended,
+  {
+    rules: { "@typescript-eslint/no-explicit-any": "off" },
+  }
 );

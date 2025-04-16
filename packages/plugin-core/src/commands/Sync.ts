@@ -80,7 +80,7 @@ export async function detectOutOfDateSeeds({
 
 const L = Logger;
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandReturns =
   | {
       committed: SyncActionResult[];

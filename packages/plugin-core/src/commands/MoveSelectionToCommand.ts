@@ -24,9 +24,9 @@ type CommandInput = {
   noConfirm?: boolean;
 };
 
-type CommandOpts = {} & CommandInput;
+type CommandOpts = object & CommandInput;
 
-type CommandOutput = {} & CommandOpts;
+type CommandOutput = object & CommandOpts;
 
 export class MoveSelectionToCommand extends BasicCommand<
   CommandOpts,

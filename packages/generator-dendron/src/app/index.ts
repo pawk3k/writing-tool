@@ -1,7 +1,7 @@
 import path from "path";
 import Generator, { GeneratorOptions } from "yeoman-generator";
 
-type Options = {} & GeneratorOptions;
+type Options = object & GeneratorOptions;
 module.exports = class extends Generator<Options> {
   public name?: string;
 

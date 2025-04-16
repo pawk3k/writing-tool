@@ -6,9 +6,9 @@ import { IDendronExtension } from "../dendronExtensionInterface";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
-type CommandInput = {};
+type CommandInput = object;
 
 type CommandOutput = NotePropsMeta | undefined;
 
@@ -39,7 +39,6 @@ export class RandomNoteCommand extends BasicCommand<
 
       let isMatch = false;
 
-       
       for (const pattern of includeSet) {
         if (note.fname.toLowerCase().startsWith(pattern.toLowerCase())) {
           isMatch = true;
@@ -49,7 +48,6 @@ export class RandomNoteCommand extends BasicCommand<
 
       // Remove Exclude Paths, if specified:
       if (randomNoteConfig.exclude) {
-         
         for (const pattern of randomNoteConfig.exclude) {
           if (note.fname.toLowerCase().startsWith(pattern.toLowerCase())) {
             isMatch = false;

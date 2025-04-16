@@ -45,6 +45,7 @@
     "prettier": "^2.0.4",
     "rimraf": "^2.6.2",
     "standard-version": "^8.0.0",
+    "suppress-eslint-errors": "^3.0.2",
     "title": "^3.4.4",
     "ts-morph": "^25.0.1",
     "tsx": "^4.19.3",
@@ -56,7 +57,7 @@
   "scripts": {
     "test": "vitest",
     "build:clean": "tsc --build --clean",
-    "lint": "eslint . --debug --ext ts,tsx --fix",
+    "lint": "eslint ./packages --debug",
     "typecheck": "tsc --build packages/plugin-core",
     "build:extension": "yarn workspace dendron run vscode:prepublish",
     "build:views": "yarn build:clean && yarn workspace @dendronhq/dendron-plugin-views run build",

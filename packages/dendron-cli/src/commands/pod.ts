@@ -32,7 +32,7 @@ export type PodCLIOpts = {
   vault?: string;
 };
 
-export type PodCommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+export type PodCommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 export type PodCommandOpts<T = any> = PodCLIOpts & {
   podClass: any;
@@ -66,7 +66,7 @@ export function fetchPodClassV4(
     if (!opts.podPkg || !opts.wsRoot) {
       throw Error("podPkg not defined");
     }
-     
+
     const podEntries = require(`${path.join(
       opts.wsRoot,
       "node_modules",
@@ -131,9 +131,8 @@ export function enrichPodArgs(opts: {
 
     // if show config, output configuration and exit
     if (showConfig) {
-       
       const config = new podClass().config;
-       
+
       console.log(config);
       process.exit(0);
     }
@@ -146,7 +145,7 @@ export function enrichPodArgs(opts: {
         podClass,
         force: true,
       });
-       
+
       console.log(`config generated at ${configPath}`);
       process.exit(0);
     }
@@ -197,7 +196,6 @@ export function enrichPodArgs(opts: {
         cleanConfig["fname"] = args.query;
       }
     } else if (podId !== NextjsExportPod.id) {
-       
       console.log(
         `WARN: --query and --vault parameter not implemented for podType ${podType}`
       );

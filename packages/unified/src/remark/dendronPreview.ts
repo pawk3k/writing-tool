@@ -10,7 +10,7 @@ import { DendronASTTypes, HashTag, UserTag, WikiLinkNoteV4 } from "../types";
 import { MDUtilsV5 } from "../utilsv5";
 import { URI, Utils } from "vscode-uri";
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 /** Makes the `.url` of the given image note a full path. */
 export function makeImageUrlFullPath({

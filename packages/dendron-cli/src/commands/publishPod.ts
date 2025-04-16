@@ -9,7 +9,7 @@ import { CLICommand, CommandCommonProps } from "./base";
 import { enrichPodArgs, PodCLIOpts, setupPodArgs } from "./pod";
 import { setupEngineArgs, SetupEngineCLIOpts, SetupEngineResp } from "./utils";
 
-type CommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+type CommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 type CommandOpts = CommandCLIOpts & {
   podClass: any;

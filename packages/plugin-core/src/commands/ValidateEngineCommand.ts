@@ -7,7 +7,7 @@ import { BasicCommand } from "./base";
 
 const L = Logger;
 
-type ValidateEngineCommandOpts = {};
+type ValidateEngineCommandOpts = object;
 
 export class ValidateEngineCommand extends BasicCommand<
   ValidateEngineCommandOpts,

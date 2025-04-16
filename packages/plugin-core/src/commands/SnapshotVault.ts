@@ -8,7 +8,7 @@ import { DENDRON_COMMANDS } from "../constants";
 import { IDendronExtension } from "../dendronExtensionInterface";
 import { BaseCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandInput = { podChoice: PodItemV4 };
 
