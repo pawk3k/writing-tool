@@ -80,7 +80,7 @@ export function whenGlobalState(key: string, cb?: () => boolean): boolean {
     function alwaysTrue() {
       return true;
     };
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   const out = getExtension().getGlobalState(key);
   if (!(out === false || _.isUndefined(out))) {
     return cb();
@@ -343,7 +343,6 @@ export class DendronExtension implements IDendronExtension {
   }
 
   static async resetConfig(globalState: vscode.Memento) {
-     
     return await Promise.all(
       _.keys(GLOBAL_STATE).map((k) => {
         const _key = GLOBAL_STATE[k as keyof typeof GLOBAL_STATE];
@@ -582,7 +581,7 @@ export class DendronExtension implements IDendronExtension {
 
     const backlinksTreeDataProvider = new BacklinksTreeDataProvider(
       this.getEngine(),
-      config,
+      config
     );
 
     const backlinkTreeView = vscode.window.createTreeView(

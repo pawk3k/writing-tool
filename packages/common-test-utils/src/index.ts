@@ -44,7 +44,6 @@ export function getLogFilePath(_name: string) {
   //
   // * TMPDIR is set for some POSIX-likes, e.g. macOS, but not Linux.
   // * TEMP is set on Windows.
-  // @ts-ignore
   //const rootDir = path.dirname(path.dirname(path.dirname(__dirname)));
   //return path.join(rootDir, "logs", `${name}.log`);
   return "stdout";

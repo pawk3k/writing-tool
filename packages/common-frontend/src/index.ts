@@ -5,5 +5,5 @@ export * from "./constants";
 export * from "react-redux";
 export * from "./themes/utils";
 export * from "./types";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 export * from "@reduxjs/toolkit";

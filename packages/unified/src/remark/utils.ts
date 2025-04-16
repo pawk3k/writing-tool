@@ -713,7 +713,7 @@ export class LinkUtils {
         // remove .md extension if it exists, but keep full path in case this is an image
         fname = /^(?<name>.*?)(\.md)?$/.exec(_.trim(v as string))?.groups?.name;
       } else {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         clean[k] = v;
       }
     });
@@ -731,7 +731,7 @@ export class LinkUtils {
       clean.vaultName = vaultName;
     }
     // TODO
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     return { from: { fname, alias }, data: clean, type: "ref" };
   }
 
@@ -745,7 +745,7 @@ export class LinkUtils {
         message: `both fname and anchorStart for ${ref} is undefined`,
       });
     }
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     return noteRef;
   }
 
@@ -1196,7 +1196,7 @@ function walk(node: Parent, fn: any) {
   fn(node);
   if (node.children) {
     (node.children as Node[]).forEach((n) => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       walk(n, fn);
     });
   }
@@ -1453,7 +1453,7 @@ export class RemarkUtils {
     dendronConfig: DendronConfig
   ) {
     const prevNote = { ...note };
-     
+
     return function (this: Processor) {
       return async (tree: Node, _vfile: VFile) => {
         const root = tree as DendronASTRoot;
@@ -1562,10 +1562,9 @@ export class RemarkUtils {
       if (_.isEqual(aOmit, bOmit)) {
         if (_.has(a, "children")) {
           return _.every(
-            // @ts-ignore
             a.children as Node[],
             (aChild: Node, aIndex: number) => {
-              // @ts-ignore
+              // @ts-expect-error TODO: fix this supression
               const bChild = (b.children as Node[])[aIndex];
               return RemarkUtils.hasIdenticalChildren(aChild, bChild);
             }
@@ -1651,9 +1650,9 @@ export class RemarkUtils {
     // Read and parse the note
     const noteText = NoteUtils.serialize(note);
     const noteAST = proc.parse(noteText);
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     if (_.isUndefined(noteAST.children)) return [];
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const nodesToSearch = _.filter(noteAST.children as Node[], (node) =>
       _.includes(NODE_TYPES_TO_EXTRACT, node.type)
     );

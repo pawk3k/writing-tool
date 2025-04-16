@@ -54,7 +54,7 @@ function attachParser(proc: Unified.Processor) {
 
       return eat(match[0])({
         type: DendronASTTypes.EXTENDED_IMAGE,
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         value,
         url: match.groups.url,
         alt: match.groups.alt,

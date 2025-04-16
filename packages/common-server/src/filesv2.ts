@@ -22,11 +22,10 @@ import fs from "fs-extra";
 import YAML, { JSON_SCHEMA } from "js-yaml";
 import _ from "lodash";
 import path from "path";
-// @ts-ignore
 import tmp, { DirResult, dirSync } from "tmp";
 import { resolvePath } from "./files";
 import { SchemaParserV2 } from "./parser";
-// @ts-expect-error
+// @ts-expect-error TODO: fix error
 import textextensionslist from "textextensions";
 
 /** Dendron should ignore any of these folders when watching or searching folders.
@@ -475,7 +474,7 @@ async function findFileInVault({
   for (const vault of vaults) {
     const fullPath = path.join(wsRoot, VaultUtils.getRelPath(vault), fpath);
     // Doing this sequentially to simulate how publishing handles conflicting assets.
-     
+
     if (await fileExists(fullPath)) {
       return { vault, fullPath };
     }
@@ -565,7 +564,6 @@ class FileUtils {
         // we got to the end without a match
         .on("end", () => resolve({ data: false }))
         .on("data", (chunk) => {
-           
           for (let i = 0; i < chunk.length; i++) {
             const a = String.fromCharCode(
               Buffer.isBuffer(chunk) ? chunk[i] : chunk.charCodeAt(i)

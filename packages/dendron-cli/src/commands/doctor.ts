@@ -1,6 +1,5 @@
 import { NoteProps } from "@dendronhq/common-all";
 import { DoctorService, DoctorActionsEnum } from "@dendronhq/engine-server";
-// @ts-ignore
 import _ from "lodash";
 import yargs from "yargs";
 import { CLICommand, CommandCommonProps } from "./base";

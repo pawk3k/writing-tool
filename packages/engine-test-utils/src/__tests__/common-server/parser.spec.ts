@@ -13,7 +13,7 @@ describe(`SchemaParserV2 tests:`, () => {
 
     it(`WHEN schema is missing id THEN throw`, () => {
       const input = [{ ...VALID_SCHEMA_OPTS }];
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       delete input[0].id;
 
       expect(() => SchemaParserV2.validateTopSchemasHaveIds(input)).toThrow();
@@ -32,7 +32,7 @@ describe(`SchemaParserV2 tests:`, () => {
       expect(() =>
         SchemaParserV2.createFromSchemaOpts({
           ...VALID_SCHEMA_OPTS,
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           pattern: 123,
         })
       ).toThrow(new RegExp(`Pattern should be a string value.*123.*`));
@@ -42,7 +42,7 @@ describe(`SchemaParserV2 tests:`, () => {
       expect(() =>
         SchemaParserV2.createFromSchemaOpts({
           ...VALID_SCHEMA_OPTS,
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           i_dont_belong_here: "hi",
         })
       ).toThrow(new RegExp(`Detected invalid property "i_dont_belong_here".*`));

@@ -263,7 +263,7 @@ export class EngineAPIService
    * Setup telemetry tracking on engine events to understand user engagement
    * levels
    */
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   private setupEngineAnalyticsTracking() {
     this._engineEventEmitter.onEngineNoteStateChanged((entries) => {
       const createCount = extractNoteChangeEntriesByType(

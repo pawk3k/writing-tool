@@ -83,7 +83,7 @@ export class NotePickerUtils {
       id: CREATE_NEW_LABEL,
       fname,
       type: "note",
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       vault: {},
     });
     return {
@@ -103,7 +103,7 @@ export class NotePickerUtils {
       id: CREATE_NEW_WITH_TEMPLATE_LABEL,
       fname,
       type: "note",
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       vault: {},
     });
 

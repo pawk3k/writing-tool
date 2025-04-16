@@ -345,7 +345,7 @@ export default class BacklinksTreeDataProvider
 
     let pathsSorted: string[];
     if (sortOrder === BacklinkPanelSortOrder.PathNames) {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       pathsSorted = this.shallowFirstPathSort(referencesByPath);
     } else if (sortOrder === BacklinkPanelSortOrder.LastUpdated) {
       pathsSorted = Object.keys(referencesByPath).sort((p1, p2) => {

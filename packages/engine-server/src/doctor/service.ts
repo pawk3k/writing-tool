@@ -222,13 +222,13 @@ export class DoctorService implements Disposable {
     const engineWrite = dryRun
       ? () => {}
       : throttle(_.bind(engine.writeNote, engine), 300, {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           leading: true,
         });
     const engineDelete = dryRun
       ? () => {}
       : throttle(_.bind(engine.deleteNote, engine), 300, {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           leading: true,
         });
 
@@ -310,7 +310,7 @@ export class DoctorService implements Disposable {
         );
         return { exit };
       }
-       
+
       case DoctorActionsEnum.H1_TO_TITLE: {
         doctorAction = async (note: NoteProps) => {
           const changes: NoteChangeEntry[] = [];
@@ -650,7 +650,7 @@ export class DoctorService implements Disposable {
       for (const note of notes) {
         if (numChanges >= limit) break;
         this.L.debug({ msg: `processing ${note.fname}` });
-         
+
         await doctorAction(note);
       }
     }

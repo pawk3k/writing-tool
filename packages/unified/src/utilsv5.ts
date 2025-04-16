@@ -12,15 +12,13 @@ import {
   OptionalExceptFor,
   ProcFlavor,
 } from "@dendronhq/common-all";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import mermaid from "@dendronhq/remark-mermaid";
 import _ from "lodash";
 import link from "rehype-autolink-headings";
 import math from "remark-math";
-// @ts-ignore
 // I don't know when it is used :)
 // import variables from "remark-variables";
-// @ts-ignore
 import katex from "rehype-katex";
 import raw from "rehype-raw";
 import slug from "rehype-slug";
@@ -148,13 +146,10 @@ function checkProps({
   data: any;
 }): { valid: true } | { valid: false; missing: string[] } {
   const hasAllProps = _.map(requiredProps, (prop) => {
-    // @ts-ignore
     return !_.isUndefined(data[prop]);
   });
   if (!_.every(hasAllProps)) {
-    // @ts-ignore
     const missing = _.filter(requiredProps, (prop) =>
-      // @ts-ignore
       _.isUndefined(data[prop])
     );
     return { valid: false, missing };
@@ -453,7 +448,7 @@ export class MDUtilsV5 {
         },
         content: {
           type: "text",
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           value: "",
         },
       });

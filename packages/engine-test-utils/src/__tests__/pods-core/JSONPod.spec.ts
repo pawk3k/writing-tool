@@ -46,7 +46,7 @@ _.map(JSON_PRESETS, (presets, name) => {
       })
     )("%p", async (_key, TestCase) => {
       const { testFunc, ...opts } = TestCase;
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       const pod = podsDict[name]();
       await runEngineTestV5(testFunc, {
         ...opts,

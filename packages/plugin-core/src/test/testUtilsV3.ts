@@ -169,7 +169,7 @@ export const writeConfig = (opts: {
   return writeYAML(configPath, opts.config);
 };
 
-export async function setupWorkspace() {}  
+export async function setupWorkspace() {}
 
 export async function setupLegacyWorkspace(
   opts: SetupLegacyWorkspaceOpts
@@ -257,7 +257,7 @@ export async function setupLegacyWorkspaceMulti(
   let workspaceFolders: readonly WorkspaceFolder[] | undefined;
 
   const { wsRoot, vaults } = await EngineTestUtilsV4.setupWS();
-  new StateService(opts.ctx!);  
+  new StateService(opts.ctx!);
   setupCodeConfiguration(opts);
   if (copts.workspaceType === WorkspaceType.CODE) {
     stubWorkspace({ wsRoot, vaults });
@@ -389,7 +389,6 @@ export function setupBeforeAfter(
       // in describeMultiWS > [[../packages/plugin-core/src/test/testUtilsV3.ts#^lk3whwd4kh4k]]
       // TODO: keep in place until we completely remove `setupBeforeAndAfter`
       try {
-        // @ts-ignore
         sinon
           .stub(VSCodeUtils, "getInstallStatusForExtension")
           .returns(InstallStatus.NO_CHANGE);
@@ -420,7 +419,7 @@ export function setupBeforeAfter(
 }
 
 export function stubSetupWorkspace({ wsRoot }: { wsRoot: string }) {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.gatherFolderPath = () => {
     return wsRoot;
   };
@@ -440,7 +439,7 @@ export const createEngineFactory = (
   ): DEngineClient => {
     const engine = new FakeEngine() as DEngineClient;
     _.map(overrides || {}, (method, key: keyof DEngine) => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       engine[key] = method(opts);
     });
     return engine;
@@ -467,7 +466,7 @@ export const stubVaultInput = (opts: {
   }
 
   let acc = 0;
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.showQuickPick = async () => ({ label: opts.sourceType });
 
   VSCodeUtils.showInputBox = async () => {

@@ -71,7 +71,7 @@ async function canShowDiff(opts: {
 /**
  * Return undefined if no changes, otherwise string with last commit
  */
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 function getLastChangelogCommit(engine: DEngineClient): undefined | string {
   const buildDir = path.join(engine.wsRoot, "build");
   const changesPath = path.join(buildDir, "changes.json");

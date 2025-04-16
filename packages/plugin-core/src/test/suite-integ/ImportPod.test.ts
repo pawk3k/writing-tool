@@ -39,7 +39,7 @@ suite("ImportPod", function () {
 
               const cmd = new ImportPodCommand();
               const podChoice = podClassEntryToPodItemV4(JSONImportPod);
-              // @ts-ignore
+              // @ts-expect-error TODO: fix this supression
               cmd.gatherInputs = async () => {
                 return { label: "", podChoice };
               };

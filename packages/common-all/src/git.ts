@@ -102,7 +102,6 @@ export function getGithubEditUrl(opts: {
 
 export function git2Github(gitUrl: string) {
   // 'git@github.com:kevinslin/dendron-vault.git'
-  // @ts-ignore
   const [_, userAndRepo] = gitUrl.split(":");
   const [user, repo] = userAndRepo.split("/");
   return `https://github.com/${user}/${path.basename(repo, ".git")}`;

@@ -1,5 +1,3 @@
- 
- 
 import {
   ConfigUtils,
   CONSTANTS,
@@ -536,7 +534,6 @@ function removeListItems({
   nodes: ParentWithIndex[];
   remove: "before-index" | "after-index";
 }): void {
-   
   for (let i = 0; i < nodes.length; i++) {
     const list = nodes[i];
     const listItem = nodes[i + 1];
@@ -581,7 +578,7 @@ function removeExceptSingleItem(nodes: ParentWithIndex[]) {
 /** If there are nested lists with a single item in them, replaces the outer single-item lists with the first multi-item list. */
 function removeSingleItemNestedLists(nodes: ParentWithIndex[]): void {
   let outermost: ParentWithIndex | undefined;
-   
+
   for (let i = 0; i < nodes.length; i++) {
     const list = nodes[i];
     if (list.ancestor.type !== DendronASTTypes.LIST) continue;
@@ -933,7 +930,7 @@ function findBlockAnchor({
     nodes,
     test: DendronASTTypes.BLOCK_ANCHOR,
     visitor: ({ node, index, ancestors }) => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       if (node.id === match) {
         // found anchor!
         foundIndex = ancestors.length > 0 ? ancestors[0].index : index;

@@ -20,7 +20,7 @@ function createFileLink(data?: Partial<DNoteRefData>): DNoteRefLink {
 
 describe("matchEmbedMarker", () => {
   test("basic", () => {
-    //@ts-ignore
+    //@ts-expect-error TODO: fix this supression
     expect(matchRefMarker("<!--(([[class.mba.chapters.2]]))-->")[1]).toEqual(
       "[[class.mba.chapters.2]]"
     );

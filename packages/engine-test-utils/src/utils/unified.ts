@@ -41,9 +41,9 @@ export class TestUnifiedUtils {
     if (_.isUndefined(index)) return node as Child;
     // TODO: pass in instead of call
     expect(node).toHaveProperty("children");
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     expect(node.children).toHaveProperty("length");
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const children = node.children as UnistNode[];
     expect(children.length).toBeGreaterThanOrEqual(index);
     return TestUnifiedUtils.getDescendantNode<Child>(

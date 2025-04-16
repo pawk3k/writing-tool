@@ -60,7 +60,7 @@ async function addWorkspaceVault({
 }
 
 function stubQuickPick(vault: DVault) {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.showQuickPick = () => {
     return { data: vault };
   };
@@ -117,7 +117,7 @@ suite("GIVEN RemoveVaultCommand", function () {
       const vaultToRemove = vaults[1];
       sinon.stub(VSCodeUtils, "showQuickPick").resolves({
         // RemoveVaultCommand uses this internally, but TypeScript doesn't recognize it for the stub
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         data: vaultToRemove,
       });
       await new RemoveVaultCommand(ExtensionProvider.getExtension()).run();
@@ -191,7 +191,7 @@ suite("GIVEN RemoveVaultCommand", function () {
 
           sinon.stub(VSCodeUtils, "showQuickPick").resolves({
             // RemoveVaultCommand uses this internally, but TypeScript doesn't recognize it for the stub
-            // @ts-ignore
+            // @ts-expect-error TODO: fix this supression
             data: vaultToRemove,
           });
           await new RemoveVaultCommand(ExtensionProvider.getExtension()).run();
@@ -218,7 +218,7 @@ suite("GIVEN RemoveVaultCommand", function () {
         const vaultToRemove = vaults[1];
         sinon.stub(VSCodeUtils, "showQuickPick").resolves({
           // RemoveVaultCommand uses this internally, but TypeScript doesn't recognize it for the stub
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           data: vaultToRemove,
         });
         await new RemoveVaultCommand(ExtensionProvider.getExtension()).run();
@@ -259,7 +259,7 @@ suite("GIVEN RemoveVaultCommand", function () {
         const vaultToRemove = vaults[0];
         sinon.stub(VSCodeUtils, "showQuickPick").resolves({
           // RemoveVaultCommand uses this internally, but TypeScript doesn't recognize it for the stub
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           data: vaultToRemove,
         });
         await new RemoveVaultCommand(ExtensionProvider.getExtension()).run();
@@ -308,7 +308,7 @@ suite("GIVEN RemoveVaultCommand", function () {
       expect(publishingConfig.duplicateNoteBehavior).toBeTruthy();
 
       const vaultsAfter = ExtensionProvider.getDWorkspace().vaults;
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       VSCodeUtils.showQuickPick = () => {
         return { data: vaultsAfter[1] };
       };
@@ -345,7 +345,7 @@ suite("GIVEN RemoveVaultCommand", function () {
         vaultsAfter[2].fsPath,
       ]);
 
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       VSCodeUtils.showQuickPick = () => {
         return { data: vaultsAfter[1] };
       };

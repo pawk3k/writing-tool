@@ -6,7 +6,7 @@ export function assertExists<T = any>(val: T, msg: string): NonNullable<T> {
   if (_.isNull(val) || _.isUndefined(val)) {
     throw new AssertionError(msg);
   }
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   return val;
 }
 

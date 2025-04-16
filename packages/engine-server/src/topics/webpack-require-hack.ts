@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 // NOTE: This file is ONLY used during debugging. In the webpacked production
 // build, the file that is used is the version located at
 // PROJECT_ROOT/packages/plugin-core/webpack-require-hack.js

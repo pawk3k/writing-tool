@@ -40,7 +40,7 @@ export class SnapshotVaultCommand extends BaseCommand<
       vaults: [vault],
       wsRoot,
       engine,
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       config: {},
     });
     window.showInformationMessage(`snapshot made to ${snapshotDirPath}`);

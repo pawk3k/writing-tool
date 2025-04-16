@@ -55,7 +55,7 @@ function attachParser(proc: Unified.Processor) {
     if (match) {
       return eat(match[0])({
         type: "blockAnchor",
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         value,
         id: match[1],
       });

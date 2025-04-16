@@ -9,11 +9,11 @@ export function run(): Promise<void> {
     });
 
     // bundles all files in the current directory matching `*.test`
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const importAll = (r: __WebpackModuleApi.RequireContext) =>
       r.keys().forEach(r);
 
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     importAll(require.context(".", true, /\.test$/));
 
     try {

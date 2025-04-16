@@ -34,11 +34,10 @@ function copyTemplateProps({
     if (k === "custom" && v) {
       if (targetNote.custom === undefined) targetNote.custom = {};
       Object.keys(v).forEach((key) => {
-        // @ts-ignore
         targetNote["custom"][key] = targetNote["custom"][key] || v[key];
       });
     } else {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       targetNote[k] = v;
     }
   });

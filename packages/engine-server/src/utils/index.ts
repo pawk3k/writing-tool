@@ -149,7 +149,7 @@ export function parseFileLink(ref: string): DNoteRefLink {
     if (k === "name") {
       fname = path.basename(v as string, ".md");
     } else {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       clean[k] = v;
     }
   });
@@ -210,7 +210,7 @@ export function stripLocalOnlyTags(doc: string) {
   do {
     matches = doc.match(re);
     if (matches) {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       const { raw, body } = matches.groups;
       doc = doc.replace(raw, "");
     }
@@ -235,7 +235,6 @@ export class HierarchyUtils {
 
     let acc = 0;
     while (acc !== skipLevels) {
-       
       const descendants = await Promise.all(
         children
           .flatMap(

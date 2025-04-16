@@ -131,7 +131,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     return new Promise((resolve, _reject) => {
       klaw(root)
         .pipe(excludeFilter)
-         
+
         .on("data", (item: Item) => {
           const out: DItem = { ...item, entries: [] };
           let isError = false;
@@ -321,7 +321,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     note: NoteProps;
     siblingNotes: NoteProps[];
     tree: DendronASTNode;
-    proc: ReturnType<typeof MDUtilsV5["procRemarkFull"]>;
+    proc: ReturnType<(typeof MDUtilsV5)["procRemarkFull"]>;
   }) {
     const linkPrefix = note.fname.substring(0, note.fname.lastIndexOf(".") + 1);
     const lines = note.body.split("\n");
@@ -375,7 +375,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     note: NoteProps;
     tree: DendronASTNode;
     assetMap: Map<string, string>;
-    proc: ReturnType<typeof MDUtilsV5["procRemarkFull"]>;
+    proc: ReturnType<(typeof MDUtilsV5)["procRemarkFull"]>;
   }) {
     const assetReferences = [
       // @ts-expect-error TS2345 - Argument of type 'DendronASTNode' is not assignable to parameter of type 'Node<Data>'.
@@ -402,7 +402,6 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
             ""
           );
           const value = assetMap.get(prefix.concat(key));
-          // @ts-ignore
           if (value) url = value;
         }
 

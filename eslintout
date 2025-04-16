@@ -1,0 +1,1273 @@
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/Server.ts
+  138:54  error  '_next' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/core.ts
+  34:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  34:21  error  Empty block statement            no-empty
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/index.ts
+  35:22  error  Promise executor functions should not be async  no-async-promise-executor
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/routes/workspace.ts
+  9:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/FuseEngine.ts
+  255:65  error  '_key' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/api.ts
+   51:22  error  '_msg' is defined but never used   @typescript-eslint/no-unused-vars
+  197:17  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/dnode.ts
+  722:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  763:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  865:38  error  '_k' is defined but never used   @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/error.ts
+  300:35  error  '_never' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/git.ts
+  105:10  error  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/sidebar.d.ts
+   7:15  error  'sidebarItemCategoryLink' is defined but only used as a type  @typescript-eslint/no-unused-vars
+  23:15  error  'sidebarItemConfig' is defined but only used as a type        @typescript-eslint/no-unused-vars
+  45:15  error  'sidebarConfig' is defined but only used as a type            @typescript-eslint/no-unused-vars
+  67:15  error  'sidebarItem' is defined but only used as a type              @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/sidebar.ts
+   82:7   error  'sidebarConfig' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+  233:10  error  'position' is defined but never used                         @typescript-eslint/no-unused-vars
+  233:20  error  'fname' is defined but never used                            @typescript-eslint/no-unused-vars
+  233:27  error  'reverse' is defined but never used                          @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/store/SchemaMetadataStore.ts
+  42:14  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/types/configs/workspace/journal.d.ts
+  12:15  error  'possibleDayOfWeekNumber' is defined but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/types/configs/workspace/journal.ts
+  16:7  error  'possibleDayOfWeekNumber' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/types/configs/workspace/task.ts
+  1:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/util/cache/cache.ts
+  18:7   error  '_key' is defined but never used   @typescript-eslint/no-unused-vars
+  22:7   error  '_key' is defined but never used   @typescript-eslint/no-unused-vars
+  22:16  error  '_data' is defined but never used  @typescript-eslint/no-unused-vars
+  26:8   error  '_key' is defined but never used   @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/components/DendronNote.tsx
+   1:1  error  Definition for rule 'react/no-danger' was not found                                                                  react/no-danger
+  16:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  23:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/engine/slice.ts
+  18:8  error  '_' is defined but never used         @typescript-eslint/no-unused-vars
+  21:8  error  'internal' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/ide/slice.ts
+  10:8  error  'internal' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/utils/vscode.ts
+  47:19  error  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/analytics.d.ts
+   3:14  error  'SiteEvents' is defined but only used as a type          @typescript-eslint/no-unused-vars
+  11:14  error  'SubscriptionEvents' is defined but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/analytics.ts
+  387:22  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  497:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/backup/service.ts
+  167:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/errorReporting.ts
+  5:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/filesv2.ts
+   72:32  error  '_reject' is defined but never used             @typescript-eslint/no-unused-vars
+  100:22  error  Promise executor functions should not be async  no-async-promise-executor
+  100:38  error  '_reject' is defined but never used             @typescript-eslint/no-unused-vars
+  605:12  error  'err' is defined but never used                 @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/logger.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/oneoff/ConfigCompat.d.ts
+  23:16  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/oneoff/ConfigCompat.ts
+  33:41  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  86:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-test-utils/src/index.ts
+  36:53  error  Unnecessary escape character: \/   no-useless-escape
+  36:55  error  Unnecessary escape character: \.   no-useless-escape
+  39:32  error  '_name' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/bin/dendron-cli.ts
+  43:1  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/commands/devCLICommand.ts
+  252:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/commands/pod.ts
+   1:1   error  Definition for rule 'import/no-dynamic-require' was not found  import/no-dynamic-require
+  70:24  error  A `require()` style import is forbidden                        @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/commands/workspace.d.ts
+  30:41  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/utils/cli.ts
+  30:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/DendronApp.tsx
+  80:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/DendronCalendarPanel/index.tsx
+    1:1  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+   35:7  error  'Calendar' is assigned a value but never used                    @typescript-eslint/no-unused-vars
+  130:9  error  'activeDate' is assigned a value but never used                  @typescript-eslint/no-unused-vars
+  198:9  error  'onPanelChange' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  213:9  error  'dateFullCellRender' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/DendronGraphPanel.tsx
+  76:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+  90:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/SeedBrowser.tsx
+  83:26  error  Parsing error: ',' expected
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/graph.tsx
+  162:22  error  'v' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+  248:5   error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+  267:5   error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+  273:5   error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+  303:5   error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+  326:11  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/hooks/index.tsx
+   18:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+   19:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+   80:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+  113:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  115:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  119:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found                                                      react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/hooks/useApplyGraphConfig.tsx
+   34:22  error  'v' is defined but never used                                    @typescript-eslint/no-unused-vars
+   68:20  error  'v' is defined but never used                                    @typescript-eslint/no-unused-vars
+  120:65  error  'i' is defined but never used                                    @typescript-eslint/no-unused-vars
+  216:5   error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/hooks/useGraphElements.tsx
+    1:1  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+  812:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+  861:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/hooks/useSyncGraphWithIDE.tsx
+  1:1  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/index.tsx
+  1:1  error  Definition for rule 'import/no-dynamic-require' was not found  import/no-dynamic-require
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/react-app-env.d.ts
+  2:1  error  Do not use a triple slash reference for react, use `import` style instead  @typescript-eslint/triple-slash-reference
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/utils/vscode.ts
+  25:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-viz/src/CircleText.tsx
+  1:1  error  Definition for rule 'react/require-default-props' was not found  react/require-default-props
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-viz/src/Tree.tsx
+    1:1   error  Definition for rule 'react/no-array-index-key' was not found                                                         react/no-array-index-key
+    3:1   error  Definition for rule 'react/require-default-props' was not found                                                      react/require-default-props
+   14:20  error  A `require()` style import is forbidden                                                                              @typescript-eslint/no-require-imports
+   89:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  111:9   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  113:9   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  439:12  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  534:12  error  Unsafe usage of optional chaining. If it short-circuits with 'undefined' the evaluation will throw TypeError         no-unsafe-optional-chaining
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/backfillV2/service.d.ts
+  8:53  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/cache/dendronFileSystemCache.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/changelog/changelog.ts
+   6:8   error  '_' is defined but never used                       @typescript-eslint/no-unused-vars
+  75:10  error  'getLastChangelogCommit' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/doctor/service.d.ts
+  38:21  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/doctor/service.ts
+  79:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  81:36  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/drivers/SQLiteMetadataStore.ts
+  198:27  error  '_note' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/drivers/file/noteParser.ts
+  301:33  error  '_k' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/drivers/file/storev2.ts
+  173:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+  184:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+  193:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/engineClient.ts
+  329:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/external/memo/utils/utils.ts
+  160:46  error  '_lineNum' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/migrations.ts
+  19:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/service.ts
+  90:5  error  'previousVersion' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/utils.d.ts
+  13:16  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  47:43  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/utils.ts
+   16:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  265:41  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/git.ts
+  216:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/hooks.ts
+  92:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/webpack-require-hack.ts
+  9:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/utils/index.ts
+  214:20  error  'body' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/workspace/fileAddWatcher.ts
+  2:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/workspace/utils.ts
+  97:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/engine-server/bulkWriteNotes.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/engine-server/getNoteBlocks.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/engine-server/index.d.ts
+  116:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  122:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  141:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  257:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  269:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  326:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/engine-server/rename.d.ts
+  49:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/engine-server/write.d.ts
+  35:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/pods-core/index.d.ts
+  15:17  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/presets/pods-core/markdown.d.ts
+  3:13  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/lib/utils/GDocMockResult.d.ts
+   25:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   43:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   52:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   94:24  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  135:38  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  150:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  163:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  173:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  183:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  200:42  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  203:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  571:45  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/bulkWriteNotes.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/getNoteBlocks.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/index.d.ts
+  116:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  122:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  141:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  257:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  269:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  326:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/note-refs.ts
+  8:10  error  Unexpected empty object pattern  no-empty-pattern
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/rename.d.ts
+  49:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/write.d.ts
+  35:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/pods-core/index.d.ts
+  15:17  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/pods-core/json.ts
+  258:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/pods-core/markdown.d.ts
+  3:13  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/utils/GDocMockResult.d.ts
+   25:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   43:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   52:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   94:24  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  135:38  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  150:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  163:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  173:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  183:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  200:42  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  203:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  571:45  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/utils/seed.ts
+  76:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/.vscode-test/vscode-darwin-arm64-1.98.2/Visual Studio Code.app/Contents/Resources/app/extensions/html-language-features/server/lib/jquery.d.ts
+   203:20  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   209:20  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   251:19  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   268:23  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   274:23  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   583:16  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   792:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   893:58  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   901:58  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1636:72  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1645:89  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1668:51  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1676:68  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1690:52  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1698:69  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1713:67  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1722:84  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1730:55  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1738:72  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1759:49  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1767:66  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1781:49  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1789:66  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1803:54  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1811:71  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1825:56  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1833:73  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1847:52  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1855:69  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1885:51  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1893:68  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  3223:21  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  3229:21  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  3236:40  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  3243:40  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/.vscode-test/vscode-darwin-arm64-1.98.2/Visual Studio Code.app/Contents/Resources/app/out/vscode-dts/vscode.d.ts
+   2291:14   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+   2297:41   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+   2317:37   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+   5731:19   error  An empty interface declaration allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9529:46   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  11920:25   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  13842:115  error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  13848:50   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  13865:130  error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  13886:19   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  13886:31   error  Irregular whitespace not allowed                                                                                                                                                                                                                                                                                                                                                          no-irregular-whitespace
+  16307:19   error  An empty interface declaration allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  16314:19   error  An empty interface declaration allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  16321:19   error  An empty interface declaration allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  20419:11   error  An interface declaring no members is equivalent to its supertype                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/engine-server/bulkWriteNotes.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/engine-server/getNoteBlocks.d.ts
+  6:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/engine-server/index.d.ts
+  116:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  122:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  141:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  257:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  269:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  326:18  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/engine-server/rename.d.ts
+  49:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/engine-server/write.d.ts
+  35:14  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/pods-core/index.d.ts
+  15:17  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/presets/pods-core/markdown.d.ts
+  3:13  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/engine-test-utils/src/utils/GDocMockResult.d.ts
+   25:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   43:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   52:40  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   94:24  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  135:38  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  150:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  163:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  173:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  183:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  200:42  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  203:32  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  571:45  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/commands/TaskComplete.d.ts
+  10:42  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/commands/TaskStatus.d.ts
+  17:41  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/commands/TogglePreviewLock.d.ts
+  11:43  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/components/lookup/NoteLookupProviderUtils.d.ts
+  12:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  13:19  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  14:25  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  15:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/features/codeActionProvider.d.ts
+  2:18  error  'activate' is defined but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/test/testUtils.d.ts
+  15:38  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  18:9   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  22:9   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/test/testUtilsV3.d.ts
+  184:5  error  Unexpected var, use let or const instead  no-var
+  233:5  error  Unexpected var, use let or const instead  no-var
+  305:5  error  Unexpected var, use let or const instead  no-var
+  324:5  error  Unexpected var, use let or const instead  no-var
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/packages/plugin-core/src/workspacev2.d.ts
+  6:15  error  Unexpected empty object pattern  no-empty-pattern
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/commands/TaskStatus.d.ts
+  17:41  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/commands/TogglePreviewLock.d.ts
+  11:43  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/components/lookup/NoteLookupProviderUtils.d.ts
+  12:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  13:19  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  14:25  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  15:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/features/codeActionProvider.d.ts
+  2:18  error  'activate' is defined but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/test/testUtils.d.ts
+  15:38  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  18:9   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  22:9   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/test/testUtilsV3.d.ts
+  184:5  error  Unexpected var, use let or const instead  no-var
+  233:5  error  Unexpected var, use let or const instead  no-var
+  305:5  error  Unexpected var, use let or const instead  no-var
+  324:5  error  Unexpected var, use let or const instead  no-var
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/out/src/workspacev2.d.ts
+  6:15  error  Unexpected empty object pattern  no-empty-pattern
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/scripts/variableSubstitution.ts
+  1:8  error  '_' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+  8:1  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/WSUtils.ts
+  100:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/WSUtilsV2.ts
+   51:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+   89:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  186:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/BrowseNoteCommand.ts
+  23:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ConvertLink.ts
+  142:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ConvertVaultCommand.ts
+  8:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/CopyCodespaceURL.ts
+  31:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/CopyNoteLink.ts
+  189:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/CopyNoteRef.ts
+  108:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/CreateNoteWithTraitCommand.ts
+  314:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/InsertNoteLink.ts
+  61:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MergeNoteCommand.ts
+   24:8   error  '_' is defined but never used                          @typescript-eslint/no-unused-vars
+  108:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MigrateSelfContainedVault.ts
+  3:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveHeader.ts
+  268:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveNoteCommand.ts
+  143:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveSelectionToCommand.ts
+  6:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RandomNote.ts
+  28:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/Refactor.ts
+  151:52  error  '_txt' is defined but never used  @typescript-eslint/no-unused-vars
+  162:52  error  '_txt' is defined but never used  @typescript-eslint/no-unused-vars
+  179:52  error  '_txt' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RefactorHierarchyV2.ts
+  106:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ReloadIndex.ts
+  24:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RenameNoteCommand.ts
+  69:13  error  'extra' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RenameNoteV2a.ts
+  69:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ShowLegacyPreview.ts
+  22:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ShowWelcomePageCommand.ts
+  27:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/SnapshotVault.ts
+  30:22  error  '_inputs' is defined but never used  @typescript-eslint/no-unused-vars
+  34:17  error  '_opts' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/TaskComplete.ts
+  26:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/TogglePreviewLock.ts
+  31:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/UpgradeSettings.ts
+  22:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/base.ts
+   46:15  error  '_name' is defined but never used  @typescript-eslint/no-unused-vars
+   62:22  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+   70:22  error  '_resp' is defined but never used  @typescript-eslint/no-unused-vars
+   75:21  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  193:38  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/pods/ConfigureServiceConnection.ts
+  26:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/doctor/buttons.ts
+  61:18  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  66:19  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/doctor/utils.ts
+  37:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/ButtonTypes.ts
+  125:21  error  '_payload' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/HierarchySelector.ts
+  58:13  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/LookupControllerV3.ts
+  534:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  564:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  591:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/NoteLookupProviderUtils.ts
+  18:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  19:15  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  20:21  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  21:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/pods/PodControls.ts
+  349:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/views/PreviewPanel.ts
+  401:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  425:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/extension.ts
+   7:3  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  15:3  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/external/memo/utils/utils.ts
+  218:46  error  '_lineNum' is defined but never used  @typescript-eslint/no-unused-vars
+  280:20  error  'offset' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/BacklinksTreeDataProvider.ts
+  194:5  error  '_token' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/DefinitionProvider.ts
+  68:5   error  '_token' is defined but never used  @typescript-eslint/no-unused-vars
+  95:18  error  'err' is defined but never used     @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/TipOfTheDayWebview.ts
+   3:8  error  '_md' is defined but never used       @typescript-eslint/no-unused-vars
+  51:5  error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  52:5  error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/codeActionProvider.ts
+   39:12  error  '_' is defined but never used         @typescript-eslint/no-unused-vars
+   69:7   error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+  112:7   error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  113:7   error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/logger.ts
+  190:5   error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  249:14  error  'err' is defined but never used    @typescript-eslint/no-unused-vars
+  266:18  error  'err' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/services/NoteTraitManager.ts
+  113:34  error  '_callbackType' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/services/stateService.ts
+  29:5  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/settings.ts
+  43:23  error  '_wsRoot' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/BacklinksPanelHoverTip.ts
+  10:14  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/CreateScratchNoteKeybindingTip.ts
+   2:8   error  '_' is defined but never used                 @typescript-eslint/no-unused-vars
+  27:21  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/GraphPanelTip.ts
+  10:14  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+  17:21  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/GraphThemeTip.ts
+  24:21  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/MeetingNotesTip.ts
+  10:14  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/ObsidianImportTip.ts
+  34:21  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/SettingsUITip.ts
+  24:21  error  '_displayLocation' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/survey.ts
+  28:18  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  32:12  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  83:18  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  87:12  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/telemetry.ts
+  24:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/telemetry/node/NodeTelemetryClient.ts
+  10:5  error  '_event' is defined but never used         @typescript-eslint/no-unused-vars
+  11:5  error  '_customProps' is defined but never used   @typescript-eslint/no-unused-vars
+  12:5  error  '_segmentProps' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/telemetry/web/WebTelemetryClient.ts
+  63:5  error  '_segmentProps' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/MockDendronExtension.ts
+   68:13  error  '_svc' is defined but never used      @typescript-eslint/no-unused-vars
+  181:14  error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  203:34  error  '_fpath' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/MockPreviewProxy.ts
+  12:14  error  '_note' is defined but never used    @typescript-eslint/no-unused-vars
+  26:8   error  '_noteId' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/expect.ts
+  7:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runPerfTest.ts
+  20:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runTest.ts
+  21:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runTestInteg.ts
+  20:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/suite-integ/components/pods/TestExportCommand.ts
+  47:20  error  '_config' is defined but never used  @typescript-eslint/no-unused-vars
+  69:5   error  '_opts' is defined but never used    @typescript-eslint/no-unused-vars
+  81:33  error  '_opts' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtils.ts
+  34:15  error  '_section' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+  64:30  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  80:7   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  97:7   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtilsV3.ts
+  395:16  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtilsv2.ts
+  29:10  error  '_activate' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/MeetingNote.ts
+  32:29  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/UserDefinedTraitV1.ts
+  34:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  68:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  69:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/journal.ts
+  27:29  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/webpack-require-hack.ts
+   1:1   error  Definition for rule 'import/no-dynamic-require' was not found  import/no-dynamic-require
+  12:18  error  A `require()` style import is forbidden                        @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/EditorUtils.ts
+  72:13  error  '_engine' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/ExtensionUtils.ts
+  84:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/analytics.ts
+  207:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/files.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/md.ts
+  710:14  error  '_alias' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  715:14  error  '_fname' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/versionProvider.ts
+  20:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/views/CalendarView.ts
+  38:5  error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  39:5  error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/views/GraphPanel.ts
+  167:5  error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  168:5  error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/views/LookupPanelView.ts
+  77:5  error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  78:5  error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/views/SampleView.ts
+  15:5   error  '_context' is defined but never used  @typescript-eslint/no-unused-vars
+  16:5   error  '_token' is defined but never used    @typescript-eslint/no-unused-vars
+  28:30  error  '_webview' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/vsCodeUtils.ts
+  238:17  error  '_section' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/extension.ts
+   29:12  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+   51:51  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+   76:16  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+   86:16  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+   96:16  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+  110:16  error  '_args' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/helpers/MockEngineAPIService.ts
+   84:16  error  '_ids' is defined but never used   @typescript-eslint/no-unused-vars
+   88:20  error  '_ids' is defined but never used   @typescript-eslint/no-unused-vars
+   92:13  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+   96:17  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  100:18  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  104:5   error  '_note' is defined but never used  @typescript-eslint/no-unused-vars
+  105:5   error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  110:5   error  '_id' is defined but never used    @typescript-eslint/no-unused-vars
+  111:5   error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  115:14  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  118:20  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/helpers/WorkspaceHelpers.ts
+  13:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  16:24  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/runWebIntegTest.ts
+  19:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/suite/index.ts
+  2:1  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/utils/WSUtils.ts
+   8:8   error  '_' is defined but never used    @typescript-eslint/no-unused-vars
+  38:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/views/preview/PreviewPanel.ts
+  390:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  414:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/workspace.ts
+  291:14  error  'err' is defined but never used                  @typescript-eslint/no-unused-vars
+  302:19  error  '_context' is defined but never used             @typescript-eslint/no-unused-vars
+  374:5   error  'opts' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  378:5   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/workspace/seedBrowserInitializer.ts
+  22:25  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/workspace/tutorialInitializer.ts
+  139:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/pods-core/src/builtin/MarkdownPod.ts
+  131:34  error  '_reject' is defined but never used  @typescript-eslint/no-unused-vars
+  171:23  error  '_k' is defined but never used       @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/pods-core/src/builtin/NextjsExportPod.ts
+   69:38  error  'body' is defined but never used                               @typescript-eslint/no-unused-vars
+  254:5   error  Definition for rule 'import/no-dynamic-require' was not found  import/no-dynamic-require
+  255:12  error  A `require()` style import is forbidden                        @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/pods-core/src/v2/pods/export/JSONExportPodV2.ts
+  8:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/backlinks.ts
+  15:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/backlinksHover.ts
+   42:36  error  '_file' is defined but never used    @typescript-eslint/no-unused-vars
+   62:20  error  '_index' is defined but never used   @typescript-eslint/no-unused-vars
+   62:33  error  '_parent' is defined but never used  @typescript-eslint/no-unused-vars
+  202:20  error  '_index' is defined but never used   @typescript-eslint/no-unused-vars
+  202:33  error  '_parent' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/blockAnchors.ts
+   1:8   error  '_' is defined but never used      @typescript-eslint/no-unused-vars
+  74:50  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  97:56  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/dendronPreview.ts
+   98:3   error  '_opts' is defined but never used                @typescript-eslint/no-unused-vars
+  100:9   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  101:36  error  '_file' is defined but never used                @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/dendronPub.ts
+  192:9   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  206:36  error  '_file' is defined but never used                @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/extendedImage.ts
+   75:50  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  125:60  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/hashtag.ts
+  144:50  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/hierarchies.ts
+  67:59  error  '_opts' is defined but never used                @typescript-eslint/no-unused-vars
+  68:9   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/noteRefsV2.ts
+  220:50  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+  364:14  error  'err' is defined but never used    @typescript-eslint/no-unused-vars
+  432:16  error  'err' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/publishSite.ts
+  19:9   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  21:36  error  '_file' is defined but never used                @typescript-eslint/no-unused-vars
+  25:24  error  '_idx' is defined but never used                 @typescript-eslint/no-unused-vars
+  25:30  error  '_parent' is defined but never used              @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/transformLinks.ts
+  18:9   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  18:9   error  'proc' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  19:36  error  '_file' is defined but never used                @typescript-eslint/no-unused-vars
+  20:24  error  '_idx' is defined but never used                 @typescript-eslint/no-unused-vars
+  20:30  error  '_parent' is defined but never used              @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/userTags.ts
+  123:50  error  '_opts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/utils.ts
+    88:18  error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   106:7   error  'note' is never reassigned. Use 'const' instead  prefer-const
+  1153:14  error  'err' is defined but never used                  @typescript-eslint/no-unused-vars
+  1404:27  error  '_vfile' is defined but never used               @typescript-eslint/no-unused-vars
+  1458:33  error  '_vfile' is defined but never used               @typescript-eslint/no-unused-vars
+  1507:27  error  '_vfile' is defined but never used               @typescript-eslint/no-unused-vars
+  1531:27  error  '_vfile' is defined but never used               @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/types.d.ts
+  46:5  error  Duplicate enum member value yaml  @typescript-eslint/no-duplicate-enum-values
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/types.ts
+  61:3  error  Duplicate enum member value yaml  @typescript-eslint/no-duplicate-enum-values
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/utilities/getParsingDependencyDicts.ts
+  117:32  error  '_index' is defined but never used  @typescript-eslint/no-unused-vars
+  126:60  error  '_index' is defined but never used  @typescript-eslint/no-unused-vars
+  133:60  error  '_index' is defined but never used  @typescript-eslint/no-unused-vars
+  160:30  error  '_index' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/utils.ts
+  13:1  error  Definition for rule 'import/no-named-default' was not found  import/no-named-default
+
+✖ 501 problems (501 errors, 0 warnings)
+

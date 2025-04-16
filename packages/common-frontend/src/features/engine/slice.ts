@@ -17,7 +17,7 @@ import {
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { EngineSliceState, LoadingStatus } from "../../types";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import internal from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 import { createLogger } from "../../utils/logger";
 

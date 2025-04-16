@@ -1,5 +1,3 @@
- 
-// @ts-ignore
 import matter from "gray-matter";
 import _ from "lodash";
 import minimatch from "minimatch";
@@ -15,11 +13,42 @@ import { VaultUtils } from "./vault";
 
 import YAML, { JSON_SCHEMA } from "js-yaml";
 import { InvalidFilenameReason } from "./constants/lookup";
-import { DEngineClient, DNodeOpts, DNodePropsQuickInputV2, NoteChangeEntry, NoteDicts, NoteOpts, NotePropsByIdDict, NoteQuickInputV2, RespV3, SchemaModuleDict, SchemaModuleOpts, SchemaModuleProps, SchemaOpts, SchemaPropsDict, SchemaRaw } from "./types/typesv2";
-import { DNodeExplicitPropsEnum, DNodeImplicitPropsEnum, DNodeProps, DNoteLoc, NoteLocalConfig, NoteProps, NotePropsMeta, SchemaData, SchemaProps } from "./types/foundation";
+import {
+  DEngineClient,
+  DNodeOpts,
+  DNodePropsQuickInputV2,
+  NoteChangeEntry,
+  NoteDicts,
+  NoteOpts,
+  NotePropsByIdDict,
+  NoteQuickInputV2,
+  RespV3,
+  SchemaModuleDict,
+  SchemaModuleOpts,
+  SchemaModuleProps,
+  SchemaOpts,
+  SchemaPropsDict,
+  SchemaRaw,
+} from "./types/typesv2";
+import {
+  DNodeExplicitPropsEnum,
+  DNodeImplicitPropsEnum,
+  DNodeProps,
+  DNoteLoc,
+  NoteLocalConfig,
+  NoteProps,
+  NotePropsMeta,
+  SchemaData,
+  SchemaProps,
+} from "./types/foundation";
 import { ReducedDEngine } from "./types/ReducedDEngine";
 import { CONSTANTS, ERROR_STATUS, TAGS_HIERARCHY } from "./constants";
-import { getSlugger, isNotUndefined, normalizeUnixPath, randomColor } from "./utils";
+import {
+  getSlugger,
+  isNotUndefined,
+  normalizeUnixPath,
+  randomColor,
+} from "./utils";
 
 export type ValidateFnameResp =
   | {
@@ -72,7 +101,7 @@ export class DNodeUtils {
     ];
     _.forEach(optionalProps, (op) => {
       if (opts[op]) {
-        // @ts-ignore;
+        // @ts-expect-error TODO: fix this supression;
         cleanProps[op] = opts[op];
       }
     });
@@ -1083,7 +1112,7 @@ export class NoteUtils {
     // All ancestors within the same hierarchy
     while (parts.length > 1) {
       parts = parts.slice(undefined, parts.length - 1);
-       
+
       note = (await engine.findNotesMeta({ fname: parts.join("."), vault }))[0];
       if (note && !(nonStubOnly && note.stub)) return note;
     }

@@ -33,7 +33,7 @@ export type SanityCheckResults = undefined | string | "cancel";
  *   - TGatherOutput: returned by {@link BaseCommand.gatherInputs}
  *   - TRunOpts: passed into {@link BaseCommand.run}
  */
- 
+
 export abstract class BaseCommand<
   TOpts,
   TOut = any,
@@ -100,7 +100,7 @@ export abstract class BaseCommand<
         return;
       }
 
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       const inputs = await this.gatherInputs(args);
       // if undefined, imply user cancel
       if (_.isUndefined(inputs)) {

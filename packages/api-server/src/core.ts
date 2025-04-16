@@ -12,7 +12,7 @@ export function setLogger({
   logLvl?: LogLvl;
 }) {
   const logLevel = logLvl || process.env.LOG_LEVEL || "debug";
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   L = createLogger("dendron.server", logPath, { lvl: logLevel });
   return L;
 }

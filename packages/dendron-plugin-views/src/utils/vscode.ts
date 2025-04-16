@@ -8,9 +8,9 @@ import React from "react";
  * @param msg
  */
 export const postVSCodeMessage = (msg: DMessage) => {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   if (window.vscode) {
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     window.vscode.postMessage(msg, "*");
   }
 };

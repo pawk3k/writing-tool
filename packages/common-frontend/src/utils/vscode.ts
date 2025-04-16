@@ -18,7 +18,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
     }
   };
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     window.addEventListener("message", listener);
     // @ts-expect-error TS2304 - Cannot find name 'window'.
     if (window.parent !== window) {
@@ -59,7 +59,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
     });
 
     return () => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       window.removeEventListener("message", listener);
       // @ts-expect-error TS2304 - Cannot find name 'window'.
       delete (window as any)["keyhookInstalled"];
@@ -68,9 +68,9 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
 };
 
 export const postVSCodeMessage = (msg: DMessage) => {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   if (window) {
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     window.parent.postMessage(msg, "*");
   }
 };

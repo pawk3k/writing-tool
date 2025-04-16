@@ -1,4 +1,3 @@
- 
 import {
   ConfigUtils,
   FIFOQueue,
@@ -7,15 +6,10 @@ import {
   DendronConfig,
   NoteProps,
 } from "@dendronhq/common-all";
-// @ts-ignore
-// @ts-ignore
 import _ from "lodash";
 import { Heading } from "mdast";
 import { blockquote, paragraph, root, text } from "mdast-builder";
 import path from "path";
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
 // eslint-disable-next-line import/no-named-default
 import { Node, Parent } from "unist";
 // import { normalizev2 } from "../utils";
@@ -87,8 +81,8 @@ export class MdastUtils {
     const cSlugger = slugger ?? getSlugger();
     const cMatchText = _.isString(match)
       ? match
-      // @ts-expect-error TS2345 - Argument of type 'Heading' is not assignable to parameter of type 'Node<Data> | Node<Data>[]'.
-      : normalizev2(toString(match), getSlugger());
+      : // @ts-expect-error TS2345 - Argument of type 'Heading' is not assignable to parameter of type 'Node<Data> | Node<Data>[]'.
+        normalizev2(toString(match), getSlugger());
     let foundNode: Node | undefined;
 
     const foundIndex = MdastUtils.findIndex(
@@ -160,7 +154,7 @@ export class MdastUtils {
         if (action === false) return false; // stop traversing completely
 
         // visit the children of this node, if any
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         if (node.children) {
           const parent = node as Parent;
           const newAncestors = [...ancestors, { ancestor: parent, index: i }];
@@ -199,7 +193,6 @@ export class MdastUtils {
     while (visitQueue.length > 0) {
       const node = visitQueue.dequeue()!;
       if (test.length === 0 || test.includes(node.type)) {
-         
         const out = await visitor(node);
         if (out === false) return;
         if (out === "skip") continue;

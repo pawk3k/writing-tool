@@ -97,7 +97,7 @@ export function env(name: ConfigKey, opts?: { shouldThrow?: boolean }): any {
     return override;
   }
   const stage = getStage();
-  // @ts-ignore: multiple configs
+  // @ts-expect-error TODO: fix this supression: multiple configs
   return getOrThrow((config || {})[stage] || {}, name, opts);
 }
 

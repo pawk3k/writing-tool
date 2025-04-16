@@ -11,7 +11,8 @@ export async function getWorkspaceConfig(wsRoot: Uri) {
 }
 
 async function readYAML(path: Uri, overwriteDuplicate?: boolean): Promise<any> {
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore TODO: fix this supression cause we might have web problem
   const textDecoder = new TextDecoder(); // This line of code is browser specific. For Node, we need to use the utils version of TextDecoder
   const file = await vscode.workspace.fs.readFile(path);
   const bar = textDecoder.decode(file);

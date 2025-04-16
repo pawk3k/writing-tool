@@ -276,13 +276,13 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         if (dest === DendronASTDest.MD_DENDRON) return;
         // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const _node = node as WikiLinkNoteV4;
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         let value = node.value as string;
         // we change this later
         const valueOrig = value;
         let isPublished = true;
         const data = _node.data;
-         
+
         let { vault } = MDUtilsV5.getProcData(proc);
         vault = getVault({
           vault,
@@ -536,7 +536,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         if (RemarkUtils.isParent(target)) {
           // Install the block anchor at the target node
           target.children.unshift(anchorHTML);
-        // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
+          // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
         } else if (RemarkUtils.isRoot(target)) {
           // If the anchor is the first thing in the note, anchorHTML goes to the start of the document
           target.children.unshift(anchorHTML);

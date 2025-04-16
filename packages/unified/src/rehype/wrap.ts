@@ -1,11 +1,11 @@
 import type { Processor, Plugin } from "unified";
 import visit from "unist-util-visit";
 import type { Node } from "unist";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import type { HastNode } from "hast-util-select";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import parseSelector from "hast-util-parse-selector";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import { selectAll } from "hast-util-select";
 
 type PluginOpts = {

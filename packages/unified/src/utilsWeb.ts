@@ -4,16 +4,15 @@ import {
   ERROR_STATUS,
   ProcFlavor,
 } from "@dendronhq/common-all";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import rehypePrism from "@mapbox/rehype-prism";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import mermaid from "@dendronhq/remark-mermaid";
 import _ from "lodash";
 import link from "rehype-autolink-headings";
 import math from "remark-math";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import variables from "remark-variables";
-// @ts-ignore
 import raw from "rehype-raw";
 import slug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
@@ -221,7 +220,7 @@ export class MDUtilsV5Web {
         },
         content: {
           type: "text",
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           value: "",
         },
       });

@@ -76,7 +76,7 @@ export function genDefaultSettings() {
       "files.autoSave": "onFocusChange",
       "markdown-preview-enhanced.enableWikiLinkSyntax": true,
       "markdown-preview-enhanced.wikiLinkFileExtension": ".md",
-      "pasteImage.path": "${currentFileDir}/assets/images",  
+      "pasteImage.path": "${currentFileDir}/assets/images",
       "pasteImage.prefix": "/",
     },
   };
@@ -109,11 +109,10 @@ export function setupCodeConfiguration(opts: SetupCodeConfigurationV2) {
 }
 
 export async function resetCodeWorkspace() {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   DendronExtension.workspaceFile = () => {
     return undefined;
   };
-  // @ts-ignore
   DendronExtension.workspaceFolders = () => {
     return undefined;
   };
