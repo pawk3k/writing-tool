@@ -8,7 +8,8 @@ import { configs as reactPluginHooksConfig } from "eslint-plugin-react-hooks";
 const recomendedImportConfig = flatConfigs.recommended;
 
 export default tseslint.config(
-  globalIgnores(["**/*.js", "**/*.test.*", "**/*.spec.*"]),
+  // Maybe at some point remove *.d.ts, but oke for now
+  globalIgnores(["**/*.js", "**/*.test.*", "**/*.spec.*", "**/*.d.ts"]),
   eslint.configs.recommended,
   tseslint.configs.recommended,
   recomendedImportConfig,
