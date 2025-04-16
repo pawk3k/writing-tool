@@ -5,6 +5,7 @@ import { globalIgnores } from "@eslint/config-helpers";
 import tseslint from "typescript-eslint";
 import { flatConfigs } from "eslint-plugin-import";
 import { configs as reactPluginHooksConfig } from "eslint-plugin-react-hooks";
+import eslintReactPlugin from "eslint-plugin-react";
 const recomendedImportConfig = flatConfigs.recommended;
 
 export default tseslint.config(
@@ -15,7 +16,7 @@ export default tseslint.config(
   recomendedImportConfig,
   // In future it would be just recomended not latest
   reactPluginHooksConfig["recommended-latest"],
-
+  eslintReactPlugin.configs.flat.recommended,
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
@@ -30,6 +31,8 @@ export default tseslint.config(
           argsIgnorePattern: "^_",
         },
       ],
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
     },
   }
 );

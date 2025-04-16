@@ -1,6 +1,6 @@
 // TODO: Please fix and remove the suppression
-// eslint-disable-next-line react/require-default-props
-/* eslint-disable react/require-default-props */
+ 
+ 
 import uniqueId from "lodash/uniqueId";
 import React, { useMemo } from "react";
 

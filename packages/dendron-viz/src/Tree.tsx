@@ -1,8 +1,5 @@
 // TODO: Please fix and remove the suppression
-// eslint-disable-next-line react/no-array-index-key
-/* eslint-disable react/no-array-index-key */
 
-/* eslint-disable react/require-default-props */
 import React, { useMemo, useRef, useState } from "react";
 import { FileType } from "./types";
 import countBy from "lodash/countBy";
@@ -199,7 +196,7 @@ export async function createTree() {
       });
 
       return children.slice(0, maxChildren);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, fileColors]);
 
     const selectedNode =
