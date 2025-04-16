@@ -44,7 +44,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
       };
 
       // @ts-expect-error TS2304 - Cannot find name 'window'.
-      if (!window.hasOwnProperty("keyhookInstalled")) {
+      if (!Object.prototype.hasOwnProperty.call(window, "keyhookInstalled")) {
         // @ts-expect-error TS2304 - Cannot find name 'window'.
         (window as any).keyhookInstalled = true;
         // @ts-expect-error TS2304 - Cannot find name 'window'.
@@ -64,6 +64,7 @@ export const useVSCodeMessage = (setMsgHook: (msg: VSCodeMessage) => void) => {
       // @ts-expect-error TS2304 - Cannot find name 'window'.
       delete (window as any)["keyhookInstalled"];
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

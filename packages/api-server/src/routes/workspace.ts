@@ -6,7 +6,6 @@ import {
 } from "@dendronhq/common-all";
 import { Request, Response, Router } from "express";
 import asyncHandler from "express-async-handler";
-import _ from "lodash";
 import { WorkspaceController } from "../modules/workspace";
 
 const router = Router();

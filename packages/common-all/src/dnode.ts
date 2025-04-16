@@ -11,7 +11,7 @@ import { DVault } from "./types/DVault";
 import { genUUID } from "./uuid";
 import { VaultUtils } from "./vault";
 
-import YAML, { JSON_SCHEMA } from "js-yaml";
+import { dump, JSON_SCHEMA } from "js-yaml";
 import { InvalidFilenameReason } from "./constants/lookup";
 import {
   DEngineClient,
@@ -719,7 +719,7 @@ export class NoteUtils {
         basename: note.fname + ".md",
       });
       return fpath;
-    } catch (err) {
+    } catch (_err) {
       throw new DendronError({
         message: "bad path",
         payload: { note, wsRoot },
@@ -760,7 +760,7 @@ export class NoteUtils {
           throw "note is undefined";
         }
         note = tmp;
-      } catch (err) {
+      } catch (_err) {
         throw Error(`no parent found for note ${note.id}`);
       }
     }
@@ -1736,7 +1736,7 @@ export class SchemaUtils {
     if (imports) {
       out.imports = imports;
     }
-    return YAML.dump(out, { schema: JSON_SCHEMA });
+    return dump(out, { schema: JSON_SCHEMA });
   }
 
   // /**

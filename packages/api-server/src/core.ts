@@ -31,7 +31,7 @@ export function configureLogger(opts?: { logPath: string; logLvl?: LogLvl }) {
     if (fs.existsSync(logPath)) {
       try {
         fs.moveSync(logPath, `${logPath}.old`, { overwrite: true });
-      } catch (err) {}
+      } catch (_err) {}
     }
     fs.ensureFileSync(logPath);
   }

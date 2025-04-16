@@ -384,7 +384,7 @@ export class SegmentClient {
               eventTime = new Date(
                 JSON.parse((err as any).config.data).timestamp
               );
-            } catch (err) {
+            } catch (_err) {
               eventTime = new Date();
             }
             resolve({

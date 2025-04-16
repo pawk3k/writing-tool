@@ -13,8 +13,8 @@ export type JournalConfig = {
 };
 
 // const assertion to tell the compiler that we only want these as dayOfWeekNumber.
-const possibleDayOfWeekNumber = [0, 1, 2, 3, 4, 5, 6] as const;
-export type dayOfWeekNumber = typeof possibleDayOfWeekNumber[number];
+type possibleDayOfWeekNumber = [0, 1, 2, 3, 4, 5, 6];
+export type dayOfWeekNumber = possibleDayOfWeekNumber[number];
 
 /**
  * Generates default {@link JournalConfig}

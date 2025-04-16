@@ -5,9 +5,7 @@ import {
   LookupModifierStatePayload,
   TreeMenu,
 } from "@dendronhq/common-all";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// @ts-expect-error TODO: fix this supression
-import internal from "@reduxjs/toolkit/node_modules/immer/dist/internal";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 import { GraphThemeEnum } from "@dendronhq/common-all/src/types";
 

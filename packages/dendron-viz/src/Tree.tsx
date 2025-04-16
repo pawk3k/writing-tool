@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
- 
+
 /* eslint-disable react/require-default-props */
 import React, { useMemo, useRef, useState } from "react";
 import { FileType } from "./types";
@@ -86,7 +86,6 @@ export async function createTree() {
         return d.children ? flatten(d.children.map(flattenTree)) : d;
       };
       const items = flattenTree(data);
-      // @ts-ignore
       const flatTree =
         colorEncoding === "last-change"
           ? items
@@ -108,9 +107,7 @@ export async function createTree() {
         "#f4f4f4",
         "#f4f4f4",
         "#f4f4f4",
-        // @ts-ignore
         colorEncoding === "last-change" ? "#C7ECEE" : "#FEEAA7",
-        // @ts-ignore
         colorEncoding === "number-of-changes" ? "#3C40C6" : "#823471",
       ];
       const colorScale = scaleLinear()
@@ -124,6 +121,7 @@ export async function createTree() {
         .range(colors)
         .clamp(true);
       return { colorScale, colorExtent };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
 
     const getColor = (d: any) => {
@@ -197,6 +195,7 @@ export async function createTree() {
       });
 
       return children.slice(0, maxChildren);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, fileColors]);
 
     const selectedNode =
@@ -436,7 +435,6 @@ export async function createTree() {
     return (
       <g transform={`translate(${width - 160}, ${height - 90})`}>
         <text x={50} y="-5" fontSize="10" textAnchor="middle">
-          {/* @ts-ignore */}
           {colorEncoding === "number-of-changes"
             ? "Number of changes"
             : "Last change date"}
@@ -531,6 +529,7 @@ export async function createTree() {
     if (isRoot && children) {
       const looseChildren = children?.filter((d) => !d.children?.length);
       children = [
+        // eslint-disable-next-line no-unsafe-optional-chaining
         ...children?.filter((d) => d.children?.length),
         {
           name: looseFilesId,

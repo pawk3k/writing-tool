@@ -1,6 +1,10 @@
 import _ from "lodash";
 import { useEffect } from "react";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import {
+  useDispatch,
+  useSelector,
+  type TypedUseSelectorHook,
+} from "react-redux";
 import { EngineState, InitNoteOpts, initNotes, syncConfig } from "./slice";
 import { AppDispatch, RootState } from "./store";
 import { createLogger } from "../../utils/logger";
@@ -45,6 +49,8 @@ export const useEngine = ({
     }
     logger.info({ ctx: "useEffect", state: "exit", engineState });
     return;
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [engineState.loading, opts.url, opts.ws]);
 };
 
@@ -73,5 +79,6 @@ export const useConfig = ({
     dispatch(syncConfig({ url: opts.url, ws: opts.ws }));
     logger.info({ ctx: "useEffect", state: "exit" });
     return;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };

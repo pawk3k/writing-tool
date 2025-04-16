@@ -11,7 +11,7 @@ import {
   SchemaModuleDict,
 } from "@dendronhq/common-all";
 
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { EngineSliceState, LoadingStatus } from "../../types";
 import { createLogger } from "../../utils/logger";
 

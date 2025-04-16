@@ -1,5 +1,5 @@
 import matter from "gray-matter";
-import YAML from "js-yaml";
+import { dump, load } from "js-yaml";
 import _ from "lodash";
 import { DNodeUtils } from "../dnode";
 import { DVault } from "../types/DVault";
@@ -27,8 +27,8 @@ export function string2Note({
   const options: any = {
     engines: {
       yaml: {
-        parse: (s: string) => YAML.load(s),
-        stringify: (s: string) => YAML.dump(s),
+        parse: (s: string) => load(s),
+        stringify: (s: string) => dump(s),
       },
     },
   };

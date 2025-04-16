@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-named-as-default
 import Amplify, { Logger } from "@aws-amplify/core";
 
 export enum LOG_LEVEL {

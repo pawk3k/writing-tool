@@ -1,4 +1,4 @@
-import YAML from "js-yaml";
+import { dump } from "js-yaml";
 import _ from "lodash";
 import { SchemaData, SchemaTemplate } from "./types/foundation";
 
@@ -69,7 +69,7 @@ export class SchemaCreationUtils {
       }
     }
 
-    return YAML.dump({
+    return dump({
       version: 1,
       imports: [],
       schemas: [topLevel],
