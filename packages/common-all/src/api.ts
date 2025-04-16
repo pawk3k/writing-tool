@@ -287,7 +287,7 @@ abstract class API {
 
 // === DendronAPI
 
-// eslint-disable-next-line camelcase
+ 
 let _DendronAPI_INSTANCE: DendronAPI | undefined;
 
 export class DendronAPI extends API {
@@ -302,7 +302,7 @@ export class DendronAPI extends API {
     if (_.isUndefined(_DendronAPI_INSTANCE)) {
       throw Error("no dendron api");
     }
-    // eslint-disable-next-line camelcase
+     
     return _DendronAPI_INSTANCE;
   }
 

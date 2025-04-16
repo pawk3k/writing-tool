@@ -19,7 +19,7 @@ async function testDataToNotePropsByIdDict(
   const dict: NotePropsByIdDict = {};
 
   for (const td of testData) {
-    // eslint-disable-next-line no-await-in-loop
+     
     const note = await NoteTestUtilsV4.createNote({
       fname: td.fname,
       vault: { fsPath: "/tmp/vault-path" },

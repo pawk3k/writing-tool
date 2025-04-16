@@ -1,4 +1,4 @@
-/* eslint-disable no-dupe-class-members */
+ 
 import {
   DendronError,
   DEngineClient,

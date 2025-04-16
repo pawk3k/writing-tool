@@ -131,7 +131,7 @@ export class MarkdownImportPod extends ImportPod<MarkdownImportPodConfig> {
     return new Promise((resolve, _reject) => {
       klaw(root)
         .pipe(excludeFilter)
-        // eslint-disable-next-line prefer-arrow-callback
+         
         .on("data", (item: Item) => {
           const out: DItem = { ...item, entries: [] };
           let isError = false;

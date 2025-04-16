@@ -169,7 +169,7 @@ export const writeConfig = (opts: {
   return writeYAML(configPath, opts.config);
 };
 
-export async function setupWorkspace() {} // eslint-disable-line no-empty-function
+export async function setupWorkspace() {}  
 
 export async function setupLegacyWorkspace(
   opts: SetupLegacyWorkspaceOpts
@@ -257,7 +257,7 @@ export async function setupLegacyWorkspaceMulti(
   let workspaceFolders: readonly WorkspaceFolder[] | undefined;
 
   const { wsRoot, vaults } = await EngineTestUtilsV4.setupWS();
-  new StateService(opts.ctx!); // eslint-disable-line no-new
+  new StateService(opts.ctx!);  
   setupCodeConfiguration(opts);
   if (copts.workspaceType === WorkspaceType.CODE) {
     stubWorkspace({ wsRoot, vaults });

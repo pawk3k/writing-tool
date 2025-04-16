@@ -343,7 +343,7 @@ export class DendronExtension implements IDendronExtension {
   }
 
   static async resetConfig(globalState: vscode.Memento) {
-    // eslint-disable-next-line  no-return-await
+     
     return await Promise.all(
       _.keys(GLOBAL_STATE).map((k) => {
         const _key = GLOBAL_STATE[k as keyof typeof GLOBAL_STATE];

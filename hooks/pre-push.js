@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ 
 const { checkToken } = require("./common");
 const { exec } = require("./exec");
 const madge = require("madge");
@@ -108,7 +108,7 @@ function main() {
   } catch {
     // Fallback to first origin if none are set
     upstream = `${exec("git remote").stdout.trim().split("\n")[0]}/master`;
-    // eslint-disable-next-line no-console
+     
     console.log("error", upstream);
   }
   // The files that would get pushed

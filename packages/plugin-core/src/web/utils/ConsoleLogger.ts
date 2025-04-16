@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ 
 import { DLogger } from "@dendronhq/common-all";
 
 /**

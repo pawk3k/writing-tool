@@ -142,7 +142,7 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
           journalMonthDateFormat
         );
 
-        // eslint-disable-next-line no-nested-ternary
+         
         return dailyDate.isValid
           ? dailyDate
           : monthlyDate.isValid

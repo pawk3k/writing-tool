@@ -103,7 +103,7 @@ export class EngineNoteProvider
     let curNode = this._tree[noteId];
 
     while (curNode.note.parent && !this._tree[curNode.note.parent]) {
-      // eslint-disable-next-line no-await-in-loop
+       
       await this.addParentOfNoteToCache(curNode.note);
 
       curNode = this._tree[curNode.note.parent];

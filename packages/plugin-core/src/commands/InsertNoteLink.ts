@@ -149,7 +149,7 @@ export class InsertNoteLinkCommand extends BasicCommand<
       }
       case InsertNoteLinkAliasModeEnum.prompt: {
         for (const note of opts.notes) {
-          // eslint-disable-next-line no-await-in-loop
+           
           const value = await this.promptForAlias(note);
           if (value !== "") {
             links.push(

@@ -1,4 +1,4 @@
-/* eslint-disable no-throw-literal */
+ 
 // @ts-ignore
 import matter from "gray-matter";
 import _ from "lodash";
@@ -1083,7 +1083,7 @@ export class NoteUtils {
     // All ancestors within the same hierarchy
     while (parts.length > 1) {
       parts = parts.slice(undefined, parts.length - 1);
-      // eslint-disable-next-line no-await-in-loop
+       
       note = (await engine.findNotesMeta({ fname: parts.join("."), vault }))[0];
       if (note && !(nonStubOnly && note.stub)) return note;
     }

@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+ 
 import { NotePropsMeta, NoteUtils, VaultUtils } from "@dendronhq/common-all";
 import { vault2Path } from "@dendronhq/common-server";
 import { AssertUtils, NoteTestUtilsV4 } from "@dendronhq/common-test-utils";

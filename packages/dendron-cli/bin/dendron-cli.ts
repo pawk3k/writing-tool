@@ -39,5 +39,5 @@ new PublishCLICommand().buildCmd(buildYargs);
 new ExportPodV2CLICommand().buildCmd(buildYargs);
 new VisualizeCLICommand().buildCmd(buildYargs);
 
-// eslint-disable-next-line no-unused-expressions
+ 
 buildYargs.strictCommands().demandCommand(1).help().argv;

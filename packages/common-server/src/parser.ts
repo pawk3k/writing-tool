@@ -59,7 +59,7 @@ async function getSchemasFromImport(
   opts: { fname: string; root: DVault; wsRoot: string }
 ) {
   const vpath = vault2Path({ vault: opts.root, wsRoot: opts.wsRoot });
-  let schemaModulesFromImport: SchemaModuleProps[] = [];
+  const schemaModulesFromImport: SchemaModuleProps[] = [];
   await Promise.all(
     _.map(imports, async (ent) => {
       const fpath = path.join(vpath, ent + ".schema.yml");

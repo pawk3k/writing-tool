@@ -61,7 +61,7 @@ export class SnapshotExportPod extends ExportPod {
   async plant(opts: SnapshotExportPodPlantOpts) {
     const { vaults, dest } = opts;
     const { ignore } = _.defaults(opts.config, { ignore: ".git" });
-    let cIgnore = _.reject(ignore.split(","), (ent) => _.isEmpty(ent));
+    const cIgnore = _.reject(ignore.split(","), (ent) => _.isEmpty(ent));
     // const payload = this.prepareForExport(opts);
 
     // verify snapshot root

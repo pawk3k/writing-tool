@@ -1480,7 +1480,7 @@ export class DendronEngineV3 extends EngineV3Base implements DEngine {
     for (const linkedNote of linkedRefNotes) {
       // Recurse into each child reference linked note.
       if (
-        // eslint-disable-next-line no-await-in-loop
+         
         !(await this._isCachedPreviewUpToDate({
           note: linkedNote,
           visitedIds,

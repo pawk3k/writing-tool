@@ -454,7 +454,7 @@ export class PreviewPanel implements PreviewProxy, vscode.Disposable {
 
   private initWithNote: NoteProps | undefined;
 
-  // eslint-disable-next-line camelcase
+   
   __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
     return {
       rewriteImageUrls: (note: NoteProps) => {

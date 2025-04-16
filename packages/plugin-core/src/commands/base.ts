@@ -33,7 +33,7 @@ export type SanityCheckResults = undefined | string | "cancel";
  *   - TGatherOutput: returned by {@link BaseCommand.gatherInputs}
  *   - TRunOpts: passed into {@link BaseCommand.run}
  */
-// eslint-disable-next-line no-redeclare
+ 
 export abstract class BaseCommand<
   TOpts,
   TOut = any,

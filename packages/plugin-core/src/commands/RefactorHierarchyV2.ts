@@ -171,7 +171,7 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
     let done = false;
     let replace: string | undefined;
     do {
-      // eslint-disable-next-line no-await-in-loop
+       
       replace = await VSCodeUtils.showInputBox({
         title: "Enter replace text",
         prompt:

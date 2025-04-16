@@ -66,7 +66,7 @@ export function fetchPodClassV4(
     if (!opts.podPkg || !opts.wsRoot) {
       throw Error("podPkg not defined");
     }
-    // eslint-disable-next-line global-require
+     
     const podEntries = require(`${path.join(
       opts.wsRoot,
       "node_modules",
@@ -131,9 +131,9 @@ export function enrichPodArgs(opts: {
 
     // if show config, output configuration and exit
     if (showConfig) {
-      // eslint-disable-next-line new-cap
+       
       const config = new podClass().config;
-      // eslint-disable-next-line no-console
+       
       console.log(config);
       process.exit(0);
     }
@@ -146,7 +146,7 @@ export function enrichPodArgs(opts: {
         podClass,
         force: true,
       });
-      // eslint-disable-next-line no-console
+       
       console.log(`config generated at ${configPath}`);
       process.exit(0);
     }
@@ -197,7 +197,7 @@ export function enrichPodArgs(opts: {
         cleanConfig["fname"] = args.query;
       }
     } else if (podId !== NextjsExportPod.id) {
-      // eslint-disable-next-line no-console
+       
       console.log(
         `WARN: --query and --vault parameter not implemented for podType ${podType}`
       );

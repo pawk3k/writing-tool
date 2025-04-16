@@ -19,7 +19,7 @@ export class Logger {
     if (msg.ctx) {
       ctx = msg.ctx;
     }
-    // eslint-disable-next-line no-console
+     
     console.log(this.name, ctx, msg);
   }
   debug = (msg: any) => {

@@ -38,7 +38,7 @@ export const createEngineFactoryFactory = ({
 };
 
 class MockEngineClass {
-  // eslint-disable-next-line no-empty-function
+   
   async init() {}
 }
 export const createMockEngine = createEngineFactoryFactory({

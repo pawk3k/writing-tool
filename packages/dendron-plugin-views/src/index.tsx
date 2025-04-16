@@ -1,4 +1,4 @@
-/* eslint-disable no-console, global-require, import/no-dynamic-require  */
+/* eslint-disable import/no-dynamic-require  */
 
 import { renderOnDOM } from "./bootstrap";
 

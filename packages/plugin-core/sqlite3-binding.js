@@ -1,4 +1,4 @@
-/* eslint-disable no-multi-assign */
+ 
 /* eslint-disable import/no-dynamic-require */
 
 /**

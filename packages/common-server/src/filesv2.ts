@@ -475,7 +475,7 @@ async function findFileInVault({
   for (const vault of vaults) {
     const fullPath = path.join(wsRoot, VaultUtils.getRelPath(vault), fpath);
     // Doing this sequentially to simulate how publishing handles conflicting assets.
-    // eslint-disable-next-line no-await-in-loop
+     
     if (await fileExists(fullPath)) {
       return { vault, fullPath };
     }
@@ -565,7 +565,7 @@ class FileUtils {
         // we got to the end without a match
         .on("end", () => resolve({ data: false }))
         .on("data", (chunk) => {
-          // eslint-disable-next-line no-plusplus
+           
           for (let i = 0; i < chunk.length; i++) {
             const a = String.fromCharCode(
               Buffer.isBuffer(chunk) ? chunk[i] : chunk.charCodeAt(i)

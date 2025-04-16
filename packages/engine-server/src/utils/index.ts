@@ -235,7 +235,7 @@ export class HierarchyUtils {
 
     let acc = 0;
     while (acc !== skipLevels) {
-      // eslint-disable-next-line no-await-in-loop
+       
       const descendants = await Promise.all(
         children
           .flatMap(

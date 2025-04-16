@@ -710,7 +710,7 @@ suite("GIVEN a text document with decorations", function () {
   });
 });
 
-// eslint-disable-next-line func-names
+ 
 function checkRanges(
   range: vscode.Range | undefined,
   startLine: number,

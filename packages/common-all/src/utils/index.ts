@@ -1,5 +1,5 @@
 // TODO: remove this disable once we deprecate old site config.
-/* eslint-disable camelcase */
+ 
 import GithubSlugger from "github-slugger";
 import _ from "lodash";
 import minimatch from "minimatch";
@@ -78,7 +78,7 @@ export const getSlugger = () => {
  * @returns boolean
  */
 export const isNumeric = (n: any) => {
-  // eslint-disable-next-line no-restricted-globals, radix
+   
   return !isNaN(parseInt(n)) && isFinite(n);
 };
 
@@ -130,9 +130,9 @@ export function isFalsy(u: any): boolean {
  * Originally released under CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.
  */
 function basicStringHash(text: string) {
-  // eslint-disable-next-line no-bitwise
+   
   return (
-    // eslint-disable-next-line no-bitwise
+     
     _.reduce(
       text,
       (prev, curr) => {
@@ -1063,7 +1063,7 @@ export class ConfigUtils {
    * If comparing the array value of a config is unnecessary,
    * make sure to add it to the omit path.
    */
-  static flattenConfigObject(opts: { obj: Object; omitPaths?: string[] }) {
+  static flattenConfigObject(opts: { obj: object; omitPaths?: string[] }) {
     const { obj, omitPaths } = opts;
     const objDeepCopy = _.cloneDeep(obj);
     if (omitPaths && omitPaths.length > 0) {
@@ -1074,7 +1074,7 @@ export class ConfigUtils {
 
     const accumulator: { path: string; value: any }[] = [];
     const flattenToPathValuePairs = (opts: {
-      obj: Object;
+      obj: object;
       parent?: string;
     }) => {
       const { obj, parent } = opts;

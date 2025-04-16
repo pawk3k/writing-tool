@@ -35,7 +35,7 @@ export class ConfigureUIPanelFactory {
       );
       this.panel.webview.onDidReceiveMessage(
         async (msg: ConfigureUIMessage) => {
-          // eslint-disable-next-line default-case
+           
           switch (msg.type) {
             case ConfigureUIMessageEnum.onUpdateConfig:
               {

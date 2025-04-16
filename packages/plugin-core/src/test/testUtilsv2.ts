@@ -76,7 +76,7 @@ export function genDefaultSettings() {
       "files.autoSave": "onFocusChange",
       "markdown-preview-enhanced.enableWikiLinkSyntax": true,
       "markdown-preview-enhanced.wikiLinkFileExtension": ".md",
-      "pasteImage.path": "${currentFileDir}/assets/images", // eslint-disable-line no-template-curly-in-string
+      "pasteImage.path": "${currentFileDir}/assets/images",  
       "pasteImage.prefix": "/",
     },
   };

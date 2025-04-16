@@ -185,7 +185,7 @@ export class UserQueries {
     let schemaName: string | undefined;
 
     do {
-      // eslint-disable-next-line no-await-in-loop
+       
       schemaName = await VSCodeUtils.showInputBox({
         value: hierarchyLevel.getDefaultSchemaName(),
       });

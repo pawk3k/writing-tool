@@ -70,7 +70,7 @@ describe("graphviz export pod", () => {
         });
 
         // check that graphviz file is created
-        let [expectedFiles, actualFiles] = FileTestUtils.cmpFiles(exportDest, [
+        const [expectedFiles, actualFiles] = FileTestUtils.cmpFiles(exportDest, [
           "graphviz.dot",
         ]);
         expect(expectedFiles).toEqual(actualFiles);

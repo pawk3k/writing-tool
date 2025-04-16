@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable no-nested-ternary */
+ 
 /* eslint-disable react/require-default-props */
 import React, { useMemo, useRef, useState } from "react";
 import { FileType } from "./types";

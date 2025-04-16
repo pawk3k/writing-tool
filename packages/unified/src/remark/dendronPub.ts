@@ -282,7 +282,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         const valueOrig = value;
         let isPublished = true;
         const data = _node.data;
-        // eslint-disable-next-line prefer-const
+         
         let { vault } = MDUtilsV5.getProcData(proc);
         vault = getVault({
           vault,

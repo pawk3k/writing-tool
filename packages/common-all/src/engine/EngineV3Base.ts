@@ -1,5 +1,5 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable no-empty-function */
+ 
+ 
 import _ from "lodash";
 import { BacklinkUtils } from "../BacklinkUtils";
 import { DLogger } from "../DLogger";
@@ -230,7 +230,7 @@ export abstract class EngineV3Base implements ReducedDEngine {
             }),
           };
         }
-        // eslint-disable-next-line no-await-in-loop
+         
         const parentResp = await this.noteStore.get(parentNote.parent);
         if (parentResp.data) {
           prevNote = { ...parentNote };

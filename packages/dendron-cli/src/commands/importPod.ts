@@ -68,7 +68,7 @@ export class ImportPodCLICommand extends CLICommand<
                     ? true
                     : `Enter either Yes or No`,
               })
-            : // eslint-disable-next-line no-console
+            :  
               console.log("Note is already in sync with the google doc");
 
         return resp;

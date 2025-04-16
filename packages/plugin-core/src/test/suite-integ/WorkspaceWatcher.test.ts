@@ -47,7 +47,7 @@ const setupBasic = async (opts: WorkspaceOpts) => {
   });
 };
 
-// eslint-disable-next-line camelcase
+ 
 const UNSAFE_getWorkspaceWatcherPropsForTesting = (
   watcher: WorkspaceWatcher
 ) => {
@@ -159,7 +159,7 @@ suite("WorkspaceWatcher", function () {
               newUri,
             },
           ],
-          // eslint-disable-next-line no-undef
+           
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               const reference = (
@@ -217,7 +217,7 @@ suite("WorkspaceWatcher", function () {
               newUri,
             },
           ],
-          // eslint-disable-next-line no-undef
+           
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               const newFile = (
@@ -262,7 +262,7 @@ suite("WorkspaceWatcher", function () {
         const editor = await ExtensionProvider.getWSUtils().openNote(fooNote);
         const vscodeEvent: vscode.TextDocumentWillSaveEvent = {
           document: editor.document,
-          // eslint-disable-next-line no-undef
+           
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               // Engine note body hasn't been updated yet
@@ -309,7 +309,7 @@ suite("WorkspaceWatcher", function () {
             await editor.document.save().then(() => {
               const vscodeEvent: vscode.TextDocumentWillSaveEvent = {
                 document: editor.document,
-                // eslint-disable-next-line no-undef
+                 
                 waitUntil: (_args: Thenable<any>) => {
                   _args.then(async () => {
                     // Engine note hasn't been updated yet

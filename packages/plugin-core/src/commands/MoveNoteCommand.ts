@@ -351,7 +351,7 @@ export class MoveNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
 
     for (const move of necessaryMoves) {
       // We need to wait for a rename to finish before triggering another rename
-      // eslint-disable-next-line no-await-in-loop
+       
       const changes = await engine.renameNote(move);
 
       allChanges.push(...(changes.data as NoteChangeEntry[]));

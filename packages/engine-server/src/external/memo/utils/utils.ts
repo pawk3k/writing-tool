@@ -1,6 +1,6 @@
-/* eslint-disable no-cond-assign */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-use-before-define */
+ 
+ 
+ 
 import { sort as sortPaths } from "cross-path-sort";
 import _ from "lodash";
 import path from "path";

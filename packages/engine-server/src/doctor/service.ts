@@ -310,7 +310,7 @@ export class DoctorService implements Disposable {
         );
         return { exit };
       }
-      // eslint-disable-next-line no-fallthrough
+       
       case DoctorActionsEnum.H1_TO_TITLE: {
         doctorAction = async (note: NoteProps) => {
           const changes: NoteChangeEntry[] = [];
@@ -650,7 +650,7 @@ export class DoctorService implements Disposable {
       for (const note of notes) {
         if (numChanges >= limit) break;
         this.L.debug({ msg: `processing ${note.fname}` });
-        // eslint-disable-next-line no-await-in-loop
+         
         await doctorAction(note);
       }
     }

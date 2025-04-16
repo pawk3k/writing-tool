@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable no-use-before-define */
+ 
+ 
 const fs = require("fs");
 const _ = require("lodash");
 
@@ -175,7 +175,7 @@ function generateScript({
 #!/usr/bin/env sh
 ${lines
   .map(
-    // eslint-disable-next-line prefer-template
+     
     (l) => prefix + l.map((ent) => ent.name).join(" --scope ") + ` ${suffix}`
   )
   .join("\n")}

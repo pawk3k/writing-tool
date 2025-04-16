@@ -34,7 +34,7 @@ const IMPORT = {
         wsRoot,
       });
       const vpath = vault2Path({ vault: vaults[0], wsRoot });
-      let [actualFiles, expectedFiles] = FileTestUtils.cmpFiles(vpath, [
+      const [actualFiles, expectedFiles] = FileTestUtils.cmpFiles(vpath, [
         "assets",
         "project.p1.md",
         "project.p1.n1.md",
@@ -94,7 +94,7 @@ const IMPORT = {
         wsRoot,
       });
       const vpath = vault2Path({ vault: vaults[0], wsRoot });
-      let [actualFiles, expectedFiles] = FileTestUtils.cmpFiles(vpath, [
+      const [actualFiles, expectedFiles] = FileTestUtils.cmpFiles(vpath, [
         "assets",
         "project.p1.md",
         "project.p1.n~1.md",

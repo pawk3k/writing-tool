@@ -26,7 +26,7 @@ export class CLIUtils {
   };
 
   static getClientVersion() {
-    // eslint-disable-next-line global-require
+     
     const pkgJSON = require("@dendronhq/dendron-cli/package.json");
     return pkgJSON.version;
   }

@@ -1453,7 +1453,7 @@ export class RemarkUtils {
     dendronConfig: DendronConfig
   ) {
     const prevNote = { ...note };
-    // eslint-disable-next-line func-names
+     
     return function (this: Processor) {
       return async (tree: Node, _vfile: VFile) => {
         const root = tree as DendronASTRoot;

@@ -9,7 +9,7 @@ export class DisposableStore {
   }
 
   public dispose() {
-    // eslint-disable-next-line no-restricted-syntax
+     
     for (const disposable of this._toDispose) {
       disposable.dispose();
     }

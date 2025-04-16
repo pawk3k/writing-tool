@@ -224,7 +224,7 @@ export class EngineConnector {
 
     // try to connect to file
     while (!this.initialized) {
-      // eslint-disable-next-line no-await-in-loop
+       
       await this.connectAndInit({ wsRoot, init: opts?.init });
     }
 

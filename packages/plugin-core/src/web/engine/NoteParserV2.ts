@@ -219,7 +219,7 @@ export class NoteParserV2 {
       lvl += 1;
 
       // TODO: Fix
-      // eslint-disable-next-line no-await-in-loop
+       
       await Promise.all(anotherOp);
     }
     return {

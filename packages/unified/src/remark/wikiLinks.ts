@@ -1,4 +1,4 @@
-/* eslint-disable func-names */
+ 
 import {
   ConfigUtils,
   CONSTANTS,

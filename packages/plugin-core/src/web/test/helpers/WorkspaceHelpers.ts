@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+ 
 import { CONSTANTS } from "@dendronhq/common-all";
 import YAML from "js-yaml";
 import * as vscode from "vscode";

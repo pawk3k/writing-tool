@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ 
 export type DLogger = {
   name?: string;
   level: any;

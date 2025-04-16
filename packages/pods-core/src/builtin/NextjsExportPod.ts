@@ -251,7 +251,7 @@ export class NextjsExportPodUtils {
       throw new Error(`no sidebar file found at ${sidebarFilePath}`);
     }
 
-    /* eslint-disable-next-line import/no-dynamic-require, global-require */
+    /* eslint-disable-next-line import/no-dynamic-require */
     return require(path.resolve(sidebarFilePath));
   }
 }
@@ -349,7 +349,7 @@ export class NextjsExportPod extends ExportPod<NextjsExportConfig> {
     await vaults.reduce(async (resp, vault) => {
       await resp;
       if (vault.visibility === "private") {
-        // eslint-disable-next-line no-console
+         
         console.log(`skipping copy assets from private vault ${vault.fsPath}`);
         return Promise.resolve({});
       }

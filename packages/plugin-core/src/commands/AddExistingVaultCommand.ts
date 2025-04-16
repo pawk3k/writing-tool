@@ -305,9 +305,9 @@ export class AddExistingVaultCommand extends BasicCommand<
         } else {
           // Some things, like updating config, can't be parallelized so needs to be done one at a time
           for (const vault of vaults) {
-            // eslint-disable-next-line no-await-in-loop
+             
             await wsService.createVault({ vault });
-            // eslint-disable-next-line no-await-in-loop
+             
             await this.addVaultToWorkspace(vault);
           }
         }
@@ -468,7 +468,7 @@ export class AddExistingVaultCommand extends BasicCommand<
     const vaults = workspace.vaults;
     // Some things, like updating workspace file, can't be parallelized so needs to be done one at a time
     for (const vault of vaults) {
-      // eslint-disable-next-line no-await-in-loop
+       
       await this.addVaultToWorkspace(vault);
     }
     // add to gitignore

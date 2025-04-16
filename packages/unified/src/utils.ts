@@ -1,4 +1,4 @@
-/* eslint-disable no-plusplus */
+ 
 import {
   ConfigUtils,
   FIFOQueue,
@@ -199,7 +199,7 @@ export class MdastUtils {
     while (visitQueue.length > 0) {
       const node = visitQueue.dequeue()!;
       if (test.length === 0 || test.includes(node.type)) {
-        // eslint-disable-next-line no-await-in-loop
+         
         const out = await visitor(node);
         if (out === false) return;
         if (out === "skip") continue;
