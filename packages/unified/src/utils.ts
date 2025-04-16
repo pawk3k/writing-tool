@@ -10,7 +10,7 @@ import _ from "lodash";
 import { Heading } from "mdast";
 import { blockquote, paragraph, root, text } from "mdast-builder";
 import path from "path";
-// eslint-disable-next-line import/no-named-default
+
 import { Node, Parent } from "unist";
 // import { normalizev2 } from "../utils";
 import { RemarkUtils } from "./remark";

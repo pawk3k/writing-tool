@@ -20,7 +20,6 @@ export const useMermaid = ({
       logger.info("mermaid initialized");
       mermaid.init();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noteRenderedBody]);
 };
 

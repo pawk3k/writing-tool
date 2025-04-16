@@ -2,9 +2,6 @@ import {
   DEngineInitPayload,
   NoteProps,
   NotePropsByIdDict,
-} from "@dendronhq/common-all";
-
-import {
   DendronApiV2,
   stringifyError,
   NoteUtils,
@@ -12,13 +9,10 @@ import {
   NoteDictsUtils,
   DendronConfig,
   SchemaModuleDict,
-} from "@dendronhq/common-all/src";
+} from "@dendronhq/common-all";
 
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import _ from "lodash";
 import { EngineSliceState, LoadingStatus } from "../../types";
-// @ts-expect-error TODO: fix this supression
-import internal from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 import { createLogger } from "../../utils/logger";
 
 /**

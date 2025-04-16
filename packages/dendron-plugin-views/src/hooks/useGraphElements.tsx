@@ -809,7 +809,7 @@ const useGraphElements = ({
         );
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [engine.notes, isLocalGraph, noteActive]);
 
   // Get new elements if active note changes
@@ -858,7 +858,7 @@ const useGraphElements = ({
       });
       setFullGraphVisited(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [elements]);
 
   // Prevent unnecessary parsing if no schemas have been added/deleted

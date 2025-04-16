@@ -1,4 +1,4 @@
-/* eslint-disable import/no-dynamic-require  */
+ 
 
 import { renderOnDOM } from "./bootstrap";
 

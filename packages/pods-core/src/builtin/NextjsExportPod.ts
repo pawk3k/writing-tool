@@ -251,7 +251,7 @@ export class NextjsExportPodUtils {
       throw new Error(`no sidebar file found at ${sidebarFilePath}`);
     }
 
-    /* eslint-disable-next-line import/no-dynamic-require */
+     
     return require(path.resolve(sidebarFilePath));
   }
 }

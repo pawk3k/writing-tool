@@ -14,8 +14,6 @@ type PluginOpts = {
  * Used from renaming wikilinks
  */
 function plugin(this: Unified.Processor, opts: PluginOpts): Transformer {
-  // @ts-expect-error TODO: fix this supression
-  const proc = this;
   function transformer(tree: Node, _file: VFile) {
     visit(tree, (node, _idx, _parent) => {
       if (node.type === DendronASTTypes.WIKI_LINK) {

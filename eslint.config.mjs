@@ -3,12 +3,31 @@
 import eslint from "@eslint/js";
 import { globalIgnores } from "@eslint/config-helpers";
 import tseslint from "typescript-eslint";
+import { flatConfigs } from "eslint-plugin-import";
+import { configs as reactPluginHooksConfig } from "eslint-plugin-react-hooks";
+const recomendedImportConfig = flatConfigs.recommended;
 
 export default tseslint.config(
   globalIgnores(["**/*.js", "**/*.test.*", "**/*.spec.*"]),
   eslint.configs.recommended,
   tseslint.configs.recommended,
+  recomendedImportConfig,
+  // In future it would be just recomended not latest
+  reactPluginHooksConfig["recommended-latest"],
+
   {
-    rules: { "@typescript-eslint/no-explicit-any": "off" },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "import/no-unresolved": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          vars: "all",
+          args: "after-used",
+          ignoreRestSiblings: true,
+          argsIgnorePattern: "^_",
+        },
+      ],
+    },
   }
 );
