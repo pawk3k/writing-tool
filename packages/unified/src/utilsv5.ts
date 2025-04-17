@@ -18,7 +18,8 @@ import _ from "lodash";
 import link from "rehype-autolink-headings";
 import math from "remark-math";
 // I don't know when it is used :)
-// import variables from "remark-variables";
+// @ts-expect-error TODO: fix me no-types defined
+import variables from "remark-variables";
 import katex from "rehype-katex";
 import raw from "rehype-raw";
 import slug from "rehype-slug";
@@ -274,7 +275,7 @@ export class MDUtilsV5 {
       .use(userTags)
       .use(extendedImage)
       .use(footnotes)
-      // .use(variables)
+      .use(variables)
       .use(backlinksHover, data.backlinkHoverOpts)
       .data("errors", errors);
 

@@ -2,16 +2,8 @@
 
 exports[`engine, notes/ > render > %p CUSTOM_FM 1`] = `
 "<h1 id="fm">Fm</h1>
-<p>{{ fm.foo }}</p>
-<p>title: {{ fm.title }}</p>"
-`;
-
-exports[`engine, notes/ > render > %p EMPTY_NOTE 1`] = `"<h1 id="empty">Empty</h1>"`;
-
-exports[`engine, notes/ render "CUSTOM_FM" 1`] = `
-"<h1 id=\\"fm\\">Fm</h1>
 <p>egg</p>
 <p>title: Fm</p>"
 `;
 
-exports[`engine, notes/ render "EMPTY_NOTE" 1`] = `"<h1 id=\\"empty\\">Empty</h1>"`;
+exports[`engine, notes/ > render > %p EMPTY_NOTE 1`] = `"<h1 id="empty">Empty</h1>"`;
