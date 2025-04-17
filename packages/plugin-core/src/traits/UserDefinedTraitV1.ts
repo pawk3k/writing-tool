@@ -1,4 +1,3 @@
- 
 import {
   NoteTrait,
   onCreateProps,
@@ -38,16 +37,16 @@ export class UserDefinedTraitV1 implements NoteTrait {
 
     this.OnWillCreate = {
       setNameModifier: trait.OnWillCreate?.setNameModifier
-        ? this.wrapFnWithRequiredModules(trait.OnWillCreate!.setNameModifier)
+        ? this.wrapFnWithRequiredModules(trait.OnWillCreate.setNameModifier)
         : undefined,
     };
 
     this.OnCreate = {
       setTitle: trait.OnCreate?.setTitle
-        ? this.wrapFnWithRequiredModules(trait.OnCreate!.setTitle)
+        ? this.wrapFnWithRequiredModules(trait.OnCreate.setTitle)
         : undefined,
       setTemplate: trait.OnCreate?.setTemplate
-        ? this.wrapFnWithRequiredModules(trait.OnCreate!.setTemplate)
+        ? this.wrapFnWithRequiredModules(trait.OnCreate.setTemplate)
         : undefined,
     };
   }

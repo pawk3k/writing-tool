@@ -10,7 +10,7 @@ function estimateABTestOutcomes<Out>(test: ABTest<Out>): Map<Out, number> {
   const foundCount = new DefaultMap<Out, number>(() => 0);
 
   let i = 0;
-   
+
   for (; i < LOOP; i++) {
     const group = test.getUserGroup(genUUID());
     foundCount.set(group, foundCount.get(group) + 1);

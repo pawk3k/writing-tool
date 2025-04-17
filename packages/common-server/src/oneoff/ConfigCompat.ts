@@ -1,4 +1,3 @@
- 
 import {
   ConfigUtils,
   DendronConfig,
@@ -78,7 +77,7 @@ type mappedConfigPath = {
   /**
    * legacy config path to target.
    */
-  target: string
+  target: string;
   /**
    * How we want to map the config.
    * if "skip", don't map.
@@ -87,7 +86,7 @@ type mappedConfigPath = {
    */
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-  iteratee?: Function | "skip"
+  iteratee?: Function | "skip";
   /**
    * Set to true to mark that legacy path should be preserved.
    */

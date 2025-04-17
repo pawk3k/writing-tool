@@ -34,7 +34,7 @@ const runGetNoteBlocks = async ({
       })
     )[0];
   const out = await engine.getNoteBlocks({
-    id: note!.id,
+    id: note.id,
     filterByAnchorType,
   });
   return cb(out);

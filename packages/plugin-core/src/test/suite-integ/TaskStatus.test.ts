@@ -14,7 +14,7 @@ suite("GIVEN TaskStatus", function () {
 
   describeSingleWS("WHEN a link to a task note is selected", {}, () => {
     let taskNote: NoteProps;
-    let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+    let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
     before(async () => {
       const { engine, vaults, wsRoot } = ExtensionProvider.getDWorkspace();
       const extension = ExtensionProvider.getExtension();
@@ -64,7 +64,7 @@ suite("GIVEN TaskStatus", function () {
   });
 
   describeSingleWS("WHEN a broken link is selected", {}, () => {
-    let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+    let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
     before(async () => {
       const { engine, vaults, wsRoot } = ExtensionProvider.getDWorkspace();
       const extension = ExtensionProvider.getExtension();
@@ -100,7 +100,7 @@ suite("GIVEN TaskStatus", function () {
     () => {
       let taskNote: NoteProps;
       let otherTaskNote: NoteProps;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
       before(async () => {
         const { engine, vaults, wsRoot } = ExtensionProvider.getDWorkspace();
         const extension = ExtensionProvider.getExtension();
@@ -170,7 +170,7 @@ suite("GIVEN TaskStatus", function () {
   describe("WHEN no link is selected", () => {
     describeMultiWS("AND a task note is open", {}, () => {
       let taskNote: NoteProps;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
       before(async () => {
         const { engine, vaults, wsRoot } = ExtensionProvider.getDWorkspace();
         const extension = ExtensionProvider.getExtension();
@@ -207,7 +207,7 @@ suite("GIVEN TaskStatus", function () {
 
     describeMultiWS("AND the current note is NOT a task", {}, () => {
       let otherNote: NoteProps;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
       before(async () => {
         const { engine, vaults, wsRoot } = ExtensionProvider.getDWorkspace();
         const extension = ExtensionProvider.getExtension();
@@ -239,7 +239,7 @@ suite("GIVEN TaskStatus", function () {
     });
 
     describeMultiWS("AND no note is open", {}, () => {
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
       before(async () => {
         const extension = ExtensionProvider.getExtension();
 

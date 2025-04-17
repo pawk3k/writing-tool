@@ -265,7 +265,7 @@ export function convertNoteRefToHAST(
         shouldApplyPublishRules &&
         !SiteUtils.canPublish({
           note,
-          config: config!,
+          config: config,
           wsRoot,
           vaults,
         })
@@ -324,7 +324,7 @@ export function convertNoteRefToHAST(
           } else {
             isPublished = SiteUtils.isPublished({
               note,
-              config: config!,
+              config: config,
               wsRoot,
               vaults,
             });

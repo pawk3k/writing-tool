@@ -70,5 +70,5 @@ const getConfigScope = async (): Promise<LocalConfigScope | undefined> => {
     ignoreFocusOut: true,
   });
 
-  return scope ? (scope.label as LocalConfigScope) : undefined;
+  return scope ? scope.label : undefined;
 };

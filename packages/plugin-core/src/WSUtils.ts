@@ -29,7 +29,6 @@ export class WSUtils {
       },
       (_progress, _token) => {
         _token.onCancellationRequested(() => {
-           
           console.log("Cancelled");
         });
 

@@ -915,7 +915,6 @@ export class LookupControllerV3 implements ILookupControllerV3 {
     }
   }
 
-   
   __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
     return {
       onSelect2ItemsBtnToggled: this.onSelect2ItemsBtnToggled.bind(this),

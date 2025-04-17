@@ -1,4 +1,3 @@
- 
 import { NotePropsMeta, NoteUtils, VaultUtils } from "@dendronhq/common-all";
 import { vault2Path } from "@dendronhq/common-server";
 import { AssertUtils, NoteTestUtilsV4 } from "@dendronhq/common-test-utils";
@@ -177,12 +176,10 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("cancelled") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("cancelled") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const vaultPath = vault2Path({ vault, wsRoot });
           const containsNew = _.includes(
@@ -229,12 +226,10 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const vaultPath = vault2Path({ vault, wsRoot });
           const fileNames = ["real.fake.md", "real.something.md"];
@@ -284,12 +279,10 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const sVaultPath = vault2Path({ vault: vault1, wsRoot });
           const xVaultPath = vault2Path({ vault: vault2, wsRoot });
@@ -350,12 +343,10 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
         );
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const firstVaultPath = vault2Path({ vault: vault1, wsRoot });
           const firstVaultFileNames = [
@@ -438,12 +429,10 @@ suite("CREATE_MISSING_LINKED_NOTES", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const firstVaultPath = vault2Path({ vault: vault1, wsRoot });
           const firstVaultFileNames = [
@@ -511,12 +500,10 @@ suite("REGENERATE_NOTE_ID", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const note = (await engine.findNotesMeta({ fname: "foo", vault }))[0];
           expect(note?.id).toNotEqual(oldId);
@@ -567,12 +554,10 @@ suite("REGENERATE_NOTE_ID", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const root = (
             await engine.findNotesMeta({ fname: "root", vault })
@@ -619,12 +604,10 @@ suite("REGENERATE_NOTE_ID", function () {
         const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
 
         try {
-          quickPickStub
-            .onCall(0)
-            .returns(
-              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-            );
+          quickPickStub.onCall(0).returns(
+            // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+            Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+          );
           await cmd.run();
           const note = (await engine.findNotesMeta({ fname: "foo", vault }))[0];
           expect(note?.id).toNotEqual(oldId);
@@ -791,12 +774,10 @@ suite("FIX_INVALID_FILENAMES", function () {
           );
           const quickPickStub = sinon.stub(VSCodeUtils, "showQuickPick");
           try {
-            quickPickStub
-              .onCall(0)
-              .returns(
-                // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-                Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
-              );
+            quickPickStub.onCall(0).returns(
+              // @ts-expect-error TS2352 - Conversion of type 'Promise<string>' to type 'Thenable<QuickPickItem>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+              Promise.resolve("proceed") as Thenable<vscode.QuickPickItem>
+            );
             await cmd.run();
             const getNoteResp2 = await engine.getNote("bar..'(foo,)'");
             expect(getNoteResp2.error).toBeFalsy();

@@ -14,19 +14,18 @@ export class CLIUtils {
    * @returns
    */
   static objectConfig2StringConfig = (ent: any): string => {
-    return (
-      _.map(ent, (v, k) => {
-        if (_.isUndefined(v)) {
-          return undefined;
-        } else {
-          return `${k}=${v}`;
-        }
-      }).filter((ent) => !_.isUndefined(ent)) as string[]
-    ).join(",");
+    return _.map(ent, (v, k) => {
+      if (_.isUndefined(v)) {
+        return undefined;
+      } else {
+        return `${k}=${v}`;
+      }
+    })
+      .filter((ent) => !_.isUndefined(ent))
+      .join(",");
   };
 
   static getClientVersion() {
-     
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const pkgJSON = require("@dendronhq/dendron-cli/package.json");

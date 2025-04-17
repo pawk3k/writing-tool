@@ -173,7 +173,6 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
     let done = false;
     let replace: string | undefined;
     do {
-       
       replace = await VSCodeUtils.showInputBox({
         title: "Enter replace text",
         prompt:
@@ -368,7 +367,7 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
     const { operations, renameCmd } = opts;
     const ctx = "RefactorHierarchy:runOperations";
     const out = await _.reduce<
-      typeof operations[0],
+      (typeof operations)[0],
       Promise<RenameNoteOutputV2a>
     >(
       operations,

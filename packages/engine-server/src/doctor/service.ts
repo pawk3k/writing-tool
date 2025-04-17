@@ -166,7 +166,7 @@ export class DoctorService implements Disposable {
           : VaultUtils.getVaultByName({ vaults, vname: link.from.vaultName! })!;
         return NoteUtils.create({
           fname: link.to!.fname!,
-          vault: destVault!,
+          vault: destVault,
         });
       }
     );

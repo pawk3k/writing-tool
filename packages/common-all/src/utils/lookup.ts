@@ -1,5 +1,10 @@
 import _ from "lodash";
-import { DEngineClient, NoteProps, NotePropsByIdDict, ReducedDEngine } from "../types/index";
+import {
+  DEngineClient,
+  NoteProps,
+  NotePropsByIdDict,
+  ReducedDEngine,
+} from "../types/index";
 import { FuseExtendedSearchConstants } from "../FuseEngine";
 import { NoteUtils } from "../dnode";
 

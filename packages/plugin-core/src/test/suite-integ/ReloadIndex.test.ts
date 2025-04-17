@@ -73,7 +73,7 @@ suite("GIVEN ReloadIndex", function () {
     const firstNote = "first";
     const secondNote = "second";
     let showMessage: sinon.SinonStub<
-      Parameters<typeof VSCodeUtils["showMessage"]>
+      Parameters<(typeof VSCodeUtils)["showMessage"]>
     >;
     before(async () => {
       const { wsRoot, vaults } = ExtensionProvider.getDWorkspace();
@@ -118,7 +118,7 @@ suite("GIVEN ReloadIndex", function () {
       const secondNote = "second";
       const thirdNote = "third";
       let showMessage: sinon.SinonStub<
-        Parameters<typeof VSCodeUtils["showMessage"]>
+        Parameters<(typeof VSCodeUtils)["showMessage"]>
       >;
       before(async () => {
         const { wsRoot, vaults } = ExtensionProvider.getDWorkspace();

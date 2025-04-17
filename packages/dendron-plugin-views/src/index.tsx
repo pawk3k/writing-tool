@@ -1,5 +1,3 @@
- 
-
 import { renderOnDOM } from "./bootstrap";
 
 // Import all components directly to ensure they're included in the bundle

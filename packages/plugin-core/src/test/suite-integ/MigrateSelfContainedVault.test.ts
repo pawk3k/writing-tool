@@ -28,7 +28,7 @@ function stubMigrateQuickPick(
   continueOption:
     | MigrateVaultContinueOption
     | undefined = MigrateVaultContinueOption.continue
-): SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]> {
+): SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]> {
   const stub = sinon.stub(VSCodeUtils, "showQuickPick");
   stub.onFirstCall().resolves({
     label: vaultSelect,
@@ -42,9 +42,9 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
     "WHEN the vault prompt is cancelled",
     { selfContained: false },
     () => {
-      let showErrorMessage: SinonStubbedFn<typeof window["showErrorMessage"]>;
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showErrorMessage: SinonStubbedFn<(typeof window)["showErrorMessage"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const cmd = new MigrateSelfContainedVaultCommand(
@@ -82,9 +82,9 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
     "WHEN the backup prompt is cancelled",
     { selfContained: false },
     () => {
-      let showErrorMessage: SinonStubbedFn<typeof window["showErrorMessage"]>;
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showErrorMessage: SinonStubbedFn<(typeof window)["showErrorMessage"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const cmd = new MigrateSelfContainedVaultCommand(
@@ -124,9 +124,9 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
     "WHEN there's only a single vault, and it's self contained",
     { selfContained: true },
     () => {
-      let showErrorMessage: SinonStubbedFn<typeof window["showErrorMessage"]>;
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let showErrorMessage: SinonStubbedFn<(typeof window)["showErrorMessage"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const cmd = new MigrateSelfContainedVaultCommand(
@@ -185,8 +185,8 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
       },
     },
     () => {
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const { vaults } = ExtensionProvider.getDWorkspace();
@@ -273,8 +273,8 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
       },
     },
     () => {
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const { vaults } = ExtensionProvider.getDWorkspace();
@@ -312,8 +312,8 @@ suite("GIVEN the MigrateSelfContainedVault command", () => {
     "WHEN there are multiple vaults",
     { selfContained: false },
     () => {
-      let reloadWindow: SinonStubbedFn<typeof VSCodeUtils["reloadWindow"]>;
-      let showQuickPick: SinonStubbedFn<typeof VSCodeUtils["showQuickPick"]>;
+      let reloadWindow: SinonStubbedFn<(typeof VSCodeUtils)["reloadWindow"]>;
+      let showQuickPick: SinonStubbedFn<(typeof VSCodeUtils)["showQuickPick"]>;
 
       before(async () => {
         const { vaults } = ExtensionProvider.getDWorkspace();

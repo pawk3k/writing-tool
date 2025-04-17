@@ -75,7 +75,7 @@ export type AsyncCreateEngineFunction = (
  */
 export async function createEngineFromEngine(opts: WorkspaceOpts) {
   return {
-    engine: engineServerCreateEngine(opts) as DEngineClient,
+    engine: engineServerCreateEngine(opts),
     port: undefined,
     server: undefined,
   };
@@ -86,7 +86,7 @@ export async function createEngineFromEngine(opts: WorkspaceOpts) {
  */
 export async function createEngineV3FromEngine(opts: WorkspaceOpts) {
   return {
-    engine: createEngineV3(opts) as DEngineClient,
+    engine: createEngineV3(opts),
     port: undefined,
     server: undefined,
   };

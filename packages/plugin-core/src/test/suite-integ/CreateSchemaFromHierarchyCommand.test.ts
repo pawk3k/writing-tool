@@ -31,7 +31,6 @@ const noteFactory = new TestNoteFactory({
 async function createSchemaCandidates(fnames: string[]) {
   const candidates = [];
   for (const fname of fnames) {
-     
     const note = await noteFactory.createForFName(fname);
     candidates.push({
       note,

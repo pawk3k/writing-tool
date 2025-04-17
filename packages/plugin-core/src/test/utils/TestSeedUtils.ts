@@ -1,5 +1,5 @@
 import { SeedService } from "@dendronhq/engine-server";
-import  { fake, replace } from "sinon";
+import { fake, replace } from "sinon";
 import { SeedAddCommand } from "../../commands/SeedAddCommand";
 import { SeedRemoveCommand } from "../../commands/SeedRemoveCommand";
 

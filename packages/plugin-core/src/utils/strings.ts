@@ -7,7 +7,6 @@ export const matchAll = (
 
   pattern.lastIndex = 0;
 
-   
   while ((match = pattern.exec(text))) {
     out.push(match);
   }

@@ -212,7 +212,7 @@ export async function setupLegacyWorkspace(
     });
   const vaults = [wsVault, ...(additionalVaults || [])].filter(
     (v) => !_.isUndefined(v)
-  ) as DVault[];
+  );
   stubWorkspaceFolders(wsRoot, vaults);
 
   // update config

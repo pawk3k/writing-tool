@@ -19,7 +19,7 @@ import anymatch from "anymatch";
 import { assign, CommentJSONValue, parse, stringify } from "comment-json";
 import { FSWatcher } from "fs";
 import fs from "fs-extra";
-import  { dump, JSON_SCHEMA, load } from "js-yaml";
+import { dump, JSON_SCHEMA, load } from "js-yaml";
 import _ from "lodash";
 import path from "path";
 import tmp, { DirResult, dirSync } from "tmp";

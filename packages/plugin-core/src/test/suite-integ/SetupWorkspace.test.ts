@@ -81,7 +81,7 @@ suite("GIVEN SetupWorkspace Command", function () {
   beforeEach(async () => {
     ctx = VSCodeUtils.getOrCreateMockContext();
     // Required for StateService Singleton Init at the moment.
-     
+
     new StateService({
       globalState: ctx.globalState,
       workspaceState: ctx.workspaceState,

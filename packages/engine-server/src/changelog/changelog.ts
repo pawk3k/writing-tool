@@ -42,12 +42,10 @@ async function getLastCommit(wsRoot: string) {
   return stdout.slice(1, -1);
 }
 
-async function canShowDiff(
-  opts: {
-    engine: DEngineClient;
-    filePath: string;
-  }
-): Promise<boolean> {
+async function canShowDiff(opts: {
+  engine: DEngineClient;
+  filePath: string;
+}): Promise<boolean> {
   const { engine, filePath } = opts;
   const { vaults, wsRoot } = engine;
   const config = DConfig.readConfigSync(wsRoot);

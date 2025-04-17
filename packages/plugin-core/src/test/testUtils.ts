@@ -81,7 +81,7 @@ export function onExtension({
   action: HistoryEventAction;
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-  cb: Function
+  cb: Function;
 }) {
   HistoryService.instance().subscribe(
     "extension",
@@ -100,7 +100,7 @@ export function onWatcher({
   action: HistoryEventAction;
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-  cb: Function
+  cb: Function;
 }) {
   HistoryService.instance().subscribe(
     "watcher",

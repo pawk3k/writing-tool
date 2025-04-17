@@ -1,4 +1,3 @@
- 
 import {
   assertUnreachable,
   DendronError,

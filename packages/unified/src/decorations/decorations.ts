@@ -101,7 +101,6 @@ export async function runAllDecorators(
     }
     const tree = proc.parse(text);
 
-     
     await MdastUtils.visitAsync(tree, [], async (nodeIn) => {
       // This was parsed, it must have a position
       const node = nodeIn as NonOptional<DendronASTNode, "position">;

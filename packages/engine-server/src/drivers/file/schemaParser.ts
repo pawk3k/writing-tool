@@ -64,10 +64,7 @@ export class SchemaParser {
         }
       })
     );
-    const errors = _.filter(
-      out,
-      (ent) => ent instanceof DendronError
-    ) as DendronError[];
+    const errors = _.filter(out, (ent) => ent instanceof DendronError);
     return {
       schemas: _.reject(
         out,

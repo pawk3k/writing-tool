@@ -122,7 +122,7 @@ export class CreateMeetingNoteCommand extends CreateNoteWithTraitCommand {
     await fs.writeFile(uri.fsPath, schemaJson);
 
     await ExtensionProvider.getExtension().schemaSyncService.saveSchema({
-      uri: uri!,
+      uri: uri,
       isBrandNewFile: true,
     });
 

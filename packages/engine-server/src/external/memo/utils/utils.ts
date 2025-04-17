@@ -1,6 +1,3 @@
- 
- 
- 
 import { sort as sortPaths } from "cross-path-sort";
 import _ from "lodash";
 import path from "path";

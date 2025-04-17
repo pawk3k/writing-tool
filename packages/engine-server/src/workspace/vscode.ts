@@ -53,7 +53,7 @@ export const _SETTINGS: ConfigUpdateChangeSet = {
     default: "onFocusChange",
   },
   // --- images
-   
+
   "pasteImage.path": { default: "${currentFileDir}/assets/images" },
   // required for jekyll image build
   "pasteImage.prefix": { default: "/" },

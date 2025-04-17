@@ -1,7 +1,7 @@
 import { DendronError, ConfigUtils } from "@dendronhq/common-all";
 import _ from "lodash";
 import { Migrations } from "./types";
-import { MigrationUtils, PATH_MAP , DEPRECATED_PATHS } from "./utils";
+import { MigrationUtils, PATH_MAP, DEPRECATED_PATHS } from "./utils";
 import { DConfig } from "@dendronhq/common-server";
 
 export const CONFIG_MIGRATIONS: Migrations = {

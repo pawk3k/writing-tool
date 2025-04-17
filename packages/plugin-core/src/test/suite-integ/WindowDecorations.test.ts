@@ -710,7 +710,6 @@ suite("GIVEN a text document with decorations", function () {
   });
 });
 
- 
 function checkRanges(
   range: vscode.Range | undefined,
   startLine: number,

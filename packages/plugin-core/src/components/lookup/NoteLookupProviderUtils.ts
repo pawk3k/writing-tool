@@ -17,16 +17,16 @@ export class NoteLookupProviderUtils {
     logger: DLogger;
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    onDone?: Function
+    onDone?: Function;
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    onError?: Function
+    onError?: Function;
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    onChangeState?: Function
+    onChangeState?: Function;
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    onHide?: Function
+    onHide?: Function;
   }): Promise<any | undefined> {
     const { id, controller, logger, onDone, onError, onChangeState, onHide } =
       opts;

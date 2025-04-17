@@ -331,16 +331,15 @@ export class SiteUtils {
       // TODO: legacy behavior around stubs, will need to remove
       if (publishingConfig.writeStubs && note.stub) {
         delete note.stub;
-         
+
         await engine.writeNote(note);
       } else {
-         
         await engine.writeNote(note, { metaOnly: true });
       }
 
       // if `skipLevels` is enabled, the children of the current note are descendants
       // further down
-       
+
       let children = await HierarchyUtils.getChildren({
         skipLevels: siteFM.skipLevels || 0,
         note,

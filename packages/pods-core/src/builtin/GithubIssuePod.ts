@@ -318,7 +318,6 @@ export class GithubIssueImportPod extends ImportPod<GithubIssueImportPodConfig> 
     }
 
     while (hasNextPage) {
-       
       const result: any = await this.getDataFromGithub({
         owner,
         repository,

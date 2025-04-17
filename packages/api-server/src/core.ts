@@ -31,9 +31,10 @@ export function configureLogger(opts?: { logPath: string; logLvl?: LogLvl }) {
     if (fs.existsSync(logPath)) {
       try {
         fs.moveSync(logPath, `${logPath}.old`, { overwrite: true });
-      } // TODO: Please fix and remove the suppression
-      // eslint-disable-next-line no-empty
-      catch (_err) {}
+      } catch (_err) {
+        // TODO: Please fix and remove the suppression
+         
+      }
     }
     fs.ensureFileSync(logPath);
   }

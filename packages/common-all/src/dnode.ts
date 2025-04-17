@@ -1350,9 +1350,7 @@ export class SchemaUtils {
     vaults: DVault[];
   }): DNodePropsQuickInputV2 {
     const vaultSuffix =
-      vaults.length > 1
-        ? ` (${path.basename(props.vault?.fsPath as string)})`
-        : "";
+      vaults.length > 1 ? ` (${path.basename(props.vault?.fsPath)})` : "";
     const label = DNodeUtils.isRoot(props.root) ? "root" : props.root.id;
     const detail = props.root.desc;
     const out = {
@@ -1516,7 +1514,7 @@ export class SchemaUtils {
         schemaModule,
         matchNamespace,
       });
-    }).filter((ent) => !_.isUndefined(ent)) as SchemaMatchResult[];
+    }).filter((ent) => !_.isUndefined(ent));
 
     matches.map((m) => {
       const { schema, notePath } = m;

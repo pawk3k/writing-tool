@@ -39,7 +39,7 @@ type CommandOpts = CommandInput & {
   /**
    * Open worksapce without reloading
    */
-   
+
   EXPERIMENTAL_openNativeWorkspaceNoReload?: boolean;
 };
 

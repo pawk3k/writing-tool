@@ -18,7 +18,7 @@ export class Logger {
     if (msg.ctx) {
       ctx = msg.ctx;
     }
-     
+
     console.log(this.name, ctx, msg);
   }
   debug = (msg: any) => {

@@ -79,6 +79,6 @@ export const useConfig = ({
     dispatch(syncConfig({ url: opts.url, ws: opts.ws }));
     logger.info({ ctx: "useEffect", state: "exit" });
     return;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };

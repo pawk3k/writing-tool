@@ -157,7 +157,7 @@ export class LookupQuickpickFactory {
       if (!initialized) {
         return;
       }
-      const items = await opts.provider!.provideItems({
+      const items = await opts.provider.provideItems({
         pickerValue: newInput,
         showDirectChildrenOnly: false,
         workspaceState: {

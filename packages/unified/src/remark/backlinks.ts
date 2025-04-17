@@ -10,7 +10,7 @@ import { DendronASTDest, DendronASTTypes, WikiLinkNoteV4 } from "../types";
 import { MDUtilsV5 } from "../utilsv5";
 
 // Plugin that adds backlinks at the end of each page if they exist
- 
+
 const plugin: Plugin = function (this: Unified.Processor) {
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-this-alias

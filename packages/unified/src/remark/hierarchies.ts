@@ -63,7 +63,7 @@ function footnoteDef2html(definition: FootnoteDefinition) {
 }
 
 /** Adds the "Children", "Tags", and "Footnotes" items to the end of the note. Also renders footnotes. */
- 
+
 const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-this-alias

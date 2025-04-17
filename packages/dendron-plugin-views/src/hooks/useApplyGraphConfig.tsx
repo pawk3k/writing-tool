@@ -97,12 +97,7 @@ const useApplyGraphConfig = ({
     // Process the allowlist and blocklist inputs
     regexTypes.forEach((type) => {
       const classNameHidden = `hidden--regex-${type}`;
-      const regexItem =
-        config[
-          `filter.regex-${type}` as
-            | "filter.regex-allowlist"
-            | "filter.regex-blocklist"
-        ];
+      const regexItem = config[`filter.regex-${type}`];
 
       // Accept comma-separated or space-separated lists
       const regexItemInputs = regexItem.value.split(/(,| )/);

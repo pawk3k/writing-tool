@@ -363,7 +363,7 @@ export class DendronEngineV2 implements DEngine {
     id: string,
     opts?: EngineDeleteOpts
   ): Promise<DeleteSchemaResp> {
-    const data = (await this.store.deleteSchema(id, opts)) as DeleteSchemaResp;
+    const data = await this.store.deleteSchema(id, opts);
     // deleted schema might affect notes
     await this.updateIndex("note");
     await this.updateIndex("schema");

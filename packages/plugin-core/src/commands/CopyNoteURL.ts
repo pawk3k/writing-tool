@@ -67,7 +67,7 @@ export class CopyNoteURLCommand extends BasicCommand<
     let anchor;
     if (selection) {
       anchor = EditorUtils.getAnchorAt({
-        editor: editor!,
+        editor: editor,
         position: selection.start,
         engine,
       });

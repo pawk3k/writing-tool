@@ -8,7 +8,6 @@ import { WorkspaceType } from "@dendronhq/common-all";
 import { expect } from "../testUtilsv2";
 import { ExtensionProvider } from "../../ExtensionProvider";
 
- 
 suite("GIVEN ChangeWorkspace command", function () {
   describeMultiWS("WHEN command is gathering inputs", {}, () => {
     let showOpenDialog: sinon.SinonStub;

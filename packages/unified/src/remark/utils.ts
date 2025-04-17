@@ -259,7 +259,7 @@ const getLinks = ({
     });
   }
   // the cast is safe because the only difference is whether `data.vaultName` exists, which is already optional
-  for (const noteRef of noteRefs as NoteRefNoteV4[]) {
+  for (const noteRef of noteRefs) {
     const { anchorStart, anchorEnd, anchorStartOffset } =
       noteRef.data.link.data;
     const anchorStartText = anchorStart || "";
@@ -327,7 +327,7 @@ const getLinkCandidates = async ({
   const linkCandidates: DLink[] = [];
   await Promise.all(
     _.map(textNodes, async (textNode: Text) => {
-      const value = textNode.value as string;
+      const value = textNode.value;
       await Promise.all(
         value.split(/\s+/).map(async (word) => {
           const possibleCandidates = await engine.findNotesMeta({
@@ -407,7 +407,7 @@ const getLinkCandidatesSync = ({
   const linkCandidates: DLink[] = [];
 
   _.map(textNodes, (textNode: Text) => {
-    const value = textNode.value as string;
+    const value = textNode.value;
 
     value.split(/\s+/).map((word) => {
       const possibleCandidates = NoteDictsUtils.findByFname({
@@ -947,7 +947,7 @@ export class LinkUtils {
       return LinkUtils.parseLinkV2({ linkString: match[1] });
     });
 
-    return matched.filter((match) => !_.isNull(match)) as ParseLinkV2Resp[];
+    return matched.filter((match) => !_.isNull(match));
   }
 
   /**
@@ -1113,7 +1113,7 @@ export class AnchorUtils {
 
     const { line, column } = node.position.start;
     if (node.type === DendronASTTypes.HEADING) {
-      const headerNode = node as Heading;
+      const headerNode = node;
       const text = this.headerText(headerNode);
       const value = slugger.slug(this.headerText(headerNode));
       return [
@@ -1199,7 +1199,7 @@ export class AnchorUtils {
 function walk(node: Parent, fn: any) {
   fn(node);
   if (node.children) {
-    (node.children as Node[]).forEach((n) => {
+    node.children.forEach((n) => {
       // @ts-expect-error TODO: fix this supression
       walk(n, fn);
     });

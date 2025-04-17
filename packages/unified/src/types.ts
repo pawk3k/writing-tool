@@ -34,7 +34,7 @@ export type DendronASTNode = Parent & {
 };
 
 export // TODO: Please fix and remove the suppression
- 
+
 enum DendronASTTypes {
   WIKI_LINK = "wikiLink",
   REF_LINK_V2 = "refLinkV2",

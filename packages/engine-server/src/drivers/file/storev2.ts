@@ -437,7 +437,7 @@ export class FileStorage implements DStore {
     const ctx = "initSchema";
     this.logger.info({ ctx, msg: "enter" });
     const out = await Promise.all(
-      (this.vaults as DVault[]).map(async (vault) => {
+      this.vaults.map(async (vault) => {
         return this._initSchema(vault);
       })
     );
@@ -517,7 +517,6 @@ export class FileStorage implements DStore {
     const start = process.hrtime();
     // instantiate so we can use singleton later
     if (this.config.workspace.metadataStore === "sqlite") {
-       
       const store = new SQLiteMetadataStore({
         wsRoot: this.wsRoot,
         force: true,
@@ -529,7 +528,7 @@ export class FileStorage implements DStore {
         async () => {
           while (store.status === "loading") {
             this.logger.info({ ctx, msg: "downloading sql dependencies..." });
-             
+
             await TimeUtils.sleep(1000);
           }
           return;
@@ -548,7 +547,7 @@ export class FileStorage implements DStore {
     }
 
     const out = await Promise.all(
-      (this.vaults as DVault[]).map(async (vault) => {
+      this.vaults.map(async (vault) => {
         const {
           notesById,
           cacheUpdates,

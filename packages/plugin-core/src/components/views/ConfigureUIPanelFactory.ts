@@ -35,7 +35,6 @@ export class ConfigureUIPanelFactory {
       );
       this.panel.webview.onDidReceiveMessage(
         async (msg: ConfigureUIMessage) => {
-           
           switch (msg.type) {
             case ConfigureUIMessageEnum.onUpdateConfig:
               {

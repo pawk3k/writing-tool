@@ -65,7 +65,7 @@ describe("GIVEN AnalyticsUtils", () => {
 
     describe("AND when sendSavedAnalytics is used", () => {
       let trackStub: sinon.SinonStub<
-        Parameters<typeof SegmentUtils["trackSync"]>
+        Parameters<(typeof SegmentUtils)["trackSync"]>
       >;
       before(async () => {
         trackStub = sinon.stub(SegmentUtils, "trackSync");

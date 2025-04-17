@@ -79,9 +79,7 @@ function getSiteConfig({
   config: DendronConfig;
   overrides?: Partial<DendronPublishingConfig>;
 }): DendronPublishingConfig {
-  const publishingConfig = ConfigUtils.getPublishing(
-    config
-  ) as DendronPublishingConfig;
+  const publishingConfig = ConfigUtils.getPublishing(config);
   return {
     ...publishingConfig,
     ...overrides,
@@ -251,7 +249,6 @@ export class NextjsExportPodUtils {
       throw new Error(`no sidebar file found at ${sidebarFilePath}`);
     }
 
-     
     // TODO: Please fix and remove the suppression
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require(path.resolve(sidebarFilePath));
@@ -351,7 +348,6 @@ export class NextjsExportPod extends ExportPod<NextjsExportConfig> {
     await vaults.reduce(async (resp, vault) => {
       await resp;
       if (vault.visibility === "private") {
-         
         console.log(`skipping copy assets from private vault ${vault.fsPath}`);
         return Promise.resolve({});
       }
@@ -605,7 +601,7 @@ export class NextjsExportPod extends ExportPod<NextjsExportConfig> {
       const noteRefs = MDUtilsV5.getRefCache();
       refIds = await Promise.all(
         Object.keys(noteRefs).map(async (ent: string) => {
-          const { refId, prettyHAST } = noteRefs![ent];
+          const { refId, prettyHAST } = noteRefs[ent];
           const noteId = refId.id;
           const noteForRef = (await engine.getNote(noteId)).data;
 

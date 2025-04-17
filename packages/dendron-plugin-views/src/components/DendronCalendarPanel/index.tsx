@@ -148,7 +148,6 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
           journalMonthDateFormat
         );
 
-         
         return dailyDate.isValid
           ? dailyDate
           : monthlyDate.isValid

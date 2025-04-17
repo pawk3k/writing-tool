@@ -131,10 +131,7 @@ export class SchemaParserV2 extends ParserBaseV2 {
   ): Promise<SchemaModuleProps> {
     const version = _.isArray(schemaOpts) ? 0 : 1;
     if (version > 0) {
-      return SchemaParserV2.parseSchemaModuleOpts(
-        schemaOpts as SchemaModuleOpts,
-        opts
-      );
+      return SchemaParserV2.parseSchemaModuleOpts(schemaOpts, opts);
     } else {
       // TODO: legacy
       const schemaDict: SchemaPropsDict = {};

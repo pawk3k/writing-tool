@@ -39,7 +39,7 @@ export class NotePickerUtils {
     if (text === undefined) {
       return;
     }
-    const wikiLinks = LinkUtils.extractWikiLinks(text as string);
+    const wikiLinks = LinkUtils.extractWikiLinks(text);
 
     // dedupe wikilinks by value
     const uniqueWikiLinks = _.uniqBy(wikiLinks, "value");

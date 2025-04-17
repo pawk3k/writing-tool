@@ -9,14 +9,30 @@ import eslintReactPlugin from "eslint-plugin-react";
 const recomendedImportConfig = flatConfigs.recommended;
 
 export default tseslint.config(
-  // Maybe at some point remove *.d.ts, but oke for now
-  globalIgnores(["**/*.js", "**/*.test.*", "**/*.spec.*", "**/*.d.ts"]),
+  globalIgnores([
+    "**/*.js",
+    "**/*.test.*",
+    "**/*.spec.*",
+    // Maybe at some point remove *.d.ts, but oke for now
+    "**/*.d.ts",
+    "packages/plugin-core/.vscode-test/*",
+  ]),
   eslint.configs.recommended,
-  tseslint.configs.recommended,
   recomendedImportConfig,
   // In future it would be just recomended not latest
   reactPluginHooksConfig["recommended-latest"],
   eslintReactPlugin.configs.flat.recommended,
+  tseslint.configs.recommended,
+  // Maybe at some point in future
+  // tseslint.configs.recommendedTypeChecked,
+  // {
+  //   languageOptions: {
+  //     parserOptions: {
+  //       projectService: true,
+  //       tsconfigRootDir: import.meta.dirname,
+  //     },
+  //   },
+  // },
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",

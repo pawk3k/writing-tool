@@ -432,7 +432,7 @@ export default class BacklinksTreeDataProvider
 
       return backlink;
     });
-    return _.filter(out, (item) => !_.isUndefined(item)) as Backlink[];
+    return _.filter(out, (item) => !_.isUndefined(item));
   }
 
   private shallowFirstPathSort(
@@ -490,10 +490,10 @@ export default class BacklinksTreeDataProvider
         }
 
         return {
-          content: (await this.getSurroundingContextForRef(
+          content: await this.getSurroundingContextForRef(
             foundRef,
             linesOfContext
-          ))!,
+          ),
           isCandidate: foundRef.isCandidate,
         };
       })
@@ -569,7 +569,7 @@ _updated: ${DateFormatUtil.formatDate(noteProps.updated)}_`
       }
     );
 
-    const note = ref.note!;
+    const note = ref.note;
 
     const fsPath = NoteUtils.getFullPath({
       note,

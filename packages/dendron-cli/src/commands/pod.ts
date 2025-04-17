@@ -1,4 +1,3 @@
- 
 import {
   Conflict,
   DendronError,

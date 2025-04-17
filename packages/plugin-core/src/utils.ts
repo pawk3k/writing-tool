@@ -9,7 +9,6 @@ export class DisposableStore {
   }
 
   public dispose() {
-     
     for (const disposable of this._toDispose) {
       disposable.dispose();
     }

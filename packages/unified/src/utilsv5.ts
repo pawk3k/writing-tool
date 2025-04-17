@@ -397,7 +397,7 @@ export class MDUtilsV5 {
         this.setProcData(proc, data as ProcDataFullV5);
 
         // add additional plugins
-        const config = data.config as DendronConfig;
+        const config = data.config;
         const shouldApplyPublishRules =
           MDUtilsV5.shouldApplyPublishingRules(proc);
 

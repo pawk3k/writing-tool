@@ -224,7 +224,6 @@ export class EngineConnector {
 
     // try to connect to file
     while (!this.initialized) {
-       
       await this.connectAndInit({ wsRoot, init: opts?.init });
     }
 

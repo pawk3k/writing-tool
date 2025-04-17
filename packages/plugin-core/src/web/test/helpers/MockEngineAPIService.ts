@@ -102,14 +102,11 @@ export class MockEngineAPIService implements ReducedDEngine {
   }
   writeNote(
     _note: NoteProps,
-    _opts?: EngineWriteOptsV2 | undefined
+    _opts?: EngineWriteOptsV2
   ): Promise<WriteNoteResp> {
     throw new Error("Method not implemented.");
   }
-  deleteNote(
-    _id: string,
-    _opts?: EngineDeleteOpts | undefined
-  ): Promise<DeleteNoteResp> {
+  deleteNote(_id: string, _opts?: EngineDeleteOpts): Promise<DeleteNoteResp> {
     throw new Error("Method not implemented.");
   }
   renameNote(_opts: RenameNoteOpts): Promise<RenameNoteResp> {

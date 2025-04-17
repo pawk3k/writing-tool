@@ -60,7 +60,7 @@ export class WebTelemetryClient implements ITelemetryClient {
   public track(
     event: string,
     customProps?: any,
-    _segmentProps?: { timestamp?: Date | undefined } | undefined
+    _segmentProps?: { timestamp?: Date | undefined }
   ): Promise<void> {
     const properties = {
       ...customProps,

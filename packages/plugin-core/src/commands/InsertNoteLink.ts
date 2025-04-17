@@ -135,7 +135,7 @@ export class InsertNoteLinkCommand extends BasicCommand<
 
         maybeAliasValue = text!;
         if (!_.isUndefined(range)) {
-          await VSCodeUtils.deleteRange(editor.document, range as vscode.Range);
+          await VSCodeUtils.deleteRange(editor.document, range);
         } else {
           vscode.window.showWarningMessage(
             "Selection doesn't contain any text. Ignoring aliases."
@@ -151,7 +151,6 @@ export class InsertNoteLinkCommand extends BasicCommand<
       }
       case InsertNoteLinkAliasModeEnum.prompt: {
         for (const note of opts.notes) {
-           
           const value = await this.promptForAlias(note);
           if (value !== "") {
             links.push(

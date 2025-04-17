@@ -181,7 +181,7 @@ function shouldInsertTitle({ proc }: { proc: Processor }) {
   ) {
     insertTitle = false;
   } else {
-    const config = data.config as DendronConfig;
+    const config = data.config;
     const shouldApplyPublishRules = MDUtilsV5.shouldApplyPublishingRules(proc);
     insertTitle = ConfigUtils.getEnableFMTitle(config, shouldApplyPublishRules);
   }
@@ -554,7 +554,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         }
         // Remove the block anchor itself since we install the anchor at the target
         const index = _.indexOf(parent.children, node);
-        parent!.children.splice(index, 1);
+        parent.children.splice(index, 1);
 
         // We might be adding and removing siblings here. We must return the index of the next sibling to traverse.
         if (target === parent) {

@@ -178,9 +178,7 @@ export class DendronExtension implements IDendronExtension {
    *
    * Global Workspace configuration
    */
-  static configuration(
-    section?: string | undefined
-  ): vscode.WorkspaceConfiguration {
+  static configuration(section?: string): vscode.WorkspaceConfiguration {
     // the reason this is static is so we can stub it for tests
     return vscode.workspace.getConfiguration(section);
   }
@@ -421,9 +419,7 @@ export class DendronExtension implements IDendronExtension {
   /**
    * @deprecated Use {@link VSCodeUtils.getWorkspaceConfig} instead.
    */
-  getWorkspaceConfig(
-    section?: string | undefined
-  ): vscode.WorkspaceConfiguration {
+  getWorkspaceConfig(section?: string): vscode.WorkspaceConfiguration {
     return VSCodeUtils.getWorkspaceConfig(section);
   }
 
@@ -512,7 +508,7 @@ export class DendronExtension implements IDendronExtension {
     if (_.isEmpty(wsFolders) || _.isUndefined(wsFolders)) {
       throw Error("no ws folders");
     }
-    return wsFolders[0] as vscode.WorkspaceFolder;
+    return wsFolders[0];
   }
 
   getEngine(): EngineAPIService {

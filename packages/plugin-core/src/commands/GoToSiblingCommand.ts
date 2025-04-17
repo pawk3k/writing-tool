@@ -171,7 +171,7 @@ export class GoToSiblingCommand extends BasicCommand<
     if (!yearNote.data.parent) {
       return [];
     }
-    const parentNote = await engine.getNoteMeta(yearNote.data.parent!);
+    const parentNote = await engine.getNoteMeta(yearNote.data.parent);
     if (!parentNote.data) {
       return [];
     }

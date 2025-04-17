@@ -1,4 +1,3 @@
- 
 export type DLogger = {
   name?: string;
   level: any;

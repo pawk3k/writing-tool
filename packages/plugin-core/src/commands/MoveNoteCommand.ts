@@ -353,7 +353,7 @@ export class MoveNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
 
     for (const move of necessaryMoves) {
       // We need to wait for a rename to finish before triggering another rename
-       
+
       const changes = await engine.renameNote(move);
 
       allChanges.push(...(changes.data as NoteChangeEntry[]));

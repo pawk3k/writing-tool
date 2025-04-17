@@ -66,7 +66,7 @@ export class InsertNoteIndexCommand extends BasicCommand<
       );
       return opts;
     }
-    const activeNote = await WSUtils.getNoteFromDocument(maybeEditor.document)!;
+    const activeNote = await WSUtils.getNoteFromDocument(maybeEditor.document);
     if (_.isUndefined(activeNote)) {
       window.showErrorMessage("Active file is not a Dendron note.");
       return opts;

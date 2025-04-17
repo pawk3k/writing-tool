@@ -1,5 +1,5 @@
 /**
- * This allows us to import javascript 
+ * This allows us to import javascript
  * at runtime without require being compiled away by webpack
  */
 const webpackRequire = (importPath) => {

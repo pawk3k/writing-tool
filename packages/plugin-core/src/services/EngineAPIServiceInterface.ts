@@ -68,24 +68,15 @@ export interface IEngineAPIService {
 
   bulkWriteNotes(opts: BulkWriteNotesOpts): Promise<BulkWriteNotesResp>;
 
-  writeNote(
-    note: NoteProps,
-    opts?: EngineWriteOptsV2 | undefined
-  ): Promise<WriteNoteResp>;
+  writeNote(note: NoteProps, opts?: EngineWriteOptsV2): Promise<WriteNoteResp>;
 
   writeSchema(schema: SchemaModuleProps): Promise<WriteSchemaResp>;
 
   init(): Promise<DEngineInitResp>;
 
-  deleteNote(
-    id: string,
-    opts?: EngineDeleteOpts | undefined
-  ): Promise<DeleteNoteResp>;
+  deleteNote(id: string, opts?: EngineDeleteOpts): Promise<DeleteNoteResp>;
 
-  deleteSchema(
-    id: string,
-    opts?: EngineDeleteOpts | undefined
-  ): Promise<DEngineInitResp>;
+  deleteSchema(id: string, opts?: EngineDeleteOpts): Promise<DEngineInitResp>;
 
   info(): Promise<EngineInfoResp>;
 

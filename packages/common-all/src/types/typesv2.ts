@@ -1,6 +1,6 @@
 import { URI } from "vscode-uri";
 import { IDendronError } from "../error";
-import { VSRange , Diagnostic } from "./compat";
+import { VSRange, Diagnostic } from "./compat";
 import { DVault } from "./DVault";
 import { FindNoteOpts } from "./FindNoteOpts";
 import {

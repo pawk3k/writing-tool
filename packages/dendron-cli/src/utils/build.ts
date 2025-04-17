@@ -1,4 +1,3 @@
- 
 import { DendronError, error2PlainObject } from "@dendronhq/common-all";
 import { createLogger, findUpTo } from "@dendronhq/common-server";
 import execa from "execa";

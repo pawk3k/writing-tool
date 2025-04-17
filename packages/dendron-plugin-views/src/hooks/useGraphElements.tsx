@@ -515,7 +515,7 @@ const getFullNoteGraphElements = ({
     edges.hierarchy.push(
       ...note.children.map((child) => {
         const childNote = notes[child];
-         
+
         const isStub = childNote
           ? _.isUndefined(note.stub) && _.isUndefined(childNote.stub)
             ? false
@@ -645,7 +645,6 @@ const getSchemaGraphElements = (
 
   if (_.isUndefined(vaults)) return { nodes, edges };
 
-   
   vaults.map((vault) => {
     const vaultName = VaultUtils.getName(vault);
     const VAULT_ID = `${vaultName}`;
@@ -809,7 +808,6 @@ const useGraphElements = ({
         );
       }
     }
-     
   }, [engine.notes, isLocalGraph, noteActive]);
 
   // Get new elements if active note changes
@@ -858,7 +856,6 @@ const useGraphElements = ({
       });
       setFullGraphVisited(true);
     }
-     
   }, [elements]);
 
   // Prevent unnecessary parsing if no schemas have been added/deleted

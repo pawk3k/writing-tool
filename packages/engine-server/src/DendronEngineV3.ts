@@ -1006,7 +1006,7 @@ export class DendronEngineV3 extends EngineV3Base implements DEngine {
 
     const schemaResponses: RespWithOptError<SchemaModuleProps[]>[] =
       await Promise.all(
-        (this.vaults as DVault[]).map(async (vault) => {
+        this.vaults.map(async (vault) => {
           const vpath = vault2Path({ vault, wsRoot: this.wsRoot });
           // Get list of files from filesystem
           const maybeFiles = await this._fileStore.readDir({
@@ -1480,7 +1480,6 @@ export class DendronEngineV3 extends EngineV3Base implements DEngine {
     for (const linkedNote of linkedRefNotes) {
       // Recurse into each child reference linked note.
       if (
-         
         !(await this._isCachedPreviewUpToDate({
           note: linkedNote,
           visitedIds,

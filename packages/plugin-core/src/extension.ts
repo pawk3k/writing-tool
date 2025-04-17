@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
   Logger.configure(context, "debug");
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  require("./_extension").activate(context);  
+  require("./_extension").activate(context);
   return {
     DWorkspace,
     Logger,
@@ -16,5 +16,5 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {
   // TODO: Please fix and remove the suppression
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  require("./_extension").deactivate();  
+  require("./_extension").deactivate();
 }

@@ -9,7 +9,7 @@ import {
 } from "@dendronhq/common-all";
 import _ from "lodash";
 import { FrontmatterContent } from "mdast";
-import  { load } from "js-yaml";
+import { load } from "js-yaml";
 
 // These are used to match the warnings to code actions. Also displayed for users along with the warning message.
 export const BAD_FRONTMATTER_CODE = "bad frontmatter";

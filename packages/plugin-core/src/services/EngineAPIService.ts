@@ -187,10 +187,7 @@ export class EngineAPIService
     return this._internalEngine.bulkWriteNotes(opts);
   }
 
-  writeNote(
-    note: NoteProps,
-    opts?: EngineWriteOptsV2 | undefined
-  ): Promise<WriteNoteResp> {
+  writeNote(note: NoteProps, opts?: EngineWriteOptsV2): Promise<WriteNoteResp> {
     if (!this._trustedWorkspace) {
       if (!opts) {
         opts = { runHooks: false };
@@ -213,17 +210,11 @@ export class EngineAPIService
     return this._internalEngine.init();
   }
 
-  deleteNote(
-    id: string,
-    opts?: EngineDeleteOpts | undefined
-  ): Promise<DeleteNoteResp> {
+  deleteNote(id: string, opts?: EngineDeleteOpts): Promise<DeleteNoteResp> {
     return this._internalEngine.deleteNote(id, opts);
   }
 
-  deleteSchema(
-    id: string,
-    opts?: EngineDeleteOpts | undefined
-  ): Promise<DEngineInitResp> {
+  deleteSchema(id: string, opts?: EngineDeleteOpts): Promise<DEngineInitResp> {
     return this._internalEngine.deleteSchema(id, opts);
   }
 

@@ -185,7 +185,6 @@ export class UserQueries {
     let schemaName: string | undefined;
 
     do {
-       
       schemaName = await VSCodeUtils.showInputBox({
         value: hierarchyLevel.getDefaultSchemaName(),
       });

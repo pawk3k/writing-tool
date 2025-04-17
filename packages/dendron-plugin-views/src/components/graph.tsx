@@ -158,10 +158,9 @@ export default function Graph({
       const parsedEdges: EdgeDefinition[] = [];
 
       // Filter elements using config
-      Object.entries(config)
-        .// TODO: Please fix and remove the suppression
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      filter(([k, v]) => k.includes("connections"))
+      Object.entries(config) // TODO: Please fix and remove the suppression
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .filter(([k, v]) => k.includes("connections"))
         .forEach(([k, v]) => {
           if (v?.value) {
             const keyArray = k.split(".");

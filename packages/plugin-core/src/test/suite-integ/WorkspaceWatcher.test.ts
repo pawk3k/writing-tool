@@ -47,7 +47,6 @@ const setupBasic = async (opts: WorkspaceOpts) => {
   });
 };
 
- 
 const UNSAFE_getWorkspaceWatcherPropsForTesting = (
   watcher: WorkspaceWatcher
 ) => {
@@ -159,7 +158,7 @@ suite("WorkspaceWatcher", function () {
               newUri,
             },
           ],
-           
+
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               const reference = (
@@ -217,7 +216,7 @@ suite("WorkspaceWatcher", function () {
               newUri,
             },
           ],
-           
+
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               const newFile = (
@@ -262,7 +261,7 @@ suite("WorkspaceWatcher", function () {
         const editor = await ExtensionProvider.getWSUtils().openNote(fooNote);
         const vscodeEvent: vscode.TextDocumentWillSaveEvent = {
           document: editor.document,
-           
+
           waitUntil: (_args: Thenable<any>) => {
             _args.then(async () => {
               // Engine note body hasn't been updated yet
@@ -309,7 +308,7 @@ suite("WorkspaceWatcher", function () {
             await editor.document.save().then(() => {
               const vscodeEvent: vscode.TextDocumentWillSaveEvent = {
                 document: editor.document,
-                 
+
                 waitUntil: (_args: Thenable<any>) => {
                   _args.then(async () => {
                     // Engine note hasn't been updated yet

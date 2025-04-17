@@ -51,7 +51,7 @@ const getRootChildrenBacklinks = async (sortOrder?: BacklinkPanelSortOrder) => {
     for (const parent of parents) {
       parentsWithChildren.push({
         ...parent,
-         
+
         children: await backlinksTreeDataProvider.getChildren(parent),
       });
     }
