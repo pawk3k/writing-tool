@@ -42,6 +42,7 @@
     "luxon": "^1.25.0",
     "minimatch": "5.1.0",
     "neverthrow": "^5.0.0",
+    "patch-package": "^8.0.0",
     "prettier": "^2.0.4",
     "rimraf": "^2.6.2",
     "standard-version": "^8.0.0",
@@ -62,7 +63,9 @@
     "build:extension": "yarn workspace dendron run vscode:prepublish",
     "build:views": "yarn build:clean && yarn workspace @dendronhq/dendron-plugin-views run build",
     "build": "yarn build:clean &&  yarn build:views && yarn build:extension",
-    "publish": "yarn workspace dendron run vsce package --no-dependencies"
+    "publish": "yarn workspace dendron run vsce package --no-dependencies",
+    "postinstall": "patch-package"
+
   },
   "dependencies": {
     "@babel/preset-typescript": "7.16.7",

@@ -38,6 +38,9 @@ jobs:
         run: yarn lint
         shell: bash
 
+      - name: Run test
+        run: yarn test
+
       - name: Run typecheck
         run: yarn typecheck
         shell: bash

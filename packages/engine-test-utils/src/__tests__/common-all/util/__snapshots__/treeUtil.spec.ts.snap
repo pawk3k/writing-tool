@@ -42,56 +42,12 @@ exports[`GIVEN basic workspace > WHEN creating a TreeNode from engine notes, the
 }
 `;
 
-exports[`GIVEN basic workspace WHEN creating a TreeNode from engine notes, then expect TreeNode to match snapshots 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [],
-      "fname": "bar",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [],
-          "fname": "ch1",
-        },
-      ],
-      "fname": "foo",
-    },
-  ],
-  "fname": "root",
-}
-`;
-
-exports[`GIVEN basic workspace WHEN creating a TreeNode from engine notes, then expect TreeNode to match snapshots 2`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [],
-      "fname": "bar",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [],
-          "fname": "ch1",
-        },
-      ],
-      "fname": "foo",
-    },
-  ],
-  "fname": "root",
-}
-`;
-
-exports[`GIVEN sidebar > WHEN regular tree > THEN return regular tree 1`] = `[]`;
-
-exports[`GIVEN sidebar WHEN regular tree THEN return regular tree 1`] = `
-Array [
-  Object {
-    "children": Array [
-      Object {
-        "children": Array [],
+exports[`GIVEN sidebar > WHEN regular tree > THEN return regular tree 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
         "hasTitleNumberOutlined": false,
         "icon": null,
         "key": "foo.ch1",
