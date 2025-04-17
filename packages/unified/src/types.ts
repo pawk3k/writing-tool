@@ -60,7 +60,6 @@ enum DendronASTTypes {
   FOOTNOTE_DEFINITION = "footnoteDefinition",
   FOOTNOTE_REFERENCE = "footnoteReference",
   HTML = "html",
-  YAML = "yaml"
 }
 
 export enum VaultMissingBehavior {

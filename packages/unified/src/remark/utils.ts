@@ -1378,7 +1378,7 @@ export class RemarkUtils {
 
   // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isYAML(node: Node): node is YAML {
-    return node.type === DendronASTTypes.YAML;
+    return node.type === DendronASTTypes.FRONTMATTER;
   }
 
   // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.

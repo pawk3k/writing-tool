@@ -17,6 +17,7 @@ export function renderOnDOM(
   Component: DendronComponent,
   opts: DendronAppProps["opts"]
 ) {
+  // eslint-disable-next-line react/no-deprecated
   ReactDOM.render(
     <React.StrictMode>
       {renderWithDendronApp({ Component, opts })}
