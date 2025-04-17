@@ -10,7 +10,7 @@ suite("logger tests", () => {
           payload: '"{\\"fullPath\\":\\"/tmp/full-path-val\\"}"',
         },
       };
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       const actual = Logger.tryExtractFullPath(inputPayload);
       expect(actual).toEqual("/tmp/full-path-val");
     });
@@ -21,7 +21,7 @@ suite("logger tests", () => {
           payload: '"{\\"noFullPath\\":\\"/tmp/full-path-val\\"}"',
         },
       };
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       const actual = Logger.tryExtractFullPath(inputPayload);
       expect(actual).toEqual(undefined);
     });

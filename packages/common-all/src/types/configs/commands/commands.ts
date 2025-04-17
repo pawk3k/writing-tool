@@ -8,7 +8,10 @@ import {
 } from "./insertNoteLink";
 import { genDefaultLookupConfig, LookupConfig } from "./lookup";
 import { genDefaultRandomNoteConfig, RandomNoteConfig } from "./randomNote";
-import { CopyNoteLinkConfig, genDefaultCopyNoteLinkConfig } from "./copyNoteLink";
+import {
+  CopyNoteLinkConfig,
+  genDefaultCopyNoteLinkConfig,
+} from "./copyNoteLink";
 
 /**
  * Namespace for all command related configurations

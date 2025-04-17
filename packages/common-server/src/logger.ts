@@ -1,7 +1,6 @@
 // import pino from "pino";
 
 import { Disposable, env } from "@dendronhq/common-all";
-import _ from "lodash";
 import pino from "pino";
 
 export type LogLvl = "debug" | "info" | "error";
@@ -19,7 +18,7 @@ export class Logger {
     if (msg.ctx) {
       ctx = msg.ctx;
     }
-    // eslint-disable-next-line no-console
+
     console.log(this.name, ctx, msg);
   }
   debug = (msg: any) => {

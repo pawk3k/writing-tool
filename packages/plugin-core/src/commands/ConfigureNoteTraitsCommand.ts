@@ -10,7 +10,7 @@ import { RegisterNoteTraitCommand } from "./RegisterNoteTraitCommand";
 
 type CommandOpts = { traitId: string };
 
-type CommandOutput = {} | undefined;
+type CommandOutput = object | undefined;
 
 /**
  * Command for a user to register a new note type with custom functionality

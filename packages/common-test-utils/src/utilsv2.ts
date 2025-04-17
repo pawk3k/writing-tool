@@ -29,7 +29,7 @@ export const createEngineFactoryFactory = ({
   ): DEngineClient => {
     const engine = new EngineClass() as DEngineClient;
     _.map(overrides || {}, (method, key: keyof DEngineClient) => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       engine[key] = method(opts);
     });
     return engine;
@@ -38,7 +38,6 @@ export const createEngineFactoryFactory = ({
 };
 
 class MockEngineClass {
-  // eslint-disable-next-line no-empty-function
   async init() {}
 }
 export const createMockEngine = createEngineFactoryFactory({

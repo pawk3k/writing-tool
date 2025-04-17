@@ -265,6 +265,8 @@ export class MoveHeaderCommand extends BasicCommand<
     const lc =
       ExtensionProvider.getExtension().lookupControllerFactory.create(lcOpts);
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: Disposable;
       NoteLookupProviderUtils.subscribe({
         id: this.key,
@@ -460,7 +462,7 @@ export class MoveHeaderCommand extends BasicCommand<
           },
         } as DNoteLink;
         const newBody = LinkUtils.updateLink({
-          note: note!,
+          note: note,
           oldLink,
           newLink,
         });
@@ -509,7 +511,7 @@ export class MoveHeaderCommand extends BasicCommand<
         });
         const resp = file2Note(
           path.join(vaultPath, note.fname + ".md"),
-          note!.vault
+          note.vault
         );
         if (ErrorUtils.isErrorResp(resp)) {
           throw new Error();

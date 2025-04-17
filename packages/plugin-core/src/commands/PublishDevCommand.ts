@@ -3,7 +3,7 @@ import { window } from "vscode";
 import { DENDRON_COMMANDS } from "../constants";
 import { BasicCommand } from "./base";
 
-type CommandOutput = {};
+type CommandOutput = object;
 
 export class PublishDevCommand extends BasicCommand<CommandOutput> {
   key = DENDRON_COMMANDS.PUBLISH_DEV.key;

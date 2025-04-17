@@ -363,7 +363,7 @@ export class DendronEngineV2 implements DEngine {
     id: string,
     opts?: EngineDeleteOpts
   ): Promise<DeleteSchemaResp> {
-    const data = (await this.store.deleteSchema(id, opts)) as DeleteSchemaResp;
+    const data = await this.store.deleteSchema(id, opts);
     // deleted schema might affect notes
     await this.updateIndex("note");
     await this.updateIndex("schema");
@@ -434,7 +434,7 @@ export class DendronEngineV2 implements DEngine {
     const { qs, vault, onlyDirectChildren, originalQS } = opts;
 
     // Need to ignore this because the engine stringifies this property, so the types are incorrect.
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     if (vault?.selfContained === "true" || vault?.selfContained === "false")
       vault.selfContained = vault.selfContained === "true";
 
@@ -643,7 +643,7 @@ export class DendronEngineV2 implements DEngine {
     flavor: ProcFlavor;
     dest: DendronASTDest;
   }): Promise<string> {
-    let proc: ReturnType<typeof MDUtilsV5["procRehypeFull"]>;
+    let proc: ReturnType<(typeof MDUtilsV5)["procRehypeFull"]>;
     const config = DConfig.readConfigSync(this.wsRoot);
 
     const noteCacheForRenderDict = await getParsingDependencyDicts(

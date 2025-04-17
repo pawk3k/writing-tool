@@ -31,7 +31,6 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
   describe(name, () => {
     test.each(
       testCases.map((ent) => [`${ent.dest}: ${ent.name}`, ent.testCase])
-      // @ts-ignore
     )("%p", async (_key, testCase: TestPresetEntryV4) => {
       await runEngineTestV5(testCase.testFunc, {
         expect,
@@ -75,7 +74,7 @@ describe("user tags", () => {
       expect(getDescendantNode(expect, resp, 0, 1).type).toEqual(
         DendronASTTypes.USERTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp, 0, 1).value).toEqual(
         "@Hamilton.Margaret"
       );
@@ -94,7 +93,7 @@ describe("user tags", () => {
       expect(getDescendantNode(expect, resp1, 0, 1).type).toEqual(
         DendronASTTypes.USERTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 1).value).toEqual(
         "@Hamilton.Margaret."
       );
@@ -105,7 +104,7 @@ describe("user tags", () => {
       expect(getDescendantNode(expect, resp2, 0, 1).type).toEqual(
         DendronASTTypes.USERTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp2, 0, 1).value).toEqual(
         "@Hamilton.Margaret"
       );
@@ -116,7 +115,7 @@ describe("user tags", () => {
       expect(getDescendantNode(expect, resp1, 0, 1).type).toEqual(
         DendronASTTypes.USERTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 1).value).toEqual(
         "@松本.行弘"
       );
@@ -127,7 +126,7 @@ describe("user tags", () => {
       expect(getDescendantNode(expect, resp1, 0, 0).type).toEqual(
         DendronASTTypes.LINK
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 0).children.length).toEqual(1);
       expect(getDescendantNode(expect, resp1, 0, 0, 0).type).toEqual(
         DendronASTTypes.TEXT

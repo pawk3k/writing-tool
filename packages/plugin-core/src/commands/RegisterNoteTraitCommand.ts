@@ -10,7 +10,7 @@ import { BasicCommand } from "./base";
 
 type CommandOpts = { traitId: string };
 
-type CommandOutput = {} | undefined;
+type CommandOutput = object | undefined;
 
 const noteTraitTemplate = `
 /**

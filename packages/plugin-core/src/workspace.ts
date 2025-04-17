@@ -80,7 +80,7 @@ export function whenGlobalState(key: string, cb?: () => boolean): boolean {
     function alwaysTrue() {
       return true;
     };
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   const out = getExtension().getGlobalState(key);
   if (!(out === false || _.isUndefined(out))) {
     return cb();
@@ -178,9 +178,7 @@ export class DendronExtension implements IDendronExtension {
    *
    * Global Workspace configuration
    */
-  static configuration(
-    section?: string | undefined
-  ): vscode.WorkspaceConfiguration {
+  static configuration(section?: string): vscode.WorkspaceConfiguration {
     // the reason this is static is so we can stub it for tests
     return vscode.workspace.getConfiguration(section);
   }
@@ -343,7 +341,6 @@ export class DendronExtension implements IDendronExtension {
   }
 
   static async resetConfig(globalState: vscode.Memento) {
-    // eslint-disable-next-line  no-return-await
     return await Promise.all(
       _.keys(GLOBAL_STATE).map((k) => {
         const _key = GLOBAL_STATE[k as keyof typeof GLOBAL_STATE];
@@ -372,10 +369,14 @@ export class DendronExtension implements IDendronExtension {
     context: vscode.ExtensionContext,
     opts?: { skipSetup?: boolean }
   ) {
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     opts = _.defaults(opts, { skipSetup: false });
     this.context = context;
     // set the default
     this.type = WorkspaceType.CODE;
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     _DendronWorkspace = this;
     this.L = Logger;
     this._disposableStore = new DisposableStore();
@@ -418,9 +419,7 @@ export class DendronExtension implements IDendronExtension {
   /**
    * @deprecated Use {@link VSCodeUtils.getWorkspaceConfig} instead.
    */
-  getWorkspaceConfig(
-    section?: string | undefined
-  ): vscode.WorkspaceConfiguration {
+  getWorkspaceConfig(section?: string): vscode.WorkspaceConfiguration {
     return VSCodeUtils.getWorkspaceConfig(section);
   }
 
@@ -509,7 +508,7 @@ export class DendronExtension implements IDendronExtension {
     if (_.isEmpty(wsFolders) || _.isUndefined(wsFolders)) {
       throw Error("no ws folders");
     }
-    return wsFolders[0] as vscode.WorkspaceFolder;
+    return wsFolders[0];
   }
 
   getEngine(): EngineAPIService {
@@ -582,7 +581,7 @@ export class DendronExtension implements IDendronExtension {
 
     const backlinksTreeDataProvider = new BacklinksTreeDataProvider(
       this.getEngine(),
-      config,
+      config
     );
 
     const backlinkTreeView = vscode.window.createTreeView(

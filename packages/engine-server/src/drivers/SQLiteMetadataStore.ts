@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import {
   asyncLoopOneAtATime,
   DVault,
@@ -10,7 +9,7 @@ import {
 } from "@dendronhq/common-all";
 import _ from "lodash";
 import { URI } from "vscode-uri";
-// @ts-ignore
+// @ts-expect-error TODO: fix this supression
 import { loadPrisma } from "./prisma-shim";
 
 type PrismaClient = any;

@@ -6,9 +6,9 @@
  * 
  * There is currently no options for this script, but you can edit the following variables to edit what gets generated.
  */
-/* eslint-disable no-console */
-/* eslint-disable no-lone-blocks */
-/* eslint-disable no-plusplus */
+ 
+ 
+ 
 const _ = require("lodash");
 
 /** How many markdown elements to generate. */

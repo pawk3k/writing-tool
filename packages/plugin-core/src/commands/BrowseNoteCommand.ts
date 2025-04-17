@@ -5,7 +5,7 @@ import { DENDRON_COMMANDS } from "../constants";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandOutput = vscode.Uri | undefined;
 
 export class BrowseNoteCommand extends BasicCommand<

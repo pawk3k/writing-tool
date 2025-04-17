@@ -13,6 +13,7 @@ import execa from "execa";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
+// eslint-disable-next-line import/no-named-as-default
 import simpleGit, {
   type SimpleGit,
   ResetMode as SimpleGitResetMode,

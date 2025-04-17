@@ -1,3 +1,5 @@
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line import/named
 import { ReportHandler } from "web-vitals";
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {

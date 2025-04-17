@@ -74,7 +74,7 @@ export class ExportPodCommand extends BaseCommand<
       getSelectionFromQuickpick,
       withProgressOpts,
     };
-    const pod = new opts.podChoice.podClass(); // eslint-disable-line new-cap
+    const pod = new opts.podChoice.podClass();
     const engine = this.extension.getEngine();
     await pod.execute({
       config: opts.config,

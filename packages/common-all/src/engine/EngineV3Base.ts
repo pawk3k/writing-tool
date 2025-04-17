@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable no-empty-function */
 import _ from "lodash";
 import { BacklinkUtils } from "../BacklinkUtils";
 import { DLogger } from "../DLogger";
@@ -230,7 +228,7 @@ export abstract class EngineV3Base implements ReducedDEngine {
             }),
           };
         }
-        // eslint-disable-next-line no-await-in-loop
+
         const parentResp = await this.noteStore.get(parentNote.parent);
         if (parentResp.data) {
           prevNote = { ...parentNote };
@@ -296,7 +294,7 @@ export abstract class EngineV3Base implements ReducedDEngine {
     // const ctx = "Engine:queryNotes";
     const { qs, vault, onlyDirectChildren, originalQS } = opts;
     // Need to ignore this because the engine stringifies this property, so the types are incorrect.
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     if (vault?.selfContained === "true" || vault?.selfContained === "false")
       vault.selfContained = vault.selfContained === "true";
 

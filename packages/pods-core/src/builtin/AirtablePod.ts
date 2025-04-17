@@ -42,7 +42,6 @@ import { PodUtils } from "../utils";
 const ID = "dendron.airtable";
 
 // Allow 5 req/sec. Also understands 'hour', 'minute', 'day', or a no. of ms
-// @ts-ignore
 const limiter = new RateLimiter({ tokensPerInterval: 5, interval: "second" });
 
 type AirtablePodCustomOptsCommon = {
@@ -161,7 +160,6 @@ export class AirtableUtils {
     // let total: number = 0;
     const out = await Promise.all(
       chunks.flatMap(async (record) => {
-        // @ts-ignore
         await limiter.removeTokens(1);
         const data = JSON.stringify({ records: record });
         try {

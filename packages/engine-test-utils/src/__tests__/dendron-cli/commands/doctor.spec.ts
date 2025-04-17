@@ -880,7 +880,7 @@ describe("GIVEN addMissingDefaultConfigs", () => {
         {
           expect,
           modConfigCb: (config) => {
-            // @ts-ignore
+            // @ts-expect-error TODO: fix this supression
             delete config.workspace.workspaceVaultSyncMode;
             return config;
           },
@@ -946,7 +946,7 @@ describe("GIVEN removeDeprecatedConfigs", () => {
         {
           expect,
           modConfigCb: (config) => {
-            // @ts-ignore
+            // @ts-expect-error TODO: fix this supression
             config.dev = { enableWebUI: true };
             return config;
           },

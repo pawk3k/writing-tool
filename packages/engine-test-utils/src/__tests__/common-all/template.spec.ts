@@ -13,7 +13,7 @@ async function expectStringMatch(note: NoteProps, matchTxt: string) {
 
 describe(`WHEN running applyTemplate tests`, () => {
   const noteFactory: TestNoteFactory = TestNoteFactory.defaultUnitTestFactory();
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   let targetNote: NoteProps;
   const currentDate = new Date(2022, 0, 10);
   let clock: sinon.SinonFakeTimers;

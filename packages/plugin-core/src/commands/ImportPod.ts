@@ -121,7 +121,7 @@ export class ImportPodCommand extends BaseCommand<
     if (!wsRoot) {
       throw Error("ws root not defined");
     }
-    const pod = new opts.podChoice.podClass() as ImportPod; // eslint-disable-line new-cap
+    const pod = new opts.podChoice.podClass() as ImportPod;
     const fileWatcher = ExtensionProvider.getExtension().fileWatcher;
     if (fileWatcher) {
       fileWatcher.pause = true;

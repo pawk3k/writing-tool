@@ -164,7 +164,7 @@ export class BackupService implements Disposable, IBackupService {
       return backupsWithKey
         .filter((dirent) => dirent.isFile)
         .map((dirent) => dirent.name);
-    } catch (error) {
+    } catch (_error) {
       return [];
     }
   }

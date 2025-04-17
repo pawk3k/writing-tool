@@ -5,7 +5,7 @@ import { BasicCommand } from "./base";
 
 const L = Logger;
 
-type OpenLogsCommandOpts = {};
+type OpenLogsCommandOpts = object;
 
 export class OpenLogsCommand extends BasicCommand<OpenLogsCommandOpts, void> {
   key = DENDRON_COMMANDS.OPEN_LOGS.key;

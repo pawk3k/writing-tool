@@ -15,7 +15,7 @@ function checkToken({ filesToCheck, forbiddenTokens, filesToIgnore }) {
         (file) => !fileIgnoreRgx.test(file.trim())
       );
     }
-    // eslint-disable-next-line no-loop-func
+     
     const failedFiles = relevantFiles.reduce((acc, fileName) => {
       const filePath = path.resolve(
         process.cwd(),

@@ -151,7 +151,7 @@ export class GitTestUtils {
     await GitTestUtils.createRepoForRemoteWorkspace(wsRoot, remoteDir);
     const rootNote = (
       await engine.findNotesMeta({ fname: "root", vault: vaults[0] })
-    )[0]!;
+    )[0];
     // Add everything and push, so that there's no untracked changes
     const git = new Git({ localUrl: wsRoot, remoteUrl: remoteDir });
     await git.addAll();

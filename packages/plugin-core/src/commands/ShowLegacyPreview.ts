@@ -4,7 +4,7 @@ import { VSCodeUtils } from "../vsCodeUtils";
 import { MarkdownUtils } from "../utils/md";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandOutput = any;
 
 export class ShowLegacyPreviewCommand extends BasicCommand<
@@ -20,7 +20,6 @@ export class ShowLegacyPreviewCommand extends BasicCommand<
   }
 
   async execute(_opts?: CommandOpts) {
-    // eslint-disable-next-line  no-return-await
     return await MarkdownUtils.showLegacyPreview();
   }
 }

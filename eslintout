@@ -1,0 +1,493 @@
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/core.ts
+  34:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  34:21  error  Empty block statement            no-empty
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/index.ts
+  35:22  error  Promise executor functions should not be async  no-async-promise-executor
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/api-server/src/routes/workspace.ts
+  9:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/dnode.ts
+   722:14  error    'err' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+   763:16  error    'err' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+  1739:12  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/drivers/string2Note.ts
+  30:31  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+  31:35  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/git.ts
+  105:10  error  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/schema.ts
+  72:12  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/sidebar.ts
+  82:7  error  'sidebarConfig' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/types/configs/workspace/journal.ts
+  16:7  error  'possibleDayOfWeekNumber' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/types/configs/workspace/task.ts
+  1:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-all/src/yaml.ts
+   7:28  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead                    import/no-named-as-default-member
+  10:24  warning  Caution: `YAML` also has a named export `YAMLException`. Check if you meant to write `import {YAMLException} from 'js-yaml'` instead  import/no-named-as-default-member
+  18:28  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead                    import/no-named-as-default-member
+  21:24  warning  Caution: `YAML` also has a named export `YAMLException`. Check if you meant to write `import {YAMLException} from 'js-yaml'` instead  import/no-named-as-default-member
+  31:13  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead      import/no-named-as-default-member
+  37:42  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead      import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/components/DendronNote.tsx
+   1:1  error  Definition for rule 'react/no-danger' was not found                                                                  react/no-danger
+  16:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/engine/hooks.ts
+   3:10  error    TypedUseSelectorHook not found in 'react-redux'                                                                                                           import/named
+  48:6   warning  React Hook useEffect has missing dependencies: 'dispatch', 'engineState', 'logger', and 'opts.force'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  76:6   warning  React Hook useEffect has missing dependencies: 'dispatch', 'logger', 'opts.url', and 'opts.ws'. Either include them or remove the dependency array        react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/engine/slice.ts
+  14:41  error  PayloadAction not found in '@reduxjs/toolkit'  import/named
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/ide/hooks.ts
+  1:10  error  TypedUseSelectorHook not found in 'react-redux'  import/named
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/features/ide/slice.ts
+   8:23  error  PayloadAction not found in '@reduxjs/toolkit'  import/named
+  10:8   error  'internal' is defined but never used           @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/utils/logger.ts
+  1:8  warning  Using exported name 'Amplify' as identifier for default import  import/no-named-as-default
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-frontend/src/utils/vscode.ts
+  47:19  error    Do not access Object.prototype method 'hasOwnProperty' from target object                                    no-prototype-builtins
+  67:6   warning  React Hook useEffect has a missing dependency: 'listener'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/analytics.ts
+  387:22  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  497:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/backup/service.ts
+  167:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/errorReporting.ts
+  5:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/files.ts
+  73:10  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead                import/no-named-as-default-member
+  74:13  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+  80:10  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead                import/no-named-as-default-member
+  81:13  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+  86:15  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead                import/no-named-as-default-member
+  86:52  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+  91:15  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead                import/no-named-as-default-member
+  91:52  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/filesv2.ts
+  100:22  error    Promise executor functions should not be async                                                                      no-async-promise-executor
+  121:22  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+  138:22  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+  342:10  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead  import/no-named-as-default-member
+  605:12  error    'err' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/git.ts
+  16:8  warning  Using exported name 'simpleGit' as identifier for default import  import/no-named-as-default
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/logger.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-server/src/oneoff/ConfigCompat.ts
+  33:41  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  86:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-test-utils/src/index.ts
+  36:53  error  Unnecessary escape character: \/  no-useless-escape
+  36:55  error  Unnecessary escape character: \.  no-useless-escape
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/common-test-utils/src/types.ts
+  2:10  error  SinonStub not found in 'sinon'  import/named
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/bin/dendron-cli.ts
+  43:1  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/commands/devCLICommand.ts
+  252:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/commands/pod.ts
+  70:24  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-cli/src/utils/cli.ts
+  30:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/DendronCalendarPanel/index.tsx
+    9:3  error  CalendarProps not found in 'antd'                        import/named
+   35:7  error  'Calendar' is assigned a value but never used            @typescript-eslint/no-unused-vars
+  130:9  error  'activeDate' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  198:9  error  'onPanelChange' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  213:9  error  'dateFullCellRender' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/DendronLookupPanel.tsx
+  2:41  error  FormInstance not found in 'antd'  import/named
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/SeedBrowser.tsx
+  83:26  error  Parsing error: ',' expected
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/components/graph.tsx
+  162:22  error  'v' is defined but never used. Allowed unused args must match /^_/u                                                  @typescript-eslint/no-unused-vars
+  326:11  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/hooks/index.tsx
+   18:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  113:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  115:5  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-plugin-views/src/reportWebVitals.ts
+  1:10  error  ReportHandler not found in 'web-vitals'  import/named
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-viz/src/CircleText.tsx
+  1:1  error  Definition for rule 'react/require-default-props' was not found  react/require-default-props
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/dendron-viz/src/Tree.tsx
+    1:1   error    Definition for rule 'react/no-array-index-key' was not found                                                                react/no-array-index-key
+    3:1   error    Definition for rule 'react/require-default-props' was not found                                                             react/require-default-props
+   14:20  error    A `require()` style import is forbidden                                                                                     @typescript-eslint/no-require-imports
+   89:7   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free         @typescript-eslint/ban-ts-comment
+  111:9   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free         @typescript-eslint/ban-ts-comment
+  113:9   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free         @typescript-eslint/ban-ts-comment
+  127:8   warning  React Hook useMemo has a missing dependency: 'colorEncoding'. Either include it or remove the dependency array              react-hooks/exhaustive-deps
+  200:8   warning  React Hook useMemo has missing dependencies: 'getColor' and 'maxDepth'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  439:12  error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free         @typescript-eslint/ban-ts-comment
+  534:12  error    Unsafe usage of optional chaining. If it short-circuits with 'undefined' the evaluation will throw TypeError                no-unsafe-optional-chaining
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/cache/dendronFileSystemCache.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/changelog/changelog.ts
+   6:8   error  '_' is defined but never used                       @typescript-eslint/no-unused-vars
+  75:10  error  'getLastChangelogCommit' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/doctor/service.ts
+  79:18  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  81:36  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/drivers/file/schemaParser.ts
+  29:29  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/drivers/file/storev2.ts
+  173:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+  184:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+  193:14  error  'parseErr' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/engineClient.ts
+  329:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/migrations.ts
+  18:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/migrations/utils.ts
+   16:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  265:41  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/git.ts
+  216:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/hooks.ts
+  92:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/topics/webpack-require-hack.ts
+  9:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/utils/index.ts
+  214:20  error  'body' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/workspace/fileAddWatcher.ts
+  2:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-server/src/workspace/utils.ts
+  97:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/engine.ts
+   40:17  error    SinonStub not found in 'sinon'                                                                                     import/named
+  371:12  warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/engine-server/note-refs.ts
+  8:10  error  Unexpected empty object pattern  no-empty-pattern
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/presets/pods-core/json.ts
+  258:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/engine-test-utils/src/utils/seed.ts
+  76:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/scripts/variableSubstitution.ts
+  1:8  error  '_' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+  8:1  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/WSUtils.ts
+  100:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/WSUtilsV2.ts
+   51:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+   89:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  186:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ConvertLink.ts
+  142:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ConvertVaultCommand.ts
+  8:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/CreateNoteWithTraitCommand.ts
+  314:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/InsertNoteLink.ts
+  61:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MergeNoteCommand.ts
+   24:8   error  '_' is defined but never used                          @typescript-eslint/no-unused-vars
+  108:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MigrateSelfContainedVault.ts
+  3:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveHeader.ts
+  268:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveNoteCommand.ts
+  143:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/MoveSelectionToCommand.ts
+  6:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RefactorHierarchyV2.ts
+  106:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/ReloadIndex.ts
+  24:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/commands/RenameNoteV2a.ts
+  69:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/doctor/utils.ts
+  37:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/HierarchySelector.ts
+  58:13  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/LookupControllerV3.ts
+  534:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  564:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  591:18  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/lookup/NoteLookupProviderUtils.ts
+  18:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  19:15  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  20:21  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  21:14  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/pods/PodControls.ts
+  349:11  error  'disposable' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/components/views/PreviewPanel.ts
+  401:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  425:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/extension.ts
+   7:3  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  15:3  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/external/memo/utils/utils.ts
+  280:20  error  'offset' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/DefinitionProvider.ts
+  95:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/TipOfTheDayWebview.ts
+  3:8  error  '_md' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/features/codeActionProvider.ts
+  39:12  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/logger.ts
+  249:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  266:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/services/stateService.ts
+  29:5  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/showcase/CreateScratchNoteKeybindingTip.ts
+  2:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/telemetry.ts
+  24:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/expect.ts
+  7:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runPerfTest.ts
+  20:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runTest.ts
+  21:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/runTestInteg.ts
+  20:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtils.ts
+  64:30  error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  80:7   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+  97:7   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type  @typescript-eslint/no-unsafe-function-type
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtilsV3.ts
+  392:9   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  395:16  error    'e' is defined but never used                                                                                            @typescript-eslint/no-unused-vars
+  397:9   warning  Caution: `sinon` also has a named export `restore`. Check if you meant to write `import {restore} from 'sinon'` instead  import/no-named-as-default-member
+  398:9   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  404:5   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  416:5   warning  Caution: `sinon` also has a named export `restore`. Check if you meant to write `import {restore} from 'sinon'` instead  import/no-named-as-default-member
+  458:5   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  707:5   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  711:3   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead        import/no-named-as-default-member
+  721:3   warning  Caution: `sinon` also has a named export `restore`. Check if you meant to write `import {restore} from 'sinon'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/testUtilsv2.ts
+   29:10  error    '_activate' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  165:3   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+  186:3   warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/utils/TestSeedUtils.ts
+  10:29  warning  Caution: `sinon` also has a named export `fake`. Check if you meant to write `import {fake} from 'sinon'` instead        import/no-named-as-default-member
+  11:28  warning  Caution: `sinon` also has a named export `fake`. Check if you meant to write `import {fake} from 'sinon'` instead        import/no-named-as-default-member
+  13:5   warning  Caution: `sinon` also has a named export `replace`. Check if you meant to write `import {replace} from 'sinon'` instead  import/no-named-as-default-member
+  14:5   warning  Caution: `sinon` also has a named export `replace`. Check if you meant to write `import {replace} from 'sinon'` instead  import/no-named-as-default-member
+  22:29  warning  Caution: `sinon` also has a named export `fake`. Check if you meant to write `import {fake} from 'sinon'` instead        import/no-named-as-default-member
+  23:28  warning  Caution: `sinon` also has a named export `fake`. Check if you meant to write `import {fake} from 'sinon'` instead        import/no-named-as-default-member
+  25:5   warning  Caution: `sinon` also has a named export `replace`. Check if you meant to write `import {replace} from 'sinon'` instead  import/no-named-as-default-member
+  26:5   warning  Caution: `sinon` also has a named export `replace`. Check if you meant to write `import {replace} from 'sinon'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/test/utils/vscode-test-utils.ts
+  10:38  warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+  28:20  warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+  41:18  warning  Caution: `sinon` also has a named export `stub`. Check if you meant to write `import {stub} from 'sinon'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/UserDefinedTraitV1.ts
+  34:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  68:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  69:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/traits/webpack-require-hack.ts
+  12:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/ExtensionUtils.ts
+  84:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/analytics.ts
+  207:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/files.ts
+  4:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/utils/md.ts
+  710:14  error  '_alias' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  715:14  error  '_fname' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/versionProvider.ts
+  20:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/extension.ts
+  29:12  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/injection-providers/getWorkspaceConfig.ts
+  19:10  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead                import/no-named-as-default-member
+  20:13  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/helpers/WorkspaceHelpers.ts
+  13:16  error    A `require()` style import is forbidden                                                                                           @typescript-eslint/no-require-imports
+  16:24  error    A `require()` style import is forbidden                                                                                           @typescript-eslint/no-require-imports
+  41:17  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead                import/no-named-as-default-member
+  41:56  warning  Caution: `YAML` also has a named export `JSON_SCHEMA`. Check if you meant to write `import {JSON_SCHEMA} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/runWebIntegTest.ts
+  19:12  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/test/suite/index.ts
+  2:1  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/utils/WSUtils.ts
+   8:8   error  '_' is defined but never used    @typescript-eslint/no-unused-vars
+  38:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/web/views/preview/PreviewPanel.ts
+  390:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  414:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/workspace.ts
+  291:14  error  'err' is defined but never used                                                  @typescript-eslint/no-unused-vars
+  374:5   error  'opts' is assigned a value but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  378:5   error  Unexpected aliasing of 'this' to local variable                                  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/plugin-core/src/workspace/tutorialInitializer.ts
+  139:18  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/pods-core/src/builtin/NextjsExportPod.ts
+  255:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/pods-core/src/v2/pods/export/JSONExportPodV2.ts
+  8:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/decorations/diagnostics.ts
+  50:29  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/backlinks.ts
+  15:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/blockAnchors.ts
+  1:8  error  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/dendronPreview.ts
+  100:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/dendronPub.ts
+  192:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/extendedImage.ts
+  49:17  warning  Caution: `YAML` also has a named export `load`. Check if you meant to write `import {load} from 'js-yaml'` instead  import/no-named-as-default-member
+  86:13  warning  Caution: `YAML` also has a named export `dump`. Check if you meant to write `import {dump} from 'js-yaml'` instead  import/no-named-as-default-member
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/hierarchies.ts
+  68:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/noteRefsV2.ts
+  364:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  432:16  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/publishSite.ts
+  19:9  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/remark/utils.ts
+    88:18  error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   106:7   error  'note' is never reassigned. Use 'const' instead  prefer-const
+  1153:14  error  'err' is defined but never used                  @typescript-eslint/no-unused-vars
+
+/Users/pravliv/Documents/int/ssh/dendron/packages/unified/src/types.ts
+  61:3  error  Duplicate enum member value yaml  @typescript-eslint/no-duplicate-enum-values
+
+✖ 225 problems (166 errors, 59 warnings)
+

@@ -9,7 +9,7 @@ export class NodeTelemetryClient implements ITelemetryClient {
   track(
     _event: string,
     _customProps?: any,
-    _segmentProps?: { timestamp?: Date | undefined } | undefined
+    _segmentProps?: { timestamp?: Date | undefined }
   ): Promise<void> {
     throw new Error("NodeTelemetryClient - Method not implemented.");
   }

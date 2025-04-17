@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import fs from "fs-extra";
 import _ from "lodash";
 import {

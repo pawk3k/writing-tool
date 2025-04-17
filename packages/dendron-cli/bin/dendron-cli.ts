@@ -39,5 +39,6 @@ new PublishCLICommand().buildCmd(buildYargs);
 new ExportPodV2CLICommand().buildCmd(buildYargs);
 new VisualizeCLICommand().buildCmd(buildYargs);
 
-// eslint-disable-next-line no-unused-expressions
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 buildYargs.strictCommands().demandCommand(1).help().argv;

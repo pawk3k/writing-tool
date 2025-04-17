@@ -1,4 +1,3 @@
-/* eslint-disable import/no-dynamic-require */
 import {
   Conflict,
   DendronError,
@@ -32,7 +31,7 @@ export type PodCLIOpts = {
   vault?: string;
 };
 
-export type PodCommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+export type PodCommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 export type PodCommandOpts<T = any> = PodCLIOpts & {
   podClass: any;
@@ -66,7 +65,9 @@ export function fetchPodClassV4(
     if (!opts.podPkg || !opts.wsRoot) {
       throw Error("podPkg not defined");
     }
-    // eslint-disable-next-line global-require
+
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const podEntries = require(`${path.join(
       opts.wsRoot,
       "node_modules",
@@ -131,9 +132,8 @@ export function enrichPodArgs(opts: {
 
     // if show config, output configuration and exit
     if (showConfig) {
-      // eslint-disable-next-line new-cap
       const config = new podClass().config;
-      // eslint-disable-next-line no-console
+
       console.log(config);
       process.exit(0);
     }
@@ -146,7 +146,7 @@ export function enrichPodArgs(opts: {
         podClass,
         force: true,
       });
-      // eslint-disable-next-line no-console
+
       console.log(`config generated at ${configPath}`);
       process.exit(0);
     }
@@ -197,7 +197,6 @@ export function enrichPodArgs(opts: {
         cleanConfig["fname"] = args.query;
       }
     } else if (podId !== NextjsExportPod.id) {
-      // eslint-disable-next-line no-console
       console.log(
         `WARN: --query and --vault parameter not implemented for podType ${podType}`
       );

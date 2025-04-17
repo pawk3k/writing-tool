@@ -5,6 +5,8 @@ import {
   VaultRemoteSource,
   VaultUtils,
 } from "@dendronhq/common-all";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { DENDRON_COMMANDS } from "../constants";
 import { BasicCommand } from "./base";

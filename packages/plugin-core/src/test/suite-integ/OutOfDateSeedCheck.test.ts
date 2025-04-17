@@ -18,7 +18,7 @@ import { PluginTestSeedUtils } from "../utils/TestSeedUtils";
 suite("GIVEN out of date seed check", function () {
   describeSingleWS("WHEN there's a seed with an out-of-date path", {}, () => {
     const seedKey = "dendron.foo";
-    let showMessage: SinonStubbedFn<typeof VSCodeUtils["showMessage"]>;
+    let showMessage: SinonStubbedFn<(typeof VSCodeUtils)["showMessage"]>;
     before(async () => {
       const { engine } = ExtensionProvider.getDWorkspace();
       const wsRoot = engine.wsRoot;

@@ -205,7 +205,7 @@ suite("missing default config detection", () => {
     "GIVEN dendron.yml with missing default key",
     {
       modConfigCb: (config) => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         delete config.workspace.workspaceVaultSyncMode;
         return config;
       },
@@ -230,7 +230,7 @@ suite("missing default config detection", () => {
       "AND missing default key",
       {
         modConfigCb: (config) => {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           delete config.workspace.workspaceVaultSyncMode;
           return config;
         },
@@ -264,7 +264,7 @@ suite("missing default config detection", () => {
       "AND missing default key",
       {
         modConfigCb: (config) => {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           delete config.workspace.workspaceVaultSyncMode;
           return config;
         },
@@ -309,7 +309,7 @@ suite("deprecated config detection", () => {
     "GIVEN dendron.yml with deprecated key",
     {
       modConfigCb: (config) => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         config.dev = { enableWebUI: true };
         return config;
       },
@@ -334,7 +334,7 @@ suite("deprecated config detection", () => {
       "AND deprecated key exists",
       {
         modConfigCb: (config) => {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           config.dev = { enableWebUI: true };
           return config;
         },
@@ -369,7 +369,7 @@ suite("deprecated config detection", () => {
       "AND deprecated key exists",
       {
         modConfigCb: (config) => {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           config.dev = { enableWebUI: true };
           return config;
         },

@@ -83,7 +83,6 @@ export async function setupEngine(
       : DendronEngineV2.create({ wsRoot, logger });
     const out = await engine.init();
     if (out.error) {
-      // eslint-disable-next-line no-console
       console.error(out.error);
     }
     return {
@@ -153,7 +152,7 @@ export async function setupEngine(
   ({ engine, port, server, serverSockets } = resp.data);
   if (init) {
     const out = await engine.init();
-    // eslint-disable-next-line no-console
+
     if (out.error) console.error(out.error);
   }
   return { wsRoot, engine, port, server, serverSockets };

@@ -1,17 +1,16 @@
-/* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-const https = require('https');
-const { admZip: AdmZip } = require('./adm-zip');
+const https = require("https");
+const { admZip: AdmZip } = require("./adm-zip");
 
 const DENDRON_SYSTEM_ROOT = path.join(os.homedir(), ".dendron");
 
 async function downloadPrisma() {
-
   return new Promise((resolve, reject) => {
-    const url = "https://d2q204iup008xl.cloudfront.net/publish/generated-prisma-client.zip";
+    const url =
+      "https://d2q204iup008xl.cloudfront.net/publish/generated-prisma-client.zip";
     const tmpPath = path.join(DENDRON_SYSTEM_ROOT, "tmp_client");
     if (fs.existsSync(tmpPath)) {
       fs.unlinkSync(tmpPath);
@@ -26,11 +25,10 @@ async function downloadPrisma() {
         resolve({ prismaDownloadPath: tmpPath });
       });
       file.on("error", (err) => {
-        reject(err)
-      })
+        reject(err);
+      });
     });
-
-  })
+  });
 }
 
 async function loadPrisma() {
@@ -40,9 +38,9 @@ async function loadPrisma() {
     return {
       Prisma,
       PrismaClient,
-    }
+    };
   } else {
-    const { prismaDownloadPath } = await downloadPrisma()
+    const { prismaDownloadPath } = await downloadPrisma();
 
     // Prisma not installed
     const zip = new AdmZip(prismaDownloadPath);
@@ -52,10 +50,10 @@ async function loadPrisma() {
     return {
       Prisma,
       PrismaClient,
-    }
+    };
   }
 }
 
 module.exports = {
-  loadPrisma
-}
+  loadPrisma,
+};

@@ -31,7 +31,7 @@ const useApplyGraphConfig = ({
     }
     try {
       Object.entries(config)
-        .filter(([k, v]) => k.includes("connections"))
+        .filter(([k]) => k.includes("connections"))
         .forEach(([k, v]) => {
           const keyArray = k.split(".");
           const edgeType = keyArray[keyArray.length - 1];
@@ -65,7 +65,7 @@ const useApplyGraphConfig = ({
     if (!graph || graph.$("*").length === 0) return;
 
     Object.entries(config)
-      .filter(([k, v]) => k.includes("vault"))
+      .filter(([k]) => k.includes("vault"))
       .forEach(([k, v]) => {
         const keyArray = k.split(".");
         const vaultName = keyArray[keyArray.length - 1];
@@ -97,12 +97,7 @@ const useApplyGraphConfig = ({
     // Process the allowlist and blocklist inputs
     regexTypes.forEach((type) => {
       const classNameHidden = `hidden--regex-${type}`;
-      const regexItem =
-        config[
-          `filter.regex-${type}` as
-            | "filter.regex-allowlist"
-            | "filter.regex-blocklist"
-        ];
+      const regexItem = config[`filter.regex-${type}`];
 
       // Accept comma-separated or space-separated lists
       const regexItemInputs = regexItem.value.split(/(,| )/);
@@ -117,7 +112,7 @@ const useApplyGraphConfig = ({
         return acc;
       }, "");
 
-      const excludedInput = regexItemInputs.reduce((acc, input, i) => {
+      const excludedInput = regexItemInputs.reduce((acc, input) => {
         const trimmedInput = input.trim();
         if (trimmedInput === "") return acc;
 

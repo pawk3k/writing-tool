@@ -87,7 +87,7 @@ export class HashTagUtils {
   };
 }
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 const plugin: Plugin<[PluginOpts?]> = function plugin(
   this: Unified.Processor,
@@ -125,7 +125,7 @@ function attachParser(proc: Unified.Processor) {
     if (match && match.groups?.tagContents) {
       return eat(match[0])({
         type: DendronASTTypes.HASHTAG,
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         value: match[0],
         fname: `${TAGS_HIERARCHY}${match.groups.tagContents}`,
       });

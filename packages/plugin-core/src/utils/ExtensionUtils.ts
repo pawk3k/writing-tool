@@ -100,7 +100,7 @@ function handleServerProcess({
 }: {
   subprocess: ExecaChildProcess;
   context: vscode.ExtensionContext;
-  onExit: Parameters<typeof ServerUtils["onProcessExit"]>[0]["cb"];
+  onExit: Parameters<(typeof ServerUtils)["onProcessExit"]>[0]["cb"];
 }) {
   const ctx = "handleServerProcess";
   Logger.info({ ctx, msg: "subprocess running", pid: subprocess.pid });
@@ -116,7 +116,6 @@ function handleServerProcess({
   );
   // if server process has issues, prompt user to restart
   ServerUtils.onProcessExit({
-    // @ts-ignore
     subprocess,
     cb: onExit,
   });
@@ -231,7 +230,7 @@ export class ExtensionUtils {
     context: vscode.ExtensionContext;
     wsService: WorkspaceService;
     start: [number, number];
-    onExit: Parameters<typeof ServerUtils["onProcessExit"]>[0]["cb"];
+    onExit: Parameters<(typeof ServerUtils)["onProcessExit"]>[0]["cb"];
   }) {
     const ctx = "startServerProcess";
     const { port, subprocess } = await startServerProcess();

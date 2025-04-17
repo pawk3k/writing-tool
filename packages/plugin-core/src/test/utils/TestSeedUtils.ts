@@ -1,5 +1,5 @@
 import { SeedService } from "@dendronhq/engine-server";
-import sinon from "sinon";
+import { fake, replace } from "sinon";
 import { SeedAddCommand } from "../../commands/SeedAddCommand";
 import { SeedRemoveCommand } from "../../commands/SeedRemoveCommand";
 
@@ -7,11 +7,11 @@ export class PluginTestSeedUtils {
   static getFakedAddCommand(svc: SeedService) {
     const cmd = new SeedAddCommand(svc);
 
-    const fakedOnUpdating = sinon.fake.resolves(null);
-    const fakedOnUpdated = sinon.fake.resolves(null);
+    const fakedOnUpdating = fake.resolves(null);
+    const fakedOnUpdated = fake.resolves(null);
 
-    sinon.replace(cmd, <any>"onUpdatingWorkspace", fakedOnUpdating);
-    sinon.replace(cmd, <any>"onUpdatedWorkspace", fakedOnUpdated);
+    replace(cmd, <any>"onUpdatingWorkspace", fakedOnUpdating);
+    replace(cmd, <any>"onUpdatedWorkspace", fakedOnUpdated);
 
     return { cmd, fakedOnUpdating, fakedOnUpdated };
   }
@@ -19,11 +19,11 @@ export class PluginTestSeedUtils {
   static getFakedRemoveCommand(svc: SeedService) {
     const cmd = new SeedRemoveCommand(svc);
 
-    const fakedOnUpdating = sinon.fake.resolves(null);
-    const fakedOnUpdated = sinon.fake.resolves(null);
+    const fakedOnUpdating = fake.resolves(null);
+    const fakedOnUpdated = fake.resolves(null);
 
-    sinon.replace(cmd, <any>"onUpdatingWorkspace", fakedOnUpdating);
-    sinon.replace(cmd, <any>"onUpdatedWorkspace", fakedOnUpdated);
+    replace(cmd, <any>"onUpdatingWorkspace", fakedOnUpdating);
+    replace(cmd, <any>"onUpdatedWorkspace", fakedOnUpdated);
 
     return { cmd, fakedOnUpdating, fakedOnUpdated };
   }

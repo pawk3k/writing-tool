@@ -72,7 +72,7 @@ describe("inMemoryNoteCache.spec.ts", () => {
       });
 
       it("WHEN calling undefined file name THEN throw", () => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         expect(() => cache.getNotesByFileNameIgnoreCase(undefined)).toThrow();
       });
 

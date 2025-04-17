@@ -1,6 +1,12 @@
 import { ResultAsync } from "neverthrow";
 import { DendronError } from "../error";
-import { NoteChangeEntry, NotePropsByIdDict, NotePropsMeta, SchemaModuleDict, SchemaModuleProps } from "../types/index";
+import {
+  NoteChangeEntry,
+  NotePropsByIdDict,
+  NotePropsMeta,
+  SchemaModuleDict,
+  SchemaModuleProps,
+} from "../types/index";
 
 export type INoteQueryOpts = {
   /**

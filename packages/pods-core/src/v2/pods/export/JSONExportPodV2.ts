@@ -5,6 +5,8 @@ import {
   RespV2,
 } from "@dendronhq/common-all";
 import { JSONSchemaType } from "ajv";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import path from "path";
 import fs from "fs-extra";

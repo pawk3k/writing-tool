@@ -9,7 +9,7 @@ import { BasicCommand } from "../base";
 
 type CommandOutput = void;
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 export class ConfigureServiceConnection extends BasicCommand<
   CommandOpts,

@@ -21,6 +21,8 @@ import {
 } from "@dendronhq/common-server";
 import { DoctorActionsEnum, DoctorService } from "@dendronhq/engine-server";
 import fs from "fs-extra";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import path from "path";
 import { ProgressLocation, window } from "vscode";

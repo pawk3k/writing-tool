@@ -6,7 +6,7 @@ import { clipboard } from "../utils";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandOutput = string | undefined;
 
 export class CopyCodespaceURL extends BasicCommand<CommandOpts, CommandOutput> {

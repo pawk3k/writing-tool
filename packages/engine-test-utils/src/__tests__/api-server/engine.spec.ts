@@ -9,12 +9,12 @@ describe("engine, schemas/", () => {
 
   ENGINE_PRESETS.forEach((pre) => {
     const { name, presets } = pre;
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const presetByNodeType = presets[nodeType];
     if (!_.isEmpty(presetByNodeType)) {
       describe(name, () => {
         test.each(
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           _.map(presets[nodeType], (v, k) => {
             return [k, v];
           })
@@ -39,7 +39,7 @@ describe("engine, notes/", () => {
           return [k, v];
         })
       )("%p", async (_key, TestCase) => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         const { testFunc, ...opts } = TestCase;
         await runEngineTestV5(testFunc, { ...opts, createEngine, expect });
       });
@@ -55,7 +55,7 @@ describe("engine, config/", () => {
           return [k, v];
         })
       )("%p", async (_key, TestCase) => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         const { testFunc, ...opts } = TestCase;
         await runEngineTestV5(testFunc, { ...opts, createEngine, expect });
       });

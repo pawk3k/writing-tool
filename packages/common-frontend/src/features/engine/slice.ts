@@ -2,9 +2,6 @@ import {
   DEngineInitPayload,
   NoteProps,
   NotePropsByIdDict,
-} from "@dendronhq/common-all";
-
-import {
   DendronApiV2,
   stringifyError,
   NoteUtils,
@@ -12,13 +9,14 @@ import {
   NoteDictsUtils,
   DendronConfig,
   SchemaModuleDict,
-} from "@dendronhq/common-all/src";
+} from "@dendronhq/common-all";
 
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import _ from "lodash";
+import {
+  createAsyncThunk,
+  createSlice,
+  type PayloadAction,
+} from "@reduxjs/toolkit";
 import { EngineSliceState, LoadingStatus } from "../../types";
-// @ts-ignore
-import internal from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 import { createLogger } from "../../utils/logger";
 
 /**
@@ -42,7 +40,7 @@ export const initNotes = createAsyncThunk(
       dispatch(setError(stringifyError(resp.error)));
       return resp;
     }
-    const data = resp.data!;
+    const data = resp.data;
     logger.info({ state: "pre:setNotes" });
 
     const schemaDict: SchemaModuleDict = {};
@@ -78,7 +76,7 @@ export const syncConfig = createAsyncThunk(
       dispatch(setError(stringifyError(resp.error)));
       return resp;
     }
-    const data = resp.data!;
+    const data = resp.data;
     logger.info({ state: "pre:setConfig" });
     dispatch(setConfig(data));
     dispatch(setError(undefined));
@@ -107,7 +105,7 @@ export const syncNote = createAsyncThunk(
       dispatch(setError(stringifyError(resp.error)));
       return resp;
     }
-    const data = resp.data!;
+    const data = resp.data;
     logger.debug({
       state: "pre:setNotes",
       // Logging notes, but avoiding it if there's too many notes to avoid any performance impact
@@ -145,7 +143,7 @@ export const renderNote = createAsyncThunk(
       dispatch(setError(stringifyError(resp.error)));
       return resp;
     }
-    const data = resp.data!;
+    const data = resp.data;
     dispatch(setRenderNote({ id, body: data }));
     dispatch(setError(undefined));
     return resp;

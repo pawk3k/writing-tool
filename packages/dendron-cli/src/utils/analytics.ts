@@ -45,7 +45,7 @@ export class CLIAnalyticsUtils {
     ].join("\n");
     const header = `\n===================\nTelemetry notice 🌱\n===================\n`;
     const container = `${header}${message}`;
-    // eslint-disable-next-line no-console
+
     console.log(container);
   }
 }

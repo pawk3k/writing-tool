@@ -1,6 +1,6 @@
 import { SeedConfig, SEED_REGISTRY } from "@dendronhq/common-all";
 
-type SeedRegistryEntry = {} & SeedConfig;
+type SeedRegistryEntry = object & SeedConfig;
 
 type SeedRegistryDict = { [key: string]: SeedRegistryEntry | undefined };
 

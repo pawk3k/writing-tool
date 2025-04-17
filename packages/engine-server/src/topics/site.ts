@@ -331,16 +331,15 @@ export class SiteUtils {
       // TODO: legacy behavior around stubs, will need to remove
       if (publishingConfig.writeStubs && note.stub) {
         delete note.stub;
-        // eslint-disable-next-line no-await-in-loop
+
         await engine.writeNote(note);
       } else {
-        // eslint-disable-next-line no-await-in-loop
         await engine.writeNote(note, { metaOnly: true });
       }
 
       // if `skipLevels` is enabled, the children of the current note are descendants
       // further down
-      // eslint-disable-next-line no-await-in-loop
+
       let children = await HierarchyUtils.getChildren({
         skipLevels: siteFM.skipLevels || 0,
         note,

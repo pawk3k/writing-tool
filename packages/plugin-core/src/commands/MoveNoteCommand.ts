@@ -140,6 +140,8 @@ export class MoveNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
     );
 
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: Disposable;
 
       NoteLookupProviderUtils.subscribe({
@@ -351,7 +353,7 @@ export class MoveNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
 
     for (const move of necessaryMoves) {
       // We need to wait for a rename to finish before triggering another rename
-      // eslint-disable-next-line no-await-in-loop
+
       const changes = await engine.renameNote(move);
 
       allChanges.push(...(changes.data as NoteChangeEntry[]));

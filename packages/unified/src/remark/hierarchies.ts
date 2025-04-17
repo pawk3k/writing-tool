@@ -63,8 +63,10 @@ function footnoteDef2html(definition: FootnoteDefinition) {
 }
 
 /** Adds the "Children", "Tags", and "Footnotes" items to the end of the note. Also renders footnotes. */
-// eslint-disable-next-line func-names
+
 const plugin: Plugin = function (this: Unified.Processor, _opts?: PluginOpts) {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   const { config } = MDUtilsV5.getProcData(this);
   let hierarchyDisplayTitle =

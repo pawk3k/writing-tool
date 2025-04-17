@@ -1,3 +1,5 @@
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { DendronError } from "@dendronhq/common-all";
 import { Eat } from "remark-parse";
@@ -55,7 +57,7 @@ function attachParser(proc: Unified.Processor) {
     if (match) {
       return eat(match[0])({
         type: "blockAnchor",
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         value,
         id: match[1],
       });

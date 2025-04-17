@@ -103,6 +103,8 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
       noHidePickerOnAccept: false,
     });
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: Disposable;
       NoteLookupProviderUtils.subscribe({
         id: this.key,
@@ -171,7 +173,6 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
     let done = false;
     let replace: string | undefined;
     do {
-      // eslint-disable-next-line no-await-in-loop
       replace = await VSCodeUtils.showInputBox({
         title: "Enter replace text",
         prompt:
@@ -366,7 +367,7 @@ export class RefactorHierarchyCommandV2 extends BasicCommand<
     const { operations, renameCmd } = opts;
     const ctx = "RefactorHierarchy:runOperations";
     const out = await _.reduce<
-      typeof operations[0],
+      (typeof operations)[0],
       Promise<RenameNoteOutputV2a>
     >(
       operations,

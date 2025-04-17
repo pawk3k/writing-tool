@@ -18,9 +18,27 @@
       "options": {
         "env": {
           "LOG_LEVEL": "info",
-          "LOG_DST": "${workspaceFolder}/engine-test-utils.log",
+          "LOG_DST": "${workspaceFolder}/engine-test-utils.log"
         }
       }
     },
+    {
+      "label": "ESLint",
+      "type": "shell",
+      "problemMatcher": "$eslint-stylish",
+      "command": "yarn lint",
+      "windows": {
+        "command": "yarn lint"
+      }
+    },
+    {
+      "label": "ESLint:fix",
+      "type": "shell",
+      "problemMatcher": "$eslint-stylish",
+      "command": "yarn lint:fix",
+      "windows": {
+        "command": "yarn lint:fix"
+      }
+    }
   ]
 }

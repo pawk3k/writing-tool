@@ -3,7 +3,7 @@ import {
   DEngineClient,
   NotePropsMeta,
   ReducedDEngine,
-  RespV3
+  RespV3,
 } from "@dendronhq/common-all";
 import _ from "lodash";
 import path from "path";
@@ -110,7 +110,7 @@ export class CopyUnfinishedActionItemsCommand extends BasicCommand<
               ...item,
               children: item.children.map((child) => {
                 if (child.type === "list") {
-                  return filterCheckedItemsRecursively(child as List);
+                  return filterCheckedItemsRecursively(child);
                 }
                 return child;
               }),
@@ -215,7 +215,7 @@ export class CopyUnfinishedActionItemsCommand extends BasicCommand<
     if (!yearNote.data.parent) {
       return [];
     }
-    const parentNote = await engine.getNoteMeta(yearNote.data.parent!);
+    const parentNote = await engine.getNoteMeta(yearNote.data.parent);
     if (!parentNote.data) {
       return [];
     }

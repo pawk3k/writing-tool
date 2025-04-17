@@ -98,7 +98,7 @@ export class GraphvizExportPod extends ExportPod<GraphvizExportConfig> {
         if (link.to) {
           const destinationNote: NoteProps | undefined =
             NoteDictsUtils.findByFname({
-              fname: link.to!.fname as string,
+              fname: link.to.fname as string,
               noteDicts,
               vault: note.vault,
             })[0];

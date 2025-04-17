@@ -57,7 +57,7 @@ export const getPreset = ({
   key: string;
 }) => {
   const ent = _.find(presets, { name: presetName })!;
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   const out = _.get(ent.presets[nodeType], key);
   if (!out) {
     throw Error(`no key ${key} found in ${presetName}`);
@@ -77,7 +77,6 @@ export const getPresetMulti = ({
   key: string;
 }) => {
   const ent = _.find(presets, { name: presetName })!;
-  // @ts-ignore
   const out = _.get(ent.presets[nodeType], key);
   if (!out) {
     throw Error(`no key ${key} found in ${presetName}`);
@@ -95,7 +94,7 @@ export const getPresetGroup = ({
   nodeType: "SCHEMAS" | "NOTES";
 }) => {
   const ent = _.find(presets, { name: presetName })!;
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   return ent.presets[nodeType] as TestPresetDict;
 };
 

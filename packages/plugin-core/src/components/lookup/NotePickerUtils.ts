@@ -39,7 +39,7 @@ export class NotePickerUtils {
     if (text === undefined) {
       return;
     }
-    const wikiLinks = LinkUtils.extractWikiLinks(text as string);
+    const wikiLinks = LinkUtils.extractWikiLinks(text);
 
     // dedupe wikilinks by value
     const uniqueWikiLinks = _.uniqBy(wikiLinks, "value");
@@ -83,7 +83,7 @@ export class NotePickerUtils {
       id: CREATE_NEW_LABEL,
       fname,
       type: "note",
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       vault: {},
     });
     return {
@@ -103,7 +103,7 @@ export class NotePickerUtils {
       id: CREATE_NEW_WITH_TEMPLATE_LABEL,
       fname,
       type: "note",
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       vault: {},
     });
 

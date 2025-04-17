@@ -128,9 +128,7 @@ export interface IDendronExtension {
    *
    * There is no need to read the configuration from the extension, it doesn't depend on the extension itself.
    */
-  getWorkspaceConfig(
-    section?: string | undefined
-  ): vscode.WorkspaceConfiguration;
+  getWorkspaceConfig(section?: string): vscode.WorkspaceConfiguration;
 
   /**
    * Gets an instance of the trait Registrar service, which contains information

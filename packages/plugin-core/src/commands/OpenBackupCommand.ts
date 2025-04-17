@@ -6,7 +6,7 @@ import { IDendronExtension } from "../dendronExtensionInterface";
 import { BasicCommand } from "./base";
 import path from "path";
 
-type OpenBackupCommandOpts = {};
+type OpenBackupCommandOpts = object;
 
 export class OpenBackupCommand extends BasicCommand<
   OpenBackupCommandOpts,

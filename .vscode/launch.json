@@ -124,7 +124,7 @@
       "runtimeExecutable": "${execPath}",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
-        "--extensionTestsPath=${workspaceFolder}/out/src/test/suite-integ/index"
+      "--extensionTestsPath=${workspaceFolder}/out/src/test/suite-integ/index"
       ],
       "env": {
         "STAGE": "test",

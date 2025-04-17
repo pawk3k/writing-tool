@@ -1,5 +1,7 @@
 import { DendronError, DVault, VaultUtils } from "@dendronhq/common-all";
 import { WorkspaceService } from "@dendronhq/engine-server";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import * as vscode from "vscode";
 import { DENDRON_COMMANDS } from "../constants";

@@ -37,7 +37,7 @@ import { DConfig } from "@dendronhq/common-server";
 
 export { CommandCLIOpts as ExportPodV2CLIOpts };
 
-type CommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+type CommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 type CommandOpts = CommandCLIOpts & {
   config: any;

@@ -95,7 +95,7 @@ const generateConfig: GenerateConfig<DateTime> = {
     },
     getShortMonths: (locale) =>
       Info.months("short", { locale: normalizeLocale(locale) }),
-    // @ts-ignore -- allow format to return `null`
+    // @ts-expect-error TODO: fix this supression -- allow format to return `null`
     format: (locale, date, format) => {
       if (!date || !date.isValid) {
         return null;

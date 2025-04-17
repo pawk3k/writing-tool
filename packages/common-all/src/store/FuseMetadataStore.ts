@@ -5,7 +5,12 @@ import { SchemaUtils } from "../dnode";
 import { DendronError } from "../error";
 import { FuseEngine } from "../FuseEngine";
 import { INoteQueryOpts, IQueryStore } from "./IDataQuery";
-import { NoteChangeEntry, NotePropsByIdDict, SchemaModuleDict, SchemaModuleProps } from "../types/typesv2";
+import {
+  NoteChangeEntry,
+  NotePropsByIdDict,
+  SchemaModuleDict,
+  SchemaModuleProps,
+} from "../types/typesv2";
 import { NotePropsMeta } from "../types/foundation";
 
 export class FuseQueryStore implements IQueryStore {

@@ -11,7 +11,7 @@ import { DendronExtension } from "../workspace";
 import { WSUtils } from "../WSUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = string | undefined;
 
@@ -67,7 +67,7 @@ export class CopyNoteURLCommand extends BasicCommand<
     let anchor;
     if (selection) {
       anchor = EditorUtils.getAnchorAt({
-        editor: editor!,
+        editor: editor,
         position: selection.start,
         engine,
       });

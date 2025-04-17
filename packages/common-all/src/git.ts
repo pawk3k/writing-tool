@@ -102,7 +102,8 @@ export function getGithubEditUrl(opts: {
 
 export function git2Github(gitUrl: string) {
   // 'git@github.com:kevinslin/dendron-vault.git'
-  // @ts-ignore
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, userAndRepo] = gitUrl.split(":");
   const [user, repo] = userAndRepo.split("/");
   return `https://github.com/${user}/${path.basename(repo, ".git")}`;

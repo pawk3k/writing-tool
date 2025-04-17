@@ -10,7 +10,7 @@ import { DendronASTTypes, HashTag, UserTag, WikiLinkNoteV4 } from "../types";
 import { MDUtilsV5 } from "../utilsv5";
 import { URI, Utils } from "vscode-uri";
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 /** Makes the `.url` of the given image note a full path. */
 export function makeImageUrlFullPath({
@@ -97,6 +97,8 @@ export function dendronHoverPreview(
   this: Unified.Processor,
   _opts?: PluginOpts
 ): Transformer {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   function transformer(tree: Node, _file: VFile) {
     visit(

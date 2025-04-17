@@ -19,14 +19,13 @@ import anymatch from "anymatch";
 import { assign, CommentJSONValue, parse, stringify } from "comment-json";
 import { FSWatcher } from "fs";
 import fs from "fs-extra";
-import YAML, { JSON_SCHEMA } from "js-yaml";
+import { dump, JSON_SCHEMA, load } from "js-yaml";
 import _ from "lodash";
 import path from "path";
-// @ts-ignore
 import tmp, { DirResult, dirSync } from "tmp";
 import { resolvePath } from "./files";
 import { SchemaParserV2 } from "./parser";
-// @ts-expect-error
+// @ts-expect-error TODO: fix error
 import textextensionslist from "textextensions";
 
 /** Dendron should ignore any of these folders when watching or searching folders.
@@ -98,6 +97,8 @@ async function _createFileWatcher(
   if (numTries <= 0) {
     throw new DendronError({ message: "exceeded numTries" });
   }
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, _reject) => {
     if (!fs.existsSync(fpath)) {
       console.log({ fpath, msg: "not exist" });
@@ -119,7 +120,7 @@ export async function file2Schema(
 ): Promise<SchemaModuleProps> {
   const root = { fsPath: path.dirname(fpath) };
   const fname = path.basename(fpath, ".schema.yml");
-  const schemaOpts = YAML.load(
+  const schemaOpts = load(
     await fs.readFile(fpath, { encoding: "utf8" })
   ) as SchemaModuleOpts;
   return SchemaParserV2.parseRaw(schemaOpts, { root, fname, wsRoot });
@@ -136,7 +137,7 @@ export async function string2Schema({
   fname: string;
   wsRoot: string;
 }) {
-  const schemaOpts = YAML.load(content) as SchemaModuleOpts;
+  const schemaOpts = load(content) as SchemaModuleOpts;
   return SchemaParserV2.parseRaw(schemaOpts, {
     root: vault,
     fname,
@@ -340,7 +341,7 @@ function serializeModuleOpts(moduleOpts: SchemaModuleOpts) {
       SchemaUtils.serializeSchemaProps(ent)
     ),
   };
-  return YAML.dump(out, { schema: JSON_SCHEMA });
+  return dump(out, { schema: JSON_SCHEMA });
 }
 
 export function schemaModuleOpts2File(
@@ -475,7 +476,7 @@ async function findFileInVault({
   for (const vault of vaults) {
     const fullPath = path.join(wsRoot, VaultUtils.getRelPath(vault), fpath);
     // Doing this sequentially to simulate how publishing handles conflicting assets.
-    // eslint-disable-next-line no-await-in-loop
+
     if (await fileExists(fullPath)) {
       return { vault, fullPath };
     }
@@ -565,7 +566,6 @@ class FileUtils {
         // we got to the end without a match
         .on("end", () => resolve({ data: false }))
         .on("data", (chunk) => {
-          // eslint-disable-next-line no-plusplus
           for (let i = 0; i < chunk.length; i++) {
             const a = String.fromCharCode(
               Buffer.isBuffer(chunk) ? chunk[i] : chunk.charCodeAt(i)

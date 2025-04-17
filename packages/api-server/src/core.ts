@@ -12,7 +12,7 @@ export function setLogger({
   logLvl?: LogLvl;
 }) {
   const logLevel = logLvl || process.env.LOG_LEVEL || "debug";
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   L = createLogger("dendron.server", logPath, { lvl: logLevel });
   return L;
 }
@@ -31,7 +31,10 @@ export function configureLogger(opts?: { logPath: string; logLvl?: LogLvl }) {
     if (fs.existsSync(logPath)) {
       try {
         fs.moveSync(logPath, `${logPath}.old`, { overwrite: true });
-      } catch (err) {}
+      } catch (_err) {
+        // TODO: Please fix and remove the suppression
+         
+      }
     }
     fs.ensureFileSync(logPath);
   }

@@ -33,7 +33,9 @@ export type DendronASTNode = Parent & {
   children?: Parent["children"] | DendronASTNode[];
 };
 
-export enum DendronASTTypes {
+export // TODO: Please fix and remove the suppression
+
+enum DendronASTTypes {
   WIKI_LINK = "wikiLink",
   REF_LINK_V2 = "refLinkV2",
   BLOCK_ANCHOR = "blockAnchor",
@@ -58,7 +60,6 @@ export enum DendronASTTypes {
   FOOTNOTE_DEFINITION = "footnoteDefinition",
   FOOTNOTE_REFERENCE = "footnoteReference",
   HTML = "html",
-  YAML = "yaml",
 }
 
 export enum VaultMissingBehavior {

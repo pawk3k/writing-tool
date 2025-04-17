@@ -158,7 +158,8 @@ export default function Graph({
       const parsedEdges: EdgeDefinition[] = [];
 
       // Filter elements using config
-      Object.entries(config)
+      Object.entries(config) // TODO: Please fix and remove the suppression
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .filter(([k, v]) => k.includes("connections"))
         .forEach(([k, v]) => {
           if (v?.value) {
@@ -323,7 +324,7 @@ export default function Graph({
         ...c,
         ...additionalChanges,
         [key]: {
-          // @ts-ignore
+          // @ts-expect-error TS2584 - Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
           ...c[key],
           value,
         },

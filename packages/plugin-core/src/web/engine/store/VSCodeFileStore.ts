@@ -17,7 +17,8 @@ export class VSCodeFileStore implements IFileStore {
   async read(uri: URI): Promise<RespV3<string>> {
     try {
       const raw = await vscode.workspace.fs.readFile(uri);
-      // @ts-ignore - this needs to use browser's TextDecoder, not an import from node utils
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore TODO: fix this supression cause we might have web problem
       const textDecoder = new TextDecoder();
       const data = textDecoder.decode(raw);
       return { data };

@@ -3,7 +3,8 @@ import { Avatar, Card, Layout, List, PageHeader } from "antd";
 import _ from "lodash";
 import seedStyles from "../styles/scss/seeds.module.scss";
 import { DendronComponent } from "../types";
-import { AddToWorkspaceButton, GoToSiteButton } from "./Seeds";
+// import { AddToWorkspaceButton, GoToSiteButton } from "./Seeds";
+import { GoToSiteButton } from "./Seeds";
 
 const SeedBrowser: DendronComponent = (props) => {
   const { ide, workspace } = props;
@@ -74,17 +75,20 @@ const SeedBrowser: DendronComponent = (props) => {
                       actions={[
                         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
                         <GoToSiteButton
+                          key={item?.id}
                           url={item!.site ? item!.site.url : undefined}
                           inVscode={!browser}
                         />,
-                        {/*
-                         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */}
-                        <AddToWorkspaceButton
-                          seedId={item?.id!}
-                          existsInWorkspace={
-                            item ? item.seedInWorkspace : false
-                          }
-                        />,
+                        {
+                          /*
+                         // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead. */
+                        },
+                        // <AddToWorkspaceButton
+                        //   seedId={item?.id!}
+                        //   existsInWorkspace={
+                        //     item ? item.seedInWorkspace : false
+                        //   }
+                        // />,
                       ]}
                     >
                       {/*

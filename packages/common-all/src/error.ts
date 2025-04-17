@@ -246,7 +246,7 @@ export function stringifyError(err: Error) {
 export const error2PlainObject = (err: IDendronError): DendronErrorProps => {
   const out: Partial<DendronErrorProps> = {};
   Object.getOwnPropertyNames(err).forEach((k) => {
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     out[k] = err[k];
   });
   return out as DendronErrorProps;

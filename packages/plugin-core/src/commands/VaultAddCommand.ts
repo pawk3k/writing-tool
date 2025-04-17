@@ -119,7 +119,7 @@ export class VaultAddCommand extends BasicCommand<CommandOpts, CommandOutput> {
           });
           qp.hide();
           return resolve({
-            type: sourceType!,
+            type: sourceType,
             name: sourceName,
             path: sourcePath,
             pathRemote: sourceRemotePath,
@@ -265,9 +265,8 @@ export class VaultAddCommand extends BasicCommand<CommandOpts, CommandOutput> {
         } else {
           // Some things, like updating config, can't be parallelized so needs to be done one at a time
           for (const vault of vaults) {
-            // eslint-disable-next-line no-await-in-loop
             await wsService.createVault({ vault });
-            // eslint-disable-next-line no-await-in-loop
+
             await this.addVaultToWorkspace(vault);
           }
         }
@@ -428,7 +427,6 @@ export class VaultAddCommand extends BasicCommand<CommandOpts, CommandOutput> {
     const vaults = workspace.vaults;
     // Some things, like updating workspace file, can't be parallelized so needs to be done one at a time
     for (const vault of vaults) {
-      // eslint-disable-next-line no-await-in-loop
       await this.addVaultToWorkspace(vault);
     }
     // add to gitignore

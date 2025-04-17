@@ -1,4 +1,6 @@
 import { ShowcaseEntry } from "@dendronhq/engine-server";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { VSCodeUtils } from "../vsCodeUtils";
 import {

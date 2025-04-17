@@ -43,7 +43,6 @@ function runAllTests(opts: { name: string; testCases: ProcTests[] }) {
   describe(name, () => {
     test.each(
       testCases.map((ent) => [`${ent.dest}: ${ent.name}`, ent.testCase])
-      // @ts-ignore
     )("%p", async (_key, testCase: TestPresetEntryV4) => {
       await runEngineTestV5(testCase.testFunc, {
         expect,
@@ -86,7 +85,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp, 0, 1).type).toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp, 0, 1).value).toEqual(
         "#my-hash-tag"
       );
@@ -106,7 +105,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp1, 0, 1).type).toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 1).value).toEqual("#dolores.");
 
       const resp2 = proc().parse(
@@ -115,7 +114,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp2, 0, 1).type).toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp2, 0, 1).value).toEqual("#dolores");
 
       const resp3 = proc().parse(
@@ -124,7 +123,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp3, 0, 1).type).toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp3, 0, 1).value).toEqual("#dolores");
     });
 
@@ -133,7 +132,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp1, 0, 1).type).toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 1).value).toEqual("#よろしく");
     });
 
@@ -142,7 +141,7 @@ describe("hashtag", () => {
       expect(getDescendantNode(expect, resp1, 0, 0).type).not.toEqual(
         DendronASTTypes.HASHTAG
       );
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       expect(getDescendantNode(expect, resp1, 0, 0).value).toEqual("no#tag");
     });
   });

@@ -183,7 +183,6 @@ export class WindowWatcher {
     return;
   }
 
-  // eslint-disable-next-line camelcase
   __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
     return {
       onDidChangeActiveTextEditor: this.onDidChangeActiveTextEditor.bind(this),

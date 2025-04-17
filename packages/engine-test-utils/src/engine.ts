@@ -37,7 +37,9 @@ import fs from "fs-extra";
 import _ from "lodash";
 import os from "os";
 import path from "path";
-import sinon, { SinonStub } from "sinon";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line import/named
+import sinon, { SinonStub, stub } from "sinon";
 import { ENGINE_HOOKS } from "./presets";
 import { GitTestUtils } from "./utils";
 
@@ -73,7 +75,7 @@ export type AsyncCreateEngineFunction = (
  */
 export async function createEngineFromEngine(opts: WorkspaceOpts) {
   return {
-    engine: engineServerCreateEngine(opts) as DEngineClient,
+    engine: engineServerCreateEngine(opts),
     port: undefined,
     server: undefined,
   };
@@ -84,7 +86,7 @@ export async function createEngineFromEngine(opts: WorkspaceOpts) {
  */
 export async function createEngineV3FromEngine(opts: WorkspaceOpts) {
   return {
-    engine: createEngineV3(opts) as DEngineClient,
+    engine: createEngineV3(opts),
     port: undefined,
     server: undefined,
   };
@@ -368,7 +370,7 @@ export function testWithEngine(
 export class TestEngineUtils {
   static mockHomeDir(dir?: string): SinonStub {
     if (_.isUndefined(dir)) dir = tmpDir().name;
-    return sinon.stub(os, "homedir").returns(dir);
+    return stub(os, "homedir").returns(dir);
   }
 
   static vault1(vaults: DVault[]) {

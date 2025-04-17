@@ -318,7 +318,6 @@ export class GithubIssueImportPod extends ImportPod<GithubIssueImportPodConfig> 
     }
 
     while (hasNextPage) {
-      // eslint-disable-next-line no-await-in-loop
       const result: any = await this.getDataFromGithub({
         owner,
         repository,

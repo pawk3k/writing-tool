@@ -42,7 +42,6 @@ function runAllTests(opts: {
   _describe(name, () => {
     test.each(
       testCases.map((ent) => [`${ent.dest}: ${ent.name}`, ent.testCase])
-      // @ts-ignore
     )("%p", async (_key, testCase: TestPresetEntryV4) => {
       await runEngineTestV5(testCase.testFunc, {
         expect,
@@ -1127,7 +1126,7 @@ describe("noteRefV2", () => {
         [DendronASTDest.MD_REGULAR]: async ({ extra, engine }) => {
           const { resp } = extra;
           expect(resp).toMatchSnapshot();
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           return ENGINE_SERVER.NOTE_REF.WILDCARD_LINK_V4.genTestResults!({
             engine,
             extra: { body: resp.toString() },

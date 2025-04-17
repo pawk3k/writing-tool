@@ -219,7 +219,7 @@ export class NoteParserV2 {
       lvl += 1;
 
       // TODO: Fix
-      // eslint-disable-next-line no-await-in-loop
+
       await Promise.all(anotherOp);
     }
     return {
@@ -302,7 +302,8 @@ export class NoteParserV2 {
   }): Promise<RespV2<NoteProps>> {
     const raw = await vscode.workspace.fs.readFile(uri);
 
-    // @ts-ignore - this needs to use browser's TextDecoder, not an import from node utils
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore TODO: fix this supression cause we might have web problem
     const textDecoder = new TextDecoder();
 
     const content = textDecoder.decode(raw);

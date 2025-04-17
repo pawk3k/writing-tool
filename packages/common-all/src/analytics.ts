@@ -1,7 +1,6 @@
 // For all new additions to the telemetry events, follow UpperCamelCasing and
 // use noun+verb for the event name.
 
-/* eslint-disable camelcase */
 export enum VSCodeEvents {
   ServerCrashed = "ServerCrashed",
   InitializeWorkspace = "InitializeWorkspace",

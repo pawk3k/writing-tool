@@ -176,7 +176,7 @@ export async function setupWebExtContainer(context: vscode.ExtensionContext) {
 
   const config = await getWorkspaceConfig(wsRoot);
   container.register<DendronConfig>("DendronConfig", {
-    useValue: config as DendronConfig,
+    useValue: config,
   });
 
   setupTabAutoComplete(context);

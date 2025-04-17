@@ -654,7 +654,7 @@ describe("GIVEN VaultAddCommand with self contained vaults enabled", function ()
       let vaultName: string;
       let remoteDir: string;
       let transitiveDir: string;
-      let showMessageStub: SinonStubbedFn<typeof VSCodeUtils["showMessage"]>;
+      let showMessageStub: SinonStubbedFn<(typeof VSCodeUtils)["showMessage"]>;
       before(async () => {
         // Create two self contained vaults with git. Add the first one into the second one.
         // The first vault becomes a transitive dependency.

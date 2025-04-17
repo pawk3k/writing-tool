@@ -185,7 +185,6 @@ export const cacheRefs = async () => {
 export const findDanglingRefsByFsPath = async (uris: vscode.Uri[]) => {
   const refsByFsPath: { [key: string]: string[] } = {};
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const { fsPath } of uris) {
     const fsPathExists = fs.existsSync(fsPath);
     if (
@@ -193,7 +192,7 @@ export const findDanglingRefsByFsPath = async (uris: vscode.Uri[]) => {
       !containsMarkdownExt(fsPath) ||
       (fsPathExists && fs.lstatSync(fsPath).isDirectory())
     ) {
-      continue; // eslint-disable-line no-continue
+      continue;
     }
 
     const doc = workspace.textDocuments.find(
@@ -217,7 +216,6 @@ export const extractDanglingRefs = (content: string) => {
   const refs: string[] = [];
 
   content.split(/\r?\n/g).forEach((lineText, _lineNum) => {
-    // eslint-disable-next-line no-restricted-syntax
     for (const match of matchAll(refRegexp, lineText)) {
       const [, , reference] = match;
       if (reference) {
@@ -250,7 +248,6 @@ export const matchAll = (
 
   pattern.lastIndex = 0;
 
-  // eslint-disable-next-line no-cond-assign
   while ((match = pattern.exec(text))) {
     out.push(match);
   }
@@ -278,10 +275,10 @@ export const replaceRefs = ({
       if (new RegExp(pattern, "i").exec(content)) {
         let replacedOnce = false;
 
-        // @ts-ignore
         const nextContent = content.replace(
           new RegExp(pattern, "gi"),
-          // @ts-ignore
+          // TODO: Please fix and remove the suppression
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           ($0, $1, offset) => {
             // const pos = document.positionAt(offset);
 

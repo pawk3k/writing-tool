@@ -224,7 +224,7 @@ const NOTES = {
       const noteToDelete = (
         await engine.findNotesMeta({ fname: "foo", vault })
       )[0];
-      const resp = await engine.deleteNote(noteToDelete?.id as string);
+      const resp = await engine.deleteNote(noteToDelete?.id);
 
       const createEntries = extractNoteChangeEntriesByType(
         resp.data!,
@@ -321,7 +321,7 @@ const NOTES = {
       const noteToDelete = (
         await engine.findNotesMeta({ fname: "foo", vault })
       )[0];
-      const resp = await engine.deleteNote(noteToDelete?.id as string);
+      const resp = await engine.deleteNote(noteToDelete?.id);
 
       const changed = resp.data as NoteChangeEntry[];
       const notesInVaultAfter = await engine.findNotesMeta({ vault });

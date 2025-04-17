@@ -170,7 +170,7 @@ router.get(
 router.post(
   "/decorations",
   asyncHandler(async (req: Request, res: Response<GetNoteBlocksResp>) => {
-    const opts = req.body as any as GetDecorationsRequest;
+    const opts = req.body as GetDecorationsRequest;
     const { ws } = opts;
     const engine = await getWSEngine({ ws: ws || "" });
     ExpressUtils.setResponse(res, await engine.getDecorations(opts));

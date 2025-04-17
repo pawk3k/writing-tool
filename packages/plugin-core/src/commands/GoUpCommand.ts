@@ -8,7 +8,7 @@ import { IDendronExtension } from "../dendronExtensionInterface";
 import { VSCodeUtils } from "../vsCodeUtils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = void;
 

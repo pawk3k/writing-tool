@@ -82,6 +82,7 @@ const DendronConfigure: DendronComponent = ({ engine }: DendronProps) => {
         return (
           // @ts-expect-error TS2686 - 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
           <Card
+            key={conf}
             title={cleanTitle(conf.substring(conf.lastIndexOf(".") + 1))}
             id={conf}
           >

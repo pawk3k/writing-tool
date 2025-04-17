@@ -448,11 +448,9 @@ export class NoteLookupCommand extends BaseCommand<
           return this.acceptItem(item);
         })
       );
-      const notesToShow = out.filter(
-        (ent) => !_.isUndefined(ent)
-      ) as OnDidAcceptReturn[];
+      const notesToShow = out.filter((ent) => !_.isUndefined(ent));
       if (!_.isUndefined(quickpick.copyNoteLinkFunc)) {
-        await quickpick.copyNoteLinkFunc!(notesToShow.map((item) => item.node));
+        await quickpick.copyNoteLinkFunc(notesToShow.map((item) => item.node));
       }
       await _.reduce(
         notesToShow,

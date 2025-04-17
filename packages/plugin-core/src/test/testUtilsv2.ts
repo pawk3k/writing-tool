@@ -12,7 +12,7 @@ import { MetadataService } from "@dendronhq/engine-server";
 import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
-import sinon from "sinon";
+import { stub } from "sinon";
 import {
   ExtensionContext,
   Location,
@@ -26,6 +26,8 @@ import { SetupWorkspaceOpts } from "../commands/SetupWorkspace";
 import { CONFIG } from "../constants";
 import { DendronExtension } from "../workspace";
 import { createMockConfig } from "./testUtils";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { _activate } from "../_extension";
 import { ExtensionProvider } from "../ExtensionProvider";
 
@@ -76,7 +78,7 @@ export function genDefaultSettings() {
       "files.autoSave": "onFocusChange",
       "markdown-preview-enhanced.enableWikiLinkSyntax": true,
       "markdown-preview-enhanced.wikiLinkFileExtension": ".md",
-      "pasteImage.path": "${currentFileDir}/assets/images", // eslint-disable-line no-template-curly-in-string
+      "pasteImage.path": "${currentFileDir}/assets/images",
       "pasteImage.prefix": "/",
     },
   };
@@ -109,11 +111,10 @@ export function setupCodeConfiguration(opts: SetupCodeConfigurationV2) {
 }
 
 export async function resetCodeWorkspace() {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   DendronExtension.workspaceFile = () => {
     return undefined;
   };
-  // @ts-ignore
   DendronExtension.workspaceFolders = () => {
     return undefined;
   };
@@ -163,7 +164,7 @@ export class LocationTestUtils {
 export const stubWorkspaceFile = (wsRoot: string) => {
   const wsPath = path.join(wsRoot, "dendron.code-workspace");
   fs.writeJSONSync(wsPath, {});
-  sinon.stub(workspace, "workspaceFile").value(Uri.file(wsPath));
+  stub(workspace, "workspaceFile").value(Uri.file(wsPath));
   DendronExtension.workspaceFile = () => {
     return Uri.file(wsPath);
   };
@@ -184,7 +185,7 @@ export const stubWorkspaceFolders = (wsRoot: string, vaults: DVault[]) => {
       },
     ]);
 
-  sinon.stub(workspace, "workspaceFolders").value(folders);
+  stub(workspace, "workspaceFolders").value(folders);
   DendronExtension.workspaceFolders = () => folders;
 };
 

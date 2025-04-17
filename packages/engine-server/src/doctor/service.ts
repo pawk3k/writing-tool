@@ -76,8 +76,12 @@ export type DoctorServiceOpts = {
 export class DoctorService implements Disposable {
   public L: ReturnType<typeof createDisposableLogger>["logger"];
   private loggerDispose: ReturnType<typeof createDisposableLogger>["dispose"];
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   private print: Function;
 
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   constructor(opts?: { printFunc?: Function }) {
     const { logger, dispose } = createDisposableLogger("DoctorService");
     this.L = logger;
@@ -162,7 +166,7 @@ export class DoctorService implements Disposable {
           : VaultUtils.getVaultByName({ vaults, vname: link.from.vaultName! })!;
         return NoteUtils.create({
           fname: link.to!.fname!,
-          vault: destVault!,
+          vault: destVault,
         });
       }
     );
@@ -222,13 +226,13 @@ export class DoctorService implements Disposable {
     const engineWrite = dryRun
       ? () => {}
       : throttle(_.bind(engine.writeNote, engine), 300, {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           leading: true,
         });
     const engineDelete = dryRun
       ? () => {}
       : throttle(_.bind(engine.deleteNote, engine), 300, {
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           leading: true,
         });
 
@@ -310,7 +314,7 @@ export class DoctorService implements Disposable {
         );
         return { exit };
       }
-      // eslint-disable-next-line no-fallthrough
+
       case DoctorActionsEnum.H1_TO_TITLE: {
         doctorAction = async (note: NoteProps) => {
           const changes: NoteChangeEntry[] = [];
@@ -650,7 +654,7 @@ export class DoctorService implements Disposable {
       for (const note of notes) {
         if (numChanges >= limit) break;
         this.L.debug({ msg: `processing ${note.fname}` });
-        // eslint-disable-next-line no-await-in-loop
+
         await doctorAction(note);
       }
     }

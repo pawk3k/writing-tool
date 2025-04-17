@@ -817,7 +817,7 @@ const NOTES = {
         },
         {
           actual: await AssertUtils.assertInString({
-            body: changedNote?.body as string,
+            body: changedNote?.body,
             match: ["[[gamma]]"],
           }),
           expected: true,
@@ -1221,7 +1221,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         match: ["#bar"],
         nomatch: ["#foo"],
       });
@@ -1266,7 +1266,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         match: ["@bar"],
         nomatch: ["@foo"],
       });
@@ -1310,7 +1310,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         match: ["tags: bar"],
         nomatch: ["tags: foo"],
       });
@@ -1360,7 +1360,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         match: ["bar"],
         nomatch: ["foo"],
       });
@@ -1410,7 +1410,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         nomatch: [
           "tags: foo",
           "tags: bar",
@@ -1464,7 +1464,7 @@ const NOTES = {
         })
       )[0];
       const containsTag = checkFileNoExpect({
-        fpath: NoteUtils.getFullPath({ note: note!, wsRoot }),
+        fpath: NoteUtils.getFullPath({ note: note, wsRoot }),
         nomatch: ["foo", "bar", "undefined"],
       });
 

@@ -21,6 +21,8 @@ import { DendronContext, DENDRON_COMMANDS } from "../constants";
 import { IDendronExtension } from "../dendronExtensionInterface";
 import { BasicCommand, SanityCheckResults } from "./base";
 import * as vscode from "vscode";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 import { ProxyMetricUtils } from "../utils/ProxyMetricUtils";
 import { VSCodeUtils } from "../vsCodeUtils";
@@ -105,6 +107,8 @@ export class MergeNoteCommand extends BasicCommand<CommandOpts, CommandOutput> {
       activeNote,
     });
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: vscode.Disposable;
       NoteLookupProviderUtils.subscribe({
         id: this.key,

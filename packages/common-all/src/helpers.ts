@@ -14,7 +14,6 @@ export async function asyncLoopOneAtATime<T, R = any>(
 ): Promise<R[]> {
   const returnValues: R[] = [];
   for (const thing of things) {
-    // eslint-disable-next-line no-await-in-loop
     returnValues.push(await cb(thing));
   }
   return returnValues;

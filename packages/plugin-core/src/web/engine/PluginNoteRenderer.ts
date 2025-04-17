@@ -82,7 +82,7 @@ export class PluginNoteRenderer implements INoteRenderer {
       })
     );
 
-    let proc: ReturnType<typeof MDUtilsV5["procRehypeFull"]>;
+    let proc: ReturnType<(typeof MDUtilsV5)["procRehypeFull"]>;
     if (dest === DendronASTDest.HTML) {
       proc = MDUtilsV5Web.procRehypeWeb(
         {

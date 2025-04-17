@@ -267,7 +267,6 @@ export class TextDocumentService implements ITextDocumentService {
     return true;
   }
 
-  // eslint-disable-next-line camelcase
   __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
     return {
       onDidSave: this.onDidSave.bind(this),

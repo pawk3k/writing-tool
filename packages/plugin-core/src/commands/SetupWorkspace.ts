@@ -39,7 +39,7 @@ type CommandOpts = CommandInput & {
   /**
    * Open worksapce without reloading
    */
-  // eslint-disable-next-line camelcase
+
   EXPERIMENTAL_openNativeWorkspaceNoReload?: boolean;
 };
 

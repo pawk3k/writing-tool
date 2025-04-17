@@ -131,7 +131,7 @@ const _setupTestFactoryCommon = ({
         preSetupHook,
       }
     );
-    // @ts-ignore;
+    // @ts-expect-error TODO: fix this supression;
     return resp;
   };
 };

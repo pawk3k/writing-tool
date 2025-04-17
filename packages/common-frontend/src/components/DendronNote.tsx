@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import React from "react";
 import { createLogger } from "../utils/logger";
 
@@ -13,14 +12,13 @@ export const useMermaid = ({
 }) => {
   React.useEffect(() => {
     const logger = createLogger("useMermaid");
-    // @ts-ignore
+    // @ts-expect-error fix types with window here
     const mermaid = (window as any)._mermaid;
     logger.info("mermaid created");
     if (mermaid) {
       logger.info("mermaid initialized");
       mermaid.init();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noteRenderedBody]);
 };
 

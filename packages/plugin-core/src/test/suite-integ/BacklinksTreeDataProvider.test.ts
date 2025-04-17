@@ -51,7 +51,7 @@ const getRootChildrenBacklinks = async (sortOrder?: BacklinkPanelSortOrder) => {
     for (const parent of parents) {
       parentsWithChildren.push({
         ...parent,
-        // eslint-disable-next-line no-await-in-loop
+
         children: await backlinksTreeDataProvider.getChildren(parent),
       });
     }

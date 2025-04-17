@@ -38,7 +38,7 @@ export class LookupControllerV3Factory implements ILookupControllerV3Factory {
       opts?.vaultButtonPressed
     )
       ? isMultiVault
-      : isMultiVault && opts!.vaultButtonPressed;
+      : isMultiVault && opts.vaultButtonPressed;
 
     const maybeVaultSelectButton =
       opts?.nodeType === "note" && isMultiVault

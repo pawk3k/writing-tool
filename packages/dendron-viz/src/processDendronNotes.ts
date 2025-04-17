@@ -67,7 +67,6 @@ export const processDir = async ({
     const notes = (await engine.bulkGetNotes(note.children)).data;
     const children = [];
     for (const cnote of notes) {
-      // eslint-disable-next-line no-await-in-loop
       const stats = await addItemToTree(cnote);
       if (stats) children.push(stats);
     }

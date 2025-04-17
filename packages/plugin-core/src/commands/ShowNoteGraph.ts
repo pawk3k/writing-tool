@@ -9,7 +9,7 @@ import { AnalyticsUtils } from "../utils/analytics";
 import { WebViewUtils } from "../views/utils";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandOutput = void;
 
 export class ShowNoteGraphCommand extends BasicCommand<

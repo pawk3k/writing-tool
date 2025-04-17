@@ -255,9 +255,7 @@ export class SchemaLookupCommand extends BaseCommand<
           return this.acceptItem(item);
         })
       );
-      const outClean = out.filter(
-        (ent) => !_.isUndefined(ent)
-      ) as OnDidAcceptReturn[];
+      const outClean = out.filter((ent) => !_.isUndefined(ent));
       await _.reduce(
         outClean,
         async (acc, item) => {

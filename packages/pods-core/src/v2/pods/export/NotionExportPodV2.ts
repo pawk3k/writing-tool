@@ -35,7 +35,6 @@ export type NotionFields = {
 };
 
 // Allow 3 req/sec (the Notion API limit). Also understands 'hour', 'minute', 'day', or a no. of ms
-// @ts-ignore
 const limiter = new RateLimiter({ tokensPerInterval: 3, interval: "second" });
 
 /**
@@ -109,7 +108,6 @@ export class NotionExportPodV2 implements ExportPodV2<NotionExportReturnType> {
     const errors: IDendronError[] = [];
     const out: NotionFields[] = await Promise.all(
       blockPagesArray.map(async (ent: any) => {
-        // @ts-ignore
         await limiter.removeTokens(1);
         try {
           const response = await notion.pages.create(ent.block);

@@ -85,6 +85,8 @@ import {
 import { MDUtilsV5, ProcFlavor, ProcMode } from "../utilsv5";
 import { getFrontmatterTags, parseFrontmatter } from "../yaml";
 
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const toString = require("mdast-util-to-string");
 
 export { select, selectAll } from "unist-util-select";
@@ -103,6 +105,8 @@ export function getNoteOrError(
   hint: any
 ): { error: DendronError | undefined; note: undefined | NoteProps } {
   let error: DendronError | undefined;
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line prefer-const
   let note: NoteProps | undefined;
   if (_.isUndefined(notes)) {
     error = new DendronError({ message: `no note found. ${hint}` });
@@ -255,7 +259,7 @@ const getLinks = ({
     });
   }
   // the cast is safe because the only difference is whether `data.vaultName` exists, which is already optional
-  for (const noteRef of noteRefs as NoteRefNoteV4[]) {
+  for (const noteRef of noteRefs) {
     const { anchorStart, anchorEnd, anchorStartOffset } =
       noteRef.data.link.data;
     const anchorStartText = anchorStart || "";
@@ -323,7 +327,7 @@ const getLinkCandidates = async ({
   const linkCandidates: DLink[] = [];
   await Promise.all(
     _.map(textNodes, async (textNode: Text) => {
-      const value = textNode.value as string;
+      const value = textNode.value;
       await Promise.all(
         value.split(/\s+/).map(async (word) => {
           const possibleCandidates = await engine.findNotesMeta({
@@ -403,7 +407,7 @@ const getLinkCandidatesSync = ({
   const linkCandidates: DLink[] = [];
 
   _.map(textNodes, (textNode: Text) => {
-    const value = textNode.value as string;
+    const value = textNode.value;
 
     value.split(/\s+/).map((word) => {
       const possibleCandidates = NoteDictsUtils.findByFname({
@@ -713,7 +717,7 @@ export class LinkUtils {
         // remove .md extension if it exists, but keep full path in case this is an image
         fname = /^(?<name>.*?)(\.md)?$/.exec(_.trim(v as string))?.groups?.name;
       } else {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         clean[k] = v;
       }
     });
@@ -731,7 +735,7 @@ export class LinkUtils {
       clean.vaultName = vaultName;
     }
     // TODO
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     return { from: { fname, alias }, data: clean, type: "ref" };
   }
 
@@ -745,7 +749,7 @@ export class LinkUtils {
         message: `both fname and anchorStart for ${ref} is undefined`,
       });
     }
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     return noteRef;
   }
 
@@ -943,7 +947,7 @@ export class LinkUtils {
       return LinkUtils.parseLinkV2({ linkString: match[1] });
     });
 
-    return matched.filter((match) => !_.isNull(match)) as ParseLinkV2Resp[];
+    return matched.filter((match) => !_.isNull(match));
   }
 
   /**
@@ -1109,7 +1113,7 @@ export class AnchorUtils {
 
     const { line, column } = node.position.start;
     if (node.type === DendronASTTypes.HEADING) {
-      const headerNode = node as Heading;
+      const headerNode = node;
       const text = this.headerText(headerNode);
       const value = slugger.slug(this.headerText(headerNode));
       return [
@@ -1195,8 +1199,8 @@ export class AnchorUtils {
 function walk(node: Parent, fn: any) {
   fn(node);
   if (node.children) {
-    (node.children as Node[]).forEach((n) => {
-      // @ts-ignore
+    node.children.forEach((n) => {
+      // @ts-expect-error TODO: fix this supression
       walk(n, fn);
     });
   }
@@ -1374,7 +1378,7 @@ export class RemarkUtils {
 
   // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
   static isYAML(node: Node): node is YAML {
-    return node.type === DendronASTTypes.YAML;
+    return node.type === DendronASTTypes.FRONTMATTER;
   }
 
   // @ts-expect-error TS2677 - A type predicate's type must be assignable to its parameter's type.
@@ -1453,7 +1457,7 @@ export class RemarkUtils {
     dendronConfig: DendronConfig
   ) {
     const prevNote = { ...note };
-    // eslint-disable-next-line func-names
+
     return function (this: Processor) {
       return async (tree: Node, _vfile: VFile) => {
         const root = tree as DendronASTRoot;
@@ -1562,10 +1566,9 @@ export class RemarkUtils {
       if (_.isEqual(aOmit, bOmit)) {
         if (_.has(a, "children")) {
           return _.every(
-            // @ts-ignore
             a.children as Node[],
             (aChild: Node, aIndex: number) => {
-              // @ts-ignore
+              // @ts-expect-error TODO: fix this supression
               const bChild = (b.children as Node[])[aIndex];
               return RemarkUtils.hasIdenticalChildren(aChild, bChild);
             }
@@ -1651,9 +1654,9 @@ export class RemarkUtils {
     // Read and parse the note
     const noteText = NoteUtils.serialize(note);
     const noteAST = proc.parse(noteText);
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     if (_.isUndefined(noteAST.children)) return [];
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const nodesToSearch = _.filter(noteAST.children as Node[], (node) =>
       _.includes(NODE_TYPES_TO_EXTRACT, node.type)
     );

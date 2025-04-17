@@ -46,7 +46,7 @@ describe("RemarkUtils and LinkUtils", () => {
           const out = RemarkUtils.findAnchors(body);
           expect(out).toMatchSnapshot();
           expect(_.size(out)).toEqual(1);
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           expect(out[0].depth).toEqual(1);
           expect(out[0].type).toEqual(DendronASTTypes.HEADING);
         },

@@ -1,4 +1,6 @@
 import { DendronProps } from "../types";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line import/named
 import { Tooltip, Form, Select, Switch, FormInstance } from "antd";
 import {
   DMessageSource,

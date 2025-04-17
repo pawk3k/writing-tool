@@ -204,7 +204,7 @@ export class LookupV3QuickPickView implements Disposable {
   }
 
   private updateButtonsOnQuickPick(...btns: DendronBtn[]): void {
-    const newButtons = this._quickPick!.buttons.map((b: DendronBtn) => {
+    const newButtons = this._quickPick.buttons.map((b: DendronBtn) => {
       const toUpdate = _.find(btns, (value) => value.type === b.type);
 
       if (toUpdate) {
@@ -213,7 +213,7 @@ export class LookupV3QuickPickView implements Disposable {
         return b.clone();
       }
     });
-    this._quickPick!.buttons = newButtons;
+    this._quickPick.buttons = newButtons;
   }
 
   private onTriggerButton = (btn: QuickInputButton) => {

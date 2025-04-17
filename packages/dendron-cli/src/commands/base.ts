@@ -213,7 +213,6 @@ export abstract class CLICommand<
     if (!args.wsRoot) {
       const configPath = WorkspaceUtils.findWSRoot();
       if (_.isUndefined(configPath) && !this.wsRootOptional) {
-        // eslint-disable-next-line no-console
         console.log("no workspace detected. --wsRoot must be set");
         process.exit(1);
       } else {
@@ -263,14 +262,12 @@ export abstract class CLICommand<
 
   print(obj: any) {
     if (!this.opts.quiet) {
-      // eslint-disable-next-line no-console
       console.log(obj);
     }
   }
 
   printError(obj: any) {
     if (!this.opts.quiet) {
-      // eslint-disable-next-line no-console
       console.error(obj);
     }
   }

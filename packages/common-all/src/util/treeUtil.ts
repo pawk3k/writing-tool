@@ -3,9 +3,8 @@ import { z } from "../parse";
 import { VaultUtils } from "../vault";
 
 import { TAGS_HIERARCHY, TAGS_HIERARCHY_BASE } from "../constants";
-import { assertUnreachable } from "../error";
+import { assertUnreachable, DendronError } from "../error";
 import type { Sidebar, SidebarItem } from "../sidebar";
-import { DendronError } from "../error";
 import { NotePropsByIdDict, RespV3 } from "../types/typesv2";
 import { NoteProps } from "../types/foundation";
 

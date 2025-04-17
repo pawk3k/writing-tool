@@ -58,6 +58,8 @@ export class InsertNoteLinkCommand extends BasicCommand<
     });
 
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: Disposable;
       NoteLookupProviderUtils.subscribe({
         id: this.key,
@@ -133,7 +135,7 @@ export class InsertNoteLinkCommand extends BasicCommand<
 
         maybeAliasValue = text!;
         if (!_.isUndefined(range)) {
-          await VSCodeUtils.deleteRange(editor.document, range as vscode.Range);
+          await VSCodeUtils.deleteRange(editor.document, range);
         } else {
           vscode.window.showWarningMessage(
             "Selection doesn't contain any text. Ignoring aliases."
@@ -149,7 +151,6 @@ export class InsertNoteLinkCommand extends BasicCommand<
       }
       case InsertNoteLinkAliasModeEnum.prompt: {
         for (const note of opts.notes) {
-          // eslint-disable-next-line no-await-in-loop
           const value = await this.promptForAlias(note);
           if (value !== "") {
             links.push(

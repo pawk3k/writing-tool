@@ -10,8 +10,10 @@ import { DendronASTDest, DendronASTTypes, WikiLinkNoteV4 } from "../types";
 import { MDUtilsV5 } from "../utilsv5";
 
 // Plugin that adds backlinks at the end of each page if they exist
-// eslint-disable-next-line func-names
+
 const plugin: Plugin = function (this: Unified.Processor) {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   function transformer(tree: Node): void {
     const root = tree as Root;

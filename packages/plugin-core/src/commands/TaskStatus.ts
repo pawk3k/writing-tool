@@ -21,7 +21,7 @@ type CommandOpts = Required<CommandInput> & {
   note: NoteProps;
 };
 
-type CommandOutput = {};
+type CommandOutput = object;
 
 export class TaskStatusCommand extends BasicCommand<
   CommandOpts,

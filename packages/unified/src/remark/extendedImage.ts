@@ -5,7 +5,7 @@ import Unified, { Plugin } from "unified";
 import { DendronASTDest, DendronASTTypes, ExtendedImage } from "../types";
 import { Element } from "hast";
 import { html } from "mdast-builder";
-import YAML from "js-yaml";
+import { dump, load } from "js-yaml";
 import { MDUtilsV5 } from "../utilsv5";
 
 export const EXTENDED_IMAGE_REGEX =
@@ -24,7 +24,7 @@ export const matchExtendedImage = (
   return undefined;
 };
 
-type PluginOpts = {};
+type PluginOpts = object;
 
 const plugin: Plugin<[PluginOpts?]> = function (
   this: Unified.Processor,
@@ -46,7 +46,7 @@ function attachParser(proc: Unified.Processor) {
     if (match && match.groups?.url) {
       let props: { [key: string]: any } = {};
       try {
-        props = YAML.load(match.groups.props) as any;
+        props = load(match.groups.props) as any;
       } catch {
         // Reject bad props so that it falls back to a regular image
         return;
@@ -54,7 +54,7 @@ function attachParser(proc: Unified.Processor) {
 
       return eat(match[0])({
         type: DendronASTTypes.EXTENDED_IMAGE,
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         value,
         url: match.groups.url,
         alt: match.groups.alt,
@@ -83,7 +83,7 @@ function attachCompiler(proc: Unified.Processor, _opts?: PluginOpts) {
       switch (dest) {
         case DendronASTDest.MD_DENDRON:
           return `![${alt}](${node.url})${_.trim(
-            YAML.dump(node.props, {
+            dump(node.props, {
               /* Inline-only so we get JSON style {foo: bar} */
               flowLevel: 0,
             })

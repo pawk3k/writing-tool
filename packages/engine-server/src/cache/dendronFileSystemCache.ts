@@ -1,6 +1,8 @@
 import { Cache, FileSystemCache } from "@dendronhq/common-all";
 import { DLogger } from "@dendronhq/common-server";
 import fs from "fs-extra";
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _ from "lodash";
 
 export abstract class DendronFileSystemCache<T extends FileSystemCache, V>

@@ -19,7 +19,6 @@ import { RateLimiter } from "limiter";
 const ID = "dendron.notion";
 
 // Allow 3 req/sec (the Notion API limit). Also understands 'hour', 'minute', 'day', or a no. of ms
-// @ts-ignore
 const limiter = new RateLimiter({ tokensPerInterval: 3, interval: "second" });
 
 type NotionExportPodCustomOpts = {

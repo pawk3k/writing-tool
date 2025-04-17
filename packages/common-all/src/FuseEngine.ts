@@ -161,7 +161,7 @@ export class FuseEngine {
       const results = this.schemaIndex.search("root");
       items = [results[0].item];
     } else if (qs === "*") {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       items = this.schemaIndex._docs;
     } else {
       let results = this.schemaIndex.search(
@@ -201,7 +201,7 @@ export class FuseEngine {
       );
       /// seearch eveyrthing
     } else if (qs === "*") {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       items = this.notesIndex._docs as NoteProps[];
     } else {
       const formattedQS = FuseEngine.formatQueryForFuse({ qs });

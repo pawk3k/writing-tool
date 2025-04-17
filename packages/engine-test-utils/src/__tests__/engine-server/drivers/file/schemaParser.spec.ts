@@ -42,7 +42,7 @@ async function parseSchemas(
     { expect, preSetupHook }
   );
 
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   return payload;
 }
 

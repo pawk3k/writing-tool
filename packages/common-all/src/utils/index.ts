@@ -1,5 +1,5 @@
 // TODO: remove this disable once we deprecate old site config.
-/* eslint-disable camelcase */
+
 import GithubSlugger from "github-slugger";
 import _ from "lodash";
 import minimatch from "minimatch";
@@ -28,14 +28,31 @@ import { DVault } from "../types/DVault";
 import { LruCache } from "../util/index";
 import { NotePropsMeta } from "../types/index";
 import { VaultUtils } from "../vault";
-import { CompatUtils, CONFIG_TO_MINIMUM_COMPAT_MAPPING } from "../constants/configs/compat";
+import {
+  CompatUtils,
+  CONFIG_TO_MINIMUM_COMPAT_MAPPING,
+} from "../constants/configs/compat";
 import { DHookDict } from "../types/hooks";
 import { NoteChangeEntry } from "../types/typesv2";
 import { NoteProps } from "../types/foundation";
 import { DendronConfig } from "../types/configs/dendronConfig";
-import { DendronCommandConfig, genDefaultCommandConfig, LookupConfig, NonNoteFileLinkAnchorType, NoteLookupConfig } from "../types/configs/commands/index";
-import { DendronPreviewConfig, genDefaultPreviewConfig } from "../types/configs/preview/index";
-import { DendronWorkspaceConfig, genDefaultWorkspaceConfig, JournalConfig, ScratchConfig } from "../types/configs/workspace/index";
+import {
+  DendronCommandConfig,
+  genDefaultCommandConfig,
+  LookupConfig,
+  NonNoteFileLinkAnchorType,
+  NoteLookupConfig,
+} from "../types/configs/commands/index";
+import {
+  DendronPreviewConfig,
+  genDefaultPreviewConfig,
+} from "../types/configs/preview/index";
+import {
+  DendronWorkspaceConfig,
+  genDefaultWorkspaceConfig,
+  JournalConfig,
+  ScratchConfig,
+} from "../types/configs/workspace/index";
 import { GiscusConfig } from "../types/configs/publishing/index";
 import { ERROR_SEVERITY } from "../constants";
 import { DateTime } from "luxon";
@@ -78,7 +95,6 @@ export const getSlugger = () => {
  * @returns boolean
  */
 export const isNumeric = (n: any) => {
-  // eslint-disable-next-line no-restricted-globals, radix
   return !isNaN(parseInt(n)) && isFinite(n);
 };
 
@@ -130,9 +146,7 @@ export function isFalsy(u: any): boolean {
  * Originally released under CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.
  */
 function basicStringHash(text: string) {
-  // eslint-disable-next-line no-bitwise
   return (
-    // eslint-disable-next-line no-bitwise
     _.reduce(
       text,
       (prev, curr) => {
@@ -862,11 +876,7 @@ export class ConfigUtils {
     config: DendronConfig,
     value: DuplicateNoteBehavior
   ): void {
-    ConfigUtils.setPublishProp(
-      config,
-      "duplicateNoteBehavior",
-      value as DuplicateNoteBehavior
-    );
+    ConfigUtils.setPublishProp(config, "duplicateNoteBehavior", value);
   }
 
   static unsetDuplicateNoteBehavior(config: DendronConfig): void {
@@ -1063,7 +1073,7 @@ export class ConfigUtils {
    * If comparing the array value of a config is unnecessary,
    * make sure to add it to the omit path.
    */
-  static flattenConfigObject(opts: { obj: Object; omitPaths?: string[] }) {
+  static flattenConfigObject(opts: { obj: object; omitPaths?: string[] }) {
     const { obj, omitPaths } = opts;
     const objDeepCopy = _.cloneDeep(obj);
     if (omitPaths && omitPaths.length > 0) {
@@ -1074,7 +1084,7 @@ export class ConfigUtils {
 
     const accumulator: { path: string; value: any }[] = [];
     const flattenToPathValuePairs = (opts: {
-      obj: Object;
+      obj: object;
       parent?: string;
     }) => {
       const { obj, parent } = opts;

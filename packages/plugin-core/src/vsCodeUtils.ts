@@ -394,7 +394,7 @@ export class VSCodeUtils {
 
   static showMessage(
     severity: MessageSeverity,
-    ...opts: Parameters<typeof vscode.window["showInformationMessage"]>
+    ...opts: Parameters<(typeof vscode.window)["showInformationMessage"]>
   ) {
     switch (severity) {
       case MessageSeverity.INFO:

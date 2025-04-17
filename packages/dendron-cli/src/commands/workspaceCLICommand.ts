@@ -81,7 +81,7 @@ export class WorkspaceCLICommand extends CLICommand<
         }
         case WorkspaceCommands.INFO: {
           const resp = await engine?.info();
-          // eslint-disable-next-line no-console
+
           console.log(resp);
           break;
         }
@@ -91,7 +91,7 @@ export class WorkspaceCLICommand extends CLICommand<
             this.printError("Can't find the engine");
             process.exit(1);
           }
-          await ws.commitAndAddAll({ engine: engine! });
+          await ws.commitAndAddAll({ engine: engine });
           break;
         }
         case WorkspaceCommands.PUSH: {

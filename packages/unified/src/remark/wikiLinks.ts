@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 import {
   ConfigUtils,
   CONSTANTS,
@@ -225,7 +224,7 @@ function attachParser(proc: Unified.Processor) {
           parseLink(linkMatch);
         return eat(match[0])({
           type: DendronASTTypes.WIKI_LINK,
-          // @ts-ignore
+          // @ts-expect-error TODO: fix this supression
           value,
           data: {
             alias,

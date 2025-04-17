@@ -205,7 +205,7 @@ export class PodUtils {
   }) {
     const podConfigPath = PodUtils.getConfigPath({ podsDir, podClass });
     ensureDirSync(path.dirname(podConfigPath));
-    // eslint-disable-next-line new-cap
+
     const pod = new podClass();
     const required = pod.config.required;
     const podConfig = pod.config.properties;
@@ -419,7 +419,7 @@ export class PodUtils {
             text = PodUtils.downloadImage(imageUrl, assetDir, text);
           }
         });
-        // eslint-disable-next-line no-nested-ternary
+
         text += bullet?.listId
           ? (text.split("\n").pop() || "").trim().endsWith("\n")
             ? ""

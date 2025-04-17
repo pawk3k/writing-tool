@@ -2,7 +2,7 @@ import { DENDRON_COMMANDS } from "../constants";
 import { BasicCommand } from "./base";
 import { GraphStyleService } from "../styles";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
 type CommandOutput = void;
 

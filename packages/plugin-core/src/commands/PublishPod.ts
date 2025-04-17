@@ -80,7 +80,7 @@ export class PublishPodCommand extends BaseCommand<
       config: dendronConfig,
       vaults,
     } = this.extension.getDWorkspace();
-    const pod = new podChoice.podClass() as PublishPod; // eslint-disable-line new-cap
+    const pod = new podChoice.podClass() as PublishPod;
     const vault = PickerUtilsV2.getVaultForOpenEditor();
     const utilityMethods = {
       showMessage,

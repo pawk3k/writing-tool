@@ -1,5 +1,3 @@
-/* eslint-disable no-throw-literal */
-// @ts-ignore
 import matter from "gray-matter";
 import _ from "lodash";
 import minimatch from "minimatch";
@@ -13,13 +11,44 @@ import { DVault } from "./types/DVault";
 import { genUUID } from "./uuid";
 import { VaultUtils } from "./vault";
 
-import YAML, { JSON_SCHEMA } from "js-yaml";
+import { dump, JSON_SCHEMA } from "js-yaml";
 import { InvalidFilenameReason } from "./constants/lookup";
-import { DEngineClient, DNodeOpts, DNodePropsQuickInputV2, NoteChangeEntry, NoteDicts, NoteOpts, NotePropsByIdDict, NoteQuickInputV2, RespV3, SchemaModuleDict, SchemaModuleOpts, SchemaModuleProps, SchemaOpts, SchemaPropsDict, SchemaRaw } from "./types/typesv2";
-import { DNodeExplicitPropsEnum, DNodeImplicitPropsEnum, DNodeProps, DNoteLoc, NoteLocalConfig, NoteProps, NotePropsMeta, SchemaData, SchemaProps } from "./types/foundation";
+import {
+  DEngineClient,
+  DNodeOpts,
+  DNodePropsQuickInputV2,
+  NoteChangeEntry,
+  NoteDicts,
+  NoteOpts,
+  NotePropsByIdDict,
+  NoteQuickInputV2,
+  RespV3,
+  SchemaModuleDict,
+  SchemaModuleOpts,
+  SchemaModuleProps,
+  SchemaOpts,
+  SchemaPropsDict,
+  SchemaRaw,
+} from "./types/typesv2";
+import {
+  DNodeExplicitPropsEnum,
+  DNodeImplicitPropsEnum,
+  DNodeProps,
+  DNoteLoc,
+  NoteLocalConfig,
+  NoteProps,
+  NotePropsMeta,
+  SchemaData,
+  SchemaProps,
+} from "./types/foundation";
 import { ReducedDEngine } from "./types/ReducedDEngine";
 import { CONSTANTS, ERROR_STATUS, TAGS_HIERARCHY } from "./constants";
-import { getSlugger, isNotUndefined, normalizeUnixPath, randomColor } from "./utils";
+import {
+  getSlugger,
+  isNotUndefined,
+  normalizeUnixPath,
+  randomColor,
+} from "./utils";
 
 export type ValidateFnameResp =
   | {
@@ -72,7 +101,7 @@ export class DNodeUtils {
     ];
     _.forEach(optionalProps, (op) => {
       if (opts[op]) {
-        // @ts-ignore;
+        // @ts-expect-error TODO: fix this supression;
         cleanProps[op] = opts[op];
       }
     });
@@ -690,7 +719,7 @@ export class NoteUtils {
         basename: note.fname + ".md",
       });
       return fpath;
-    } catch (err) {
+    } catch (_err) {
       throw new DendronError({
         message: "bad path",
         payload: { note, wsRoot },
@@ -731,7 +760,7 @@ export class NoteUtils {
           throw "note is undefined";
         }
         note = tmp;
-      } catch (err) {
+      } catch (_err) {
         throw Error(`no parent found for note ${note.id}`);
       }
     }
@@ -1083,7 +1112,7 @@ export class NoteUtils {
     // All ancestors within the same hierarchy
     while (parts.length > 1) {
       parts = parts.slice(undefined, parts.length - 1);
-      // eslint-disable-next-line no-await-in-loop
+
       note = (await engine.findNotesMeta({ fname: parts.join("."), vault }))[0];
       if (note && !(nonStubOnly && note.stub)) return note;
     }
@@ -1321,9 +1350,7 @@ export class SchemaUtils {
     vaults: DVault[];
   }): DNodePropsQuickInputV2 {
     const vaultSuffix =
-      vaults.length > 1
-        ? ` (${path.basename(props.vault?.fsPath as string)})`
-        : "";
+      vaults.length > 1 ? ` (${path.basename(props.vault?.fsPath)})` : "";
     const label = DNodeUtils.isRoot(props.root) ? "root" : props.root.id;
     const detail = props.root.desc;
     const out = {
@@ -1487,7 +1514,7 @@ export class SchemaUtils {
         schemaModule,
         matchNamespace,
       });
-    }).filter((ent) => !_.isUndefined(ent)) as SchemaMatchResult[];
+    }).filter((ent) => !_.isUndefined(ent));
 
     matches.map((m) => {
       const { schema, notePath } = m;
@@ -1707,7 +1734,7 @@ export class SchemaUtils {
     if (imports) {
       out.imports = imports;
     }
-    return YAML.dump(out, { schema: JSON_SCHEMA });
+    return dump(out, { schema: JSON_SCHEMA });
   }
 
   // /**

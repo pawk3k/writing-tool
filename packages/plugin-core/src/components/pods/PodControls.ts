@@ -346,6 +346,8 @@ export class PodUIControls {
     });
 
     return new Promise((resolve) => {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line prefer-const
       let disposable: vscode.Disposable;
       NoteLookupProviderUtils.subscribe({
         id: key,

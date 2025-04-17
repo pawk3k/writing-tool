@@ -28,7 +28,7 @@ describe("engine, notes/", () => {
           return [k, v];
         })
       )("%p", async (_key, TestCase) => {
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         const { testFunc, ...opts } = TestCase;
         await runEngineTestV5(testFunc, { ...opts, createEngine, expect });
       });
@@ -54,7 +54,7 @@ describe("engine, notes/multi/", () => {
         ) {
           return;
         }
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         const { testFunc, ...opts } = TestCase;
         await runEngineTestV5(testFunc, { ...opts, createEngine, expect });
       });
@@ -67,7 +67,7 @@ describe("engine, schemas/", () => {
 
   ENGINE_PRESETS.forEach((pre) => {
     const { name, presets } = pre;
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     const presetByNodeType = presets[nodeType];
     if (!_.isEmpty(presetByNodeType)) {
       describe(name, () => {
@@ -77,7 +77,6 @@ describe("engine, schemas/", () => {
           })
           // @ts-expect-error error
         )("%p", async (_key, TestCase) => {
-          // @ts-ignore
           const { testFunc, ...opts } = TestCase;
           await runEngineTestV5(testFunc, { ...opts, createEngine, expect });
         });

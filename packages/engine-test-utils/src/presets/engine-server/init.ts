@@ -147,7 +147,7 @@ const NOTES = {
     async ({ engine }) => {
       return [
         {
-          actual: _.omit((await engine.getNote("one")).data!, [
+          actual: _.omit((await engine.getNote("one")).data, [
             "body",
             "parent",
           ]),
@@ -172,7 +172,7 @@ const NOTES = {
           },
         },
         {
-          actual: _.omit((await engine.getNote("three")).data!, [
+          actual: _.omit((await engine.getNote("three")).data, [
             "body",
             "parent",
           ]),

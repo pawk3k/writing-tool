@@ -59,7 +59,7 @@ async function getSchemasFromImport(
   opts: { fname: string; root: DVault; wsRoot: string }
 ) {
   const vpath = vault2Path({ vault: opts.root, wsRoot: opts.wsRoot });
-  let schemaModulesFromImport: SchemaModuleProps[] = [];
+  const schemaModulesFromImport: SchemaModuleProps[] = [];
   await Promise.all(
     _.map(imports, async (ent) => {
       const fpath = path.join(vpath, ent + ".schema.yml");
@@ -131,10 +131,7 @@ export class SchemaParserV2 extends ParserBaseV2 {
   ): Promise<SchemaModuleProps> {
     const version = _.isArray(schemaOpts) ? 0 : 1;
     if (version > 0) {
-      return SchemaParserV2.parseSchemaModuleOpts(
-        schemaOpts as SchemaModuleOpts,
-        opts
-      );
+      return SchemaParserV2.parseSchemaModuleOpts(schemaOpts, opts);
     } else {
       // TODO: legacy
       const schemaDict: SchemaPropsDict = {};

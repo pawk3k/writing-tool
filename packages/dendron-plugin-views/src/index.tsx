@@ -1,5 +1,3 @@
-/* eslint-disable no-console, global-require, import/no-dynamic-require  */
-
 import { renderOnDOM } from "./bootstrap";
 
 // Import all components directly to ensure they're included in the bundle

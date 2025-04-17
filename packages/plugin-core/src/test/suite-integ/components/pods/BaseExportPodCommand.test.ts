@@ -22,7 +22,7 @@ import {
 import { TestExportPodCommand } from "./TestExportCommand";
 
 const stubQuickPick = (vault: DVault) => {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.showQuickPick = () => {
     return { data: vault };
   };

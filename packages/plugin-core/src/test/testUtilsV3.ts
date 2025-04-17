@@ -49,7 +49,6 @@ import _ from "lodash";
 import { after, afterEach, before, beforeEach, describe } from "mocha";
 import os from "os";
 import { performance } from "perf_hooks";
-import sinon from "sinon";
 import {
   CancellationToken,
   ExtensionContext,
@@ -78,6 +77,7 @@ import {
   stubWorkspaceFile,
   stubWorkspaceFolders,
 } from "./testUtilsv2";
+import { restore, stub } from "sinon";
 
 const TIMEOUT = 60 * 1000 * 5;
 
@@ -169,7 +169,7 @@ export const writeConfig = (opts: {
   return writeYAML(configPath, opts.config);
 };
 
-export async function setupWorkspace() {} // eslint-disable-line no-empty-function
+export async function setupWorkspace() {}
 
 export async function setupLegacyWorkspace(
   opts: SetupLegacyWorkspaceOpts
@@ -212,7 +212,7 @@ export async function setupLegacyWorkspace(
     });
   const vaults = [wsVault, ...(additionalVaults || [])].filter(
     (v) => !_.isUndefined(v)
-  ) as DVault[];
+  );
   stubWorkspaceFolders(wsRoot, vaults);
 
   // update config
@@ -257,7 +257,7 @@ export async function setupLegacyWorkspaceMulti(
   let workspaceFolders: readonly WorkspaceFolder[] | undefined;
 
   const { wsRoot, vaults } = await EngineTestUtilsV4.setupWS();
-  new StateService(opts.ctx!); // eslint-disable-line no-new
+  new StateService(opts.ctx!);
   setupCodeConfiguration(opts);
   if (copts.workspaceType === WorkspaceType.CODE) {
     stubWorkspace({ wsRoot, vaults });
@@ -389,20 +389,19 @@ export function setupBeforeAfter(
       // in describeMultiWS > [[../packages/plugin-core/src/test/testUtilsV3.ts#^lk3whwd4kh4k]]
       // TODO: keep in place until we completely remove `setupBeforeAndAfter`
       try {
-        // @ts-ignore
-        sinon
-          .stub(VSCodeUtils, "getInstallStatusForExtension")
-          .returns(InstallStatus.NO_CHANGE);
+        stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+          InstallStatus.NO_CHANGE
+        );
       } catch (e) {
         // eat it.
-        sinon.restore();
-        sinon
-          .stub(VSCodeUtils, "getInstallStatusForExtension")
-          .returns(InstallStatus.NO_CHANGE);
+        restore();
+        stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+          InstallStatus.NO_CHANGE
+        );
       }
     }
 
-    sinon.stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
+    stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
 
     if (opts?.beforeHook) {
       await opts.beforeHook(ctx);
@@ -414,13 +413,13 @@ export function setupBeforeAfter(
     if (opts?.afterHook) {
       await opts.afterHook();
     }
-    sinon.restore();
+    restore();
   });
   return ctx;
 }
 
 export function stubSetupWorkspace({ wsRoot }: { wsRoot: string }) {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.gatherFolderPath = () => {
     return wsRoot;
   };
@@ -440,7 +439,7 @@ export const createEngineFactory = (
   ): DEngineClient => {
     const engine = new FakeEngine() as DEngineClient;
     _.map(overrides || {}, (method, key: keyof DEngine) => {
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       engine[key] = method(opts);
     });
     return engine;
@@ -456,7 +455,7 @@ export const stubVaultInput = (opts: {
   sourceName?: string;
 }): void => {
   if (opts.cmd) {
-    sinon.stub(opts.cmd, "gatherInputs").returns(
+    stub(opts.cmd, "gatherInputs").returns(
       Promise.resolve({
         type: opts.sourceType,
         name: opts.sourceName,
@@ -467,7 +466,7 @@ export const stubVaultInput = (opts: {
   }
 
   let acc = 0;
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   VSCodeUtils.showQuickPick = async () => ({ label: opts.sourceType });
 
   VSCodeUtils.showInputBox = async () => {
@@ -705,11 +704,11 @@ export function setupWorkspaceStubs(opts: {
 }): ExtensionContext {
   // workspace has not upgraded
   if (!opts.noSetInstallStatus) {
-    sinon
-      .stub(VSCodeUtils, "getInstallStatusForExtension")
-      .returns(InstallStatus.NO_CHANGE);
+    stub(VSCodeUtils, "getInstallStatusForExtension").returns(
+      InstallStatus.NO_CHANGE
+    );
   }
-  sinon.stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
+  stub(WorkspaceInitFactory, "create").returns(new BlankInitializer());
   Logger.configure(opts.ctx, "info");
   return opts.ctx;
 }
@@ -719,7 +718,7 @@ export function cleanupWorkspaceStubs(ctx: ExtensionContext): void {
   cleanupVSCodeContextSubscriptions(ctx);
   const ext = ExtensionProvider.getExtension();
   ext.deactivate();
-  sinon.restore();
+  restore();
 }
 
 /**

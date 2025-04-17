@@ -101,7 +101,6 @@ export async function runAllDecorators(
     }
     const tree = proc.parse(text);
 
-    // eslint-disable-next-line no-await-in-loop
     await MdastUtils.visitAsync(tree, [], async (nodeIn) => {
       // This was parsed, it must have a position
       const node = nodeIn as NonOptional<DendronASTNode, "position">;

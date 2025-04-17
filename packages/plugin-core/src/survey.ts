@@ -558,7 +558,7 @@ export class SurveyUtils {
           AnalyticsUtils.track(SurveyEvents.InitialSurveyRejected);
         }
       })
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       .catch((error: any) => {
         Logger.error({ msg: error });
       });
@@ -630,7 +630,7 @@ export class SurveyUtils {
           );
         }
       })
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       .catch((error: any) => {
         Logger.error({ msg: error });
       });
@@ -669,7 +669,7 @@ export class SurveyUtils {
           AnalyticsUtils.track(SurveyEvents.InactiveUserSurveyRejected);
         }
       })
-      // @ts-ignore
+      // @ts-expect-error TODO: fix this supression
       .catch((error: any) => {
         Logger.error({ msg: error });
       });

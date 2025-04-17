@@ -26,6 +26,8 @@ export class StateService {
   }) {
     this.globalState = opts.globalState;
     this.workspaceState = opts.workspaceState;
+    // TODO: Please fix and remove the suppression
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     _StateService = this;
   }
 

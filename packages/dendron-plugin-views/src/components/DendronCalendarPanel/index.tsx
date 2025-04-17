@@ -6,6 +6,8 @@ import { createLogger } from "@dendronhq/common-frontend/src/utils";
 import {
   Badge,
   Button,
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line import/named
   CalendarProps as AntdCalendarProps,
   ConfigProvider,
   Divider,
@@ -32,6 +34,8 @@ const { useEngine } = engineHooks;
 type DateTime = InstanceType<typeof Time.DateTime>;
 
 // @ts-expect-error TS6133 - 'Calendar' is declared but its value is never read.
+// TODO: Please fix and remove the suppression
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Calendar = generateCalendar<DateTime>(luxonGenerateConfig);
 
 type CalendarProps = AntdCalendarProps<DateTime>;
@@ -127,6 +131,8 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   }, [notes, journalName, journalDailyDomain, currentVault?.fsPath]);
 
   // @ts-expect-error TS6133 - 'activeDate' is declared but its value is never read.
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const activeDate = useMemo(() => {
     if (noteActive && journalName && journalDateFormat) {
       const maybeDatePortion = getMaybeDatePortion(noteActive, journalName);
@@ -142,7 +148,6 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
           journalMonthDateFormat
         );
 
-        // eslint-disable-next-line no-nested-ternary
         return dailyDate.isValid
           ? dailyDate
           : monthlyDate.isValid
@@ -195,6 +200,8 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   );
 
   // @ts-expect-error TS6133 - 'onPanelChange' is declared but its value is never read.
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onPanelChange = useCallback<
     Exclude<CalendarProps["onPanelChange"], undefined>
   >((date, mode) => {
@@ -210,6 +217,8 @@ export default function DendronCalendarPanel({ ide, engine }: DendronProps) {
   }, [onSelect]);
 
   // @ts-expect-error TS6133 - 'dateFullCellRender' is declared but its value is never read.
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dateFullCellRender = useCallback<
     Exclude<CalendarProps["dateFullCellRender"], undefined>
   >(

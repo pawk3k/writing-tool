@@ -14,7 +14,7 @@ import { BasicCommand } from "./base";
 
 const L = Logger;
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandReturns =
   | {
       finalMessage: string;

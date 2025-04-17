@@ -3,9 +3,9 @@ import { PreviewProxy } from "../components/views/PreviewProxy";
 import { DENDRON_COMMANDS } from "../constants";
 import { BasicCommand } from "./base";
 
-type CommandInput = {};
+type CommandInput = object;
 
-type CommandOpts = {};
+type CommandOpts = object;
 type CommandOutput = CommandOpts;
 
 export class TogglePreviewLockCommand extends BasicCommand<

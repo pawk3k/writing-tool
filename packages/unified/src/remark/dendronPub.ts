@@ -181,7 +181,7 @@ function shouldInsertTitle({ proc }: { proc: Processor }) {
   ) {
     insertTitle = false;
   } else {
-    const config = data.config as DendronConfig;
+    const config = data.config;
     const shouldApplyPublishRules = MDUtilsV5.shouldApplyPublishingRules(proc);
     insertTitle = ConfigUtils.getEnableFMTitle(config, shouldApplyPublishRules);
   }
@@ -189,6 +189,8 @@ function shouldInsertTitle({ proc }: { proc: Processor }) {
 }
 
 function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const proc = this;
   const { vault, vaults, wsRoot } = MDUtilsV5.getProcData(proc);
   const pOpts = MDUtilsV5.getProcOpts(proc);
@@ -276,13 +278,13 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         if (dest === DendronASTDest.MD_DENDRON) return;
         // @ts-expect-error TS2352 - Conversion of type 'Node<Data>' to type 'WikiLinkNoteV4' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
         const _node = node as WikiLinkNoteV4;
-        // @ts-ignore
+        // @ts-expect-error TODO: fix this supression
         let value = node.value as string;
         // we change this later
         const valueOrig = value;
         let isPublished = true;
         const data = _node.data;
-        // eslint-disable-next-line prefer-const
+
         let { vault } = MDUtilsV5.getProcData(proc);
         vault = getVault({
           vault,
@@ -536,7 +538,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         if (RemarkUtils.isParent(target)) {
           // Install the block anchor at the target node
           target.children.unshift(anchorHTML);
-        // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
+          // @ts-expect-error TS2345 - Argument of type 'Node<Data> | undefined' is not assignable to parameter of type 'Node<Data>'.
         } else if (RemarkUtils.isRoot(target)) {
           // If the anchor is the first thing in the note, anchorHTML goes to the start of the document
           target.children.unshift(anchorHTML);
@@ -552,7 +554,7 @@ function plugin(this: Unified.Processor, opts?: PluginOpts): Transformer {
         }
         // Remove the block anchor itself since we install the anchor at the target
         const index = _.indexOf(parent.children, node);
-        parent!.children.splice(index, 1);
+        parent.children.splice(index, 1);
 
         // We might be adding and removing siblings here. We must return the index of the next sibling to traverse.
         if (target === parent) {

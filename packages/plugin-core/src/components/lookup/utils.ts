@@ -1,4 +1,3 @@
-/* eslint-disable no-dupe-class-members */
 import {
   DendronError,
   DEngineClient,
@@ -79,7 +78,7 @@ export function createNoActiveItem(vault: DVault): DNodePropsQuickInputV2 {
 }
 
 export function createMoreResults(): DNodePropsQuickInputV2 {
-  // @ts-ignore
+  // @ts-expect-error TODO: fix this supression
   return {
     label: MORE_RESULTS_LABEL,
     detail: "",

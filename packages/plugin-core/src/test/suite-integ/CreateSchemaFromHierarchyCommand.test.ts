@@ -31,7 +31,6 @@ const noteFactory = new TestNoteFactory({
 async function createSchemaCandidates(fnames: string[]) {
   const candidates = [];
   for (const fname of fnames) {
-    // eslint-disable-next-line no-await-in-loop
     const note = await noteFactory.createForFName(fname);
     candidates.push({
       note,

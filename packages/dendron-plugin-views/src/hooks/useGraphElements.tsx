@@ -515,7 +515,7 @@ const getFullNoteGraphElements = ({
     edges.hierarchy.push(
       ...note.children.map((child) => {
         const childNote = notes[child];
-        // eslint-disable-next-line no-nested-ternary
+
         const isStub = childNote
           ? _.isUndefined(note.stub) && _.isUndefined(childNote.stub)
             ? false
@@ -645,7 +645,6 @@ const getSchemaGraphElements = (
 
   if (_.isUndefined(vaults)) return { nodes, edges };
 
-  // eslint-disable-next-line array-callback-return
   vaults.map((vault) => {
     const vaultName = VaultUtils.getName(vault);
     const VAULT_ID = `${vaultName}`;
@@ -809,7 +808,6 @@ const useGraphElements = ({
         );
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [engine.notes, isLocalGraph, noteActive]);
 
   // Get new elements if active note changes
@@ -858,7 +856,6 @@ const useGraphElements = ({
       });
       setFullGraphVisited(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [elements]);
 
   // Prevent unnecessary parsing if no schemas have been added/deleted

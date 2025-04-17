@@ -129,7 +129,7 @@ export class SeedService {
       seedEntry.site = seed.site;
     }
 
-    seeds![id] = seedEntry;
+    seeds[id] = seedEntry;
     ConfigUtils.setWorkspaceProp(config, "seeds", seeds);
 
     const updateWorkspace =
@@ -305,6 +305,6 @@ export class SeedService {
   }
 
   getSeedsInWorkspace(): string[] {
-    return this.getSeedVaultsInWorkspace().map((vault) => vault.seed!);
+    return this.getSeedVaultsInWorkspace().map((vault) => vault.seed);
   }
 }

@@ -105,7 +105,7 @@ export function appModule({
 
   app.get(
     "/version",
-    // @ts-ignore
+    // @ts-expect-error TODO: fix this supression
     asyncHandler(async (_req: Request, res: Response) => {
       const pkg = findInParent(__dirname, "package.json");
       if (!pkg) {

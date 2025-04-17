@@ -9,7 +9,7 @@ import { BasicCommand } from "./base";
 
 const L = createLogger("UpgradeSettingsCommand");
 
-type UpgradeSettingsCommandOpts = {};
+type UpgradeSettingsCommandOpts = object;
 export type UpgradeSettingsCommandResp = {
   configUpdate: CodeConfigChanges;
 };
@@ -25,7 +25,7 @@ export class UpgradeSettingsCommand extends BasicCommand<
 
     const wsRoot = (await DendronExtension.workspaceRoots())[0];
 
-    const newConfig = await WorkspaceConfig.update(wsRoot!);
+    const newConfig = await WorkspaceConfig.update(wsRoot);
     this.L.info({ ctx, newConfig });
     // vscode doesn't let us uninstall extensions
     // tell user to uninstall extensions we no longer want

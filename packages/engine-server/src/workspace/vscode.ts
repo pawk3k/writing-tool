@@ -53,7 +53,7 @@ export const _SETTINGS: ConfigUpdateChangeSet = {
     default: "onFocusChange",
   },
   // --- images
-  // eslint-disable-next-line no-template-curly-in-string
+
   "pasteImage.path": { default: "${currentFileDir}/assets/images" },
   // required for jekyll image build
   "pasteImage.prefix": { default: "/" },

@@ -26,7 +26,7 @@ export type PodCLIOpts = {
   podId?: string;
 };
 
-export type PodCommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+export type PodCommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 export type PodCommandOpts<T = any> = PodCLIOpts & {
   config: T;

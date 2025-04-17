@@ -356,7 +356,7 @@ export class DendronEngineV3Web
 
   async deleteNote(
     id: string,
-    opts?: EngineDeleteOpts | undefined
+    opts?: EngineDeleteOpts
   ): Promise<DeleteNoteResp> {
     const ctx = "DendronEngineV3Web:delete";
     const changes = await super.deleteNote(id, opts);

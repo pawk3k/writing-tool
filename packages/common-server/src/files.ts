@@ -1,6 +1,6 @@
 import fs, { Dirent } from "fs-extra";
 import matter from "gray-matter";
-import YAML from "js-yaml";
+import { dump, JSON_SCHEMA, load } from "js-yaml";
 import _ from "lodash";
 import os from "os";
 import path from "path";
@@ -70,25 +70,25 @@ export function readMD(fpath: string): { data: any; content: string } {
  * @returns
  */
 export function readYAML(fpath: string, overwriteDuplicate?: boolean): any {
-  return YAML.load(fs.readFileSync(fpath, { encoding: "utf8" }), {
-    schema: YAML.JSON_SCHEMA,
+  return load(fs.readFileSync(fpath, { encoding: "utf8" }), {
+    schema: JSON_SCHEMA,
     json: overwriteDuplicate ?? false,
   });
 }
 
 export async function readYAMLAsync(fpath: string): Promise<any> {
-  return YAML.load(await fs.readFile(fpath, { encoding: "utf8" }), {
-    schema: YAML.JSON_SCHEMA,
+  return load(await fs.readFile(fpath, { encoding: "utf8" }), {
+    schema: JSON_SCHEMA,
   });
 }
 
 export function writeYAML(fpath: string, data: any) {
-  const out = YAML.dump(data, { indent: 4, schema: YAML.JSON_SCHEMA });
+  const out = dump(data, { indent: 4, schema: JSON_SCHEMA });
   return fs.writeFileSync(fpath, out);
 }
 
 export function writeYAMLAsync(fpath: string, data: any) {
-  const out = YAML.dump(data, { indent: 4, schema: YAML.JSON_SCHEMA });
+  const out = dump(data, { indent: 4, schema: JSON_SCHEMA });
   return fs.writeFile(fpath, out);
 }
 

@@ -8,7 +8,7 @@ import { DendronError } from "@dendronhq/common-all";
 
 export { CommandCLIOpts as ExportPodCLIOpts };
 
-type CommandCLIOpts = {} & SetupEngineCLIOpts & PodCLIOpts;
+type CommandCLIOpts = object & SetupEngineCLIOpts & PodCLIOpts;
 
 type CommandOpts = CommandCLIOpts &
   CommandCommonProps & {
@@ -68,8 +68,7 @@ export class ImportPodCLICommand extends CLICommand<
                     ? true
                     : `Enter either Yes or No`,
               })
-            : // eslint-disable-next-line no-console
-              console.log("Note is already in sync with the google doc");
+            : console.log("Note is already in sync with the google doc");
 
         return resp;
       },

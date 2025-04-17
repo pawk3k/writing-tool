@@ -7,7 +7,6 @@ export const matchAll = (
 
   pattern.lastIndex = 0;
 
-  // eslint-disable-next-line no-cond-assign
   while ((match = pattern.exec(text))) {
     out.push(match);
   }

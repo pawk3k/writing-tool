@@ -33,6 +33,8 @@ export * from "./utils";
 export * from "./utilsv2";
 
 export function filterDotFiles(filenames: string[]) {
+  // TODO: Please fix and remove the suppression
+  // eslint-disable-next-line no-useless-escape
   return filenames.filter((filename) => !/(^|\/)\.[^\/\.]/g.test(filename));
 }
 
@@ -44,7 +46,6 @@ export function getLogFilePath(_name: string) {
   //
   // * TMPDIR is set for some POSIX-likes, e.g. macOS, but not Linux.
   // * TEMP is set on Windows.
-  // @ts-ignore
   //const rootDir = path.dirname(path.dirname(path.dirname(__dirname)));
   //return path.join(rootDir, "logs", `${name}.log`);
   return "stdout";
@@ -213,8 +214,8 @@ export class EngineTestUtilsV2 {
       withAssets: true,
       withGit: true,
     });
-    let wsRoot = opts.wsRoot ? opts.wsRoot : tmpDir().name;
-    let vaultDir = opts.vaultDir ? opts.vaultDir : path.join(wsRoot, "vault");
+    const wsRoot = opts.wsRoot ? opts.wsRoot : tmpDir().name;
+    const vaultDir = opts.vaultDir ? opts.vaultDir : path.join(wsRoot, "vault");
     await fs.ensureDir(vaultDir);
     await EngineTestUtilsV2.setupVault({
       vaultDir,
@@ -222,7 +223,7 @@ export class EngineTestUtilsV2 {
       withAssets,
       withGit,
     });
-    let vaults = [vaultDir];
+    const vaults = [vaultDir];
     return {
       wsRoot,
       vaults,
@@ -230,7 +231,7 @@ export class EngineTestUtilsV2 {
   }
   static async setupVault(opts: SetupVaultOpts): Promise<string> {
     const { withAssets, withGit } = opts;
-    let vaultDir = opts.vaultDir ? opts.vaultDir : tmpDir().name;
+    const vaultDir = opts.vaultDir ? opts.vaultDir : tmpDir().name;
     if (opts?.initDirCb) {
       await opts.initDirCb(vaultDir);
     }

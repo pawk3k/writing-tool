@@ -4,9 +4,9 @@ import { showWelcome } from "../WelcomeUtils";
 import { DendronExtension } from "../workspace";
 import { BasicCommand } from "./base";
 
-type CommandOpts = {};
+type CommandOpts = object;
 
-type CommandInput = {};
+type CommandInput = object;
 
 type CommandOutput = void;
 

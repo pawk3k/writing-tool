@@ -707,11 +707,15 @@ export function hasAnchorsToUpdate(
   if (wikiLinkMatch && wikiLinkMatch.groups?.text) {
     let processed = wikiLinkMatch.groups.text;
     if (processed.includes("|")) {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const [_alias, link] = processed.split("|");
       processed = link;
     }
 
     if (processed.includes("#")) {
+      // TODO: Please fix and remove the suppression
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const [_fname, anchor] = processed.split("#");
       if (anchor.startsWith("^")) {
         return anchorNamesToUpdate.includes(anchor.substring(1));
