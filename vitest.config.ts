@@ -7,9 +7,8 @@ export default defineConfig({
       "./packages/engine-test-utils/src/__tests__/**/*.(test|spec)*.ts",
     ],
     exclude: [
+      // Right now I just not feel for pods
       "./packages/engine-test-utils/src/__tests__/pods-core/**/*.(test|spec)*.ts",
-      // This is for now as I probably have problem with DB
-      "./packages/engine-test-utils/src/__tests__/engine-server/markdown/**/*.(test|spec)*.ts",
     ],
     silent: true,
     globals: true,

@@ -1,74 +1,74 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`user tags WHEN disabled in config THEN user tags don't get parsed or processed 1`] = `
+exports[`user tags > WHEN disabled in config > THEN user tags don't get parsed or processed 1`] = `
 VFile {
-  "contents": "<h1 id=\\"root\\">Root</h1>
+  "contents": "<h1 id="root">Root</h1>
 <p>@test</p>",
-  "cwd": "<PROJECT_ROOT>",
-  "data": Object {},
-  "history": Array [],
-  "messages": Array [],
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
 }
 `;
 
-exports[`user tags WHEN disabled in config THEN user tags don't get parsed or processed 2`] = `
+exports[`user tags > WHEN disabled in config > THEN user tags don't get parsed or processed 2`] = `
 VFile {
-  "contents": "<h1 id=\\"root\\">Root</h1>
+  "contents": "<h1 id="root">Root</h1>
 <p>@test</p>",
-  "cwd": "<PROJECT_ROOT>",
-  "data": Object {},
-  "history": Array [],
-  "messages": Array [],
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
 }
 `;
 
-exports[`user tags rendering compile "HTML: inside a link" 1`] = `
+exports[`user tags > rendering > compile > %p HTML: inside a link 1`] = `
 VFile {
-  "contents": "<h1 id=\\"root\\">Root</h1>
-<p><a href=\\"https://twitter.com/dendronhq\\">@dendronhq</a></p>
+  "contents": "<h1 id="root">Root</h1>
+<p><a href="https://twitter.com/dendronhq">@dendronhq</a></p>
 <hr>
 <strong>Children</strong>
 <ol>
-<li><a href=\\"bar\\">Bar</a></li>
-<li><a href=\\"foo\\">Foo</a></li>
+<li><a href="bar">Bar</a></li>
+<li><a href="foo">Foo</a></li>
 </ol>",
-  "cwd": "<PROJECT_ROOT>",
-  "data": Object {},
-  "history": Array [],
-  "messages": Array [],
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
 }
 `;
 
-exports[`user tags rendering compile "HTML: inside a link" 2`] = `
+exports[`user tags > rendering > compile > %p HTML: inside a link 2`] = `
 VFile {
-  "contents": "<h1 id=\\"root\\">Root</h1>
-<p><a href=\\"https://twitter.com/dendronhq\\">@dendronhq</a></p>
+  "contents": "<h1 id="root">Root</h1>
+<p><a href="https://twitter.com/dendronhq">@dendronhq</a></p>
 <hr>
 <strong>Children</strong>
 <ol>
-<li><a href=\\"bar\\">Bar</a></li>
-<li><a href=\\"foo\\">Foo</a></li>
+<li><a href="bar">Bar</a></li>
+<li><a href="foo">Foo</a></li>
 </ol>",
-  "cwd": "<PROJECT_ROOT>",
-  "data": Object {},
-  "history": Array [],
-  "messages": Array [],
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
 }
 `;
 
-exports[`user tags rendering compile "HTML: simple" 1`] = `
+exports[`user tags > rendering > compile > %p HTML: simple 1`] = `
 VFile {
-  "contents": "<h1 id=\\"root\\">Root</h1>
-<p><a href=\\"user.Hamilton.Margaret\\">@Hamilton.Margaret</a></p>
+  "contents": "<h1 id="root">Root</h1>
+<p><a href="user.Hamilton.Margaret">@Hamilton.Margaret</a></p>
 <hr>
 <strong>Children</strong>
 <ol>
-<li><a href=\\"bar\\">Bar</a></li>
-<li><a href=\\"foo\\">Foo</a></li>
+<li><a href="bar">Bar</a></li>
+<li><a href="foo">Foo</a></li>
 </ol>",
-  "cwd": "<PROJECT_ROOT>",
-  "data": Object {},
-  "history": Array [],
-  "messages": Array [],
+  "cwd": "/Users/pravliv/Documents/int/ssh/dendron",
+  "data": {},
+  "history": [],
+  "messages": [],
 }
 `;

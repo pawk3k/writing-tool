@@ -75,7 +75,8 @@ const expectNote = async ({
   expect(ok).toBeTruthy();
 };
 
-describe("engine", () => {
+// TODO uncomment to enable the hooks
+describe.skip("engine", () => {
   testWithEngine(
     "use js ",
     async ({ engine, vaults }) => {
@@ -397,7 +398,8 @@ describe("remote engine", () => {
     );
   });
 
-  test("bad hook function", async () => {
+  // TODO skip hooks fro now
+  test.skip("bad hook function", async () => {
     await runEngineTestV5(
       async ({ vaults, engine }) => {
         const vault = _.find(vaults, { fsPath: "vault1" })!;

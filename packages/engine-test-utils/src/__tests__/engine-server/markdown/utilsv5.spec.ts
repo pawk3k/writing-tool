@@ -1,4 +1,7 @@
-import { TestPresetEntryV4 } from "@dendronhq/common-test-utils";
+import {
+  TestPresetEntryV4,
+  NoteTestUtilsV4,
+} from "@dendronhq/common-test-utils";
 import {
   AnchorUtils,
   DendronASTDest,
@@ -282,6 +285,43 @@ describe("MDUtils.proc", () => {
     },
   });
 
+  const WITH_VARIABLE = createProcCompileTests({
+    name: "WITH_VARIABLE",
+    setup: async (opts) => {
+      const { proc } = getOpts(opts);
+      const resp = await proc.process(`Title: {{fm.title}}! Bond: {{fm.bond}}`);
+      return { resp, proc };
+    },
+    verify: {
+      [DendronASTDest.MD_REGULAR]: {
+        [ProcFlavor.REGULAR]: async ({ extra }) => {
+          const { resp } = extra;
+          await checkString(resp.contents, "Title: Foo! Bond: 42");
+        },
+        [ProcFlavor.PREVIEW]: ProcFlavor.REGULAR,
+        [ProcFlavor.PUBLISHING]: ProcFlavor.REGULAR,
+      },
+      [DendronASTDest.HTML]: {
+        [ProcFlavor.REGULAR]: async ({ extra }) => {
+          const { resp } = extra;
+          await checkString(resp.contents, "Title: Foo! Bond: 42");
+        },
+        [ProcFlavor.PREVIEW]: ProcFlavor.REGULAR,
+        [ProcFlavor.PUBLISHING]: ProcFlavor.REGULAR,
+      },
+    },
+    preSetupHook: async (opts) => {
+      await ENGINE_HOOKS.setupBasic(opts);
+      await NoteTestUtilsV4.modifyNoteByPath(
+        { wsRoot: opts.wsRoot, vault: opts.vaults[0], fname: "foo" },
+        (note) => {
+          note.custom = { bond: 42 };
+          return note;
+        }
+      );
+    },
+  });
+
   const ALL_TEST_CASES = [
     ...WITH_FOOTNOTES,
     ...IMAGE_NO_LEAD_FORWARD_SLASH,
@@ -290,6 +330,7 @@ describe("MDUtils.proc", () => {
     ...WIKILINK_WITH_ANCHOR,
     ...USER_TAGS,
     ...HASH_TAGS,
+    ...WITH_VARIABLE,
   ];
 
   test.each(

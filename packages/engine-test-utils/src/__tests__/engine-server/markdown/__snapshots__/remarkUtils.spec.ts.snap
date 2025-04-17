@@ -1,23 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`RemarkUtils and LinkUtils doesn't find block anchor within code block 1`] = `Array []`;
+exports[`RemarkUtils and LinkUtils > doesn't find block anchor within code block 1`] = `[]`;
 
-exports[`RemarkUtils and LinkUtils doesn't find block anchor within inline code 1`] = `Array []`;
+exports[`RemarkUtils and LinkUtils > doesn't find block anchor within inline code 1`] = `[]`;
 
-exports[`RemarkUtils and LinkUtils findAnchors doesn't find block anchor within wikilink 1`] = `Array []`;
+exports[`RemarkUtils and LinkUtils > findAnchors > doesn't find block anchor within wikilink 1`] = `[]`;
 
-exports[`RemarkUtils and LinkUtils findAnchors one block anchor 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findAnchors > one block anchor 1`] = `
+[
+  {
     "id": "block-anchor",
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 53,
         "line": 2,
         "offset": 98,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 40,
         "line": 2,
         "offset": 85,
@@ -29,19 +29,19 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findAnchors one header 1`] = `
-Array [
-  Object {
-    "children": Array [
-      Object {
+exports[`RemarkUtils and LinkUtils > findAnchors > one header 1`] = `
+[
+  {
+    "children": [
+      {
         "position": Position {
-          "end": Object {
+          "end": {
             "column": 5,
             "line": 1,
             "offset": 4,
           },
-          "indent": Array [],
-          "start": Object {
+          "indent": [],
+          "start": {
             "column": 3,
             "line": 1,
             "offset": 2,
@@ -53,13 +53,13 @@ Array [
     ],
     "depth": 1,
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 5,
         "line": 1,
         "offset": 4,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 1,
         "offset": 0,
@@ -70,32 +70,32 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody empty link 1`] = `Array []`;
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > empty link 1`] = `[]`;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody filter loc match 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > filter > loc match 1`] = `
+[
+  {
     "alias": undefined,
-    "from": Object {
+    "from": {
       "fname": "foo",
       "id": "foo",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 8,
         "line": 1,
         "offset": 7,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 1,
         "offset": 0,
       },
     },
     "sameFile": false,
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "foo",
       "vaultName": undefined,
@@ -107,32 +107,32 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody filter loc no match 1`] = `Array []`;
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > filter > loc no match 1`] = `[]`;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody hashtag link 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > hashtag link 1`] = `
+[
+  {
     "alias": "#bar",
-    "from": Object {
+    "from": {
       "fname": "foo",
       "id": "foo",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 5,
         "line": 1,
         "offset": 4,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 1,
         "offset": 0,
       },
     },
     "sameFile": undefined,
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "tags.bar",
       "vaultName": undefined,
@@ -144,30 +144,30 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody note ref 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > note ref 1`] = `
+[
+  {
     "alias": undefined,
-    "from": Object {
+    "from": {
       "fname": "foo.one",
       "id": "foo.one-id",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 30,
         "line": 3,
         "offset": 52,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 19,
         "line": 3,
         "offset": 41,
       },
     },
     "sameFile": false,
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "foo.two",
       "vaultName": undefined,
@@ -176,26 +176,26 @@ Array [
     "value": "foo.two",
     "xvault": false,
   },
-  Object {
-    "from": Object {
+  {
+    "from": {
       "fname": "foo.one",
       "id": "foo.one-id",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 13,
         "line": 2,
         "offset": 22,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 2,
         "offset": 10,
       },
     },
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "foo.two",
       "vaultName": undefined,
@@ -207,30 +207,30 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody one link 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > one link 1`] = `
+[
+  {
     "alias": undefined,
-    "from": Object {
+    "from": {
       "fname": "foo",
       "id": "foo",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 8,
         "line": 1,
         "offset": 7,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 1,
         "offset": 0,
       },
     },
     "sameFile": false,
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "bar",
       "vaultName": undefined,
@@ -242,30 +242,30 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils findLinksFromBody xvault link 1`] = `
-Array [
-  Object {
+exports[`RemarkUtils and LinkUtils > findLinksFromBody > xvault link 1`] = `
+[
+  {
     "alias": undefined,
-    "from": Object {
+    "from": {
       "fname": "foo",
       "id": "foo",
       "vaultName": "vault1",
     },
     "position": Position {
-      "end": Object {
+      "end": {
         "column": 25,
         "line": 1,
         "offset": 24,
       },
-      "indent": Array [],
-      "start": Object {
+      "indent": [],
+      "start": {
         "column": 1,
         "line": 1,
         "offset": 0,
       },
     },
     "sameFile": false,
-    "to": Object {
+    "to": {
       "anchorHeader": undefined,
       "fname": "bar",
       "vaultName": "vault2",
@@ -277,25 +277,25 @@ Array [
 ]
 `;
 
-exports[`RemarkUtils and LinkUtils updateLink basic 1`] = `
+exports[`RemarkUtils and LinkUtils > updateLink > basic 1`] = `
 "# Foo.One
 ![[foo.two]]
 Regular wikilink: [[foo.bar]]"
 `;
 
-exports[`RemarkUtils and LinkUtils updateLink multiple links present link no space 1`] = `
+exports[`RemarkUtils and LinkUtils > updateLink > multiple links present > link no space 1`] = `
 "[[foo]]
 nospace[[bar]]
 onespace [[foo]]"
 `;
 
-exports[`RemarkUtils and LinkUtils updateLink multiple links present link onespace 1`] = `
+exports[`RemarkUtils and LinkUtils > updateLink > multiple links present > link onespace 1`] = `
 "[[foo]]
 nospace[[foo]]
 onespace [[bar]]"
 `;
 
-exports[`RemarkUtils and LinkUtils updateLink multiple links present only link 1`] = `
+exports[`RemarkUtils and LinkUtils > updateLink > multiple links present > only link 1`] = `
 "[[bar]]
 nospace[[foo]]
 onespace [[foo]]"
