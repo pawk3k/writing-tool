@@ -65,11 +65,9 @@
     "build": "yarn build:clean &&  yarn build:views && yarn build:extension",
     "publish": "yarn workspace dendron run vsce package --no-dependencies",
     "postinstall": "patch-package"
-
   },
   "dependencies": {
     "@babel/preset-typescript": "7.16.7",
-    "@pawk3k/ts-migrator": "npm:@jsr/pawk3k__ts-migrator@^1.0.1",
     "chalk": "^4.1.1",
     "cross-env": "^7.0.3",
     "execa": "^5.0.0",
